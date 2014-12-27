@@ -173,8 +173,6 @@
     </ul>
   </li>
   <li><a href="#caveats">Caveats</a></li>
-  <li><a href="#tracked-tools">Tracked Tools</a></li>
-  <li><a href="#license">License</a></li>
 </ul>
 
   </div>
@@ -251,53 +249,53 @@ mr up</code></pre></div>
 
 <p>If you want to manage a new tool and its dotfiles with vcsh and myrepos, follow the steps given below using ack as example.</p>
 
-<ol>
+<ul>
   <li>Create a new remote repository for the tool you want to manage with vcsh.</li>
-</ol>
+</ul>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">vcsh init ack</code></pre></div>
 
-<ol>
+<ul>
   <li>The URL to clone that repository might look like: <em>git@github.com/vcsh-ack.git</em>.</li>
   <li>Add new myrepos config file <em>~/.config/mr/available.d/ack.vcsh</em>, which might look as follows:</li>
-</ol>
+</ul>
 
 <div class="highlight"><pre><code class="language-ini" data-lang="ini"><span class="k">[$HOME/.config/vcsh/repo.d/ack.git]</span>
 <span class="na">checkout</span> <span class="o">=</span> <span class="s">vcsh clone git@github.com:srijanshetty/vcsh-ack.git ack</span></code></pre></div>
 
-<ol>
+<ul>
   <li>Create a symbolic link to tell mr to include this repository:</li>
-</ol>
+</ul>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~/.config/mr/config.d/
 ln -s ../available.d/ack.vcsh .</code></pre></div>
 
-<ol>
+<ul>
   <li>Commit and push your changes in your local myrepos repository:</li>
-</ol>
+</ul>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">vcsh mr add ~/.config/mr
 vcsh mr commit -m <span class="s2">&quot;[ack] add vcsh repository&quot;</span>
 vcsh mr push</code></pre></div>
 
-<ol>
+<ul>
   <li>Add the tool’s dotfiles by to vcsh.</li>
-</ol>
+</ul>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">vcsh ack add .ackrc</code></pre></div>
 
-<ol>
-  <li>Create, customize, and add the tool-specific excludesfile. (More info about it over here)</li>
-</ol>
+<ul>
+  <li>Create, customize, and add the tool-specific excludesfile. (More info about it over <a href="#gitignore">here</a>)</li>
+</ul>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">vcsh write-gitignore ack
 vcsh ack add -f .gitignore.d/ack
 vcsh write-gitignore ack
 vcsh ack add .gitignore.d/ack</code></pre></div>
 
-<ol>
+<ul>
   <li>Commit and push your changes in your local ack repository:</li>
-</ol>
+</ul>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">vcsh ack commit -m <span class="s2">&quot;[Initial Commit] add initial ackrc file&quot;</span>
 vcsh ack push</code></pre></div>
@@ -316,15 +314,15 @@ mr up</code></pre></div>
 
 <p>The work-flow for adding new files/updating files is simple enough.</p>
 
-<ol>
+<ul>
   <li>After updating the files or adding new files, run:</li>
-</ol>
+</ul>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">vcsh &lt;REPO_NAME&gt; add &lt;FILE_NAME&gt;</code></pre></div>
 
-<ol>
+<ul>
   <li>Then commit the changes and push</li>
-</ol>
+</ul>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">vcsh &lt;REPO_NAME&gt; commit -m <span class="s2">&quot;Yowza!&quot;</span>
 vcsh &lt;REPO_NAME&gt; push</code></pre></div>
@@ -403,27 +401,6 @@ git push
   <li><a href="https://github.com/srijanshetty/custom/blob/master/functions/myrepos.zsh">This</a> script creates wrappers for automating most of this.</li>
 </ol>
 
-<h2 id="tracked-tools">Tracked Tools</h2>
-
-<p>Following is a list of the tools I’m using vcsh to track:</p>
-
-<ul>
-  <li>[beets]</li>
-  <li>[ledger]</li>
-  <li>[ssh]</li>
-  <li><a href="https://github.com/srijanshetty/vcsh-sandbox">sandbox</a></li>
-  <li><a href="https://github.com/srijanshetty/vcsh-git">git</a></li>
-  <li><a href="https://github.com/srijanshetty/vcsh-mr">mr</a></li>
-  <li><a href="https://github.com/srijanshetty/vcsh-tmux">tmux</a></li>
-  <li><a href="https://github.com/srijanshetty/vcsh-vim">vim</a></li>
-  <li><a href="https://github.com/srijanshetty/vcsh-misc">misc</a></li>
-  <li><a href="https://github.com/srijanshetty/vcsh-zsh">zsh</a></li>
-</ul>
-
-<h2 id="license">License</h2>
-
-<p>This project is licensed under the terms of the <a href="LICENSE">MIT LICENSE</a></p>
-
       <hr />
       <footer role="contentinfo">
         <div class="article-author-bottom">
@@ -455,6 +432,8 @@ git push
         <p class="byline"><strong>Vcsh, Mr - Dotfiles Nirvana</strong> was published on <time datetime="2014-12-27T17:42:20+05:30">December 27, 2014</time> and last modified on <time datetime="2014-12-27">December 27, 2014</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
+  
+    <section id="disqus_thread"></section><!-- /#disqus_thread -->
   
   </article>
 </div><!-- /#main -->
@@ -500,6 +479,30 @@ git push
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 </script>
+
+
+  
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'srijanshetty'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 	        
 
