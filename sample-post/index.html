@@ -148,16 +148,16 @@
 <a href="http://facebook.com/srijanrshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-facebook-square"></i> Facebook</a>
 <a href="http://plus.google.com/+SrijanRShetty" class="author-social" target="_blank"><i class="fa fa-fw fa-google-plus-square"></i> Google+</a>
 <a href="http://linkedin.com/in/srijanshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>
-
+<a href="http://instagram.com/srijanshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-instagram"></i> Instagram</a>
 
 <a href="http://github.com/srijanshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
 
 <a href="http://lastfm.com/user/srijanshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-music"></i> Last.fm</a>
 
+<a href="http://www.pinterest.com/srijanshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-pinterest"></i> Pinterest</a>
 
 
-
-
+<a href="https://youtube.com/user/srijanshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-youtube-square"></i> Youtube</a>
 
   </div>
   <article class="post">
@@ -196,9 +196,24 @@
         </ul>
       </li>
       <li><a href="#tables">Tables</a></li>
-      <li><a href="#code-snippets">Code Snippets</a></li>
+      <li><a href="#code-snippets">Code Snippets</a>        <ul>
+          <li><a href="#pygments-code-blocks">Pygments Code Blocks</a></li>
+          <li><a href="#standard-code-block">Standard Code Block</a></li>
+          <li><a href="#fenced-code-blocks">Fenced Code Blocks</a></li>
+          <li><a href="#github-gist-embed">GitHub Gist Embed</a></li>
+        </ul>
+      </li>
       <li><a href="#buttons">Buttons</a></li>
       <li><a href="#notices">Notices</a></li>
+      <li><a href="#images">Images</a>        <ul>
+          <li><a href="#figures-for-images-or-video">Figures (for images or video)</a>            <ul>
+              <li><a href="#one-up">One Up</a></li>
+              <li><a href="#two-up">Two Up</a></li>
+              <li><a href="#three-up">Three Up</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
@@ -307,11 +322,102 @@
 
 <h2 id="code-snippets">Code Snippets</h2>
 
+<p>Syntax highlighting is a feature that displays source code, in different colors and fonts according to the category of terms. This feature facilitates writing in a structured language such as a programming language or a markup language as both structures and syntax errors are visually distinct. Highlighting does not affect the meaning of the text itself; it is intended only for human readers.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+
+<h3 id="pygments-code-blocks">Pygments Code Blocks</h3>
+
+<p>To modify styling and highlight colors edit <code>/_sass/_pygments.scss</code>.</p>
+
 <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nf">#container</span> <span class="p">{</span>
-  <span class="k">float</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
-  <span class="k">margin</span><span class="o">:</span> <span class="m">0</span> <span class="m">-240px</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span>
-  <span class="k">width</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="k">float</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
+    <span class="k">margin</span><span class="o">:</span> <span class="m">0</span> <span class="m">-240px</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span>
+    <span class="k">width</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
 <span class="p">}</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">&quot;pagination&quot;</span> <span class="na">role=</span><span class="s">&quot;navigation&quot;</span><span class="nt">&gt;</span>
+    {% if page.previous %}
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;{{ site.url }}{{ page.previous.url }}&quot;</span> <span class="na">class=</span><span class="s">&quot;btn&quot;</span> <span class="na">title=</span><span class="s">&quot;{{ page.previous.title }}&quot;</span><span class="nt">&gt;</span>Previous article<span class="nt">&lt;/a&gt;</span>
+    {% endif %}
+    {% if page.next %}
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;{{ site.url }}{{ page.next.url }}&quot;</span> <span class="na">class=</span><span class="s">&quot;btn&quot;</span> <span class="na">title=</span><span class="s">&quot;{{ page.next.title }}&quot;</span><span class="nt">&gt;</span>Next article<span class="nt">&lt;/a&gt;</span>
+    {% endif %}
+<span class="nt">&lt;/nav&gt;</span><span class="c">&lt;!-- /.pagination --&gt;</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">Jekyll</span>
+  <span class="k">class</span> <span class="nc">TagIndex</span> <span class="o">&lt;</span> <span class="no">Page</span>
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">site</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">dir</span><span class="p">,</span> <span class="n">tag</span><span class="p">)</span>
+      <span class="vi">@site</span> <span class="o">=</span> <span class="n">site</span>
+      <span class="vi">@base</span> <span class="o">=</span> <span class="n">base</span>
+      <span class="vi">@dir</span> <span class="o">=</span> <span class="n">dir</span>
+      <span class="vi">@name</span> <span class="o">=</span> <span class="s1">&#39;index.html&#39;</span>
+      <span class="nb">self</span><span class="o">.</span><span class="n">process</span><span class="p">(</span><span class="vi">@name</span><span class="p">)</span>
+      <span class="nb">self</span><span class="o">.</span><span class="n">read_yaml</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="s1">&#39;_layouts&#39;</span><span class="p">),</span> <span class="s1">&#39;tag_index.html&#39;</span><span class="p">)</span>
+      <span class="nb">self</span><span class="o">.</span><span class="n">data</span><span class="o">[</span><span class="s1">&#39;tag&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="n">tag</span>
+      <span class="n">tag_title_prefix</span> <span class="o">=</span> <span class="n">site</span><span class="o">.</span><span class="n">config</span><span class="o">[</span><span class="s1">&#39;tag_title_prefix&#39;</span><span class="o">]</span> <span class="o">||</span> <span class="s1">&#39;Tagged: &#39;</span>
+      <span class="n">tag_title_suffix</span> <span class="o">=</span> <span class="n">site</span><span class="o">.</span><span class="n">config</span><span class="o">[</span><span class="s1">&#39;tag_title_suffix&#39;</span><span class="o">]</span> <span class="o">||</span> <span class="s1">&#39;&amp;#8211;&#39;</span>
+      <span class="nb">self</span><span class="o">.</span><span class="n">data</span><span class="o">[</span><span class="s1">&#39;title&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">tag_title_prefix</span><span class="si">}#{</span><span class="n">tag</span><span class="si">}</span><span class="s2">&quot;</span>
+      <span class="nb">self</span><span class="o">.</span><span class="n">data</span><span class="o">[</span><span class="s1">&#39;description&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;An archive of posts tagged </span><span class="si">#{</span><span class="n">tag</span><span class="si">}</span><span class="s2">.&quot;</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></div>
+
+<h3 id="standard-code-block">Standard Code Block</h3>
+
+<pre><code>&lt;nav class="pagination" role="navigation"&gt;
+    {% if page.previous %}
+        &lt;a href="{{ site.url }}{{ page.previous.url }}" class="btn" title="{{ page.previous.title }}"&gt;Previous article&lt;/a&gt;
+    {% endif %}
+    {% if page.next %}
+        &lt;a href="{{ site.url }}{{ page.next.url }}" class="btn" title="{{ page.next.title }}"&gt;Next article&lt;/a&gt;
+    {% endif %}
+&lt;/nav&gt;&lt;!-- /.pagination --&gt;
+</code></pre>
+
+<h3 id="fenced-code-blocks">Fenced Code Blocks</h3>
+
+<p>To modify styling and highlight colors edit <code>/_sass/_coderay.scss</code>. Line numbers and a few other things can be modified in <code>_config.yml</code>. Consult <a href="http://jekyllrb.com/docs/configuration/">Jekyll’s documentation</a> for more information.</p>
+
+<pre><code class="language-css">#container {
+    float: left;
+    margin: 0 -240px 0 0;
+    width: 100%;
+}
+</code></pre>
+
+<pre><code class="language-html">&lt;nav class="pagination" role="navigation"&gt;
+    {% if page.previous %}
+        &lt;a href="{{ site.url }}{{ page.previous.url }}" class="btn" title="{{ page.previous.title }}"&gt;Previous article&lt;/a&gt;
+    {% endif %}
+    {% if page.next %}
+        &lt;a href="{{ site.url }}{{ page.next.url }}" class="btn" title="{{ page.next.title }}"&gt;Next article&lt;/a&gt;
+    {% endif %}
+&lt;/nav&gt;&lt;!-- /.pagination --&gt;
+</code></pre>
+
+<pre><code class="language-ruby">module Jekyll
+  class TagIndex &lt; Page
+    def initialize(site, base, dir, tag)
+      @site = site
+      @base = base
+      @dir = dir
+      @name = 'index.html'
+      self.process(@name)
+      self.read_yaml(File.join(base, '_layouts'), 'tag_index.html')
+      self.data['tag'] = tag
+      tag_title_prefix = site.config['tag_title_prefix'] || 'Tagged: '
+      tag_title_suffix = site.config['tag_title_suffix'] || '&amp;#8211;'
+      self.data['title'] = "#{tag_title_prefix}#{tag}"
+      self.data['description'] = "An archive of posts tagged #{tag}."
+    end
+  end
+end
+</code></pre>
+
+<h3 id="github-gist-embed">GitHub Gist Embed</h3>
+
+<p>An example of a Gist embed below.</p>
+
+<script src="https://gist.github.com/mmistakes/6589546.js"> </script>
 
 <h2 id="buttons">Buttons</h2>
 
@@ -329,6 +435,65 @@
 
 <p class="notice"><strong>Watch out!</strong> You can also add notices by appending <code>{: .notice}</code> to a paragraph.</p>
 
+<h2 id="images">Images</h2>
+<p>Here are some examples of what a post with images might look like. If you want to display two or three images next to each other responsively use <code>figure</code> with the appropriate <code>class</code>. Each instance of <code>figure</code> is auto-numbered and displayed in the caption.</p>
+
+<h3 id="figures-for-images-or-video">Figures (for images or video)</h3>
+
+<h4 id="one-up">One Up</h4>
+
+<figure>
+	<a href="http://farm9.staticflickr.com/8426/7758832526_cc8f681e48_b.jpg"><img src="http://farm9.staticflickr.com/8426/7758832526_cc8f681e48_c.jpg" /></a>
+	<figcaption><a href="http://www.flickr.com/photos/80901381@N04/7758832526/" title="Morning Fog Emerging From Trees by A Guy Taking Pictures, on Flickr">Morning Fog Emerging From Trees by A Guy Taking Pictures, on Flickr</a>.</figcaption>
+</figure>
+
+<p>Vero laborum commodo occupy. Semiotics voluptate mumblecore pug. Cosby sweater ullamco quinoa ennui assumenda, sapiente occupy delectus lo-fi. Ea fashion axe Marfa cillum aliquip. Retro Bushwick keytar cliche. Before they sold out sustainable gastropub Marfa readymade, ethical Williamsburg skateboard brunch qui consectetur gentrify semiotics. Mustache cillum irony, fingerstache magna pour-over keffiyeh tousled selfies.</p>
+
+<h4 id="two-up">Two Up</h4>
+
+<p>Apply the <code>half</code> class like so to display two images side by side that share the same caption.</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">&quot;half&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/images/image-filename-1-large.jpg&quot;</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">&quot;/images/image-filename-1.jpg&quot;</span><span class="nt">&gt;&lt;/a&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/images/image-filename-2-large.jpg&quot;</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">&quot;/images/image-filename-2.jpg&quot;</span><span class="nt">&gt;&lt;/a&gt;</span>
+    <span class="nt">&lt;figcaption&gt;</span>Caption describing these two images.<span class="nt">&lt;/figcaption&gt;</span>
+<span class="nt">&lt;/figure&gt;</span></code></pre></div>
+
+<p>And you’ll get something that looks like this:</p>
+
+<figure class="half">
+	<a href="http://placehold.it/1200x600.JPG"><img src="http://placehold.it/600x300.jpg" /></a>
+	<a href="http://placehold.it/1200x600.jpeg"><img src="http://placehold.it/600x300.jpg" /></a>
+	<figcaption>Two images.</figcaption>
+</figure>
+
+<h4 id="three-up">Three Up</h4>
+
+<p>Apply the <code>third</code> class like so to display three images side by side that share the same caption.</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">&quot;third&quot;</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;/images/image-filename-1.jpg&quot;</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;/images/image-filename-2.jpg&quot;</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;/images/image-filename-3.jpg&quot;</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;figcaption&gt;</span>Caption describing these three images.<span class="nt">&lt;/figcaption&gt;</span>
+<span class="nt">&lt;/figure&gt;</span></code></pre></div>
+
+<p>And you’ll get something that looks like this:</p>
+
+<figure class="third">
+	<img src="http://placehold.it/600x300.jpg" />
+	<img src="http://placehold.it/600x300.jpg" />
+	<img src="http://placehold.it/600x300.jpg" />
+	<figcaption>Three images.</figcaption>
+</figure>
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p><a href="http://en.wikipedia.org/wiki/Syntax_highlighting">http://en.wikipedia.org/wiki/Syntax_highlighting</a> <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
       <hr />
       <footer role="contentinfo">
         <div class="article-author-bottom">
@@ -345,16 +510,16 @@
 <a href="http://facebook.com/srijanrshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-facebook-square"></i> Facebook</a>
 <a href="http://plus.google.com/+SrijanRShetty" class="author-social" target="_blank"><i class="fa fa-fw fa-google-plus-square"></i> Google+</a>
 <a href="http://linkedin.com/in/srijanshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>
-
+<a href="http://instagram.com/srijanshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-instagram"></i> Instagram</a>
 
 <a href="http://github.com/srijanshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
 
 <a href="http://lastfm.com/user/srijanshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-music"></i> Last.fm</a>
 
+<a href="http://www.pinterest.com/srijanshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-pinterest"></i> Pinterest</a>
 
 
-
-
+<a href="https://youtube.com/user/srijanshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-youtube-square"></i> Youtube</a>
 
         </div>
         <p class="byline"><strong>Sample Post</strong> was published on <time datetime="2011-03-10T00:00:00+05:30">March 10, 2011</time> and last modified on <time datetime="2013-05-31">May 31, 2013</time>.</p>
@@ -371,11 +536,11 @@
   <h4>You might also enjoy <small class="pull-right">(<a href="http://srijanshetty.in/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="http://srijanshetty.in/technical/vcsh-mr-dotfiles-nirvana/" title="Vcsh, Mr - Dotfiles Nirvana">Vcsh, Mr - Dotfiles Nirvana</a></li>
+    
       <li><a href="http://srijanshetty.in/travelogue/travelogue-indore/" title="Travelogue - Indore">Travelogue - Indore</a></li>
     
       <li><a href="http://srijanshetty.in/poems/travelogue-mt/" title="Travelogue - MT">Travelogue - MT</a></li>
-    
-      <li><a href="http://srijanshetty.in/code-highlighting-post/" title="Syntax Highlighting Post">Syntax Highlighting Post</a></li>
     
     </ul>
     <hr />

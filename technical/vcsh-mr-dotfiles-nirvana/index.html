@@ -1,0 +1,507 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Vcsh, Mr - Dotfiles Nirvana &#8211; Lost Echoes</title>
+<meta name="description" content="dotfiles nirvana using vcsh and mr">
+<meta name="keywords" content="vcsh, mr, dotfiles, shell, zsh">
+
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Vcsh, Mr - Dotfiles Nirvana">
+<meta name="twitter:description" content="dotfiles nirvana using vcsh and mr">
+<meta name="twitter:site" content="@srijanshetty">
+<meta name="twitter:creator" content="@srijanshetty">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://srijanshetty.in/images/default-thumb.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vcsh, Mr - Dotfiles Nirvana">
+<meta property="og:description" content="dotfiles nirvana using vcsh and mr">
+<meta property="og:url" content="http://srijanshetty.in/technical/vcsh-mr-dotfiles-nirvana/">
+<meta property="og:site_name" content="Lost Echoes">
+
+
+
+
+
+<link rel="canonical" href="http://srijanshetty.in/technical/vcsh-mr-dotfiles-nirvana/">
+<link href="http://srijanshetty.in/feed.xml" type="application/atom+xml" rel="alternate" title="Lost Echoes Feed">
+<link rel="author" href="http://plus.google.com/+SrijanRShetty?rel=author">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://srijanshetty.in/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="http://srijanshetty.in/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="http://srijanshetty.in/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="http://srijanshetty.in/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://srijanshetty.in/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://srijanshetty.in/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://srijanshetty.in/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://srijanshetty.in/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://srijanshetty.in/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://srijanshetty.in/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="http://srijanshetty.in">Lost Echoes</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+					    
+					        
+					    
+					    <li><a href="http://srijanshetty.in/about/" >About</a></li>
+					  
+					    
+					        
+					    
+					    <li><a href="http://srijanshetty.in/academics.html" >Academics</a></li>
+					  
+					    
+					        
+					    
+					    <li><a href="http://srijanshetty.in/posts/" >Posts</a></li>
+					  
+					    
+					        
+					    
+					    <li><a href="http://srijanshetty.in/projects/" >Projects</a></li>
+					  
+					    
+					        
+					    
+					    <li><a href="http://srijanshetty.in/cv.pdf" >Resume</a></li>
+					  
+					    
+					        
+					    
+					    <li><a href="http://srijanshetty.in/feed.xml" >RSS</a></li>
+					  
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+
+
+	<img src="http://srijanshetty.in/images/bio-photo.jpg" class="bio-photo" alt="Srijan R. Shetty bio photo">
+
+<h3>Srijan R. Shetty</h3>
+<p>Eccentric, Scribler, Hacker</p>
+<a href="mailto:srijan.shetty+blog@gmail.com" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+<a href="http://twitter.com/srijanshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>
+<a href="http://facebook.com/srijanrshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-facebook-square"></i> Facebook</a>
+<a href="http://plus.google.com/+SrijanRShetty" class="author-social" target="_blank"><i class="fa fa-fw fa-google-plus-square"></i> Google+</a>
+<a href="http://linkedin.com/in/srijanshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>
+<a href="http://instagram.com/srijanshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-instagram"></i> Instagram</a>
+
+<a href="http://github.com/srijanshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+
+<a href="http://lastfm.com/user/srijanshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-music"></i> Last.fm</a>
+
+<a href="http://www.pinterest.com/srijanshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-pinterest"></i> Pinterest</a>
+
+
+<a href="https://youtube.com/user/srijanshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-youtube-square"></i> Youtube</a>
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="http://srijanshetty.in/technical/vcsh-mr-dotfiles-nirvana/" rel="bookmark" title="Vcsh, Mr - Dotfiles Nirvana">Vcsh, Mr - Dotfiles Nirvana</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <section id="table-of-contents" class="toc">
+  <header>
+    <h3>Overview</h3>
+  </header>
+<div id="drawer">
+<ul id="markdown-toc">
+  <li><a href="#dotfiles">Dotfiles</a></li>
+  <li><a href="#bootstrapping">Bootstrapping</a></li>
+  <li><a href="#organization">Organization</a></li>
+  <li><a href="#walk-through">Walk-through</a>    <ul>
+      <li><a href="#adding-a-new-repository">Adding a new repository</a></li>
+      <li><a href="#reproduction-of-configuration">Reproduction of configuration</a></li>
+      <li><a href="#updating-a-repository">Updating a repository</a></li>
+      <li><a href="#gitignore">gitignore</a></li>
+    </ul>
+  </li>
+  <li><a href="#caveats">Caveats</a></li>
+  <li><a href="#tracked-tools">Tracked Tools</a></li>
+  <li><a href="#license">License</a></li>
+</ul>
+
+  </div>
+</section>
+<!-- /#table-of-contents -->
+
+<h2 id="dotfiles">Dotfiles</h2>
+
+<p>When I started on the path of managing my dotfiles, I was naive enough to believe that my scripting abilities would let me conquer the beast that <em>dotfiles</em> are, and it took me a couple of years to realize my folly. But I’ve decided to mend my ways, to follow the wisdom of the ages - <strong>UNIX way</strong>.</p>
+
+<h2 id="bootstrapping">Bootstrapping</h2>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">sudo apt-get install -y vcsh myrepos
+vcsh clone git@github.com:srijanshetty/vcsh-mr.git
+mr up</code></pre></div>
+
+<p>Want to get down and dirty? You need to go <a href="#walk-through">here</a></p>
+
+<h2 id="organization">Organization</h2>
+
+<p>There are three vital pieces of the puzzle: vcsh, mr and the directory structure of mr.</p>
+
+<ol>
+  <li>
+    <p><strong>vcsh</strong>: The ~500 LOC of vcsh bellies it unfathomable power. Like every great UNIX utility, vcsh builds upon another great UNIX utility - <em>git</em>. Git allows for the $GIT_DIR to be separate from the $GIT_WORKING_TREE. What this means is that the ‘.git
+‘ directory could be located in another folder and Git would still work fine. vcsh keeps all these ‘.git’ folders in ~/.config/vcsh/repo.d/REPO_NAME.git. And the work trees are maintained in $HOME. So, we can have multiple git directories residing within home and none of them will collide with each other. Awesome isn’t it?</p>
+  </li>
+  <li>
+    <p><strong>mr</strong>: mr allows to manage multiple repositories together. You register repositories with mr (Using <em>mr reg</em>, D’oh) and then you can execute VCS commands like push, update, checkout on them together. mr supports all popular version controls systems. (I only care about git though).</p>
+  </li>
+  <li>
+    <p><strong>Directory Structure</strong>: The author of the vcsh work flow prescribes the following directory structure:</p>
+  </li>
+</ol>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">~/.config/mr/
+    ├── available.d
+    │   ├── beets.vcsh
+    │   ├── git.vcsh
+    │   ├── ledger.vcsh
+    │   ├── misc.vcsh
+    │   ├── mr.vcsh
+    │   ├── template.vcsh
+    │   ├── tmux.vcsh
+    │   ├── vim.vcsh
+    │   ├── xmonad.vcsh
+    │   └── zsh.vcsh
+    └── config.d
+        ├── beets.vcsh -&gt; ../available.d/beets.vcsh
+        ├── git.vcsh -&gt; ../available.d/git.vcsh
+        ├── ledger.vcsh -&gt; ../available.d/ledger.vcsh
+        ├── misc.vcsh -&gt; ../available.d/misc.vcsh
+        ├── mr.vcsh -&gt; ../available.d/mr.vcsh
+        ├── tmux.vcsh -&gt; ../available.d/tmux.vcsh
+        ├── vim.vcsh -&gt; ../available.d/vim.vcsh
+        └── zsh.vcsh -&gt; ../available.d/zsh.vcsh</code></pre></div>
+
+<p>Some salient points about this directory structure are:
+- <strong>available.d</strong> serves as a store for different available configurations.
+- active configurations are symlinked in <strong>config.d</strong>.
+- mr acts only on the configurations listed in <strong>config.d</strong>.</p>
+
+<p>What’s wonderful about these three tools is that they were written by the same author and work together seamlessly!!</p>
+
+<p><strong>Note</strong>: Maintaining symlinks seemed too much of a chore for me; and so I did what any respectable programmer would do - <a href="https://github.com/srijanshetty/custom/blob/master/functions/myrepos.zsh">automate it</a></p>
+
+<h2 id="walk-through">Walk-through</h2>
+
+<p>It took me three tries - with the last one taking over a day - in a span of over 4 months to get this straight. <a href="http://www.martin-burger.net/blog/unix-shell/manage-dotfiles-quickly-and-effortlessly/">This</a>) guide did wonders.</p>
+
+<p>Caveat: A lot of this section is derivative of the about mentioned article.</p>
+
+<h3 id="adding-a-new-repository">Adding a new repository</h3>
+
+<p>If you want to manage a new tool and its dotfiles with vcsh and myrepos, follow the steps given below using ack as example.</p>
+
+<ol>
+  <li>Create a new remote repository for the tool you want to manage with vcsh.</li>
+</ol>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">vcsh init ack</code></pre></div>
+
+<ol>
+  <li>The URL to clone that repository might look like: <em>git@github.com/vcsh-ack.git</em>.</li>
+  <li>Add new myrepos config file <em>~/.config/mr/available.d/ack.vcsh</em>, which might look as follows:</li>
+</ol>
+
+<div class="highlight"><pre><code class="language-ini" data-lang="ini"><span class="k">[$HOME/.config/vcsh/repo.d/ack.git]</span>
+<span class="na">checkout</span> <span class="o">=</span> <span class="s">vcsh clone git@github.com:srijanshetty/vcsh-ack.git ack</span></code></pre></div>
+
+<ol>
+  <li>Create a symbolic link to tell mr to include this repository:</li>
+</ol>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~/.config/mr/config.d/
+ln -s ../available.d/ack.vcsh .</code></pre></div>
+
+<ol>
+  <li>Commit and push your changes in your local myrepos repository:</li>
+</ol>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">vcsh mr add ~/.config/mr
+vcsh mr commit -m <span class="s2">&quot;[ack] add vcsh repository&quot;</span>
+vcsh mr push</code></pre></div>
+
+<ol>
+  <li>Add the tool’s dotfiles by to vcsh.</li>
+</ol>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">vcsh ack add .ackrc</code></pre></div>
+
+<ol>
+  <li>Create, customize, and add the tool-specific excludesfile. (More info about it over here)</li>
+</ol>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">vcsh write-gitignore ack
+vcsh ack add -f .gitignore.d/ack
+vcsh write-gitignore ack
+vcsh ack add .gitignore.d/ack</code></pre></div>
+
+<ol>
+  <li>Commit and push your changes in your local ack repository:</li>
+</ol>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">vcsh ack commit -m <span class="s2">&quot;[Initial Commit] add initial ackrc file&quot;</span>
+vcsh ack push</code></pre></div>
+
+<p>Yes, the initial configuration is quite complicated. But the effort is well worth what comes next.</p>
+
+<h3 id="reproduction-of-configuration">Reproduction of configuration</h3>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">sudo apt-get install -y vcsh myrepos
+vcsh clone git@github.com:srijanshetty/vcsh-mr.git
+mr up</code></pre></div>
+
+<p>Bam! It’s done!</p>
+
+<h3 id="updating-a-repository">Updating a repository</h3>
+
+<p>The work-flow for adding new files/updating files is simple enough.</p>
+
+<ol>
+  <li>After updating the files or adding new files, run:</li>
+</ol>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">vcsh &lt;REPO_NAME&gt; add &lt;FILE_NAME&gt;</code></pre></div>
+
+<ol>
+  <li>Then commit the changes and push</li>
+</ol>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">vcsh &lt;REPO_NAME&gt; commit -m <span class="s2">&quot;Yowza!&quot;</span>
+vcsh &lt;REPO_NAME&gt; push</code></pre></div>
+
+<p>As can be seen, vcsh supports all common VCS commands. An easier work-flow is to enter a <em>vcsh chroot</em>, demonstrated as follows:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">vcsh enter REPO_NAME
+ga &lt;FILE_NAME&gt;
+gcm <span class="s2">&quot;Yowza!&quot;</span>
+git push
+<span class="nb">exit</span></code></pre></div>
+
+<p>Not only does this enable the git prompt, but also you can use those aliases that you set. Could this get any better?</p>
+
+<h3 id="gitignore">gitignore</h3>
+
+<p>If you tried entering the <em>vcsh chroot</em> that I just talked about and you use a git prompt (you do use it don’t you), then you’re in for a treat - your terminal may have frozen for a good amount of time; and if you’re like me you would have given up on this vcsh business already. But fret not, such behaviour is expected. Git prompts make use of ls-files and with over 25,000 files in my $HOME, this king of tardiness is expected.</p>
+
+<p>To get around this problem, we need to define a <em>gitignore/excludesfile</em>. And through <em>vcsh write-gitignore</em>, vcsh provides us the means to do so. The generated excludesfile is a white-list, for the ack example above, the final generated .gitignore.d/ack file is as follows</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">*
+!.ackrc
+!.gitignore.d/
+!.gitignore.d/ack</code></pre></div>
+
+<p>The first line ignores all files in $HOME and then starts including the files we’re tracking one by one. While this is well and good for normal use-cases, it does cause you to forget adding new files. For example, the generated excludesfile for mr is</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">*
+!.config
+!.config/mr
+!.config/mr/available.d
+!.config/mr/available.d/mr.vcsh
+!.config/mr/available.d/git.vcsh
+!.config/mr/config.d
+!.config/mr/config.d/mr.vcsh
+!.config/mr/config.d/git.vcsh
+!.gitignore.d/
+!.gitignore.d/mr
+!.mrconfig</code></pre></div>
+
+<p>Do you see the problem? Okay let me tell you, any new file in <em>available.d/ or config.d/</em> is ignored by default. So, I’d advise using the following <em>.gitignore.d/mr</em> file which tracks files by default.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">*
+!.config
+!.config/mr
+!.config/mr/available.d
+!.config/mr/available.d/*
+!.config/mr/config.d
+!.config/mr/config.d/*
+!.gitignore.d
+!.gitignore.d/mr
+!.mrconfig</code></pre></div>
+
+<p>A final note on the four sub steps required in Step 9 of [Adding a new repository].
+1. Generate a gitignore file.
+2. Force add the gitignore file to index, which is ignored up till now.
+3. Regenerate the gitignore file (this time it will include the gitignore file itself).
+4. Add the now modified gitignore file.</p>
+
+<h2 id="caveats">Caveats</h2>
+
+<ol>
+  <li>
+    <strike>The lack a git prompt in my terminal for vcsh enabled repos is unnerving. I still need to soak it all in and find a system to track pending changes. </strike>
+  </li>
+  <li>All repositories need to share a common README file. Again, I need to find a way around this.</li>
+  <li>
+    <strike>I don't like the manual symlinking required in .config.d/. It would be much easier to have helper functions like Apache provides for it's web server.</strike>
+  </li>
+</ol>
+
+<p><strong>Update</strong>:</p>
+
+<ol>
+  <li>vcsh version 1.2 onwards solves 1 using a <strong>vcsh status</strong> command.</li>
+  <li><a href="https://github.com/srijanshetty/custom/blob/master/functions/myrepos.zsh">This</a> script creates wrappers for automating most of this.</li>
+</ol>
+
+<h2 id="tracked-tools">Tracked Tools</h2>
+
+<p>Following is a list of the tools I’m using vcsh to track:</p>
+
+<ul>
+  <li>[beets]</li>
+  <li>[ledger]</li>
+  <li>[ssh]</li>
+  <li><a href="https://github.com/srijanshetty/vcsh-sandbox">sandbox</a></li>
+  <li><a href="https://github.com/srijanshetty/vcsh-git">git</a></li>
+  <li><a href="https://github.com/srijanshetty/vcsh-mr">mr</a></li>
+  <li><a href="https://github.com/srijanshetty/vcsh-tmux">tmux</a></li>
+  <li><a href="https://github.com/srijanshetty/vcsh-vim">vim</a></li>
+  <li><a href="https://github.com/srijanshetty/vcsh-misc">misc</a></li>
+  <li><a href="https://github.com/srijanshetty/vcsh-zsh">zsh</a></li>
+</ul>
+
+<h2 id="license">License</h2>
+
+<p>This project is licensed under the terms of the <a href="LICENSE">MIT LICENSE</a></p>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="article-author-bottom">
+          
+
+
+
+	<img src="http://srijanshetty.in/images/bio-photo.jpg" class="bio-photo" alt="Srijan R. Shetty bio photo">
+
+<h3>Srijan R. Shetty</h3>
+<p>Eccentric, Scribler, Hacker</p>
+<a href="mailto:srijan.shetty+blog@gmail.com" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+<a href="http://twitter.com/srijanshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>
+<a href="http://facebook.com/srijanrshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-facebook-square"></i> Facebook</a>
+<a href="http://plus.google.com/+SrijanRShetty" class="author-social" target="_blank"><i class="fa fa-fw fa-google-plus-square"></i> Google+</a>
+<a href="http://linkedin.com/in/srijanshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>
+<a href="http://instagram.com/srijanshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-instagram"></i> Instagram</a>
+
+<a href="http://github.com/srijanshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+
+<a href="http://lastfm.com/user/srijanshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-music"></i> Last.fm</a>
+
+<a href="http://www.pinterest.com/srijanshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-pinterest"></i> Pinterest</a>
+
+
+<a href="https://youtube.com/user/srijanshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-youtube-square"></i> Youtube</a>
+
+        </div>
+        <p class="byline"><strong>Vcsh, Mr - Dotfiles Nirvana</strong> was published on <time datetime="2014-12-27T17:42:20+05:30">December 27, 2014</time> and last modified on <time datetime="2014-12-27">December 27, 2014</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="http://srijanshetty.in/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="http://srijanshetty.in/travelogue/travelogue-indore/" title="Travelogue - Indore">Travelogue - Indore</a></li>
+    
+      <li><a href="http://srijanshetty.in/poems/travelogue-mt/" title="Travelogue - MT">Travelogue - MT</a></li>
+    
+      <li><a href="http://srijanshetty.in/sample-post/" title="Sample Post">Sample Post</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  <footer>
+    
+
+<span>&copy; 2014 Srijan R. Shetty. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://srijanshetty.in/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://srijanshetty.in/assets/js/scripts.min.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-54744194-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+	        
+
+</body>
+</html>
