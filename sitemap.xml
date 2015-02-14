@@ -16,49 +16,54 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>http://srijanshetty.in/poems/smile/</loc>
+    <lastmod>2013-11-23T22:55:57+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>http://srijanshetty.in/sample-post/</loc>
     <lastmod>2011-03-10T00:00:00+05:30</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://srijanshetty.in/academics.html</loc>
-    <lastmod>2015-01-28T15:06:01+05:30</lastmod>
+    <lastmod>2015-02-14T23:11:08+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://srijanshetty.in/almanac.html</loc>
-    <lastmod>2015-01-28T15:06:01+05:30</lastmod>
+    <lastmod>2015-02-14T23:11:08+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://srijanshetty.in/posts/</loc>
-    <lastmod>2015-01-28T15:06:01+05:30</lastmod>
+    <lastmod>2015-02-14T23:11:08+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://srijanshetty.in/theme-setup/</loc>
-    <lastmod>2015-01-28T15:06:01+05:30</lastmod>
+    <lastmod>2015-02-14T23:11:08+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://srijanshetty.in/projects/</loc>
-    <lastmod>2015-01-28T15:06:01+05:30</lastmod>
+    <lastmod>2015-02-14T23:11:08+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://srijanshetty.in/about/</loc>
-    <lastmod>2015-01-28T15:06:01+05:30</lastmod>
+    <lastmod>2015-02-14T23:11:08+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://srijanshetty.in/</loc>
-    <lastmod>2015-01-28T15:06:01+05:30</lastmod>
+    <lastmod>2015-02-14T23:11:08+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
