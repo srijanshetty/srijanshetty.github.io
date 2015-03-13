@@ -4,13 +4,43 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://srijanshetty.in/feed.xml" />
 <link rel="alternate" type="text/html" href="http://srijanshetty.in" />
-<updated>2015-02-20T15:55:33+05:30</updated>
+<updated>2015-03-13T10:20:35+05:30</updated>
 <id>http://srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
   <uri>http://srijanshetty.in/</uri>
   <email>srijan.shetty+blog@gmail.com</email>
 </author>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Linux: Pause and Resume Processes]]></title>
+  <link rel="alternate" type="text/html" href="http://srijanshetty.in/hacks/linux-pause-and-resume-processes/" />
+  <id>http://srijanshetty.in/hacks/linux-pause-and-resume-processes</id>
+  <published>2015-03-13T02:59:33+05:30</published>
+  <updated>2015-03-13T02:59:33+05:30</updated>
+  <author>
+    <name>Srijan R. Shetty</name>
+    <uri>http://srijanshetty.in</uri>
+    <email>srijan.shetty+blog@gmail.com</email>
+  </author>
+  <content type="html">&lt;p&gt;The last few days have been pretty hectic with two major assignment deadlines. And like every wild goose hunt fuelled by caffeine, they’ve enriched my repertoire.&lt;br /&gt;&lt;br /&gt;
+The &lt;strong&gt;R Tree&lt;/strong&gt; assignment for &lt;em&gt;CS618: Searching and Indexing in Databases&lt;/em&gt; involved the insertion of a million data points which took about &lt;strong&gt;forty minutes&lt;/strong&gt; to run to completion. The program was midway through when I realized that I needed some precious CPU time for my other assignment: &lt;strong&gt;fitting a mixture of Gaussian&lt;/strong&gt; to a data-set for &lt;em&gt;CS771: Machine Learning Tools and Techniques&lt;/em&gt;.&lt;br /&gt;&lt;br /&gt;
+I’ve always maintained the racial superiority of my Dell XPS 15 but I knew better than run both these programs simultaneously. With less than three hours to D-Day, I couldn’t afford terminating the &lt;strong&gt;R Tree&lt;/strong&gt; program; it was then by divine providence that I chanced upon the idea of somehow pausing the &lt;strong&gt;R Tree&lt;/strong&gt; program. And guess what, as it turns out, Linux has just the solution.&lt;br /&gt;&lt;br /&gt;
+The Linux scheduler allows to pause any running program and resume it at a later time; and the way to achieve the same is dead simple. To pause a process, run the following command:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;kill&lt;/span&gt; -STOP &amp;lt;pid&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;And at any later stage, one can resume the stopped program by issuing the following command:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;kill&lt;/span&gt; -CONT &amp;lt;pid&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;And with that I was able to pause the &lt;strong&gt;R Tree&lt;/strong&gt; program and save the universe from destruction (Not really, but I did manage to save my grades from destruction)&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://srijanshetty.in/hacks/linux-pause-and-resume-processes/&quot;&gt;Linux: Pause and Resume Processes&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on March 13, 2015.&lt;/p&gt;</content>
+</entry>
 
 
   
