@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://srijanshetty.in/technical/shell-magic/</loc>
+    <lastmod>2015-05-04T15:45:32+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>http://srijanshetty.in/technical/first-programming-bug/</loc>
     <lastmod>2015-04-04T18:23:20+05:30</lastmod>
     <priority>0.8</priority>
@@ -47,49 +52,49 @@
   </url>
   <url>
     <loc>http://srijanshetty.in/academics.html</loc>
-    <lastmod>2015-04-19T22:45:40+05:30</lastmod>
+    <lastmod>2015-05-04T16:16:12+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://srijanshetty.in/almanac.html</loc>
-    <lastmod>2015-04-19T22:45:40+05:30</lastmod>
+    <lastmod>2015-05-04T16:16:12+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://srijanshetty.in/about/</loc>
-    <lastmod>2015-04-19T22:45:40+05:30</lastmod>
+    <lastmod>2015-05-04T16:16:12+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://srijanshetty.in/</loc>
-    <lastmod>2015-04-19T22:45:40+05:30</lastmod>
+    <lastmod>2015-05-04T16:16:12+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://srijanshetty.in/theme-setup/</loc>
-    <lastmod>2015-04-19T22:45:40+05:30</lastmod>
+    <lastmod>2015-05-04T16:16:12+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://srijanshetty.in/posts/</loc>
-    <lastmod>2015-04-19T22:45:40+05:30</lastmod>
+    <lastmod>2015-05-04T16:16:12+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://srijanshetty.in/projects/</loc>
-    <lastmod>2015-04-19T22:45:40+05:30</lastmod>
+    <lastmod>2015-05-04T16:16:12+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://srijanshetty.in/talks.html</loc>
-    <lastmod>2015-04-19T22:45:40+05:30</lastmod>
+    <lastmod>2015-05-04T16:16:12+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

@@ -4,13 +4,71 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://srijanshetty.in/feed.xml" />
 <link rel="alternate" type="text/html" href="http://srijanshetty.in" />
-<updated>2015-04-19T22:45:40+05:30</updated>
+<updated>2015-05-04T16:16:12+05:30</updated>
 <id>http://srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
   <uri>http://srijanshetty.in/</uri>
   <email>srijan.shetty+blog@gmail.com</email>
 </author>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Shell Magic]]></title>
+  <link rel="alternate" type="text/html" href="http://srijanshetty.in/technical/shell-magic/" />
+  <id>http://srijanshetty.in/technical/shell-magic</id>
+  <published>2015-05-04T15:45:32+05:30</published>
+  <updated>2015-05-04T15:45:32+05:30</updated>
+  <author>
+    <name>Srijan R. Shetty</name>
+    <uri>http://srijanshetty.in</uri>
+    <email>srijan.shetty+blog@gmail.com</email>
+  </author>
+  <content type="html">&lt;p&gt;The other day, a friend of mine ran the following command in an attempt to remove wine and it’s dependants.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo apt-get purge wine *&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Unfortunately for him, the command worked and did end up removing wine with a whole lot of other system critical
+packages. In an attempt to resuscitate his computer, he tried rebooting it and in the moments that ensued, I can
+swear I saw the living daylights sucked out of his face. But every cloud has a silver lining and despite the fact
+that we could not boot into X, we did have shell access. &lt;br /&gt;&lt;br /&gt;
+Fortunately for us, &lt;strong&gt;apt&lt;/strong&gt; maintains a log of all the operations it performs in &lt;em&gt;/var/log/apt/term.log&lt;/em&gt; and while
+it would have been easy to just manually make a list of programs that were uninstalled, it wasn’t &lt;a href=&quot;https://www.youtube.com/watch?v=sCZJblyT_XM&quot;&gt;half-assed
+&lt;/a&gt; enough. Instead, I summoned the Gods of the shell to aid us in
+this conquest.&lt;br /&gt;&lt;br /&gt;
+We began by getting the relevant portion of the log file to another file (while it is possible to work with the
+same log file, I didn’t want to go through the hassle of using &lt;strong&gt;sudo&lt;/strong&gt; every time I had to access the log file.)&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo tail -177 /var/log/apt/term.log &amp;gt; temp.log&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;I’ll admit, I cheated a bit by using &lt;strong&gt;177&lt;/strong&gt; and while it could have been programmed easily using &lt;strong&gt;grep&lt;/strong&gt;, I was
+more excited about what I had to do next to really worry about making all of this reproducible.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Log started: 2015-05-01  10:36:15
+Removing cmake
+Processing triggers &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; man-db
+Log ended: 2015-05-01  10:36:29&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;As you can see above, &lt;strong&gt;apt&lt;/strong&gt; logs all removed programs as *Removing &lt;program_name&gt;*, so a simple **grep** search
+would list all the lines containing the removed programs and the second field of these lines would get us
+a list of all the programs which were removed by this operation. &lt;br /&gt;&lt;/program_name&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;cat temp.log &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; grep &lt;span class=&quot;s1&quot;&gt;&amp;#39;^Removing&amp;#39;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; awk &lt;span class=&quot;s1&quot;&gt;&amp;#39;{print \$2}&amp;#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The carat in &lt;strong&gt;grep&lt;/strong&gt;’s argument signifies that we want all lines starting with the word ‘Removing’. Also,
+we use &lt;strong&gt;awk&lt;/strong&gt; to obtain the second field of the lines (an astute reader may suggest alternatives like
+&lt;strong&gt;cut&lt;/strong&gt; as well). &lt;br /&gt;&lt;br /&gt;
+Now that we had a list of the uninstalled programs, all that is left is feeding this list to &lt;strong&gt;apt&lt;/strong&gt; for
+installation.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;cat temp.log &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; grep &lt;span class=&quot;s1&quot;&gt;&amp;#39;^Removing&amp;#39;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; awk &lt;span class=&quot;s1&quot;&gt;&amp;#39;{print \$2}&amp;#39;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; xargs sudo apt-get install -y&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;And viola! All was back to normal in Linux Land.&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://srijanshetty.in/technical/shell-magic/&quot;&gt;Shell Magic&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on May 04, 2015.&lt;/p&gt;</content>
+</entry>
 
 
   

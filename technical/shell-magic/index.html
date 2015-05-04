@@ -5,15 +5,15 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Lost &#8211; Lost Echoes</title>
-<meta name="description" content="An innocent was lost to the man he became, it wasn't how but was when - the child became the man he despised.">
-<meta name="keywords" content="poems, lost, dreams, wishes, future, past, child">
+<title>Shell Magic &#8211; Lost Echoes</title>
+<meta name="description" content="Saving an Ubuntu in distress with some commandline-fu">
+<meta name="keywords" content="linux, sed, awk, grep, apt-get, technical">
 
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Lost">
-<meta name="twitter:description" content="An innocent was lost to the man he became, it wasn't how but was when - the child became the man he despised.">
+<meta name="twitter:title" content="Shell Magic">
+<meta name="twitter:description" content="Saving an Ubuntu in distress with some commandline-fu">
 <meta name="twitter:site" content="@srijanshetty">
 <meta name="twitter:creator" content="@srijanshetty">
 
@@ -23,16 +23,16 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Lost">
-<meta property="og:description" content="An innocent was lost to the man he became, it wasn't how but was when - the child became the man he despised.">
-<meta property="og:url" content="http://srijanshetty.in/poems/lost/">
+<meta property="og:title" content="Shell Magic">
+<meta property="og:description" content="Saving an Ubuntu in distress with some commandline-fu">
+<meta property="og:url" content="http://srijanshetty.in/technical/shell-magic/">
 <meta property="og:site_name" content="Lost Echoes">
 
 
 
 
 
-<link rel="canonical" href="http://srijanshetty.in/poems/lost/">
+<link rel="canonical" href="http://srijanshetty.in/technical/shell-magic/">
 <link href="http://srijanshetty.in/feed.xml" type="application/atom+xml" rel="alternate" title="Lost Echoes Feed">
 <link rel="author" href="http://plus.google.com/+SrijanRShetty?rel=author">
 
@@ -163,32 +163,50 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="http://srijanshetty.in/poems/lost/" rel="bookmark" title="Lost">Lost</a></h1>
+        <h1><a href="http://srijanshetty.in/technical/shell-magic/" rel="bookmark" title="Shell Magic">Shell Magic</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>Amidst voices of other forlorn men,<br />
-An eerie silence, and a broken pen;<br />
-reminiscing, a man stood lost again.<br />
-A promise once made was broken;<br />
-the empty doorways stood it’s token.<br /><br />
-I never feared what lay ahead,<br />
-but what was once - the buried dead,<br />
-a haunted past, a scarred child,<br />
-who stood there, hopeful, in the wild.<br />
-And when I looked into those eyes,<br />
-I felt a chill; I could hear the lies,<br />
-which were told to this innocent life -<br />
-promises of no struggle, no strife.<br /><br />
-Hollow words, just like mine.<br />
-But he endured he didn’t whine,<br />
-Thinking, he could change time.<br />
-Alas, he was thrown into an abyss,<br />
-ambition was lost and so was his<br />
-faith. An innocent was lost to the man<br />
-he became, it wasn’t how but was when -<br />
-the child became the man he despised.<br /></p>
+      <p>The other day, a friend of mine ran the following command in an attempt to remove wine and it’s dependants.</p>
 
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>sudo apt-get purge wine *</code></pre></div>
+
+<p>Unfortunately for him, the command worked and did end up removing wine with a whole lot of other system critical
+packages. In an attempt to resuscitate his computer, he tried rebooting it and in the moments that ensued, I can
+swear I saw the living daylights sucked out of his face. But every cloud has a silver lining and despite the fact
+that we could not boot into X, we did have shell access. <br /><br />
+Fortunately for us, <strong>apt</strong> maintains a log of all the operations it performs in <em>/var/log/apt/term.log</em> and while
+it would have been easy to just manually make a list of programs that were uninstalled, it wasn’t <a href="https://www.youtube.com/watch?v=sCZJblyT_XM">half-assed
+</a> enough. Instead, I summoned the Gods of the shell to aid us in
+this conquest.<br /><br />
+We began by getting the relevant portion of the log file to another file (while it is possible to work with the
+same log file, I didn’t want to go through the hassle of using <strong>sudo</strong> every time I had to access the log file.)</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>sudo tail -177 /var/log/apt/term.log &gt; temp.log</code></pre></div>
+
+<p>I’ll admit, I cheated a bit by using <strong>177</strong> and while it could have been programmed easily using <strong>grep</strong>, I was
+more excited about what I had to do next to really worry about making all of this reproducible.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">Log started: 2015-05-01  10:36:15
+Removing cmake
+Processing triggers <span class="k">for</span> man-db
+Log ended: 2015-05-01  10:36:29</code></pre></div>
+
+<p>As you can see above, <strong>apt</strong> logs all removed programs as *Removing <program_name>*, so a simple **grep** search
+would list all the lines containing the removed programs and the second field of these lines would get us
+a list of all the programs which were removed by this operation. <br /></program_name></p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>cat temp.log <span class="p">|</span> grep <span class="s1">&#39;^Removing&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;{print \$2}&#39;</span></code></pre></div>
+
+<p>The carat in <strong>grep</strong>’s argument signifies that we want all lines starting with the word ‘Removing’. Also,
+we use <strong>awk</strong> to obtain the second field of the lines (an astute reader may suggest alternatives like
+<strong>cut</strong> as well). <br /><br />
+Now that we had a list of the uninstalled programs, all that is left is feeding this list to <strong>apt</strong> for
+installation.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>cat temp.log <span class="p">|</span> grep <span class="s1">&#39;^Removing&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;{print \$2}&#39;</span> <span class="p">|</span> xargs sudo apt-get install -y</code></pre></div>
+
+<p>And viola! All was back to normal in Linux Land.</p>
 
       <hr />
       <footer role="contentinfo">
@@ -219,7 +237,7 @@ the child became the man he despised.<br /></p>
 
 
         </div>
-        <p class="byline"><strong>Lost</strong> was published on <time datetime="2013-08-10T05:31:00+05:30">August 10, 2013</time> and last modified on <time datetime="2015-02-20">February 20, 2015</time>.</p>
+        <p class="byline"><strong>Shell Magic</strong> was published on <time datetime="2015-05-04T15:45:32+05:30">May 04, 2015</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -233,11 +251,11 @@ the child became the man he despised.<br /></p>
   <h4>You might also enjoy <small class="pull-right">(<a href="http://srijanshetty.in/posts/">View all posts</a>)</small></h4>
     <ul>
     
-      <li><a href="http://srijanshetty.in/technical/shell-magic/" title="Shell Magic">Shell Magic</a></li>
-    
       <li><a href="http://srijanshetty.in/technical/first-programming-bug/" title="First Programming Bug">First Programming Bug</a></li>
     
       <li><a href="http://srijanshetty.in/travelogue/travelogue-nepal/" title="Travelogue - Nepal">Travelogue - Nepal</a></li>
+    
+      <li><a href="http://srijanshetty.in/hacks/linux-pause-and-resume-processes/" title="Linux: Pause and Resume Processes">Linux: Pause and Resume Processes</a></li>
     
     </ul>
     <hr />
