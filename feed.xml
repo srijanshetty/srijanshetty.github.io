@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://srijanshetty.in/feed.xml" />
 <link rel="alternate" type="text/html" href="http://srijanshetty.in" />
-<updated>2015-05-04T16:16:12+05:30</updated>
+<updated>2015-05-05T19:09:03+05:30</updated>
 <id>http://srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
@@ -36,15 +36,15 @@ swear I saw the living daylights sucked out of his face. But every cloud has a s
 that we could not boot into X, we did have shell access. &lt;br /&gt;&lt;br /&gt;
 Fortunately for us, &lt;strong&gt;apt&lt;/strong&gt; maintains a log of all the operations it performs in &lt;em&gt;/var/log/apt/term.log&lt;/em&gt; and while
 it would have been easy to just manually make a list of programs that were uninstalled, it wasn’t &lt;a href=&quot;https://www.youtube.com/watch?v=sCZJblyT_XM&quot;&gt;half-assed
-&lt;/a&gt; enough. Instead, I summoned the Gods of the shell to aid us in
+&lt;/a&gt; enough. Instead, we summoned the Gods of the shell to aid us in
 this conquest.&lt;br /&gt;&lt;br /&gt;
 We began by getting the relevant portion of the log file to another file (while it is possible to work with the
-same log file, I didn’t want to go through the hassle of using &lt;strong&gt;sudo&lt;/strong&gt; every time I had to access the log file.)&lt;/p&gt;
+same log file, we didn’t want to go through the hassle of using &lt;strong&gt;sudo&lt;/strong&gt; every time we had to access the log file.)&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo tail -177 /var/log/apt/term.log &amp;gt; temp.log&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;I’ll admit, I cheated a bit by using &lt;strong&gt;177&lt;/strong&gt; and while it could have been programmed easily using &lt;strong&gt;grep&lt;/strong&gt;, I was
-more excited about what I had to do next to really worry about making all of this reproducible.&lt;/p&gt;
+&lt;p&gt;I’ll admit, we cheated a bit by using &lt;strong&gt;177&lt;/strong&gt; and while it could have been programmed easily using &lt;strong&gt;grep&lt;/strong&gt;, we were
+more excited about what we had to do next to really worry about making all of this reproducible.&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Log started: 2015-05-01  10:36:15
 Removing cmake
