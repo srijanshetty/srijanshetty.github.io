@@ -1,110 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://srijanshetty.in/philosophy/on-photographs/</loc>
+    <loc>http://localhost:4000/philosophy/on-photographs/</loc>
     <lastmod>2015-05-09T09:40:04+05:30</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://srijanshetty.in/technical/shell-magic/</loc>
+    <loc>http://localhost:4000/technical/shell-magic/</loc>
     <lastmod>2015-05-04T15:45:32+05:30</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://srijanshetty.in/technical/first-programming-bug/</loc>
+    <loc>http://localhost:4000/technical/first-programming-bug/</loc>
     <lastmod>2015-04-04T18:23:20+05:30</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://srijanshetty.in/travelogue/travelogue-nepal/</loc>
+    <loc>http://localhost:4000/travelogue/travelogue-nepal/</loc>
     <lastmod>2015-03-26T12:06:15+05:30</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://srijanshetty.in/hacks/linux-pause-and-resume-processes/</loc>
+    <loc>http://localhost:4000/hacks/linux-pause-and-resume-processes/</loc>
     <lastmod>2015-03-13T02:59:33+05:30</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://srijanshetty.in/technical/vcsh-mr-dotfiles-nirvana/</loc>
+    <loc>http://localhost:4000/technical/vcsh-mr-dotfiles-nirvana/</loc>
     <lastmod>2014-12-27T17:42:20+05:30</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://srijanshetty.in/travelogue/travelogue-indore/</loc>
+    <loc>http://localhost:4000/travelogue/travelogue-indore/</loc>
     <lastmod>2014-12-19T22:04:16+05:30</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://srijanshetty.in/poems/travelogue-mt/</loc>
+    <loc>http://localhost:4000/poems/travelogue-mt/</loc>
     <lastmod>2014-11-16T20:40:24+05:30</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://srijanshetty.in/poems/smile/</loc>
+    <loc>http://localhost:4000/poems/smile/</loc>
     <lastmod>2013-11-23T22:55:57+05:30</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://srijanshetty.in/poems/lost/</loc>
+    <loc>http://localhost:4000/poems/lost/</loc>
     <lastmod>2013-08-10T05:31:00+05:30</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://srijanshetty.in/sample-post/</loc>
+    <loc>http://localhost:4000/sample-post/</loc>
     <lastmod>2011-03-10T00:00:00+05:30</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://srijanshetty.in/academics.html</loc>
-    <lastmod>2015-05-09T22:54:27+05:30</lastmod>
+    <loc>http://localhost:4000/academics.html</loc>
+    <lastmod>2015-05-10T10:07:24+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://srijanshetty.in/almanac.html</loc>
-    <lastmod>2015-05-09T22:54:27+05:30</lastmod>
+    <loc>http://localhost:4000/almanac.html</loc>
+    <lastmod>2015-05-10T10:07:24+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://srijanshetty.in/about/</loc>
-    <lastmod>2015-05-09T22:54:27+05:30</lastmod>
+    <loc>http://localhost:4000/posts/</loc>
+    <lastmod>2015-05-10T10:07:24+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://srijanshetty.in/</loc>
-    <lastmod>2015-05-09T22:54:27+05:30</lastmod>
+    <loc>http://localhost:4000/about/</loc>
+    <lastmod>2015-05-10T10:07:24+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://localhost:4000/</loc>
+    <lastmod>2015-05-10T10:07:24+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>http://srijanshetty.in/theme-setup/</loc>
-    <lastmod>2015-05-09T22:54:27+05:30</lastmod>
+    <loc>http://localhost:4000/theme-setup/</loc>
+    <lastmod>2015-05-10T10:07:24+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://srijanshetty.in/posts/</loc>
-    <lastmod>2015-05-09T22:54:27+05:30</lastmod>
+    <loc>http://localhost:4000/projects.html</loc>
+    <lastmod>2015-05-10T10:07:24+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://srijanshetty.in/projects/</loc>
-    <lastmod>2015-05-09T22:54:27+05:30</lastmod>
+    <loc>http://localhost:4000/talks.html</loc>
+    <lastmod>2015-05-10T10:07:24+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://srijanshetty.in/talks.html</loc>
-    <lastmod>2015-05-09T22:54:27+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>http://srijanshetty.in/googlecb25530ac5881c68.html</loc>
+    <loc>http://localhost:4000/googlecb25530ac5881c68.html</loc>
     <lastmod>2015-05-09T09:38:08+05:30</lastmod>
     <priority>0.6</priority>
   </url>
