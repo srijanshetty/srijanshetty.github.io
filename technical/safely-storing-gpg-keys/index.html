@@ -5,15 +5,15 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Academics &#8211; Lost Echoes</title>
-<meta name="description" content="Srijan R Shetty, Senior Undergraduate, CSE, IIT Kanpur">
-<meta name="keywords" content="academics, graduation, iit kanpur, computer">
+<title>Safely Storing GPG Keys &#8211; Lost Echoes</title>
+<meta name="description" content="An easy way to store GPG Keys">
+<meta name="keywords" content="blackbox, encryption, security, GPG">
 
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Academics">
-<meta name="twitter:description" content="Srijan R Shetty, Senior Undergraduate, CSE, IIT Kanpur">
+<meta name="twitter:title" content="Safely Storing GPG Keys">
+<meta name="twitter:description" content="An easy way to store GPG Keys">
 <meta name="twitter:site" content="@srijanshetty">
 <meta name="twitter:creator" content="@srijanshetty">
 
@@ -23,16 +23,16 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Academics">
-<meta property="og:description" content="Srijan R Shetty, Senior Undergraduate, CSE, IIT Kanpur">
-<meta property="og:url" content="http://localhost:4000/academics.html">
+<meta property="og:title" content="Safely Storing GPG Keys">
+<meta property="og:description" content="An easy way to store GPG Keys">
+<meta property="og:url" content="http://localhost:4000/technical/safely-storing-gpg-keys/">
 <meta property="og:site_name" content="Lost Echoes">
 
 
 
 
 
-<link rel="canonical" href="http://localhost:4000/academics.html">
+<link rel="canonical" href="http://localhost:4000/technical/safely-storing-gpg-keys/">
 <link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Lost Echoes Feed">
 <link rel="author" href="http://plus.google.com/+SrijanRShetty?rel=author">
 
@@ -73,7 +73,7 @@
 
 </head>
 
-<body class="page">
+<body class="post">
 
 <!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
 
@@ -157,114 +157,126 @@
 <a href="" class="author-social" target="_blank"><i class="fa fa-fw fa-rss"></i> RSS </a>
 
   </div>
-  <article class="page">
-    <h1>Academics</h1>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="http://localhost:4000/technical/safely-storing-gpg-keys/" rel="bookmark" title="Safely Storing GPG Keys">Safely Storing GPG Keys</a></h1>
+      
+    </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>I’m a senior undergraduate student at the <a href="http://cse.iitk.ac.in">Department of Computer Science and Engineering</a>, <a href="www.iitk.ac.in">Indian Institute of Technology Kanpur.</a></p>
+      <blockquote>
+  <p>TL;DR: The next few paragraphs are mindless rants on the chicken-egg safety problem,
+any sane person - you I presume - is better off not reading them and directly going to
+<a href="#encryption">here</a></p>
+</blockquote>
 
-<h2 id="academic-background">Academic Background</h2>
+<p>I’m very paranoid when it comes to managing private information like GPG Keys, SSH Keys, and
+other sensitive information. (What I call private information is essentially arbitrary, I tend to
+use the thumb rule that any kind of key, its meta-data and other information that I wouldn’t want
+people reading is private). At the same time, I’m also paranoid of my beloved computer crashing on
+me - I know, the thought itself is terrifying but a harsh reality that we need to face. A very nice
+quote which is vaguely relevant to this topic by Leslie Lamport:</p>
 
-<table rules="groups">
-  <thead>
-    <tr>
-      <th style="text-align: left">Degree</th>
-      <th style="text-align: left">Year</th>
-      <th style="text-align: left">Performance</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">B. Tech., IIT Kanpur</td>
-      <td style="text-align: left">2015</td>
-      <td style="text-align: left">CPI 9.6 (10)</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td style="text-align: left">The Emerald Heights International, CBSE Board</td>
-      <td style="text-align: left">2011</td>
-      <td style="text-align: left">91.4%</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td style="text-align: left">Laurels School International, ICSE Board</td>
-      <td style="text-align: left">2009</td>
-      <td style="text-align: left">95.4%</td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr>
-      <td style="text-align: left"> </td>
-      <td style="text-align: left"> </td>
-      <td style="text-align: left"> </td>
-    </tr>
-  </tfoot>
-</table>
+<blockquote>
+  <p>You know you have a distributed system when the crash of a computer you’ve never
+heard of stops you from getting any work done.</p>
+</blockquote>
 
-<h2 id="teaching">Teaching</h2>
+<p>After a lot of soul searching – on Google lasting for 10 minutes, I found
+<strong><a href="https://github.com/StackExchange/blackbox">blackbox</a></strong>, a set of git hooks used by the holy
+monks of StackExchange to encrypt all data using GPG Keys before adding it version control.
+I suddenly felt complete, I was in bliss; I created a git repo, loaded it with all the
+private information I wanted and pushed it to git (a private git hosting service and not
+GitHub, just for an extra bit of security). I thought that I was done for life, and then
+it suddenly struck me, the problem of encryption is essentially a chicken-egg problem. I
+still needed a way to secure my GPG Keys and make copies.<br /><br />
+Detested, I went in for another round of soul searching and now I just AES256 encrypt my GPG Keys,
+Base64 encode it (to make them look all nice and clean) and store them in LastPass. (Still stuck in
+the chicken-egg problem). The steps have bee illustrated below for the curious.<br /><br /></p>
 
-<ul>
-  <li><strong>Tutor</strong>, Fundamentals of Computing (ESC101), Winter Semester, 2014-2015</li>
-  <li><strong>Academic Mentor</strong>, Fundamentals of Computing (ESC101), Winter Semester, 2012-2013</li>
-</ul>
+<h2 id="encryption">Encryption</h2>
 
-<h2 id="major-courses">Major Courses</h2>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># copy all the relevant information</span>
+<span class="nv">$ </span>cp ~/.gnupg/pubring.gpg gpgkeys/
+<span class="nv">$ </span>cp ~/.gnupg/secring.gpg gpgkeys/
+<span class="nv">$ </span>cp ~/.gnupg/trustdb.gpg gpgkeys/
 
-<p><strong>Computer Science:</strong></p>
+<span class="c"># or, instead of backing up trustdb ..</span>
+<span class="nv">$ </span>gpg --export-ownertrust &gt; gpgkeys/srijanshetty-ownertrust-gpg.txt
 
-<ul>
-  <li>Searching and Indexing in Databases</li>
-  <li>Database Systems</li>
-  <li>Network and Internet Security</li>
-  <li>Compilers</li>
-  <li>Principles of Programming Languages</li>
-  <li>Operating Systems</li>
-  <li>Computer Networks</li>
-  <li>Computer Organization</li>
-  <li>Data Structures and Algorithms</li>
-  <li>Design and Analysis of Algorithms</li>
-  <li>Machine Learning Tools and Techniques</li>
-  <li>Artificial Intelligence</li>
-</ul>
+<span class="c"># tar the folder</span>
+<span class="nv">$ </span>tar cvzf gpgkeys.tar.gz gpgkeys
 
-<p><strong>Mathematics:</strong></p>
+<span class="c"># encrypt and base64 encode</span>
+<span class="nv">$ </span>openssl aes-256-cbc -in gpgkeys.tar.gz -out gpgkeys.tar.gz.enc -a</code></pre></div>
 
-<ul>
-  <li>Calculus</li>
-  <li>Linear Algebra</li>
-  <li>Abstract Algebra</li>
-  <li>Fundamentals of Logic</li>
-  <li>Discrete Mathematics</li>
-  <li>Probability and Statistics</li>
-  <li>Numerical Method of Approximation</li>
-</ul>
+<h2 id="decryption">Decryption</h2>
 
-<p><strong>Economics:</strong></p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># decypt and base64 decode</span>
+<span class="nv">$ </span>openssl aes-256-cbc -d -in gpgkeys.tar.gz.enc -out gpgkeys.tar.gz -a
 
-<ul>
-  <li>Micro-economics</li>
-  <li>Introduction to Game Theory</li>
-</ul>
+<span class="c"># untar</span>
+<span class="nv">$ </span>tar xvzf gpgkeys.tar.gz.enc
 
-<p><strong>Others:</strong></p>
+<span class="c"># copy back to gnupg folder</span>
+<span class="nv">$ </span>cp gpgkeys/*.gpg ~/.gnupg/
 
-<ul>
-  <li>Introduction to Philosophy</li>
-  <li>Social Psychology</li>
-  <li>Elements of Visual Representation</li>
-  <li>Human Rights</li>
-</ul>
+<span class="c"># or, if you exported the ownertrust</span>
+<span class="nv">$ </span>gpg --import-ownertrust srijanshetty-ownertrust-gpg.txt</code></pre></div>
 
 
+      <hr />
+      <footer role="contentinfo">
+        <div class="article-author-bottom">
+          
+
+
+
+	<img src="http://localhost:4000/images/bio-photo.jpg" class="bio-photo" alt="Srijan R. Shetty bio photo">
+
+<h3>Srijan R. Shetty</h3>
+<p>Eccentric, Scribbler, Hacker</p>
+<a href="mailto:srijan.shetty+code@gmail.com" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+<a href="http://twitter.com/srijanshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>
+<a href="http://facebook.com/srijanrshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-facebook-square"></i> Facebook</a>
+<a href="http://plus.google.com/+SrijanRShetty" class="author-social" target="_blank"><i class="fa fa-fw fa-google-plus-square"></i> Google+</a>
+<a href="http://linkedin.com/in/srijanshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>
+<a href="http://instagram.com/srijanshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-instagram"></i> Instagram</a>
+
+<a href="http://github.com/srijanshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+
+<a href="http://lastfm.com/user/srijanshetty" class="author-social" target="_blank"><i class="fa fa-fw fa-music"></i> Last.fm</a>
+
+
+
+
+
+
+
+<a href="" class="author-social" target="_blank"><i class="fa fa-fw fa-rss"></i> RSS </a>
+
+        </div>
+        <p class="byline"><strong>Safely Storing GPG Keys</strong> was published on <time datetime="2015-05-23T16:59:33+05:30">May 23, 2015</time>.</p>
+      </footer>
     </div><!-- /.article-wrap -->
-    
-      <section id="disqus_thread"></section><!-- /#disqus_thread -->
-    
+  
   </article>
-</div><!-- /#index -->
+</div><!-- /#main -->
 
 <div class="footer-wrap">
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="http://localhost:4000/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="http://localhost:4000/philosophy/on-photographs/" title="On Photographs">On Photographs</a></li>
+    
+      <li><a href="http://localhost:4000/technical/shell-magic/" title="Shell Magic">Shell Magic</a></li>
+    
+      <li><a href="http://localhost:4000/technical/first-programming-bug/" title="First Programming Bug">First Programming Bug</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
   <footer>
     
 
@@ -293,31 +305,7 @@
   })();
 </script>
 
-
-  
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'srijanshetty'; // required: replace example with your forum shortname
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-          
+	        
 
 </body>
 </html>
