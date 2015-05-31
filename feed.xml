@@ -4,13 +4,89 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="//srijanshetty.in/feed.xml" />
 <link rel="alternate" type="text/html" href="//srijanshetty.in" />
-<updated>2015-05-29T14:59:24+05:30</updated>
+<updated>2015-05-31T07:45:32+05:30</updated>
 <id>//srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
   <uri>//srijanshetty.in/</uri>
   <email>srijan.shetty+code@gmail.com</email>
 </author>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Time Travelling With Vim]]></title>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/time-travelling-with-vim/" />
+  <id>//srijanshetty.in/technical/time-travelling-with-vim</id>
+  <published>2015-05-30T12:06:18+05:30</published>
+  <updated>2015-05-30T12:06:18+05:30</updated>
+  <author>
+    <name>Srijan R. Shetty</name>
+    <uri>//srijanshetty.in</uri>
+    <email>srijan.shetty+code@gmail.com</email>
+  </author>
+  <content type="html">&lt;p&gt;I usually work on many projects at a time and as a consequence, I tend to open as many files as I
+close at any given span of time. Having all of my data backed in a VCS saves me the hassle of losing
+any data that has been committed to the system, but I can always shoot myself by messing up my work
+tree and this is where the editor of my choice - the mighty and glorious - vim comes to my rescue.
+One of vim’s superpowers is time travel, and not just plain old time travel, time travel on
+steroids.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Vim might call it persistent undo, but there’s no fooling us. To enable time travel, you need to
+create an undodir for vim to use.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mkdir -p ~/.vim/undodir&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Next you need to enable time travel by editing vimrc and including the following lines:&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;undofile
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;undodir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;~/.vim/undodir&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;And now you can go on an editing rampage and never be afraid of losing anything. Which
+is kind of a code nirvana.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;The next time, I shall talk about vim’s other time travel superpower - multi-verse.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/time-travelling-with-vim/&quot;&gt;Time Travelling With Vim&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on May 30, 2015.&lt;/p&gt;</content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Officially an Alumni of IIT Kanpur]]></title>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/writeup/officially-an-alumni-of-iit-kanpur/" />
+  <id>//srijanshetty.in/writeup/officially-an-alumni-of-iit-kanpur</id>
+  <updated>Sat May 30 09:54:14 IST 2015T00:00:00-00:00</updated>
+  <published>2015-05-30T09:51:19+05:30</published>
+  
+  <author>
+    <name>Srijan R. Shetty</name>
+    <uri>//srijanshetty.in</uri>
+    <email>srijan.shetty+code@gmail.com</email>
+  </author>
+  <content type="html">&lt;blockquote&gt;
+  &lt;p&gt;Alumni Contact Program, IIT Kanpur asked me to write this post which was featured
+on their facebook page on May 27, 2015.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;#Kanpur16 #3&lt;br /&gt;&lt;br /&gt;
+Newest Alumni/Alumnae Of IIT Kanpur&lt;br /&gt;&lt;br /&gt;
+&lt;strong&gt;Srijan R Shetty (IITK/B.Tech./CSE/2015)&lt;/strong&gt;&lt;br /&gt;&lt;br /&gt;
+IITK, a microcosm, a melody made of the discordant notes that the fleeting faces of the institute are. And in this cacophony, I found the greatest of treasures - true friendships: seniors, who’ve pushed me out of my comfort zone, and at the helm of life; juniors, who’ve always inspired me to be a better person; and a bunch of crazy whacks who’ve made me realize that life is about the experiences and the people you choose to share them with. Now that I look back, the last four years seem to have lasted a lifetime and if it hadn’t been for these pyscho-whacks - fondly, my wing - who’ve stood by me for no apparent reason, it would have been a very humdrum affair.&lt;br /&gt;&lt;br /&gt;
+Perhaps, the most important thing that this institute has taught me is to keep my mind open and to never stop learning.
+You meet people from different walks of life, you are faced with different ideologies, ideas traditions and the only way you can appreciate them is with an open mind. Keeping an open mind has also made for some great stories, one in particular relates to getting convinced by a friend to mass bunk a class. Amusingly, in the next class of the same course, the professor maintained a calm demeanour and wasn’t furious at all. We were in for a surprise though, as he soon announced - ‘We completed four chapters in the previous class and the quiz copies for the quiz conducted in the last class has been checked, students are
+requested to collect the answer sheets from my office; and the quiz amounts to 25% the course weight.’ The dumbstruck faces all over the class were priceless.&lt;br /&gt;&lt;br /&gt;
+&lt;em&gt;One last piece of advice, abhor the concept POR (Position Of Responsibility). At the end, you either learn something out of it or there are already enough people with the same POR for it to be of any consequence.&lt;/em&gt;&lt;br /&gt;&lt;br /&gt;
+We wish All The Best to Srijan for his future endeavours !!&lt;/p&gt;
+
+&lt;figure&gt;
+	&lt;a href=&quot;/images/acp-27-05-2015.jpg&quot;&gt;&lt;img src=&quot;/images/acp-27-05-2015.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/figure&gt;
+
+  &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/writeup/officially-an-alumni-of-iit-kanpur/&quot;&gt;Officially an Alumni of IIT Kanpur&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on May 30, 2015.&lt;/p&gt;</content>
+</entry>
 
 
   

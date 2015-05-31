@@ -5,15 +5,15 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>First Programming Bug &#8211; Lost Echoes</title>
-<meta name="description" content="The first programming that I encountered with JS">
-<meta name="keywords" content="technical, javascript, js, ECMA">
+<title>Time Travelling With Vim &#8211; Lost Echoes</title>
+<meta name="description" content="Using vim to time travel">
+<meta name="keywords" content="technical, vim-tips, tips, vim">
 
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="First Programming Bug">
-<meta name="twitter:description" content="The first programming that I encountered with JS">
+<meta name="twitter:title" content="Time Travelling With Vim">
+<meta name="twitter:description" content="Using vim to time travel">
 <meta name="twitter:site" content="@srijanshetty">
 <meta name="twitter:creator" content="@srijanshetty">
 
@@ -23,16 +23,16 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="First Programming Bug">
-<meta property="og:description" content="The first programming that I encountered with JS">
-<meta property="og:url" content="//srijanshetty.in/technical/first-programming-bug/">
+<meta property="og:title" content="Time Travelling With Vim">
+<meta property="og:description" content="Using vim to time travel">
+<meta property="og:url" content="//srijanshetty.in/technical/time-travelling-with-vim/">
 <meta property="og:site_name" content="Lost Echoes">
 
 
 
 
 
-<link rel="canonical" href="//srijanshetty.in/technical/first-programming-bug/">
+<link rel="canonical" href="//srijanshetty.in/technical/time-travelling-with-vim/">
 <link href="//srijanshetty.in/feed.xml" type="application/atom+xml" rel="alternate" title="Lost Echoes Feed">
 <link rel="author" href="http://plus.google.com/+SrijanRShetty?rel=author">
 
@@ -160,71 +160,31 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="//srijanshetty.in/technical/first-programming-bug/" rel="bookmark" title="First Programming Bug">First Programming Bug</a></h1>
+        <h1><a href="//srijanshetty.in/technical/time-travelling-with-vim/" rel="bookmark" title="Time Travelling With Vim">Time Travelling With Vim</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <blockquote>
-  <p>This article has been featured on this blog for the sole purpose of embarrassing the author, who incidentally is also the author of this post.</p>
-</blockquote>
+      <p>I usually work on many projects at a time and as a consequence, I tend to open as many files as I
+close at any given span of time. Having all of my data backed in a VCS saves me the hassle of losing
+any data that has been committed to the system, but I can always shoot myself by messing up my work
+tree and this is where the editor of my choice - the mighty and glorious - vim comes to my rescue.
+One of vim’s superpowers is time travel, and not just plain old time travel, time travel on
+steroids.<br /><br /></p>
 
-<p>Prima facie, ECMAScript – the most popular language of the world – appears to be an innocuous, straightforward language; but once you start getting serious with it, it is only then that it will reveal its myriad idiosyncrasies. What is truly remarkable is the fact that despite the fact that many seasoned veterans have been confounded by this language, it has now become ubiquitous in the world of computers.
-My first encounter with this language left me exasperated. I was fairly competent in C/C++ and in my hubris thought not much of this “petty scripting language”, and surely I was in for a surprise. Having spent a long 20 minutes on a comprehensive three page ECMAScript primer, I proceeded to write a simple program. The program was to subtract two numbers and return the result.</p>
+<p>Vim might call it persistent undo, but there’s no fooling us. To enable time travel, you need to
+create an undodir for vim to use.<br /><br /></p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">sub</span><span class="p">(</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span> <span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="nx">a</span><span class="o">-</span><span class="nx">b</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>mkdir -p ~/.vim/undodir</code></pre></div>
 
-<p>A bit too simple for someone who has vanquished behemoths like C, so I increased the repertoire of this function. I recalled that the primer had a section on object literals, which seemed like a great feature to test. I modified the program to add abilities of subtraction and multiplication using an object literal.</p>
+<p>Next you need to enable time travel by editing vimrc and including the following lines:<br /><br /></p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">calc</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span>
-    <span class="p">{</span>
-           <span class="nx">add</span><span class="o">:</span> <span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">,</span>
-           <span class="nx">sub</span><span class="o">:</span> <span class="nx">a</span><span class="o">-</span><span class="nx">b</span><span class="p">,</span>
-           <span class="nx">mul</span><span class="o">:</span> <span class="nx">a</span><span class="o">*</span><span class="nx">b</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">set </span>undofile
+<span class="nb">set </span><span class="nv">undodir</span><span class="o">=</span>~/.vim/undodir</code></pre></div>
 
-<p>After this ostensibly trivial change, I tried running the program but in vain, for, for every input, the computer adamantly spewed the same output: “undefined”. This was nothing out of the ordinary, and I proceeded with an error correction drill which was ingrained in my brain after all the hours of programming in C.  I checked for syntax errors - none.  Then I tried to narrow down the possibilities of error and commented out various portions of the code — which as you can see was very easy.</p>
+<p>And now you can go on an editing rampage and never be afraid of losing anything. Which
+is kind of a code nirvana.<br /><br /></p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">calc</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span>
-    <span class="p">{</span>
-           <span class="nx">add</span><span class="o">:</span> <span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">,</span>
-        <span class="c1">// sub</span>
-        <span class="c1">// mul</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-
-<p>The program still did not budge. Ideally I would have turned to a debugger and tried out various sophisticated debugging techniques (read ‘stare at the program and plead for mercy’); but ECMAScript was an altogether new beast, I was at loss. So, with no solution in sight, I turned to my my final recourse - google. After a few hours of searching and reading thread after thread of solutions, I finally found the error. The correct code was:</p>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">calc</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="p">{</span>
-           <span class="nx">add</span><span class="o">:</span> <span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">,</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-
-<p>And viola, the bug was fixed. Yes, the difference between my original code and the correct code is not evident at first sight, but nevertheless, was significant. The placement of the brace matters in ECMAScript because, of something known as semicolon insertion performed by the ECMAScript engines. A statement like</p>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">return</span>
-<span class="p">{</span>
-<span class="p">}</span></code></pre></div>
-
-<p>is translated into</p>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">return</span> <span class="kc">undefined</span><span class="p">;</span>
-<span class="p">{</span>
-<span class="p">};</span></code></pre></div>
-
-<p>And so my program always produced “undefined” as its result.</p>
-
-<p>This particular vignette taught me humility, and ever since then, I’ve never started writing a computer program in an alien language without spending sufficient time going through the documentation and specification of the language.</p>
-
+<p>The next time, I shall talk about vim’s other time travel superpower - multi-verse.<br /><br /></p>
 
       <hr />
       <footer role="contentinfo">
@@ -257,7 +217,7 @@ My first encounter with this language left me exasperated. I was fairly competen
 <a href="" class="author-social" target="_blank"><i class="fa fa-fw fa-rss"></i> RSS </a>
 
         </div>
-        <p class="byline"><strong>First Programming Bug</strong> was published on <time datetime="2015-04-04T18:23:20+05:30">April 04, 2015</time> and last modified on <time datetime="2015-04-04">April 04, 2015</time>.</p>
+        <p class="byline"><strong>Time Travelling With Vim</strong> was published on <time datetime="2015-05-30T12:06:18+05:30">May 30, 2015</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -271,11 +231,11 @@ My first encounter with this language left me exasperated. I was fairly competen
   <h4>You might also enjoy <small class="pull-right">(<a href="//srijanshetty.in/posts/">View all posts</a>)</small></h4>
     <ul>
     
-      <li><a href="//srijanshetty.in/technical/time-travelling-with-vim/" title="Time Travelling With Vim">Time Travelling With Vim</a></li>
-    
       <li><a href="//srijanshetty.in/writeup/officially-an-alumni-of-iit-kanpur/" title="Officially an Alumni of IIT Kanpur">Officially an Alumni of IIT Kanpur</a></li>
     
       <li><a href="//srijanshetty.in/technical/safely-storing-gpg-keys/" title="Safely Storing GPG Keys">Safely Storing GPG Keys</a></li>
+    
+      <li><a href="//srijanshetty.in/philosophy/on-photographs/" title="On Photographs">On Photographs</a></li>
     
     </ul>
     <hr />
