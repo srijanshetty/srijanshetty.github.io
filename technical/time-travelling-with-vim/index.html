@@ -164,25 +164,25 @@
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>I usually work on many projects at a time and as a consequence, I tend to open as many files as I
-close at any given span of time. Having all of my data backed in a VCS saves me the hassle of losing
-any data that has been committed to the system, but I can always shoot myself by messing up my work
-tree and this is where the editor of my choice - the mighty and glorious - vim comes to my rescue.
-One of vim’s superpowers is time travel, and not just plain old time travel, time travel on
-steroids.<br /><br />
-Vim might call it persistent undo, but there’s no fooling us. To enable time travel, you need to
-create an undodir for vim to use.<br /><br /></p>
+      <p>I usually work on many projects at a time and as a consequence, I tend to open many files. Having all
+of my data backed in a VCS saves me the hassle of losing any committed data, but it’s always possible to
+shoot yourself in the foot by messing up the work tree; and this is where the editor of my choice -
+the mighty and glorious - vim comes to the rescue. A little know fact - vim is a superhero - and
+one of vim’s superpowers is time travel - and not just any time travel - time travel on steroids.<br /><br />
+Other folks may call it persistent undo, but there’s no fooling us! But being the humble superhero that vim
+is, you need to tell vim to use time travel.<br /><br /></p>
+
+<p>First create an undodir for vim.</p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>mkdir -p ~/.vim/undodir</code></pre></div>
 
-<p>Next you need to enable time travel by editing vimrc and including the following lines:<br /><br /></p>
+<p>Next you need to enable persistent undo by including the following lines in your vimrc:</p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">set </span>undofile
 <span class="nb">set </span><span class="nv">undodir</span><span class="o">=</span>~/.vim/undodir</code></pre></div>
 
-<p>And now you can go on an editing rampage and never be afraid of losing anything. Which
-is kind of a code nirvana.<br /><br />
-The next time, I shall talk about vim’s other time travel superpower - multi-verse.<br /><br /></p>
+<p>And now even if you go on an editing rampage, vim will save the day. The next time, I shall introduce you
+to vim’s other superpower - the ability to use the multi-verse.</p>
 
       <hr />
       <footer role="contentinfo">

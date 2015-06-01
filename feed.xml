@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="//srijanshetty.in/feed.xml" />
 <link rel="alternate" type="text/html" href="//srijanshetty.in" />
-<updated>2015-06-01T14:19:43+05:30</updated>
+<updated>2015-06-01T19:21:56+05:30</updated>
 <id>//srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
@@ -26,25 +26,25 @@
     <uri>//srijanshetty.in</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
-  <content type="html">&lt;p&gt;I usually work on many projects at a time and as a consequence, I tend to open as many files as I
-close at any given span of time. Having all of my data backed in a VCS saves me the hassle of losing
-any data that has been committed to the system, but I can always shoot myself by messing up my work
-tree and this is where the editor of my choice - the mighty and glorious - vim comes to my rescue.
-One of vim’s superpowers is time travel, and not just plain old time travel, time travel on
-steroids.&lt;br /&gt;&lt;br /&gt;
-Vim might call it persistent undo, but there’s no fooling us. To enable time travel, you need to
-create an undodir for vim to use.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+  <content type="html">&lt;p&gt;I usually work on many projects at a time and as a consequence, I tend to open many files. Having all
+of my data backed in a VCS saves me the hassle of losing any committed data, but it’s always possible to
+shoot yourself in the foot by messing up the work tree; and this is where the editor of my choice -
+the mighty and glorious - vim comes to the rescue. A little know fact - vim is a superhero - and
+one of vim’s superpowers is time travel - and not just any time travel - time travel on steroids.&lt;br /&gt;&lt;br /&gt;
+Other folks may call it persistent undo, but there’s no fooling us! But being the humble superhero that vim
+is, you need to tell vim to use time travel.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;First create an undodir for vim.&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mkdir -p ~/.vim/undodir&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Next you need to enable time travel by editing vimrc and including the following lines:&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;Next you need to enable persistent undo by including the following lines in your vimrc:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;undofile
 &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;undodir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;~/.vim/undodir&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;And now you can go on an editing rampage and never be afraid of losing anything. Which
-is kind of a code nirvana.&lt;br /&gt;&lt;br /&gt;
-The next time, I shall talk about vim’s other time travel superpower - multi-verse.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;And now even if you go on an editing rampage, vim will save the day. The next time, I shall introduce you
+to vim’s other superpower - the ability to use the multi-verse.&lt;/p&gt;
 
   &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/time-travelling-with-vim/&quot;&gt;Time Travelling With Vim&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on May 30, 2015.&lt;/p&gt;</content>
 </entry>
