@@ -5,15 +5,15 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Linux: Pause and Resume Processes &#8211; Lost Echoes</title>
-<meta name="description" content="Pause any running linux process and resume it later">
-<meta name="keywords" content="linux, process, management, pause, resume">
+<title>Computer Science and Engineering, IIT Kanpur &#8211; Lost Echoes</title>
+<meta name="description" content="A guide to CSE at IIT Kanpur">
+<meta name="keywords" content="iitk, jee, counselling, thatsiitk">
 
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Linux: Pause and Resume Processes">
-<meta name="twitter:description" content="Pause any running linux process and resume it later">
+<meta name="twitter:title" content="Computer Science and Engineering, IIT Kanpur">
+<meta name="twitter:description" content="A guide to CSE at IIT Kanpur">
 <meta name="twitter:site" content="@srijanshetty">
 <meta name="twitter:creator" content="@srijanshetty">
 
@@ -23,16 +23,16 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux: Pause and Resume Processes">
-<meta property="og:description" content="Pause any running linux process and resume it later">
-<meta property="og:url" content="//srijanshetty.in/hacks/linux-pause-and-resume-processes/">
+<meta property="og:title" content="Computer Science and Engineering, IIT Kanpur">
+<meta property="og:description" content="A guide to CSE at IIT Kanpur">
+<meta property="og:url" content="//srijanshetty.in/writeup/computer-science-and-engineering-iit-kanpur/">
 <meta property="og:site_name" content="Lost Echoes">
 
 
 
 
 
-<link rel="canonical" href="//srijanshetty.in/hacks/linux-pause-and-resume-processes/">
+<link rel="canonical" href="//srijanshetty.in/writeup/computer-science-and-engineering-iit-kanpur/">
 <link href="//srijanshetty.in/feed.xml" type="application/atom+xml" rel="alternate" title="Lost Echoes Feed">
 <link rel="author" href="http://plus.google.com/+SrijanRShetty?rel=author">
 
@@ -160,22 +160,37 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="//srijanshetty.in/hacks/linux-pause-and-resume-processes/" rel="bookmark" title="Linux: Pause and Resume Processes">Linux: Pause and Resume Processes</a></h1>
+        <h1><a href="//srijanshetty.in/writeup/computer-science-and-engineering-iit-kanpur/" rel="bookmark" title="Computer Science and Engineering, IIT Kanpur">Computer Science and Engineering, IIT Kanpur</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>The last few days have been pretty hectic with two major assignment deadlines. And like every wild goose hunt fuelled by caffeine, they’ve enriched my repertoire.<br /><br />
-The <strong>R Tree</strong> assignment for <em>CS618: Searching and Indexing in Databases</em> involved the insertion of a million data points which took about <strong>forty minutes</strong> to run to completion. The program was midway through when I realized that I needed some precious CPU time for my other assignment: <strong>fitting a mixture of Gaussian</strong> to a data-set for <em>CS771: Machine Learning Tools and Techniques</em>.<br /><br />
-I’ve always maintained the racial superiority of my Dell XPS 15 but I knew better than run both these programs simultaneously. With less than three hours to D-Day, I couldn’t afford terminating the <strong>R Tree</strong> program; it was then by divine providence that I chanced upon the idea of somehow pausing the <strong>R Tree</strong> program. And guess what, as it turns out, Linux has just the solution.<br /><br />
-The Linux scheduler allows to pause any running program and resume it at a later time; and the way to achieve the same is dead simple. To pause a process, run the following command:</p>
+      <p>First of all, I would like to congratulate you and your family for this outstanding feat of clearing JEE ‘15.<br /><br /> Introductions are in order, I am Srijan R Shetty, an alum - it’ll take considerable time to digest that fact - of the Department of Computer Science and Engineering at IIT Kanpur.<br /><br />
+Before you embark upon the tedious journey of reading through this entire post, I would urge you to go through Professor Dheeraj Sanghi’s blog “A Guide to JEE Counselling”. Additionally, he’s active on Quora; and most certainly will answer pertinent questions. <br /><br />
+There are some excellent posts written by my peers at IITK out in the wild and as my computer science education has taught me not to reinvent the wheel, I shall compile the best bits from their articles.<br /><br />
+Why IITK? <a href="https://www.quora.com/Shashwat-Chandra">Shashwat Chandra</a> does an excellent job of answering this question:<br /></p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">kill</span> -STOP &lt;pid&gt;</code></pre></div>
+<blockquote>
+  <p>Why IIT Kanpur? The cultural festival of IIT Kanpur, Antaragni, is run virtually entirely by students. The Students’ Gymkhana is a body made of students of all batches. The New SAC (Students’ Activity Centre, a place for people to hang out) was majorly planned by the students of three batches, and the franchises selected for its food court were selected by a panel of students. The degree of freedom given to students at IIT Kanpur is, in my opinion, definitely larger than most other institutes. IIT Kanpur also has the distinct advantage of being in a city that is much lesser developed than places like Mumbai and Delhi. Why is this an advantage? IIT Kanpur has become self-contained, because there is a larger incentive to make everything available on campus. The choices of extra-curricular activities are larger, the food options are cheap and more varied, and all sections of the campus are together, making it a tighter, closer-knit location. Each club has its own advantages. Some clubs improve your speaking skill; others teach you a new art; even others let you hone your intellect in the direction you want. Art, music, literature, dance, electronics, robotics, photography, whatever your interest, there is going to be an outlet. If there isn’t, it is not hard to create an outlet or a club for an interest you feel will benefit you. There are certain to be more people interested in the things you like.</p>
+</blockquote>
 
-<p>And at any later stage, one can resume the stopped program by issuing the following command:</p>
+<p>IITK’s academic curriculum was revised in 2011 and the new curriculum was one of the primary reasons why I joined IITK. The curriculum contains two parts: a departmental core and a compulsory core.<br /><br />
+In the very first year, all courses are department neutral. You will get to learn Mechanics and Electromagnetic Theory in Physics, Organic, Inorganic and Physical Chemistry in Chemistry, Basic Life Sciences (yes Biology!), Engineering Graphics, Linear Algebra and Calculus in Mathematics and (the dreaded) morning exercises. Having the first year being departmental neutral works out for students who change their branches. (A side note on branch changes, don’t bank on them. Albeit I managed to change my branch from Civil to Computer Science, they are a tricky slope to ascend.) To break the monotony and gain a broader outlook, you will be doing at least five Humanities and Social Sciences Courses in your stay at IITK. (I’ve done courses in Philosophy, Psychology, Art, Human Rights and will be doing one in Economics next fall. While people may disagree, I’ve found these courses liberating - pun intended.)<br /><br />
+The CSE course curriculum looks as follows: <a href="http://www.iitk.ac.in/doaa/DOAA/arc2012templete.pdf">CSE Course Template</a>, you can cross reference the course numbers from <a href="http://cse.iitk.ac.in/pages/Courses.html">Department of Computer Science and Engineering</a>.<br /><br />
+<a href="https://www.quora.com/Priyank-Jaini">Priyank Jaini</a> gave a very good overview of how your curriculum will work: (I did make a few changes so that the data matches with that of CSE)</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">kill</span> -CONT &lt;pid&gt;</code></pre></div>
+<blockquote>
+  <p>While pursuing CSE at IITK, you will have the option of taking 6 Open Electives(OE), 4 Engineering Science Options(ESO), 4 Departmental Electives(DE), UGP-I(Undergraduate Project)(optional) and UGP-II &amp; III (Undergraduate Project II which can be substituted with another DE or OE) and UGP-IV(this is to earn extra credits), 5 HSS courses(2 from level-I HSS and 3 from Level-II HSS bracket).<br /><br />
+Open Electives as the name suggests are courses you can opt from any department including your own. These are the courses which render flexibility to your programme. But choosing these courses from a discipline which interests you, you can even go for a Minor in that discipline provided you fulfil the criteria set. For example you are interested in Computer Science, you can take OE’s accordingly that make you eligible to obtain a Minor in CSE after 4years with a Major in Maths(Note: From the current status, CSE Dept. of IIT-Kanpur has offered no Minors and hence the example is a purely hypothetical one.<br /><br />
+Science Options are courses in other Science discipline like Physics and Chemistry. You will have to choose a total of 2 such courses. Departmental Electives are courses you can choose from your own Department template subject to what courses are offered in the semester.</p>
+</blockquote>
 
-<p>And with that I was able to pause the <strong>R Tree</strong> program and save the universe from destruction (Not really, but I did manage to save my grades from destruction)<br /><br /></p>
+<p>The flexibility of IITK’s new academic programme was what made it an obvious choice for me. You can take up minors in departments which interest you, or take up a secondary major in an another department altogether, you are also given the option for dual degrees. Also with a new branch change policy in place, I believe that it will be easier for students to get a branch change.
+(The new academic curriculum is finally stabilizing and only a few minors kinks need to be ironed out).<br /><br />
+Finally I would like to say: IITK has shaped the person that I’ve become today. In IITK, I developed a new found vigour towards learning in general, which is veritably unlike the rote learning I did in school. I believe this is partly because of professors who spend hours preparing for our next lectures and partly because of the students over here who never fail to me amaze me with what they are capable of (both in life and academics). I’ve been showered with opportunities and I’ve met people who I’ll cherish for a lifetime.<br /><br />
+Feel free to ask any questions, you could drop a mail at <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#114;&#105;&#106;&#097;&#110;&#115;&#064;&#105;&#105;&#116;&#107;&#046;&#097;&#099;&#046;&#105;&#110;">&#115;&#114;&#105;&#106;&#097;&#110;&#115;&#064;&#105;&#105;&#116;&#107;&#046;&#097;&#099;&#046;&#105;&#110;</a> or you could ping me on facebook, <a href="https://www.facebook.com/srijanrshetty">Srijan R Shetty | Facebook</a>.<br /><br />
+Hope this will be of some use.<br />
+Live long and prosper<br />
+Shetty.</p>
 
       <hr />
       <footer role="contentinfo">
@@ -208,7 +223,7 @@ The Linux scheduler allows to pause any running program and resume it at a later
 <a href="" class="author-social" target="_blank"><i class="fa fa-fw fa-rss"></i> RSS </a>
 
         </div>
-        <p class="byline"><strong>Linux: Pause and Resume Processes</strong> was published on <time datetime="2015-03-13T02:59:33+05:30">March 13, 2015</time>.</p>
+        <p class="byline"><strong>Computer Science and Engineering, IIT Kanpur</strong> was published on <time datetime="2015-06-11T15:53:22+05:30">June 11, 2015</time> and last modified on <time datetime="2015-06-11">June 11, 2015</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -222,11 +237,11 @@ The Linux scheduler allows to pause any running program and resume it at a later
   <h4>You might also enjoy <small class="pull-right">(<a href="//srijanshetty.in/posts/">View all posts</a>)</small></h4>
     <ul>
     
-      <li><a href="//srijanshetty.in/writeup/computer-science-and-engineering-iit-kanpur/" title="Computer Science and Engineering, IIT Kanpur">Computer Science and Engineering, IIT Kanpur</a></li>
-    
       <li><a href="//srijanshetty.in/technical/time-travelling-with-vim/" title="Time Travelling With Vim">Time Travelling With Vim</a></li>
     
       <li><a href="//srijanshetty.in/writeup/officially-an-alumni-of-iit-kanpur/" title="Officially an Alumni of IIT Kanpur">Officially an Alumni of IIT Kanpur</a></li>
+    
+      <li><a href="//srijanshetty.in/technical/safely-storing-gpg-keys/" title="Safely Storing GPG Keys">Safely Storing GPG Keys</a></li>
     
     </ul>
     <hr />
