@@ -5,15 +5,15 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Safely Storing GPG Keys &#8211; Lost Echoes</title>
-<meta name="description" content="An easy way to store GPG Keys">
-<meta name="keywords" content="blackbox, encryption, security, GPG">
+<title>Greg Wilson - What We Know About Software &#8211; Lost Echoes</title>
+<meta name="description" content="A few key takeaways from Greg Wilson's talk.">
+<meta name="keywords" content="technical, talks, software, favorite">
 
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Safely Storing GPG Keys">
-<meta name="twitter:description" content="An easy way to store GPG Keys">
+<meta name="twitter:title" content="Greg Wilson - What We Know About Software">
+<meta name="twitter:description" content="A few key takeaways from Greg Wilson's talk.">
 <meta name="twitter:site" content="@srijanshetty">
 <meta name="twitter:creator" content="@srijanshetty">
 
@@ -23,9 +23,9 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Safely Storing GPG Keys">
-<meta property="og:description" content="An easy way to store GPG Keys">
-<meta property="og:url" content="//srijanshetty.in/technical/safely-storing-gpg-keys/">
+<meta property="og:title" content="Greg Wilson - What We Know About Software">
+<meta property="og:description" content="A few key takeaways from Greg Wilson's talk.">
+<meta property="og:url" content="//srijanshetty.in/technical/greg-wilson-what-we-know-about-software/">
 <meta property="og:site_name" content="Lost Echoes">
 
 <meta property="og:image" content="//srijanshetty.in/images/default-thumb.png">
@@ -35,7 +35,7 @@
 
 
 
-<link rel="canonical" href="//srijanshetty.in/technical/safely-storing-gpg-keys/">
+<link rel="canonical" href="//srijanshetty.in/technical/greg-wilson-what-we-know-about-software/">
 <link href="//srijanshetty.in/feed.xml" type="application/atom+xml" rel="alternate" title="Lost Echoes Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -165,70 +165,38 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="//srijanshetty.in/technical/safely-storing-gpg-keys/" rel="bookmark" title="Safely Storing GPG Keys">Safely Storing GPG Keys</a></h1>
+        <h1><a href="//srijanshetty.in/technical/greg-wilson-what-we-know-about-software/" rel="bookmark" title="Greg Wilson - What We Know About Software">Greg Wilson - What We Know About Software</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <blockquote>
-  <p>TL;DR: The next few paragraphs are mindless rants on the chicken-egg safety problem,
-any sane person - you I presume - is better off not reading them and directly going to
-<a href="#encryption">here</a></p>
-</blockquote>
+      <p>A few key takeaways and fun quotes from the insightful talk by <a href="http://www.cs.toronto.edu/~gvwilson/">Greg Wilson</a> titled “What We Actually Know About Software Development, and Why We Believe It’s True”:</p>
 
-<p>I’m very paranoid when it comes to managing private information like GPG Keys, SSH Keys, and
-other sensitive information. (What I call private information is essentially arbitrary, I tend to
-use the thumb rule that any kind of key, its meta-data and other information that I wouldn’t want
-people reading is private). At the same time, I’m also paranoid of my beloved computer crashing on
-me - I know, the thought itself is terrifying but a harsh reality that we need to face. A very nice
-quote which is vaguely relevant to this topic by Leslie Lamport:</p>
+<ol>
+  <li>A programmer should be willing to burn the entire code base down and rebuild if the project
+reaches such a stage.</li>
+  <li>Code reviews. Just do them.</li>
+  <li>We know nothing about estimating the completion time of software projects.</li>
+  <li>Conway’s Law: The code structure closely resembles the structure of the organization.</li>
+  <li>As programmers, we can understand only small patches. (It’s because coding is a very complex task.)</li>
+  <li>Engineering is the love-child of Science and Economics.</li>
+  <li>Ask for citations, back everything with data.</li>
+  <li>Increasing the problem complexity non linearly increases the solution complexity.</li>
+  <li>Platform independent code provides platform independent performance.</li>
+  <li>Coders produce the same number of lines of code disregarding the language they code in.
+As a consequence, we should be coding in a language higher up in the abstraction pyramid.</li>
+  <li>We as a society have very low standards of proof.</li>
+  <li>Most OOP metrics perform no better than a simple LOC measurement.</li>
+  <li>Most of the time of developing a project lies in requirements and design phase.</li>
+  <li>A possible reason while agile works is that we work on smaller parts of the project and hence
+this might lead to reduced time in requirements phase. <em>Research Needed</em></li>
+  <li>All progress in science isn’t forward, sometimes science has to take a step back, accept that
+it faltered and restart.</li>
+</ol>
 
-<blockquote>
-  <p>You know you have a distributed system when the crash of a computer you’ve never
-heard of stops you from getting any work done.</p>
-</blockquote>
+<p>I would urge all of you to watch the talk:</p>
 
-<p>After a lot of soul searching – on Google lasting for 10 minutes, I found
-<strong><a href="https://github.com/StackExchange/blackbox">blackbox</a></strong>, a set of git hooks used by the holy
-monks of StackExchange to encrypt all data using GPG Keys before adding it version control.
-I suddenly felt complete, I was in bliss; I created a git repo, loaded it with all the
-private information I wanted and pushed it to git (a private git hosting service and not
-GitHub, just for an extra bit of security). I thought that I was done for life, and then
-it suddenly struck me, the problem of encryption is essentially a chicken-egg problem. I
-still needed a way to secure my GPG Keys and make copies.<br /><br />
-Detested, I went in for another round of soul searching and now I just AES256 encrypt my GPG Keys,
-Base64 encode it (to make them look all nice and clean) and store them in LastPass. (Still stuck in
-the chicken-egg problem). The steps have bee illustrated below for the curious.<br /><br /></p>
-
-<h2 id="encryption">Encryption</h2>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># copy all the relevant information</span>
-<span class="nv">$ </span>cp ~/.gnupg/pubring.gpg gpgkeys/
-<span class="nv">$ </span>cp ~/.gnupg/secring.gpg gpgkeys/
-<span class="nv">$ </span>cp ~/.gnupg/trustdb.gpg gpgkeys/
-
-<span class="c"># or, instead of backing up trustdb ..</span>
-<span class="nv">$ </span>gpg --export-ownertrust &gt; gpgkeys/srijanshetty-ownertrust-gpg.txt
-
-<span class="c"># tar the folder</span>
-<span class="nv">$ </span>tar cvzf gpgkeys.tar.gz gpgkeys
-
-<span class="c"># encrypt and base64 encode</span>
-<span class="nv">$ </span>openssl aes-256-cbc -in gpgkeys.tar.gz -out gpgkeys.tar.gz.enc -a</code></pre></div>
-
-<h2 id="decryption">Decryption</h2>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># decypt and base64 decode</span>
-<span class="nv">$ </span>openssl aes-256-cbc -d -in gpgkeys.tar.gz.enc -out gpgkeys.tar.gz -a
-
-<span class="c"># untar</span>
-<span class="nv">$ </span>tar xvzf gpgkeys.tar.gz.enc
-
-<span class="c"># copy back to gnupg folder</span>
-<span class="nv">$ </span>cp gpgkeys/*.gpg ~/.gnupg/
-
-<span class="c"># or, if you exported the ownertrust</span>
-<span class="nv">$ </span>gpg --import-ownertrust srijanshetty-ownertrust-gpg.txt</code></pre></div>
-
+<iframe src="https://player.vimeo.com/video/9270320" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+<p><a href="https://vimeo.com/9270320">Greg Wilson - What We Actually Know About Software Development, and Why We Believe It&#039;s True</a> from <a href="https://vimeo.com/cusec">CUSEC</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
       <hr />
       <footer role="contentinfo">
@@ -236,17 +204,17 @@ the chicken-egg problem). The steps have bee illustrated below for the curious.<
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/technical/safely-storing-gpg-keys/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/technical/greg-wilson-what-we-know-about-software/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/technical/safely-storing-gpg-keys/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/technical/greg-wilson-what-we-know-about-software/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=//srijanshetty.in/technical/safely-storing-gpg-keys/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=//srijanshetty.in/technical/greg-wilson-what-we-know-about-software/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>Safely Storing GPG Keys</strong> was published on <time datetime="2015-05-23T16:59:33+05:30">May 23, 2015</time> and last modified on <time datetime="2015-05-23">May 23, 2015</time>.</p>
+        <p class="byline"><strong>Greg Wilson - What We Know About Software</strong> was published on <time datetime="2015-06-27T22:15:23+05:30">June 27, 2015</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -261,11 +229,11 @@ the chicken-egg problem). The steps have bee illustrated below for the curious.<
   <h4>You might also enjoy <small class="pull-right">(<a href="//srijanshetty.in/posts/">View all posts</a>)</small></h4>
     <ul>
     
-      <li><a href="//srijanshetty.in/technical/greg-wilson-what-we-know-about-software/" title="Greg Wilson - What We Know About Software">Greg Wilson - What We Know About Software</a></li>
-    
       <li><a href="//srijanshetty.in/writeup/computer-science-and-engineering-iit-kanpur/" title="Computer Science and Engineering, IIT Kanpur">Computer Science and Engineering, IIT Kanpur</a></li>
     
       <li><a href="//srijanshetty.in/technical/time-travelling-with-vim/" title="Time Travelling With Vim">Time Travelling With Vim</a></li>
+    
+      <li><a href="//srijanshetty.in/writeup/officially-an-alumni-of-iit-kanpur/" title="Officially an Alumni of IIT Kanpur">Officially an Alumni of IIT Kanpur</a></li>
     
     </ul>
     <hr />
