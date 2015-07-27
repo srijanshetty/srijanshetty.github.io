@@ -2,110 +2,114 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>//srijanshetty.in/technical/greg-wilson-what-we-know-about-software/</loc>
-    <lastmod>2015-06-27T22:15:23+05:30</lastmod>
+    <lastmod>2015-06-27T12:45:23-04:00</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/writeup/computer-science-and-engineering-iit-kanpur/</loc>
-    <lastmod>2015-06-11T15:53:22+05:30</lastmod>
+    <lastmod>2015-06-11T06:23:22-04:00</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/technical/time-travelling-with-vim/</loc>
-    <lastmod>2015-05-30T12:06:18+05:30</lastmod>
+    <lastmod>2015-05-30T02:36:18-04:00</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/writeup/officially-an-alumni-of-iit-kanpur/</loc>
-    <lastmod>2015-05-30T09:51:19+05:30</lastmod>
+    <lastmod>2015-05-30T00:21:19-04:00</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/technical/safely-storing-gpg-keys/</loc>
-    <lastmod>2015-05-23T16:59:33+05:30</lastmod>
+    <lastmod>2015-05-23T16:59:33-04:00</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/philosophy/on-photographs/</loc>
-    <lastmod>2015-05-09T09:40:04+05:30</lastmod>
+    <lastmod>2015-05-09T00:10:04-04:00</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/technical/shell-magic/</loc>
-    <lastmod>2015-05-04T15:45:32+05:30</lastmod>
+    <lastmod>2015-05-04T15:45:32-04:00</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/technical/first-programming-bug/</loc>
-    <lastmod>2015-04-04T18:23:20+05:30</lastmod>
+    <lastmod>2015-04-04T08:53:20-04:00</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/travelogue/travelogue-nepal/</loc>
-    <lastmod>2015-03-26T12:06:15+05:30</lastmod>
+    <lastmod>2015-03-26T12:06:15-04:00</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/hacks/linux-pause-and-resume-processes/</loc>
-    <lastmod>2015-03-13T02:59:33+05:30</lastmod>
+    <lastmod>2015-03-12T17:29:33-04:00</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/technical/vcsh-mr-dotfiles-nirvana/</loc>
-    <lastmod>2014-12-27T17:42:20+05:30</lastmod>
+    <lastmod>2014-12-27T07:12:20-05:00</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/travelogue/travelogue-indore/</loc>
-    <lastmod>2014-12-19T22:04:16+05:30</lastmod>
+    <lastmod>2014-12-19T11:34:16-05:00</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/poems/travelogue-mt/</loc>
-    <lastmod>2014-11-16T20:40:24+05:30</lastmod>
+    <lastmod>2014-11-16T10:10:24-05:00</lastmod>
+  </url>
+  <url>
+    <loc>//srijanshetty.in/writeup/aham-bhokalam/</loc>
+    <lastmod>2014-07-29T22:56:29-04:00</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/writeup/why-iit-kanpur/</loc>
-    <lastmod>2014-06-16T00:00:00+05:30</lastmod>
+    <lastmod>2014-06-16T00:00:00-04:00</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/poems/smile/</loc>
-    <lastmod>2013-11-23T22:55:57+05:30</lastmod>
+    <lastmod>2013-11-23T12:25:57-05:00</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/poems/lost/</loc>
-    <lastmod>2013-08-10T05:31:00+05:30</lastmod>
+    <lastmod>2013-08-09T20:01:00-04:00</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/writeup/art106-elements-of-visual-representation/</loc>
-    <lastmod>2013-05-08T00:00:00+05:30</lastmod>
+    <lastmod>2013-05-08T00:00:00-04:00</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/sample-post/</loc>
-    <lastmod>2011-03-10T00:00:00+05:30</lastmod>
+    <lastmod>2011-03-10T00:00:00-05:00</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/academics.html</loc>
-    <lastmod>2015-07-25T23:48:24+05:30</lastmod>
+    <lastmod>2015-07-26T23:01:12-04:00</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/almanac.html</loc>
-    <lastmod>2015-07-25T23:48:24+05:30</lastmod>
+    <lastmod>2015-07-26T23:01:12-04:00</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/theme-setup/</loc>
-    <lastmod>2015-07-25T23:48:24+05:30</lastmod>
+    <lastmod>2015-07-26T23:01:12-04:00</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/posts/</loc>
-    <lastmod>2015-07-25T23:48:24+05:30</lastmod>
+    <lastmod>2015-07-26T23:01:12-04:00</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/about/</loc>
-    <lastmod>2015-07-25T23:48:24+05:30</lastmod>
+    <lastmod>2015-07-26T23:01:12-04:00</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/</loc>
-    <lastmod>2015-07-25T23:48:24+05:30</lastmod>
+    <lastmod>2015-07-26T23:01:12-04:00</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/projects.html</loc>
-    <lastmod>2015-07-25T23:48:24+05:30</lastmod>
+    <lastmod>2015-07-26T23:01:12-04:00</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/talks.html</loc>
-    <lastmod>2015-07-25T23:48:24+05:30</lastmod>
+    <lastmod>2015-07-26T23:01:12-04:00</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/googlecb25530ac5881c68.html</loc>
-    <lastmod>2015-05-22T09:48:23+05:30</lastmod>
+    <lastmod>2015-05-22T00:18:23-04:00</lastmod>
   </url>
 </urlset>
