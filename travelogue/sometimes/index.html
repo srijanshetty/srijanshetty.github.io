@@ -5,15 +5,15 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>First Programming Bug &#8211; Lost Echoes</title>
-<meta name="description" content="The first programming that I encountered with JS">
-<meta name="keywords" content="technical, javascript, js, ECMA">
+<title>Sometimes &#8211; Lost Echoes</title>
+<meta name="description" content="A few chapters from my life">
+<meta name="keywords" content="travelogue, sometimes, love, faith, expecations">
 
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="First Programming Bug">
-<meta name="twitter:description" content="The first programming that I encountered with JS">
+<meta name="twitter:title" content="Sometimes">
+<meta name="twitter:description" content="A few chapters from my life">
 <meta name="twitter:site" content="@srijanshetty">
 <meta name="twitter:creator" content="@srijanshetty">
 
@@ -23,9 +23,9 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="First Programming Bug">
-<meta property="og:description" content="The first programming that I encountered with JS">
-<meta property="og:url" content="http://localhost:4000/technical/first-programming-bug/">
+<meta property="og:title" content="Sometimes">
+<meta property="og:description" content="A few chapters from my life">
+<meta property="og:url" content="http://localhost:4000/travelogue/sometimes/">
 <meta property="og:site_name" content="Lost Echoes">
 
 <meta property="og:image" content="http://localhost:4000/images/default-thumb.png">
@@ -35,7 +35,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/technical/first-programming-bug/">
+<link rel="canonical" href="http://localhost:4000/travelogue/sometimes/">
 <link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Lost Echoes Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -165,70 +165,35 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="http://localhost:4000/technical/first-programming-bug/" rel="bookmark" title="First Programming Bug">First Programming Bug</a></h1>
+        <h1><a href="http://localhost:4000/travelogue/sometimes/" rel="bookmark" title="Sometimes">Sometimes</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
       <blockquote>
-  <p>This article has been featured on this blog for the sole purpose of embarrassing the author, who incidentally is also the author of this post.</p>
+  <p>This is one of my favourite works, for every verse reminds me of a chapter in my life.</p>
 </blockquote>
 
-<p>Prima facie, ECMAScript – the most popular language of the world – appears to be an innocuous, straightforward language; but once you start getting serious with it, it is only then that it will reveal its myriad idiosyncrasies. What is truly remarkable is the fact that despite the fact that many seasoned veterans have been confounded by this language, it has now become ubiquitous in the world of computers.
-My first encounter with this language left me exasperated. I was fairly competent in C/C++ and in my hubris thought not much of this “petty scripting language”, and surely I was in for a surprise. Having spent a long 20 minutes on a comprehensive three page ECMAScript primer, I proceeded to write a simple program. The program was to subtract two numbers and return the result.</p>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">sub</span><span class="p">(</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span> <span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="nx">a</span><span class="o">-</span><span class="nx">b</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
-
-<p>A bit too simple for someone who has vanquished behemoths like C, so I increased the repertoire of this function. I recalled that the primer had a section on object literals, which seemed like a great feature to test. I modified the program to add abilities of subtraction and multiplication using an object literal.</p>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">calc</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span>
-    <span class="p">{</span>
-           <span class="nx">add</span><span class="o">:</span> <span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">,</span>
-           <span class="nx">sub</span><span class="o">:</span> <span class="nx">a</span><span class="o">-</span><span class="nx">b</span><span class="p">,</span>
-           <span class="nx">mul</span><span class="o">:</span> <span class="nx">a</span><span class="o">*</span><span class="nx">b</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-
-<p>After this ostensibly trivial change, I tried running the program but in vain, for, for every input, the computer adamantly spewed the same output: “undefined”. This was nothing out of the ordinary, and I proceeded with an error correction drill which was ingrained in my brain after all the hours of programming in C.  I checked for syntax errors - none.  Then I tried to narrow down the possibilities of error and commented out various portions of the code — which as you can see was very easy.</p>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">calc</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span>
-    <span class="p">{</span>
-           <span class="nx">add</span><span class="o">:</span> <span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">,</span>
-        <span class="c1">// sub</span>
-        <span class="c1">// mul</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-
-<p>The program still did not budge. Ideally I would have turned to a debugger and tried out various sophisticated debugging techniques (read ‘stare at the program and plead for mercy’); but ECMAScript was an altogether new beast, I was at loss. So, with no solution in sight, I turned to my my final recourse - google. After a few hours of searching and reading thread after thread of solutions, I finally found the error. The correct code was:</p>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">calc</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="p">{</span>
-           <span class="nx">add</span><span class="o">:</span> <span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">,</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-
-<p>And viola, the bug was fixed. Yes, the difference between my original code and the correct code is not evident at first sight, but nevertheless, was significant. The placement of the brace matters in ECMAScript because, of something known as semicolon insertion performed by the ECMAScript engines. A statement like</p>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">return</span>
-<span class="p">{</span>
-<span class="p">}</span></code></pre></div>
-
-<p>is translated into</p>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">return</span> <span class="kc">undefined</span><span class="p">;</span>
-<span class="p">{</span>
-<span class="p">};</span></code></pre></div>
-
-<p>And so my program always produced “undefined” as its result.</p>
-
-<p>This particular vignette taught me humility, and ever since then, I’ve never started writing a computer program in an alien language without spending sufficient time going through the documentation and specification of the language.</p>
+<p>Sometimes tears quench the pain,<br />
+Sometimes a loss has more to gain,<br />
+Sometimes words are not enough,<br />
+Sometimes life is agonizingly tough,<br />
+Sometimes you can only believe,<br />
+Sometimes friends do betray and deceive,<br />
+Sometimes old foes become friends,<br />
+Sometimes a battle never ends,<br />
+Sometimes expectations don’t matter,<br />
+Sometimes dreams do shatter,<br />
+Sometimes you are left estranged,<br />
+Sometimes the person in the mirror has changed.<br />
+Sometimes people act uncanny and strange,<br />
+Sometimes silence drives you insane,<br />
+Sometimes your best efforts are in vain.<br /><br />
+Sometimes the most certain thing in life,<br />
+Becomes its greatest strife;<br />
+Sometimes the mistakes that you do,<br />
+Outlives the good in you.<br />
+Sometimes after all is said and done,<br />
+You still fail to recognize ‘the one’.<br /></p>
 
 
       <hr />
@@ -237,17 +202,17 @@ My first encounter with this language left me exasperated. I was fairly competen
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/technical/first-programming-bug/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/travelogue/sometimes/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/technical/first-programming-bug/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/travelogue/sometimes/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=http://localhost:4000/technical/first-programming-bug/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/travelogue/sometimes/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>First Programming Bug</strong> was published on <time datetime="2015-04-04T08:53:20-04:00">April 04, 2015</time> and last modified on <time datetime="2015-04-04">April 04, 2015</time>.</p>
+        <p class="byline"><strong>Sometimes</strong> was published on <time datetime="2013-04-23T23:30:14-04:00">April 23, 2013</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
