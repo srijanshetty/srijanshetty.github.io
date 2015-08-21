@@ -2,13 +2,13 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 <title type="text">Lost Echoes</title>
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="//srijanshetty.in/feed.xml" />
-<link rel="alternate" type="text/html" href="//srijanshetty.in" />
-<updated>2015-08-21T06:15:42+05:30</updated>
-<id>//srijanshetty.in/</id>
+<link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
+<link rel="alternate" type="text/html" href="http://localhost:4000" />
+<updated>2015-08-21T07:15:59+05:30</updated>
+<id>http://localhost:4000/</id>
 <author>
   <name>Srijan R. Shetty</name>
-  <uri>//srijanshetty.in/</uri>
+  <uri>http://localhost:4000/</uri>
   <email>srijan.shetty+code@gmail.com</email>
 </author>
 
@@ -17,13 +17,13 @@
 
 <entry>
   <title type="html"><![CDATA[Estranged]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/poems/estranged/" />
-  <id>//srijanshetty.in/poems/estranged</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/poems/estranged/" />
+  <id>http://localhost:4000/poems/estranged</id>
   <published>2015-08-20T22:23:15+05:30</published>
   <updated>2015-08-20T22:23:15+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
+    <uri>http://localhost:4000</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -54,7 +54,7 @@ And even if I yearned, or asked for more,&lt;br /&gt;
 The deed was done, no wise of what it meant.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/poems/estranged/&quot;&gt;Estranged&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on August 20, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/poems/estranged/&quot;&gt;Estranged&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lost Echoes&lt;/a&gt; on August 20, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -63,13 +63,13 @@ The deed was done, no wise of what it meant.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 <entry>
   <title type="html"><![CDATA[Travelogue - Central Park, NY]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/travelogue/travelogue-central-park-ny/" />
-  <id>//srijanshetty.in/travelogue/travelogue-central-park-ny</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/travelogue/travelogue-central-park-ny/" />
+  <id>http://localhost:4000/travelogue/travelogue-central-park-ny</id>
   <published>2015-08-04T08:16:40+05:30</published>
   <updated>2015-08-04T08:16:40+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
+    <uri>http://localhost:4000</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -86,7 +86,7 @@ A desire to transcend,&lt;br /&gt;
 To nourish, to create,&lt;br /&gt;
 To leave, and to move.&lt;br /&gt;&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/travelogue/travelogue-central-park-ny/&quot;&gt;Travelogue - Central Park, NY&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on August 04, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/travelogue/travelogue-central-park-ny/&quot;&gt;Travelogue - Central Park, NY&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lost Echoes&lt;/a&gt; on August 04, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -95,13 +95,13 @@ To leave, and to move.&lt;br /&gt;&lt;/p&gt;
 
 <entry>
   <title type="html"><![CDATA[Greg Wilson - What We Know About Software]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/greg-wilson-what-we-know-about-software/" />
-  <id>//srijanshetty.in/technical/greg-wilson-what-we-know-about-software</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/technical/greg-wilson-what-we-know-about-software/" />
+  <id>http://localhost:4000/technical/greg-wilson-what-we-know-about-software</id>
   <published>2015-06-27T22:15:23+05:30</published>
   <updated>2015-06-27T22:15:23+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
+    <uri>http://localhost:4000</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -134,7 +134,7 @@ it faltered and restart.&lt;/li&gt;
 &lt;iframe src=&quot;https://player.vimeo.com/video/9270320&quot; width=&quot;500&quot; height=&quot;281&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 &lt;p&gt;&lt;a href=&quot;https://vimeo.com/9270320&quot;&gt;Greg Wilson - What We Actually Know About Software Development, and Why We Believe It&amp;#039;s True&lt;/a&gt; from &lt;a href=&quot;https://vimeo.com/cusec&quot;&gt;CUSEC&lt;/a&gt; on &lt;a href=&quot;https://vimeo.com&quot;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/greg-wilson-what-we-know-about-software/&quot;&gt;Greg Wilson - What We Know About Software&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on June 27, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/technical/greg-wilson-what-we-know-about-software/&quot;&gt;Greg Wilson - What We Know About Software&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lost Echoes&lt;/a&gt; on June 27, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -143,14 +143,14 @@ it faltered and restart.&lt;/li&gt;
 
 <entry>
   <title type="html"><![CDATA[Computer Science and Engineering, IIT Kanpur]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/writeup/computer-science-and-engineering-iit-kanpur/" />
-  <id>//srijanshetty.in/writeup/computer-science-and-engineering-iit-kanpur</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/writeup/computer-science-and-engineering-iit-kanpur/" />
+  <id>http://localhost:4000/writeup/computer-science-and-engineering-iit-kanpur</id>
   <updated>Thu Jun 11 16:01:43 IST 2015T00:00:00-00:00</updated>
   <published>2015-06-11T15:53:22+05:30</published>
   
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
+    <uri>http://localhost:4000</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -182,7 +182,7 @@ Hope this will be of some use.&lt;br /&gt;
 Live long and prosper&lt;br /&gt;
 Shetty.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/writeup/computer-science-and-engineering-iit-kanpur/&quot;&gt;Computer Science and Engineering, IIT Kanpur&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on June 11, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/writeup/computer-science-and-engineering-iit-kanpur/&quot;&gt;Computer Science and Engineering, IIT Kanpur&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lost Echoes&lt;/a&gt; on June 11, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -191,13 +191,13 @@ Shetty.&lt;/p&gt;
 
 <entry>
   <title type="html"><![CDATA[Time Travelling With Vim]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/time-travelling-with-vim/" />
-  <id>//srijanshetty.in/technical/time-travelling-with-vim</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/technical/time-travelling-with-vim/" />
+  <id>http://localhost:4000/technical/time-travelling-with-vim</id>
   <published>2015-05-30T12:06:18+05:30</published>
   <updated>2015-05-30T12:06:18+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
+    <uri>http://localhost:4000</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -221,7 +221,7 @@ is, you need to tell vim to use time travel.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p&gt;And now even if you go on an editing rampage, vim will save the day. The next time, I shall introduce you
 to vim’s other superpower - the ability to use the multi-verse.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/time-travelling-with-vim/&quot;&gt;Time Travelling With Vim&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on May 30, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/technical/time-travelling-with-vim/&quot;&gt;Time Travelling With Vim&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lost Echoes&lt;/a&gt; on May 30, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -230,14 +230,14 @@ to vim’s other superpower - the ability to use the multi-verse.&lt;/p&gt;
 
 <entry>
   <title type="html"><![CDATA[Officially an Alumni of IIT Kanpur]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/writeup/officially-an-alumni-of-iit-kanpur/" />
-  <id>//srijanshetty.in/writeup/officially-an-alumni-of-iit-kanpur</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/writeup/officially-an-alumni-of-iit-kanpur/" />
+  <id>http://localhost:4000/writeup/officially-an-alumni-of-iit-kanpur</id>
   <updated>Sat May 30 09:54:14 IST 2015T00:00:00-00:00</updated>
   <published>2015-05-30T09:51:19+05:30</published>
   
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
+    <uri>http://localhost:4000</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -260,7 +260,7 @@ We wish All The Best to Srijan for his future endeavours !!&lt;/p&gt;
 	&lt;a href=&quot;/images/acp-27-05-2015.jpg&quot;&gt;&lt;img src=&quot;/images/acp-27-05-2015.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/writeup/officially-an-alumni-of-iit-kanpur/&quot;&gt;Officially an Alumni of IIT Kanpur&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on May 30, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/writeup/officially-an-alumni-of-iit-kanpur/&quot;&gt;Officially an Alumni of IIT Kanpur&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lost Echoes&lt;/a&gt; on May 30, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -269,14 +269,14 @@ We wish All The Best to Srijan for his future endeavours !!&lt;/p&gt;
 
 <entry>
   <title type="html"><![CDATA[Safely Storing GPG Keys]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/safely-storing-gpg-keys/" />
-  <id>//srijanshetty.in/technical/safely-storing-gpg-keys</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/technical/safely-storing-gpg-keys/" />
+  <id>http://localhost:4000/technical/safely-storing-gpg-keys</id>
   <updated>Sat May 23 17:24:35 IST 2015T00:00:00-00:00</updated>
   <published>2015-05-23T16:59:33+05:30</published>
   
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
+    <uri>http://localhost:4000</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -341,7 +341,7 @@ the chicken-egg problem). The steps have bee illustrated below for the curious.&
 &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gpg --import-ownertrust srijanshetty-ownertrust-gpg.txt&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/safely-storing-gpg-keys/&quot;&gt;Safely Storing GPG Keys&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on May 23, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/technical/safely-storing-gpg-keys/&quot;&gt;Safely Storing GPG Keys&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lost Echoes&lt;/a&gt; on May 23, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -350,13 +350,13 @@ the chicken-egg problem). The steps have bee illustrated below for the curious.&
 
 <entry>
   <title type="html"><![CDATA[On Photographs]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/philosophy/on-photographs/" />
-  <id>//srijanshetty.in/philosophy/on-photographs</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/philosophy/on-photographs/" />
+  <id>http://localhost:4000/philosophy/on-photographs</id>
   <published>2015-05-09T09:40:04+05:30</published>
   <updated>2015-05-09T09:40:04+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
+    <uri>http://localhost:4000</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -377,7 +377,7 @@ memory and trying to fight for the things that I cherish. &lt;br /&gt;&lt;br /&g
 And maybe I’m wrong about all of this, but it’s a thought worth a minute.&lt;/p&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/philosophy/on-photographs/&quot;&gt;On Photographs&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on May 09, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/philosophy/on-photographs/&quot;&gt;On Photographs&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lost Echoes&lt;/a&gt; on May 09, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -386,13 +386,13 @@ And maybe I’m wrong about all of this, but it’s a thought worth a minute.&lt
 
 <entry>
   <title type="html"><![CDATA[Shell Magic]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/shell-magic/" />
-  <id>//srijanshetty.in/technical/shell-magic</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/technical/shell-magic/" />
+  <id>http://localhost:4000/technical/shell-magic</id>
   <published>2015-05-04T15:45:32+05:30</published>
   <updated>2015-05-04T15:45:32+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
+    <uri>http://localhost:4000</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -437,7 +437,7 @@ installation.&lt;/p&gt;
 
 &lt;p&gt;And viola! All was back to normal in Linux Land.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/shell-magic/&quot;&gt;Shell Magic&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on May 04, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/technical/shell-magic/&quot;&gt;Shell Magic&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lost Echoes&lt;/a&gt; on May 04, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -446,14 +446,14 @@ installation.&lt;/p&gt;
 
 <entry>
   <title type="html"><![CDATA[First Programming Bug]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/first-programming-bug/" />
-  <id>//srijanshetty.in/technical/first-programming-bug</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/technical/first-programming-bug/" />
+  <id>http://localhost:4000/technical/first-programming-bug</id>
   <updated>Sat Apr  4 20:44:37 IST 2015T00:00:00-00:00</updated>
   <published>2015-04-04T18:23:20+05:30</published>
   
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
+    <uri>http://localhost:4000</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -519,7 +519,7 @@ My first encounter with this language left me exasperated. I was fairly competen
 &lt;p&gt;This particular vignette taught me humility, and ever since then, I’ve never started writing a computer program in an alien language without spending sufficient time going through the documentation and specification of the language.&lt;/p&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/first-programming-bug/&quot;&gt;First Programming Bug&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on April 04, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/technical/first-programming-bug/&quot;&gt;First Programming Bug&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lost Echoes&lt;/a&gt; on April 04, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -528,14 +528,14 @@ My first encounter with this language left me exasperated. I was fairly competen
 
 <entry>
   <title type="html"><![CDATA[Travelogue - Nepal]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/travelogue/travelogue-nepal/" />
-  <id>//srijanshetty.in/travelogue/travelogue-nepal</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/travelogue/travelogue-nepal/" />
+  <id>http://localhost:4000/travelogue/travelogue-nepal</id>
   <updated>Thu Mar 26 12:06:04 IST 2015T00:00:00-00:00</updated>
   <published>2015-03-26T12:06:15+05:30</published>
   
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
+    <uri>http://localhost:4000</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -555,7 +555,7 @@ Life would never be the same.&lt;br /&gt;&lt;/p&gt;
 &lt;iframe width=&quot;854&quot; height=&quot;510&quot; src=&quot;https://www.youtube.com/embed/niShO0BIA6Q&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/travelogue/travelogue-nepal/&quot;&gt;Travelogue - Nepal&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on March 26, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/travelogue/travelogue-nepal/&quot;&gt;Travelogue - Nepal&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lost Echoes&lt;/a&gt; on March 26, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -564,13 +564,13 @@ Life would never be the same.&lt;br /&gt;&lt;/p&gt;
 
 <entry>
   <title type="html"><![CDATA[Linux: Pause and Resume Processes]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/hacks/linux-pause-and-resume-processes/" />
-  <id>//srijanshetty.in/hacks/linux-pause-and-resume-processes</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/hacks/linux-pause-and-resume-processes/" />
+  <id>http://localhost:4000/hacks/linux-pause-and-resume-processes</id>
   <published>2015-03-13T02:59:33+05:30</published>
   <updated>2015-03-13T02:59:33+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
+    <uri>http://localhost:4000</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -587,7 +587,7 @@ The Linux scheduler allows to pause any running program and resume it at a later
 
 &lt;p&gt;And with that I was able to pause the &lt;strong&gt;R Tree&lt;/strong&gt; program and save the universe from destruction (Not really, but I did manage to save my grades from destruction)&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/hacks/linux-pause-and-resume-processes/&quot;&gt;Linux: Pause and Resume Processes&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on March 13, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/hacks/linux-pause-and-resume-processes/&quot;&gt;Linux: Pause and Resume Processes&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lost Echoes&lt;/a&gt; on March 13, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -596,14 +596,14 @@ The Linux scheduler allows to pause any running program and resume it at a later
 
 <entry>
   <title type="html"><![CDATA[Vcsh, Mr - Dotfiles Nirvana]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/vcsh-mr-dotfiles-nirvana/" />
-  <id>//srijanshetty.in/technical/vcsh-mr-dotfiles-nirvana</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/technical/vcsh-mr-dotfiles-nirvana/" />
+  <id>http://localhost:4000/technical/vcsh-mr-dotfiles-nirvana</id>
   <updated>2014-12-27 17:42:20 +0530T00:00:00-00:00</updated>
   <published>2014-12-27T17:42:20+05:30</published>
   
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
+    <uri>http://localhost:4000</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -852,7 +852,7 @@ git push
   &lt;li&gt;&lt;a href=&quot;https://github.com/srijanshetty/custom/blob/master/functions/myrepos.zsh&quot;&gt;This&lt;/a&gt; script creates wrappers for automating most of this.&lt;/li&gt;
 &lt;/ol&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/vcsh-mr-dotfiles-nirvana/&quot;&gt;Vcsh, Mr - Dotfiles Nirvana&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on December 27, 2014.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/technical/vcsh-mr-dotfiles-nirvana/&quot;&gt;Vcsh, Mr - Dotfiles Nirvana&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lost Echoes&lt;/a&gt; on December 27, 2014.&lt;/p&gt;
   </content>
 </entry>
 
@@ -861,14 +861,14 @@ git push
 
 <entry>
   <title type="html"><![CDATA[Travelogue - Indore]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/travelogue/travelogue-indore/" />
-  <id>//srijanshetty.in/travelogue/travelogue-indore</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/travelogue/travelogue-indore/" />
+  <id>http://localhost:4000/travelogue/travelogue-indore</id>
   <updated>Sat Dec 20 02:09:24 IST 2014T00:00:00-00:00</updated>
   <published>2014-12-19T22:04:16+05:30</published>
   
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
+    <uri>http://localhost:4000</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -886,7 +886,7 @@ git push
 &lt;p&gt;Such nights are to be cherished and such friends rejoiced. So, cheers to many such nights together.&lt;/p&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/travelogue/travelogue-indore/&quot;&gt;Travelogue - Indore&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on December 19, 2014.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/travelogue/travelogue-indore/&quot;&gt;Travelogue - Indore&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lost Echoes&lt;/a&gt; on December 19, 2014.&lt;/p&gt;
   </content>
 </entry>
 
@@ -895,14 +895,14 @@ git push
 
 <entry>
   <title type="html"><![CDATA[Travelogue - MT]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/poems/travelogue-mt/" />
-  <id>//srijanshetty.in/poems/travelogue-mt</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/poems/travelogue-mt/" />
+  <id>http://localhost:4000/poems/travelogue-mt</id>
   <updated>2015-02-14 23:06:57 +0530T00:00:00-00:00</updated>
   <published>2014-11-16T20:40:24+05:30</published>
   
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
+    <uri>http://localhost:4000</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -922,7 +922,7 @@ And as words became muffled,&lt;br /&gt;
 And the light in my hands lost,&lt;br /&gt;
 We rose to leave, only to return.&lt;br /&gt;&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/poems/travelogue-mt/&quot;&gt;Travelogue - MT&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on November 16, 2014.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/poems/travelogue-mt/&quot;&gt;Travelogue - MT&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lost Echoes&lt;/a&gt; on November 16, 2014.&lt;/p&gt;
   </content>
 </entry>
 
@@ -931,13 +931,13 @@ We rose to leave, only to return.&lt;br /&gt;&lt;/p&gt;
 
 <entry>
   <title type="html"><![CDATA[Aham Bhokalam]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/writeup/aham-bhokalam/" />
-  <id>//srijanshetty.in/writeup/aham-bhokalam</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/writeup/aham-bhokalam/" />
+  <id>http://localhost:4000/writeup/aham-bhokalam</id>
   <published>2014-07-30T08:26:29+05:30</published>
   <updated>2014-07-30T08:26:29+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
+    <uri>http://localhost:4000</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -946,7 +946,7 @@ Antaragni stands today for the aspirations of thousands of students who after mo
 Yes, the theme has caused its fair share of cause celebre. I for one believe, that the only way to appreciate it would be to let go of the negative connotations we have associated with the word ‘Bhokal’. ‘Aham Bhokalam’ perfectly portrays the spirit of Antaragni - the unfathomable power of the human will - of unleashing the power within. ‘Aham Bhokalam’ for us is a celebration of our indomitable spirit, of finding new meaning in conventional wisdoms, of creating our own paths, of exploring territories where no woman(or man) has ever gone before, to use that line, of being open to the different choices that people make.&lt;br /&gt;&lt;br /&gt;
 The crux of the theme I shall say, is that we can be what we want to be, with of course a zing of our homeland - Kanpur.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/writeup/aham-bhokalam/&quot;&gt;Aham Bhokalam&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on July 30, 2014.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/writeup/aham-bhokalam/&quot;&gt;Aham Bhokalam&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lost Echoes&lt;/a&gt; on July 30, 2014.&lt;/p&gt;
   </content>
 </entry>
 
@@ -955,14 +955,14 @@ The crux of the theme I shall say, is that we can be what we want to be, with of
 
 <entry>
   <title type="html"><![CDATA[Why IIT Kanpur?]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/writeup/why-iit-kanpur/" />
-  <id>//srijanshetty.in/writeup/why-iit-kanpur</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/writeup/why-iit-kanpur/" />
+  <id>http://localhost:4000/writeup/why-iit-kanpur</id>
   <updated>Wed May 27 11:38:03 IST 2015T00:00:00-00:00</updated>
   <published>2014-06-16T00:00:00+05:30</published>
   
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
+    <uri>http://localhost:4000</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -987,7 +987,7 @@ IIT Kanpur is a thriving microcosm, and this post barely scratches the surface o
 - &lt;a href=&quot;https://anshulr.quora.com/Electrical-Engineering-at-IIT-Kanpur&quot;&gt;Electrical Engineering at Kanpur&lt;/a&gt;&lt;br /&gt;
 - &lt;a href=&quot;https://www.facebook.com/notes/priyank-jaini/guide-to-bs-mathematics-and-scientific-commputing-iit-kanpur/532987276750044&quot;&gt;Mathematics and Scientific Computing at Kanpur&lt;/a&gt;&lt;br /&gt;&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/writeup/why-iit-kanpur/&quot;&gt;Why IIT Kanpur?&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on June 16, 2014.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/writeup/why-iit-kanpur/&quot;&gt;Why IIT Kanpur?&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lost Echoes&lt;/a&gt; on June 16, 2014.&lt;/p&gt;
   </content>
 </entry>
 
@@ -996,13 +996,13 @@ IIT Kanpur is a thriving microcosm, and this post barely scratches the surface o
 
 <entry>
   <title type="html"><![CDATA[Apathy]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/poems/apathy/" />
-  <id>//srijanshetty.in/poems/apathy</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/poems/apathy/" />
+  <id>http://localhost:4000/poems/apathy</id>
   <published>2014-06-03T08:33:24+05:30</published>
   <updated>2014-06-03T08:33:24+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
+    <uri>http://localhost:4000</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -1027,7 +1027,7 @@ A could’ve been,
 Chants of scriptures,
 For a lost kin.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/poems/apathy/&quot;&gt;Apathy&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on June 03, 2014.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/poems/apathy/&quot;&gt;Apathy&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lost Echoes&lt;/a&gt; on June 03, 2014.&lt;/p&gt;
   </content>
 </entry>
 
@@ -1036,13 +1036,13 @@ For a lost kin.&lt;/p&gt;
 
 <entry>
   <title type="html"><![CDATA[Travelogue - Kanyakumari]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/travelogue/travelogue-kanyakumari/" />
-  <id>//srijanshetty.in/travelogue/travelogue-kanyakumari</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/travelogue/travelogue-kanyakumari/" />
+  <id>http://localhost:4000/travelogue/travelogue-kanyakumari</id>
   <published>2014-05-15T08:33:50+05:30</published>
   <updated>2014-05-15T08:33:50+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
+    <uri>http://localhost:4000</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -1065,7 +1065,7 @@ Are we near light?
 Or are those goals still,
 Looming in sight?&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/travelogue/travelogue-kanyakumari/&quot;&gt;Travelogue - Kanyakumari&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on May 15, 2014.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/travelogue/travelogue-kanyakumari/&quot;&gt;Travelogue - Kanyakumari&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lost Echoes&lt;/a&gt; on May 15, 2014.&lt;/p&gt;
   </content>
 </entry>
 
@@ -1074,13 +1074,13 @@ Looming in sight?&lt;/p&gt;
 
 <entry>
   <title type="html"><![CDATA[They]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/poems/they/" />
-  <id>//srijanshetty.in/poems/they</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/poems/they/" />
+  <id>http://localhost:4000/poems/they</id>
   <published>2014-04-09T04:30:00+05:30</published>
   <updated>2014-04-09T04:30:00+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
+    <uri>http://localhost:4000</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -1113,7 +1113,7 @@ And despite all of this, they stand -&lt;br /&gt;
 this enigmatic pair,  undiscerning,&lt;br /&gt;
 Amidst differences, hand in hand.&lt;br /&gt;&amp;lt;/br&amp;gt;&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/poems/they/&quot;&gt;They&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on April 09, 2014.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/poems/they/&quot;&gt;They&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lost Echoes&lt;/a&gt; on April 09, 2014.&lt;/p&gt;
   </content>
 </entry>
 
