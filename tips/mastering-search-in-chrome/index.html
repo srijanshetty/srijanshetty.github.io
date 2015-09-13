@@ -5,37 +5,37 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Estranged &#8211; Lost Echoes</title>
-<meta name="description" content="Two roads diverged in a wood, and estranged they stood.">
-<meta name="keywords" content="poems, seperation, estranged, love, fear, agony, pain">
+<title>Mastering Custom Site Search in Chrome &#8211; Lost Echoes</title>
+<meta name="description" content="The title says it all">
+<meta name="keywords" content="tips, technical, chrome, search, custom site, google, address bar">
 
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Estranged">
-<meta name="twitter:description" content="Two roads diverged in a wood, and estranged they stood.">
+<meta name="twitter:title" content="Mastering Custom Site Search in Chrome">
+<meta name="twitter:description" content="The title says it all">
 <meta name="twitter:site" content="@srijanshetty">
 <meta name="twitter:creator" content="@srijanshetty">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="//srijanshetty.in/images/roads.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="//srijanshetty.in/images/default-thumb.png">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Estranged">
-<meta property="og:description" content="Two roads diverged in a wood, and estranged they stood.">
-<meta property="og:url" content="//srijanshetty.in/poems/estranged/">
+<meta property="og:title" content="Mastering Custom Site Search in Chrome">
+<meta property="og:description" content="The title says it all">
+<meta property="og:url" content="//srijanshetty.in/tips/mastering-search-in-chrome/">
 <meta property="og:site_name" content="Lost Echoes">
 
-<meta property="og:image" content="//srijanshetty.in/images/roads.jpg">
+<meta property="og:image" content="//srijanshetty.in/images/default-thumb.png">
 
 
 
 
 
 
-<link rel="canonical" href="//srijanshetty.in/poems/estranged/">
+<link rel="canonical" href="//srijanshetty.in/tips/mastering-search-in-chrome/">
 <link href="//srijanshetty.in/feed.xml" type="application/atom+xml" rel="alternate" title="Lost Echoes Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -128,17 +128,6 @@
 </div><!-- /.navigation-wrapper -->
 
 
-  <div class="image-wrap">
-  <img src=
-    
-      "//srijanshetty.in/images/roads.jpg"
-    
-  alt="Estranged feature image">
-  
-    <span class="image-credit">Photo Credit: <a href="">Srijan R. Shetty</a></span>
-  
-  </div><!-- /.image-wrap -->
-
 
 <div id="main" role="main">
   <div class="article-author-side">
@@ -180,35 +169,42 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="//srijanshetty.in/poems/estranged/" rel="bookmark" title="Estranged">Estranged</a></h1>
+        <h1><a href="//srijanshetty.in/tips/mastering-search-in-chrome/" rel="bookmark" title="Mastering Custom Site Search in Chrome">Mastering Custom Site Search in Chrome</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <blockquote>
-  <p>Two roads diverged in a wood, and estranged they stood.</p>
-</blockquote>
+      <p>Chrome was the shiny, fast browser which caused me to shift from firefox; and even after chrome has become the still shiny, slow mess that it has become, I find it hard to move away due to some really awesome inbuilt features of chrome. My favourite amongst them is the ability to leverage any site’s search functionality. I’m pretty sure that you might have noticed that pressing <code>[Tab]</code> after typing youtube in the search bar allows you to search youtube directly from the search bar. What’s really fun is that this functionality can be extended to any website as long as it searched using a URL query.<br /><br />
+For example, I’ll show you how to automate searching within the settings of chrome.</p>
 
-<p>For a minute there I wanted time to stop,<br />
-A thousand answers whirred by,<br />
-With no semblance to the question at top.<br /><br />
-Words felt heavy, and my breath was lost,<br />
-A wandering spirit, a guilt, and a rumour of loss,<br />
-Not reason, it was absolution I sought.<br /><br />
-We had trudged along, enduring our plight,<br />
-Numbed by our pain, seeking respite,<br />
-Dreaming together, in the search of light.<br /><br />
-No direction, and this inheritance of loss,<br />
-In our love of shared pain, and lost cause,<br />
-Being alone, with each other, in this chaos.<br /><br />
-Yes, I’d erred, I had lost her hand,<br />
-Not knowing what that had meant,<br />
-I’m now left with ruins in the sand.<br /><br />
-These echoes of silence, my hopeless cries,<br />
-Hallow my way - the scars of a past life,<br />
-Guiding my path, amidst these many lies.<br /><br />
-The minute was gone, the thought was spent,<br />
-And even if I yearned, or asked for more,<br />
-The deed was done, no wise of what it meant.<br /><br /></p>
+<ul>
+  <li>
+    <p>Firstly navigate to <strong>chrome://settings</strong> - and yes, I like to type that out.</p>
+  </li>
+  <li>
+    <p>In the search section, you’ll see a <strong>Manage Search Engines</strong> option.</p>
+  </li>
+</ul>
+<figure>
+	<a href="/images/manage-search-engines.png"><img src="/images/manage-search-engines.png" /></a>
+</figure>
+
+<ul>
+  <li>
+    <p>Scroll to the end of the list of search engines, where it says that you can <code>Add a new search engine</code>.</p>
+  </li>
+  <li>
+    <p>To add a new search engine, you need to name it and additionally give it a <code>trigger</code>. The trigger
+ is the key which followed by a <code>Tab</code> on the omnibar lets chrome know your intent of searching the site
+ instead of merely visiting it. Here I’ve used <code>csettings</code> as a trigger.</p>
+  </li>
+</ul>
+<figure>
+  <a href="/images/example-search-engine.png"><img src="/images/example-search-engine.png" /></a>
+</figure>
+
+<ul>
+  <li>Fin.</li>
+</ul>
 
 
       <hr />
@@ -217,17 +213,17 @@ The deed was done, no wise of what it meant.<br /><br /></p>
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/poems/estranged/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/tips/mastering-search-in-chrome/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/poems/estranged/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/tips/mastering-search-in-chrome/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=//srijanshetty.in/poems/estranged/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=//srijanshetty.in/tips/mastering-search-in-chrome/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>Estranged</strong> was published on <time datetime="2015-08-20T22:23:15+05:30">August 20, 2015</time>.</p>
+        <p class="byline"><strong>Mastering Custom Site Search in Chrome</strong> was published on <time datetime="2015-09-13T19:36:38+05:30">September 13, 2015</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -242,11 +238,11 @@ The deed was done, no wise of what it meant.<br /><br /></p>
   <h4>You might also enjoy <small class="pull-right">(<a href="//srijanshetty.in/posts/">View all posts</a>)</small></h4>
     <ul>
     
-      <li><a href="//srijanshetty.in/tips/mastering-search-in-chrome/" title="Mastering Custom Site Search in Chrome">Mastering Custom Site Search in Chrome</a></li>
-    
       <li><a href="//srijanshetty.in/poems/nothingness/" title="Nothingness">Nothingness</a></li>
     
       <li><a href="//srijanshetty.in/hacks/chromecast-and-linux/" title="Chromecast and Linux">Chromecast and Linux</a></li>
+    
+      <li><a href="//srijanshetty.in/poems/estranged/" title="Estranged">Estranged</a></li>
     
     </ul>
     <hr />
