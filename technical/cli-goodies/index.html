@@ -5,37 +5,37 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Linux: Pause and Resume Processes &#8211; Lost Echoes</title>
-<meta name="description" content="Pause any running linux process and resume it later">
-<meta name="keywords" content="linux, process, management, pause, resume">
+<title>CLI Goodies &#8211; Lost Echoes</title>
+<meta name="description" content="My commandline productivity toolkit">
+<meta name="keywords" content="CLI, zsh, bash, prezto, antigen, prompt, technical, productivity, tools, plugins, completions, linux, unix">
 
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Linux: Pause and Resume Processes">
-<meta name="twitter:description" content="Pause any running linux process and resume it later">
+<meta name="twitter:title" content="CLI Goodies">
+<meta name="twitter:description" content="My commandline productivity toolkit">
 <meta name="twitter:site" content="@srijanshetty">
 <meta name="twitter:creator" content="@srijanshetty">
 
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://localhost:4000/images/default-thumb.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://localhost:4000/images/zsh.png">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux: Pause and Resume Processes">
-<meta property="og:description" content="Pause any running linux process and resume it later">
-<meta property="og:url" content="http://localhost:4000/hacks/linux-pause-and-resume-processes/">
+<meta property="og:title" content="CLI Goodies">
+<meta property="og:description" content="My commandline productivity toolkit">
+<meta property="og:url" content="http://localhost:4000/technical/cli-goodies/">
 <meta property="og:site_name" content="Lost Echoes">
 
-<meta property="og:image" content="http://localhost:4000/images/default-thumb.png">
+<meta property="og:image" content="http://localhost:4000/images/zsh.png">
 
 
 
 
 
 
-<link rel="canonical" href="http://localhost:4000/hacks/linux-pause-and-resume-processes/">
+<link rel="canonical" href="http://localhost:4000/technical/cli-goodies/">
 <link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Lost Echoes Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -128,6 +128,17 @@
 </div><!-- /.navigation-wrapper -->
 
 
+  <div class="image-wrap">
+  <img src=
+    
+      "http://localhost:4000/images/zsh.png"
+    
+  alt="CLI Goodies feature image">
+  
+    <span class="image-credit">Photo Credit: <a href="">Srijan R. Shetty</a></span>
+  
+  </div><!-- /.image-wrap -->
+
 
 <div id="main" role="main">
   <div class="article-author-side">
@@ -169,22 +180,96 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="http://localhost:4000/hacks/linux-pause-and-resume-processes/" rel="bookmark" title="Linux: Pause and Resume Processes">Linux: Pause and Resume Processes</a></h1>
+        <h1><a href="http://localhost:4000/technical/cli-goodies/" rel="bookmark" title="CLI Goodies">CLI Goodies</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>The last few days have been pretty hectic with two major assignment deadlines. And like every wild goose hunt fuelled by caffeine, they’ve enriched my repertoire.<br /><br />
-The <strong>R Tree</strong> assignment for <em>CS618: Searching and Indexing in Databases</em> involved the insertion of a million data points which took about <strong>forty minutes</strong> to run to completion. The program was midway through when I realized that I needed some precious CPU time for my other assignment: <strong>fitting a mixture of Gaussian</strong> to a data-set for <em>CS771: Machine Learning Tools and Techniques</em>.<br /><br />
-I’ve always maintained the racial superiority of my Dell XPS 15 but I knew better than run both these programs simultaneously. With less than three hours to D-Day, I couldn’t afford terminating the <strong>R Tree</strong> program; it was then by divine providence that I chanced upon the idea of somehow pausing the <strong>R Tree</strong> program. And guess what, as it turns out, Linux has just the solution.<br /><br />
-The Linux scheduler allows to pause any running program and resume it at a later time; and the way to achieve the same is dead simple. To pause a process, run the following command:</p>
+      <blockquote>
+  <p>Today, I finally have most of the goodness of my shell packed as a single repository. I say most because, I still have some things stuck in antigen with no clear migration path. Until then give these goodies a whirl, and do give a shout out to me if you need any help setting them up; I’ve added instructions of getting them up and ready with the common - a metric defined by the number of GitHub stars the framework has - frameworks out there. (My favourite is undoubtedly <code>Prezto</code> for it’s super fast startup).</p>
+</blockquote>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">kill</span> -STOP &lt;pid&gt;</code></pre></div>
+<h2 id="installation">Installation</h2>
 
-<p>And at any later stage, one can resume the stopped program by issuing the following command:</p>
+<p><strong>Installing under <a href="https://github.com/sorin-ionescu/prezto">Prezto</a></strong></p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">kill</span> -CONT &lt;pid&gt;</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> .zprezto
+  git submodule add https://github.com/srijanshetty/cli-goodies.git modules/cli-goodies</code></pre></div>
 
-<p>And with that I was able to pause the <strong>R Tree</strong> program and save the universe from destruction (Not really, but I did manage to save my grades from destruction)<br /><br /></p>
+<p>Add <code>cli-goodies</code> to your <code>.zpreztorc</code> file:</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text"># Set the Prezto modules to load (browse modules).
+  # The order matters.
+  zstyle &#39;:prezto:load&#39; pmodule \
+    &#39;environment&#39; \
+    &#39;terminal&#39; \
+    &#39;editor&#39; \
+    &#39;history&#39; \
+    &#39;directory&#39; \
+    &#39;spectrum&#39; \
+    &#39;utility&#39; \
+    &#39;completion&#39; \
+    &#39;prompt&#39; \
+    &#39;cli-goodies&#39;</code></pre></div>
+
+<p><strong>Installing under oh-my-zsh</strong><br />
+I haven’t tried using <code>cli-goodies</code> with <code>oh-my-zsh</code> and I think the following should work in theory.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">wget https://raw.github.com/srijanshetty/cli-goodies/master/init.zsh -O <span class="nv">$HOME</span>/.oh-my-zsh/custom/cli-goodies.zsh</code></pre></div>
+
+<p><strong>Installing using <a href="https://github.com/zsh-users/antigen">Antigen</a></strong><br />
+If you use <a href="https://github.com/zsh-users/antigen">Antigen</a>, adding the following line to <code>.zshrc</code> should load <code>cli-goodies</code>.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">antigen-bundle srijanshetty/zsh-dwim</code></pre></div>
+
+<p><strong>Using <code>cli-goodies</code> anywhere else</strong><br />
+Anyone running <code>zsh</code> should only need to add the following line to their <code>.zshrc</code>:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">source </span>init.zsh</code></pre></div>
+
+<h2 id="dependencies">Dependencies</h2>
+
+<p>You’ll need to install <code>peru</code> to get the completions working. Peru is a simple file downloader with a declarative syntax. While <code>curl</code> could be used to accomplish the same, <code>peru</code> is simpler to read.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">pip install peru
+peru sync</code></pre></div>
+
+<h2 id="features">Features</h2>
+<p><strong>Completions</strong></p>
+
+<ul>
+  <li><a href="https://github.com/sampsyo/beets/blob/master/extra/_beet">_beet</a></li>
+  <li><a href="https://github.com/s7anley/zsh-geeknote/master/_geeknote">_geeknote</a></li>
+  <li><a href="https://github.com/Schnouki/git-annex-zsh-completion/master/_git-annex">_git-annex</a></li>
+  <li><a href="https://github.com/gruntjs/grunt-cli/master/completion/zsh">_grunt</a></li>
+  <li><a href="https://github.com/srijanshetty/gulp-autocompletion-zsh/master/_gulp">_gulp</a></li>
+  <li><a href="https://github.com/srijanshetty/zsh-pip-completion/master/_pip">_pip</a></li>
+  <li><a href="https://github.com/srijanshetty/zsh-pandoc-completion/master/_pandoc">_pandoc</a></li>
+  <li><a href="https://github.com/rvm/rvm/master/scripts/extras/completion.zsh/_rvm">_rvm</a></li>
+  <li><a href="https://github.com/oscardelben/sheet/master/contrib/completion/sheet.zsh">_sheet</a></li>
+  <li><a href="https://github.com/github/hub/blob/master/etc/hub.zsh_completion">_hub</a></li>
+  <li><a href="https://github.com/srijanshetty/offline/blob/master/_offline">_offline</a></li>
+  <li><a href="https://raw.githubusercontent.com/srijanshetty/sdp/master/_sdp">_sdp</a></li>
+  <li><a href="functions/_repos">_repos</a></li>
+</ul>
+
+<p><strong>Scripts/Functions</strong></p>
+
+<ul>
+  <li><a href="https://github.com/srijanshetty/cron-wallpaper">cron-wallpaper</a>: Change wallpapers using cron.</li>
+  <li><a href="https://github.com/srijanshetty/dnd">dnd</a>: DND mode for Elementary OS.</li>
+  <li><a href="https://github.com/srijanshetty/folder2md">folder2md</a>: Convert a directory tree to markdown.</li>
+  <li><a href="https://github.com/srijanshetty/offline">offline</a>: Stores commands when offline and execute later in batch.</li>
+  <li><a href="functions/pastebin">pastebin</a>: Create a pastie using <a href="http://sprunge.us">sprunge.us</a></li>
+  <li><a href="functions/proxy">proxy</a>: Enable/disable proxy settings.</li>
+  <li><a href="functions/repos">repos</a>: Helper for <a href="myrepos.branchable.com">myrepos</a>.</li>
+  <li><a href="https://github.com/srijanshetty/sdp">sdp</a>: scp for directories.</li>
+  <li><a href="functions/showtoiletfonts">showtoiletfonts</a>: Show available toilet fonts.</li>
+  <li><a href="https://github.com/srijanshetty/stats-cli">stats-cli</a>: Compute avg, sd, min, max from a list.</li>
+  <li><a href="http://transfer.sh">transfer</a>: Use <a href="https://transfer.sh">transfer.sh</a> to transfer files from the CLI.</li>
+</ul>
+
+<p>I hope that you have fun using these tools as much as I do. PRs are encouraged.<br /><br />
+Fin.</p>
 
       <hr />
       <footer role="contentinfo">
@@ -192,17 +277,17 @@ The Linux scheduler allows to pause any running program and resume it at a later
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/hacks/linux-pause-and-resume-processes/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/technical/cli-goodies/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/hacks/linux-pause-and-resume-processes/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/technical/cli-goodies/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=http://localhost:4000/hacks/linux-pause-and-resume-processes/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/technical/cli-goodies/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>Linux: Pause and Resume Processes</strong> was published on <time datetime="2015-03-13T02:59:33+05:30">March 13, 2015</time>.</p>
+        <p class="byline"><strong>CLI Goodies</strong> was published on <time datetime="2015-09-27T17:43:02+05:30">September 27, 2015</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -217,11 +302,11 @@ The Linux scheduler allows to pause any running program and resume it at a later
   <h4>You might also enjoy <small class="pull-right">(<a href="http://localhost:4000/posts/">View all posts</a>)</small></h4>
     <ul>
     
-      <li><a href="http://localhost:4000/technical/cli-goodies/" title="CLI Goodies">CLI Goodies</a></li>
-    
       <li><a href="http://localhost:4000/hacks/mastering-search-in-chrome/" title="Mastering Custom Site Search in Chrome">Mastering Custom Site Search in Chrome</a></li>
     
       <li><a href="http://localhost:4000/poems/nothingness/" title="Nothingness">Nothingness</a></li>
+    
+      <li><a href="http://localhost:4000/hacks/chromecast-and-linux/" title="Chromecast and Linux">Chromecast and Linux</a></li>
     
     </ul>
     <hr />
