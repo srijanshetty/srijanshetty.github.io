@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>//srijanshetty.in/tasker/tasker/</loc>
+    <lastmod>2016-01-31T23:42:34+05:30</lastmod>
+  </url>
+  <url>
     <loc>//srijanshetty.in/travelogue/travelogue-paris/</loc>
     <lastmod>2015-11-28T13:50:03+05:30</lastmod>
   </url>
@@ -161,6 +165,10 @@
     <lastmod>2013-05-26T09:11:13+05:30</lastmod>
   </url>
   <url>
+    <loc>//srijanshetty.in/readability-feature-post/</loc>
+    <lastmod>2013-05-23T00:00:00+05:30</lastmod>
+  </url>
+  <url>
     <loc>//srijanshetty.in/poems/love/</loc>
     <lastmod>2013-05-11T09:08:52+05:30</lastmod>
   </url>
@@ -186,46 +194,36 @@
   </url>
   <url>
     <loc>//srijanshetty.in/academics.html</loc>
-    <lastmod>2015-11-28T14:00:37+05:30</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/almanac.html</loc>
-    <lastmod>2015-11-28T14:00:37+05:30</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/posts/category-wise.html</loc>
-    <lastmod>2015-11-28T14:00:37+05:30</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/about/</loc>
-    <lastmod>2015-11-28T14:00:37+05:30</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/posts/</loc>
-    <lastmod>2015-11-28T14:00:37+05:30</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/theme-setup/</loc>
-    <lastmod>2015-11-28T14:00:37+05:30</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/</loc>
-    <lastmod>2015-11-28T14:00:37+05:30</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/now.html</loc>
-    <lastmod>2015-11-28T14:00:37+05:30</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/projects.html</loc>
-    <lastmod>2015-11-28T14:00:37+05:30</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/talks.html</loc>
-    <lastmod>2015-11-28T14:00:37+05:30</lastmod>
   </url>
   <url>
     <loc>//srijanshetty.in/googlecb25530ac5881c68.html</loc>
-    <lastmod>2015-09-26T14:54:21+05:30</lastmod>
+    <lastmod>2015-12-08T12:44:27+05:30</lastmod>
   </url>
 </urlset>

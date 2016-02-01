@@ -260,7 +260,7 @@
 
 <h2 id="running-jekyll">Running Jekyll</h2>
 
-<p>If <code>jekyll build</code> and <code>jekyll serve</code> throw errors you may have to run Jekyll with <code>bundled exec</code> instead.</p>
+<p>If <code>jekyll build</code> and <code>jekyll serve</code> throw errors you may have to run Jekyll with <code>bundle exec</code> instead.</p>
 
 <blockquote>
   <p>In some cases, running executables without bundle exec may work, if the executable happens to be installed in your system and does not pull in any gems that conflict with your bundle.</p>
@@ -360,7 +360,7 @@ bundle exec jekyll serve</code></pre></div>
 
 <p>While completely optional, I’ve included Octopress and some starter templates to automate the creation of new posts and pages. To take advantage of it start by installing the <a href="https://github.com/octopress/octopress">Octopress</a> gem if it isn’t already.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gem install octopress --pre</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gem install octopress</code></pre></div>
 
 <h3 id="new-post">New Post</h3>
 
@@ -370,7 +370,7 @@ bundle exec jekyll serve</code></pre></div>
 
 <p>Default works great if you want all your posts in one directory, but if you’re like me and want to group them into subfolders like <code>/posts</code>, <code>/portfolio</code>, etc. Then this is the command for you. By specifying the DIR it will create a new post in that folder and populate the <code>categories:</code> YAML with the same value.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>octopress new post <span class="s2">&quot;New Post Title&quot;</span> --dir posts</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>octopress new post <span class="s2">&quot;New Portfolio Post Title&quot;</span> --dir portfolio</code></pre></div>
 
 <h3 id="new-page">New Page</h3>
 
@@ -556,7 +556,7 @@ bundle exec jekyll serve</code></pre></div>
   <footer>
     
 
-<span>&copy; 2015 Srijan R. Shetty. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2016 Srijan R. Shetty. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->
