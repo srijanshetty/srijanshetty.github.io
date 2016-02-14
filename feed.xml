@@ -4,13 +4,43 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="//srijanshetty.in/feed.xml" />
 <link rel="alternate" type="text/html" href="//srijanshetty.in" />
-<updated>2016-02-10T15:57:24+05:30</updated>
+<updated>2016-02-14T22:02:22+05:30</updated>
 <id>//srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
   <uri>//srijanshetty.in/</uri>
   <email>srijan.shetty+code@gmail.com</email>
 </author>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Installing Scikit and Numpy in Ubuntu]]></title>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/installing-scikit-and-numpy-in-ubuntu/" />
+  <id>//srijanshetty.in/technical/installing-scikit-and-numpy-in-ubuntu</id>
+  <published>2016-02-14T21:15:35+05:30</published>
+  <updated>2016-02-14T21:15:35+05:30</updated>
+  <author>
+    <name>Srijan R. Shetty</name>
+    <uri>//srijanshetty.in</uri>
+    <email>srijan.shetty+code@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;After sifting through multiple stack-overflow answers and blog posts, here is a list of consolidated steps to install scipy stack on Ubuntu 14.04. (I’m currently using Elementary OS Freya which is a derivative of Ubuntu 14.04).&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo apt-get install python-pip python-setuptools python-dev
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo apt-get install libjpeg-dev zlib1g-dev &lt;span class=&quot;c&quot;&gt;# Pillow build dependencies&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo apt-get install libblas-dev libatlas-dev liblapack-dev gfortran &lt;span class=&quot;c&quot;&gt;# Scipy dependencies&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo apt-get install g++ &lt;span class=&quot;c&quot;&gt;# Sciki-lean dependency&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo apt-get install cython &lt;span class=&quot;c&quot;&gt;# Scikit-image dependency&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo apt-get install libenchant-dev &lt;span class=&quot;c&quot;&gt;# PyEnchant dependency&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install scipy numpy &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;use pyenv, not sudo&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/installing-scikit-and-numpy-in-ubuntu/&quot;&gt;Installing Scikit and Numpy in Ubuntu&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on February 14, 2016.&lt;/p&gt;
+  </content>
+</entry>
 
 
   
@@ -905,271 +935,6 @@ The Linux scheduler allows to pause any running program and resume it at a later
 &lt;p&gt;And with that I was able to pause the &lt;strong&gt;R Tree&lt;/strong&gt; program and save the universe from destruction (Not really, but I did manage to save my grades from destruction)&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/hacks/linux-pause-and-resume-processes/&quot;&gt;Linux: Pause and Resume Processes&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on March 13, 2015.&lt;/p&gt;
-  </content>
-</entry>
-
-
-  
-
-<entry>
-  <title type="html"><![CDATA[Vcsh, Mr - Dotfiles Nirvana]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/vcsh-mr-dotfiles-nirvana/" />
-  <id>//srijanshetty.in/technical/vcsh-mr-dotfiles-nirvana</id>
-  <updated>2014-12-27 17:42:20 +0530T00:00:00-00:00</updated>
-  <published>2014-12-27T17:42:20+05:30</published>
-  
-  <author>
-    <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
-    <email>srijan.shetty+code@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
-  &lt;header&gt;
-    &lt;h3&gt;Overview&lt;/h3&gt;
-  &lt;/header&gt;
-&lt;div id=&quot;drawer&quot;&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#dotfiles&quot; id=&quot;markdown-toc-dotfiles&quot;&gt;Dotfiles&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#bootstrapping&quot; id=&quot;markdown-toc-bootstrapping&quot;&gt;Bootstrapping&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#organization&quot; id=&quot;markdown-toc-organization&quot;&gt;Organization&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#walk-through&quot; id=&quot;markdown-toc-walk-through&quot;&gt;Walk-through&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#adding-a-new-repository&quot; id=&quot;markdown-toc-adding-a-new-repository&quot;&gt;Adding a new repository&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#reproduction-of-configuration&quot; id=&quot;markdown-toc-reproduction-of-configuration&quot;&gt;Reproduction of configuration&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#updating-a-repository&quot; id=&quot;markdown-toc-updating-a-repository&quot;&gt;Updating a repository&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#gitignore&quot; id=&quot;markdown-toc-gitignore&quot;&gt;gitignore&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#caveats&quot; id=&quot;markdown-toc-caveats&quot;&gt;Caveats&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-  &lt;/div&gt;
-&lt;/section&gt;
-&lt;!-- /#table-of-contents --&gt;
-
-&lt;h2 id=&quot;dotfiles&quot;&gt;Dotfiles&lt;/h2&gt;
-
-&lt;p&gt;When I started on the path of managing my dotfiles, I was naive enough to believe that my scripting abilities would let me conquer the beast that &lt;em&gt;dotfiles&lt;/em&gt; are, and it took me a couple of years to realize my folly. But I’ve decided to mend my ways, to follow the wisdom of the ages - &lt;strong&gt;UNIX way&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;bootstrapping&quot;&gt;Bootstrapping&lt;/h2&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get install -y vcsh myrepos
-vcsh clone git@github.com:srijanshetty/vcsh-mr.git
-mr up&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Want to get down and dirty? You need to go &lt;a href=&quot;#walk-through&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;organization&quot;&gt;Organization&lt;/h2&gt;
-
-&lt;p&gt;There are three vital pieces of the puzzle: vcsh, mr and the directory structure of mr.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;vcsh&lt;/strong&gt;: The ~500 LOC of vcsh bellies it unfathomable power. Like every great UNIX utility, vcsh builds upon another great UNIX utility - &lt;em&gt;git&lt;/em&gt;. Git allows for the $GIT_DIR to be separate from the $GIT_WORKING_TREE. What this means is that the ‘.git
-‘ directory could be located in another folder and Git would still work fine. vcsh keeps all these ‘.git’ folders in ~/.config/vcsh/repo.d/REPO_NAME.git. And the work trees are maintained in $HOME. So, we can have multiple git directories residing within home and none of them will collide with each other. Awesome isn’t it?&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;mr&lt;/strong&gt;: mr allows to manage multiple repositories together. You register repositories with mr (Using &lt;em&gt;mr reg&lt;/em&gt;, D’oh) and then you can execute VCS commands like push, update, checkout on them together. mr supports all popular version controls systems. (I only care about git though).&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Directory Structure&lt;/strong&gt;: The author of the vcsh work flow prescribes the following directory structure:&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;~/.config/mr/
-    ├── available.d
-    │   ├── beets.vcsh
-    │   ├── git.vcsh
-    │   ├── ledger.vcsh
-    │   ├── misc.vcsh
-    │   ├── mr.vcsh
-    │   ├── template.vcsh
-    │   ├── tmux.vcsh
-    │   ├── vim.vcsh
-    │   ├── xmonad.vcsh
-    │   └── zsh.vcsh
-    └── config.d
-        ├── beets.vcsh -&amp;gt; ../available.d/beets.vcsh
-        ├── git.vcsh -&amp;gt; ../available.d/git.vcsh
-        ├── ledger.vcsh -&amp;gt; ../available.d/ledger.vcsh
-        ├── misc.vcsh -&amp;gt; ../available.d/misc.vcsh
-        ├── mr.vcsh -&amp;gt; ../available.d/mr.vcsh
-        ├── tmux.vcsh -&amp;gt; ../available.d/tmux.vcsh
-        ├── vim.vcsh -&amp;gt; ../available.d/vim.vcsh
-        └── zsh.vcsh -&amp;gt; ../available.d/zsh.vcsh&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Some salient points about this directory structure are:
-- &lt;strong&gt;available.d&lt;/strong&gt; serves as a store for different available configurations.
-- active configurations are symlinked in &lt;strong&gt;config.d&lt;/strong&gt;.
-- mr acts only on the configurations listed in &lt;strong&gt;config.d&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;What’s wonderful about these three tools is that they were written by the same author and work together seamlessly!!&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: Maintaining symlinks seemed too much of a chore for me; and so I did what any respectable programmer would do - &lt;a href=&quot;https://github.com/srijanshetty/custom/blob/master/functions/myrepos.zsh&quot;&gt;automate it&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;walk-through&quot;&gt;Walk-through&lt;/h2&gt;
-
-&lt;p&gt;It took me three tries - with the last one taking over a day - in a span of over 4 months to get this straight. &lt;a href=&quot;http://www.martin-burger.net/blog/unix-shell/manage-dotfiles-quickly-and-effortlessly/&quot;&gt;This&lt;/a&gt;) guide did wonders.&lt;/p&gt;
-
-&lt;p&gt;Caveat: A lot of this section is derivative of the about mentioned article.&lt;/p&gt;
-
-&lt;h3 id=&quot;adding-a-new-repository&quot;&gt;Adding a new repository&lt;/h3&gt;
-
-&lt;p&gt;If you want to manage a new tool and its dotfiles with vcsh and myrepos, follow the steps given below using ack as example.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Create a new remote repository for the tool you want to manage with vcsh.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;vcsh init ack&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The URL to clone that repository might look like: &lt;em&gt;git@github.com/vcsh-ack.git&lt;/em&gt;.&lt;/li&gt;
-  &lt;li&gt;Add new myrepos config file &lt;em&gt;~/.config/mr/available.d/ack.vcsh&lt;/em&gt;, which might look as follows:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ini&quot; data-lang=&quot;ini&quot;&gt;&lt;span class=&quot;k&quot;&gt;[$HOME/.config/vcsh/repo.d/ack.git]&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;checkout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;vcsh clone git@github.com:srijanshetty/vcsh-ack.git ack&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Create a symbolic link to tell mr to include this repository:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/.config/mr/config.d/
-ln -s ../available.d/ack.vcsh .&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Commit and push your changes in your local myrepos repository:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;vcsh mr add ~/.config/mr
-vcsh mr commit -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;[ack] add vcsh repository&amp;quot;&lt;/span&gt;
-vcsh mr push&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Add the tool’s dotfiles by to vcsh.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;vcsh ack add .ackrc&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Create, customize, and add the tool-specific excludesfile. (More info about it over &lt;a href=&quot;#gitignore&quot;&gt;here&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;vcsh write-gitignore ack
-vcsh ack add -f .gitignore.d/ack
-vcsh write-gitignore ack
-vcsh ack add .gitignore.d/ack&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Commit and push your changes in your local ack repository:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;vcsh ack commit -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;[Initial Commit] add initial ackrc file&amp;quot;&lt;/span&gt;
-vcsh ack push&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Yes, the initial configuration is quite complicated. But the effort is well worth what comes next.&lt;/p&gt;
-
-&lt;h3 id=&quot;reproduction-of-configuration&quot;&gt;Reproduction of configuration&lt;/h3&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get install -y vcsh myrepos
-vcsh clone git@github.com:srijanshetty/vcsh-mr.git
-mr up&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Bam! It’s done!&lt;/p&gt;
-
-&lt;h3 id=&quot;updating-a-repository&quot;&gt;Updating a repository&lt;/h3&gt;
-
-&lt;p&gt;The work-flow for adding new files/updating files is simple enough.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;After updating the files or adding new files, run:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;vcsh &amp;lt;REPO_NAME&amp;gt; add &amp;lt;FILE_NAME&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Then commit the changes and push&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;vcsh &amp;lt;REPO_NAME&amp;gt; commit -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;Yowza!&amp;quot;&lt;/span&gt;
-vcsh &amp;lt;REPO_NAME&amp;gt; push&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;As can be seen, vcsh supports all common VCS commands. An easier work-flow is to enter a &lt;em&gt;vcsh chroot&lt;/em&gt;, demonstrated as follows:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;vcsh enter REPO_NAME
-ga &amp;lt;FILE_NAME&amp;gt;
-gcm &lt;span class=&quot;s2&quot;&gt;&amp;quot;Yowza!&amp;quot;&lt;/span&gt;
-git push
-&lt;span class=&quot;nb&quot;&gt;exit&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Not only does this enable the git prompt, but also you can use those aliases that you set. Could this get any better?&lt;/p&gt;
-
-&lt;h3 id=&quot;gitignore&quot;&gt;gitignore&lt;/h3&gt;
-
-&lt;p&gt;If you tried entering the &lt;em&gt;vcsh chroot&lt;/em&gt; that I just talked about and you use a git prompt (you do use it don’t you), then you’re in for a treat - your terminal may have frozen for a good amount of time; and if you’re like me you would have given up on this vcsh business already. But fret not, such behaviour is expected. Git prompts make use of ls-files and with over 25,000 files in my $HOME, this king of tardiness is expected.&lt;/p&gt;
-
-&lt;p&gt;To get around this problem, we need to define a &lt;em&gt;gitignore/excludesfile&lt;/em&gt;. And through &lt;em&gt;vcsh write-gitignore&lt;/em&gt;, vcsh provides us the means to do so. The generated excludesfile is a white-list, for the ack example above, the final generated .gitignore.d/ack file is as follows&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;*
-!.ackrc
-!.gitignore.d/
-!.gitignore.d/ack&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The first line ignores all files in $HOME and then starts including the files we’re tracking one by one. While this is well and good for normal use-cases, it does cause you to forget adding new files. For example, the generated excludesfile for mr is&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;*
-!.config
-!.config/mr
-!.config/mr/available.d
-!.config/mr/available.d/mr.vcsh
-!.config/mr/available.d/git.vcsh
-!.config/mr/config.d
-!.config/mr/config.d/mr.vcsh
-!.config/mr/config.d/git.vcsh
-!.gitignore.d/
-!.gitignore.d/mr
-!.mrconfig&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Do you see the problem? Okay let me tell you, any new file in &lt;em&gt;available.d/ or config.d/&lt;/em&gt; is ignored by default. So, I’d advise using the following &lt;em&gt;.gitignore.d/mr&lt;/em&gt; file which tracks files by default.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;*
-!.config
-!.config/mr
-!.config/mr/available.d
-!.config/mr/available.d/*
-!.config/mr/config.d
-!.config/mr/config.d/*
-!.gitignore.d
-!.gitignore.d/mr
-!.mrconfig&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;A final note on the four sub steps required in Step 9 of [Adding a new repository].
-1. Generate a gitignore file.
-2. Force add the gitignore file to index, which is ignored up till now.
-3. Regenerate the gitignore file (this time it will include the gitignore file itself).
-4. Add the now modified gitignore file.&lt;/p&gt;
-
-&lt;h2 id=&quot;caveats&quot;&gt;Caveats&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;strike&gt;The lack a git prompt in my terminal for vcsh enabled repos is unnerving. I still need to soak it all in and find a system to track pending changes. &lt;/strike&gt;
-  &lt;/li&gt;
-  &lt;li&gt;All repositories need to share a common README file. Again, I need to find a way around this.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;strike&gt;I don&#39;t like the manual symlinking required in .config.d/. It would be much easier to have helper functions like Apache provides for it&#39;s web server.&lt;/strike&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;vcsh version 1.2 onwards solves 1 using a &lt;strong&gt;vcsh status&lt;/strong&gt; command.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/srijanshetty/custom/blob/master/functions/myrepos.zsh&quot;&gt;This&lt;/a&gt; script creates wrappers for automating most of this.&lt;/li&gt;
-&lt;/ol&gt;
-
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/vcsh-mr-dotfiles-nirvana/&quot;&gt;Vcsh, Mr - Dotfiles Nirvana&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on December 27, 2014.&lt;/p&gt;
   </content>
 </entry>
 
