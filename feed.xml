@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="//srijanshetty.in/feed.xml" />
 <link rel="alternate" type="text/html" href="//srijanshetty.in" />
-<updated>2018-05-15T11:17:31+05:30</updated>
+<updated>2018-05-15T11:28:42+05:30</updated>
 <id>//srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
@@ -28,9 +28,8 @@
   </author>
   <content type="html">
     &lt;p&gt;Children have issues, especially when you try to kill them incorrectly and they come back as
-zombies - just in case, I’m talking about process children in linux (don’t arrest me please).&lt;/p&gt;
-
-&lt;p&gt;Here’s a snipped of code that I was working for on a personal project:&lt;/p&gt;
+zombies - just in case, I’m talking about process children in linux (don’t arrest me please).&lt;br /&gt;&lt;br /&gt;
+Here’s a snippet of code from a personal project:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;child_pid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;signal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SIGTERM&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -38,12 +37,11 @@ zombies - just in case, I’m talking about process children in linux (don’t a
 &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;ne&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Notice what’s wrong with the above snippet? (Apart from the horrid error handling, and the fact that
-I’ve ignored that the children have async-signal-safe signal handlers present)&lt;/p&gt;
-
-&lt;p&gt;You’ll be leaving zombie children all over the OS!!&lt;/p&gt;
-
-&lt;p&gt;It took me a while to figure out the correct (mostly) way to handle killing your own (process’)
+&lt;p&gt;Can you notice what’s wrong with the above snippet? (Apart from the horrid error handling,
+and the fact that I’ve ignored that the children must have async-signal-safe signal handlers
+present.)&lt;br /&gt;&lt;br /&gt;
+You’ll be leaving zombies all over the OS!&lt;br /&gt;&lt;br /&gt;
+It took me a while to figure out the (mostly) correct way to handle killing your own (process’)
 children safely:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;signal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SIGTERM&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -62,17 +60,16 @@ children safely:&lt;/p&gt;
     &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;psutil&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TimeoutExpired&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Zombie children have escaped. I repeat zombie children have escaped&amp;#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Let me explain what’s going on here. The first terminate sends a &lt;strong&gt;SIGTERM&lt;/strong&gt; to the child and then we
-do a blocking 45s wait on the child process. If all is well, we have successfully killed the child.
-If not, we’ll have to bring out the big guns of** SIGKILL**.&lt;/p&gt;
-
-&lt;p&gt;The second &lt;strong&gt;SIGKILL&lt;/strong&gt; is where things get interesting, some process accept &lt;strong&gt;SIGKILL&lt;/strong&gt; and terminate but
-they still remain as zombies. Just like adolescent teens. The second wait with a shorter interval
-reaps those processes. (You could ideally keep the timeout at 0, which will convert it to a non
-blocking call as well.)&lt;/p&gt;
-
-&lt;p&gt;At this point if the zombies don’t die, your only option is to wait for the apocalypse. Or you could
-nuke the parent and hope the zombies don’t become orphan zombies.&lt;/p&gt;
+&lt;p&gt;Let me explain what’s going on here. The first &lt;em&gt;terminate&lt;/em&gt; sends a &lt;strong&gt;SIGTERM&lt;/strong&gt; to the child and then we
+do a blocking 45 seconds wait on the child process in order to reap it. If all goes according to plan,
+we would have successfully killed the process. But if the powers that be conspire, we might have to bring out
+the big guns with &lt;strong&gt;SIGKILL&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+The second &lt;strong&gt;SIGKILL&lt;/strong&gt; is where things get interesting, all process accept &lt;strong&gt;SIGKILL&lt;/strong&gt; and shold terminate
+in an ideal worldbut they still might remain as zombies - those beautiful adolescent teen years.
+The second wait with a shorter interval tries reaps such processes. (You could ideally keep the timeout at 0,
+which will convert it to a non blocking call.)&lt;br /&gt;&lt;br /&gt;
+At this point if the zombies don’t die, your only option is to wait for the apocalypse. Or you could
+nuke the parent and hope the zombies don’t become orphan zombies. (Yikes)&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/zombie-children-eating-memory/&quot;&gt;Zombie Children Eating Memory&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on May 15, 2018.&lt;/p&gt;
   </content>

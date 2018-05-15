@@ -6,14 +6,14 @@
 <head>
 <meta charset="utf-8">
 <title>Zombie Children Eating Memory &#8211; Lost Echoes</title>
-<meta name="description" content="If you're not careful, you children can turn into zombies and eat your server">
+<meta name="description" content="If you're not careful, your children can turn into zombies and eat your server">
 <meta name="keywords" content="linux, python, psutil. os, zombie, orphan, process, memory, subprocess, child, wait, pid">
 
 
 
 <!-- Twitter Cards -->
 <meta name="twitter:title" content="Zombie Children Eating Memory">
-<meta name="twitter:description" content="If you're not careful, you children can turn into zombies and eat your server">
+<meta name="twitter:description" content="If you're not careful, your children can turn into zombies and eat your server">
 <meta name="twitter:site" content="@srijanshetty">
 <meta name="twitter:creator" content="@srijanshetty">
 
@@ -24,7 +24,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Zombie Children Eating Memory">
-<meta property="og:description" content="If you're not careful, you children can turn into zombies and eat your server">
+<meta property="og:description" content="If you're not careful, your children can turn into zombies and eat your server">
 <meta property="og:url" content="//srijanshetty.in/technical/zombie-children-eating-memory/">
 <meta property="og:site_name" content="Lost Echoes">
 
@@ -179,9 +179,8 @@
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
       <p>Children have issues, especially when you try to kill them incorrectly and they come back as
-zombies - just in case, I’m talking about process children in linux (don’t arrest me please).</p>
-
-<p>Here’s a snipped of code that I was working for on a personal project:</p>
+zombies - just in case, I’m talking about process children in linux (don’t arrest me please).<br /><br />
+Here’s a snippet of code from a personal project:</p>
 
 <div class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">try</span><span class="p">:</span>
     <span class="n">os</span><span class="o">.</span><span class="n">kill</span><span class="p">(</span><span class="n">child_pid</span><span class="p">,</span> <span class="n">signal</span><span class="o">.</span><span class="n">SIGTERM</span><span class="p">)</span>
@@ -189,12 +188,11 @@ zombies - just in case, I’m talking about process children in linux (don’t a
 <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span></code></pre></div>
 
-<p>Notice what’s wrong with the above snippet? (Apart from the horrid error handling, and the fact that
-I’ve ignored that the children have async-signal-safe signal handlers present)</p>
-
-<p>You’ll be leaving zombie children all over the OS!!</p>
-
-<p>It took me a while to figure out the correct (mostly) way to handle killing your own (process’)
+<p>Can you notice what’s wrong with the above snippet? (Apart from the horrid error handling,
+and the fact that I’ve ignored that the children must have async-signal-safe signal handlers
+present.)<br /><br />
+You’ll be leaving zombies all over the OS!<br /><br />
+It took me a while to figure out the (mostly) correct way to handle killing your own (process’)
 children safely:</p>
 
 <div class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">os</span><span class="o">.</span><span class="n">kill</span><span class="p">(</span><span class="n">pid</span><span class="p">,</span> <span class="n">signal</span><span class="o">.</span><span class="n">SIGTERM</span><span class="p">)</span>
@@ -213,17 +211,16 @@ children safely:</p>
     <span class="k">except</span> <span class="n">psutil</span><span class="o">.</span><span class="n">TimeoutExpired</span><span class="p">:</span>
         <span class="n">msg</span> <span class="o">=</span> <span class="s">&#39;Zombie children have escaped. I repeat zombie children have escaped&#39;</span></code></pre></div>
 
-<p>Let me explain what’s going on here. The first terminate sends a <strong>SIGTERM</strong> to the child and then we
-do a blocking 45s wait on the child process. If all is well, we have successfully killed the child.
-If not, we’ll have to bring out the big guns of** SIGKILL**.</p>
-
-<p>The second <strong>SIGKILL</strong> is where things get interesting, some process accept <strong>SIGKILL</strong> and terminate but
-they still remain as zombies. Just like adolescent teens. The second wait with a shorter interval
-reaps those processes. (You could ideally keep the timeout at 0, which will convert it to a non
-blocking call as well.)</p>
-
-<p>At this point if the zombies don’t die, your only option is to wait for the apocalypse. Or you could
-nuke the parent and hope the zombies don’t become orphan zombies.</p>
+<p>Let me explain what’s going on here. The first <em>terminate</em> sends a <strong>SIGTERM</strong> to the child and then we
+do a blocking 45 seconds wait on the child process in order to reap it. If all goes according to plan,
+we would have successfully killed the process. But if the powers that be conspire, we might have to bring out
+the big guns with <strong>SIGKILL</strong>.<br /><br />
+The second <strong>SIGKILL</strong> is where things get interesting, all process accept <strong>SIGKILL</strong> and shold terminate
+in an ideal worldbut they still might remain as zombies - those beautiful adolescent teen years.
+The second wait with a shorter interval tries reaps such processes. (You could ideally keep the timeout at 0,
+which will convert it to a non blocking call.)<br /><br />
+At this point if the zombies don’t die, your only option is to wait for the apocalypse. Or you could
+nuke the parent and hope the zombies don’t become orphan zombies. (Yikes)</p>
 
       <hr />
       <footer role="contentinfo">
