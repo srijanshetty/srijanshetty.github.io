@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>//srijanshetty.in/technical/zombie-children-eating-memory/</loc>
+    <lastmod>2018-05-15T10:58:38+05:30</lastmod>
+  </url>
+  <url>
     <loc>//srijanshetty.in/technical/installing-scikit-and-numpy-in-ubuntu/</loc>
     <lastmod>2016-02-14T21:15:35+05:30</lastmod>
   </url>
@@ -206,16 +210,16 @@
     <loc>//srijanshetty.in/posts/category-wise.html</loc>
   </url>
   <url>
-    <loc>//srijanshetty.in/posts/</loc>
-  </url>
-  <url>
     <loc>//srijanshetty.in/theme-setup/</loc>
   </url>
   <url>
-    <loc>//srijanshetty.in/</loc>
+    <loc>//srijanshetty.in/about/</loc>
   </url>
   <url>
-    <loc>//srijanshetty.in/about/</loc>
+    <loc>//srijanshetty.in/posts/</loc>
+  </url>
+  <url>
+    <loc>//srijanshetty.in/</loc>
   </url>
   <url>
     <loc>//srijanshetty.in/now.html</loc>

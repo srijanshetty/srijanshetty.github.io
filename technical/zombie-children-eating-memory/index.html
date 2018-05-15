@@ -5,15 +5,15 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Lost &#8211; Lost Echoes</title>
-<meta name="description" content="An innocent was lost to the man he became, it wasn't how but was when - the child became the man he despised.">
-<meta name="keywords" content="poems, lost, dreams, wishes, future, past, child">
+<title>Zombie Children Eating Memory &#8211; Lost Echoes</title>
+<meta name="description" content="If you're not careful, you children can turn into zombies and eat your server">
+<meta name="keywords" content="linux, python, psutil. os, zombie, orphan, process, memory, subprocess, child, wait, pid">
 
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Lost">
-<meta name="twitter:description" content="An innocent was lost to the man he became, it wasn't how but was when - the child became the man he despised.">
+<meta name="twitter:title" content="Zombie Children Eating Memory">
+<meta name="twitter:description" content="If you're not careful, you children can turn into zombies and eat your server">
 <meta name="twitter:site" content="@srijanshetty">
 <meta name="twitter:creator" content="@srijanshetty">
 
@@ -23,9 +23,9 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Lost">
-<meta property="og:description" content="An innocent was lost to the man he became, it wasn't how but was when - the child became the man he despised.">
-<meta property="og:url" content="//srijanshetty.in/poems/lost/">
+<meta property="og:title" content="Zombie Children Eating Memory">
+<meta property="og:description" content="If you're not careful, you children can turn into zombies and eat your server">
+<meta property="og:url" content="//srijanshetty.in/technical/zombie-children-eating-memory/">
 <meta property="og:site_name" content="Lost Echoes">
 
 <meta property="og:image" content="//srijanshetty.in/images/default-thumb.png">
@@ -35,7 +35,7 @@
 
 
 
-<link rel="canonical" href="//srijanshetty.in/poems/lost/">
+<link rel="canonical" href="//srijanshetty.in/technical/zombie-children-eating-memory/">
 <link href="//srijanshetty.in/feed.xml" type="application/atom+xml" rel="alternate" title="Lost Echoes Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -174,32 +174,56 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="//srijanshetty.in/poems/lost/" rel="bookmark" title="Lost">Lost</a></h1>
+        <h1><a href="//srijanshetty.in/technical/zombie-children-eating-memory/" rel="bookmark" title="Zombie Children Eating Memory">Zombie Children Eating Memory</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>Amidst voices of other forlorn men,<br />
-An eerie silence, and a broken pen;<br />
-reminiscing, a man stood lost again.<br />
-A promise once made was broken;<br />
-the empty doorways stood it’s token.<br /><br />
-I never feared what lay ahead,<br />
-but what was once - the buried dead,<br />
-a haunted past, a scarred child,<br />
-who stood there, hopeful, in the wild.<br />
-And when I looked into those eyes,<br />
-I felt a chill; I could hear the lies,<br />
-which were told to this innocent life -<br />
-promises of no struggle, no strife.<br /><br />
-Hollow words, just like mine.<br />
-But he endured he didn’t whine,<br />
-Thinking, he could change time.<br />
-Alas, he was thrown into an abyss,<br />
-ambition was lost and so was his<br />
-faith. An innocent was lost to the man<br />
-he became, it wasn’t how but was when -<br />
-the child became the man he despised.<br /></p>
+      <p>Children have issues, especially when you try to kill them incorrectly and they come back as
+zombies - just in case, I’m talking about process children in linux (don’t arrest me please).</p>
 
+<p>Here’s a snipped of code that I was working for on a personal project:</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">try</span><span class="p">:</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">kill</span><span class="p">(</span><span class="n">child_pid</span><span class="p">,</span> <span class="n">signal</span><span class="o">.</span><span class="n">SIGTERM</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">True</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span></code></pre></div>
+
+<p>Notice what’s wrong with the above snippet? (Apart from the horrid error handling, and the fact that
+I’ve ignored that the children have async-signal-safe signal handlers present)</p>
+
+<p>You’ll be leaving zombie children all over the OS!!</p>
+
+<p>It took me a while to figure out the correct (mostly) way to handle killing your own (process’)
+children safely:</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">os</span><span class="o">.</span><span class="n">kill</span><span class="p">(</span><span class="n">pid</span><span class="p">,</span> <span class="n">signal</span><span class="o">.</span><span class="n">SIGTERM</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">psutil</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">pid</span><span class="p">)</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">terminate</span><span class="p">()</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+    <span class="n">msg</span> <span class="o">=</span> <span class="s">&#39;Wow. your children are really obedient&#39;</span>
+<span class="k">except</span> <span class="n">psutil</span><span class="o">.</span><span class="n">TimeoutExpired</span><span class="p">:</span>
+    <span class="c"># For a bad process this will ensure that we send it a sigkill</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">send_signal</span><span class="p">(</span><span class="n">signal</span><span class="o">.</span><span class="n">SIGKILL</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="s">&#39;Close call, we need the big guns, but at least they&#39;</span><span class="n">re</span> <span class="n">dead</span> <span class="n">now</span><span class="s">&#39;</span>
+    <span class="k">except</span> <span class="n">psutil</span><span class="o">.</span><span class="n">TimeoutExpired</span><span class="p">:</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="s">&#39;Zombie children have escaped. I repeat zombie children have escaped&#39;</span></code></pre></div>
+
+<p>Let me explain what’s going on here. The first terminate sends a <strong>SIGTERM</strong> to the child and then we
+do a blocking 45s wait on the child process. If all is well, we have successfully killed the child.
+If not, we’ll have to bring out the big guns of** SIGKILL**.</p>
+
+<p>The second <strong>SIGKILL</strong> is where things get interesting, some process accept <strong>SIGKILL</strong> and terminate but
+they still remain as zombies. Just like adolescent teens. The second wait with a shorter interval
+reaps those processes. (You could ideally keep the timeout at 0, which will convert it to a non
+blocking call as well.)</p>
+
+<p>At this point if the zombies don’t die, your only option is to wait for the apocalypse. Or you could
+nuke the parent and hope the zombies don’t become orphan zombies.</p>
 
       <hr />
       <footer role="contentinfo">
@@ -207,17 +231,17 @@ the child became the man he despised.<br /></p>
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/poems/lost/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/technical/zombie-children-eating-memory/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/poems/lost/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/technical/zombie-children-eating-memory/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=//srijanshetty.in/poems/lost/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=//srijanshetty.in/technical/zombie-children-eating-memory/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>Lost</strong> was published on <time datetime="2013-08-10T05:31:00+05:30">August 10, 2013</time> and last modified on <time datetime="2015-02-20">February 20, 2015</time>.</p>
+        <p class="byline"><strong>Zombie Children Eating Memory</strong> was published on <time datetime="2018-05-15T10:58:38+05:30">May 15, 2018</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -232,11 +256,11 @@ the child became the man he despised.<br /></p>
   <h4>You might also enjoy <small class="pull-right">(<a href="//srijanshetty.in/posts/">View all posts</a>)</small></h4>
     <ul>
     
-      <li><a href="//srijanshetty.in/technical/zombie-children-eating-memory/" title="Zombie Children Eating Memory">Zombie Children Eating Memory</a></li>
-    
       <li><a href="//srijanshetty.in/technical/installing-scikit-and-numpy-in-ubuntu/" title="Installing Scikit and Numpy in Ubuntu">Installing Scikit and Numpy in Ubuntu</a></li>
     
       <li><a href="//srijanshetty.in/tasker/tasker/" title="Tasker Appendix">Tasker Appendix</a></li>
+    
+      <li><a href="//srijanshetty.in/travelogue/travelogue-paris/" title="Travelogue - Paris">Travelogue - Paris</a></li>
     
     </ul>
     <hr />
