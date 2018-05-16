@@ -201,15 +201,15 @@ children safely:</p>
     <span class="n">p</span> <span class="o">=</span> <span class="n">psutil</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">pid</span><span class="p">)</span>
     <span class="n">p</span><span class="o">.</span><span class="n">terminate</span><span class="p">()</span>
     <span class="n">p</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
-    <span class="n">msg</span> <span class="o">=</span> <span class="s">&#39;Wow. your children are really obedient&#39;</span>
+    <span class="n">msg</span> <span class="o">=</span> <span class="s">&quot;Wow. your children are really obedient&quot;</span>
 <span class="k">except</span> <span class="n">psutil</span><span class="o">.</span><span class="n">TimeoutExpired</span><span class="p">:</span>
     <span class="c"># For a bad process this will ensure that we send it a sigkill</span>
     <span class="n">p</span><span class="o">.</span><span class="n">send_signal</span><span class="p">(</span><span class="n">signal</span><span class="o">.</span><span class="n">SIGKILL</span><span class="p">)</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">p</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-        <span class="n">msg</span> <span class="o">=</span> <span class="s">&#39;Close call, we need the big guns, but at least they&#39;</span><span class="n">re</span> <span class="n">dead</span> <span class="n">now</span><span class="s">&#39;</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="s">&quot;Close call, we need the big guns, but at least they&#39;re dead now&quot;</span>
     <span class="k">except</span> <span class="n">psutil</span><span class="o">.</span><span class="n">TimeoutExpired</span><span class="p">:</span>
-        <span class="n">msg</span> <span class="o">=</span> <span class="s">&#39;Zombie children have escaped. I repeat zombie children have escaped&#39;</span></code></pre></div>
+        <span class="n">msg</span> <span class="o">=</span> <span class="s">&quot;Zombies have escaped. I repeat, zombies have escaped&quot;</span></code></pre></div>
 
 <p>Let me explain what’s going on here. The first <em>terminate</em> sends a <strong>SIGTERM</strong> to the child and then we
 do a blocking 45 seconds wait on the child process in order to reap it. If all goes according to plan,
@@ -238,7 +238,7 @@ nuke the parent and hope the zombies don’t become orphan zombies. (Yikes)</p>
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>Zombie Children Eating Memory</strong> was published on <time datetime="2018-05-15T10:58:38+05:30">May 15, 2018</time>.</p>
+        <p class="byline"><strong>Zombie Children Eating Memory</strong> was published on <time datetime="2018-05-15T10:58:38+05:30">May 15, 2018</time> and last modified on <time datetime="2018-05-16">May 16, 2018</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
