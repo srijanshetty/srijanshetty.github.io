@@ -5,15 +5,15 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Apathy &#8211; Lost Echoes</title>
-<meta name="description" content="It was the circumstances that made him callous">
-<meta name="keywords" content="poems, apathy, funeral, pyre">
+<title>Honey, I Did a Bare Except &#8211; Lost Echoes</title>
+<meta name="description" content="Don't even think about using bare excepts or exceptions in python">
+<meta name="keywords" content="linux, signal, sigalrm, python, try, idiomatic, code, computers">
 
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Apathy">
-<meta name="twitter:description" content="It was the circumstances that made him callous">
+<meta name="twitter:title" content="Honey, I Did a Bare Except">
+<meta name="twitter:description" content="Don't even think about using bare excepts or exceptions in python">
 <meta name="twitter:site" content="@srijanshetty">
 <meta name="twitter:creator" content="@srijanshetty">
 
@@ -23,9 +23,9 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Apathy">
-<meta property="og:description" content="It was the circumstances that made him callous">
-<meta property="og:url" content="//srijanshetty.in/poems/apathy/">
+<meta property="og:title" content="Honey, I Did a Bare Except">
+<meta property="og:description" content="Don't even think about using bare excepts or exceptions in python">
+<meta property="og:url" content="//srijanshetty.in/technical/honey-i-did-a-bare-except/">
 <meta property="og:site_name" content="Lost Echoes">
 
 <meta property="og:image" content="//srijanshetty.in/images/default-thumb.png">
@@ -35,7 +35,7 @@
 
 
 
-<link rel="canonical" href="//srijanshetty.in/poems/apathy/">
+<link rel="canonical" href="//srijanshetty.in/technical/honey-i-did-a-bare-except/">
 <link href="//srijanshetty.in/feed.xml" type="application/atom+xml" rel="alternate" title="Lost Echoes Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -174,30 +174,69 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="//srijanshetty.in/poems/apathy/" rel="bookmark" title="Apathy">Apathy</a></h1>
+        <h1><a href="//srijanshetty.in/technical/honey-i-did-a-bare-except/" rel="bookmark" title="Honey, I Did a Bare Except">Honey, I Did a Bare Except</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <blockquote>
-  <p>It was the circumstances that made him callous. He found solace in being alone, and the wounds hurt so much that he stopped hurting.</p>
-</blockquote>
+      <p>So, what you might ask? In fact you might have seen this blasphemy time and time again:</p>
 
-<p>An empty pyre,
-Melancholic fumes,
-An ebbing fire,
-As reality looms.<br /><br />
-A wailing lad,
-Unnerved and broken,
-An aegis clad,
-No tears bespoken.<br /><br />
-An innocent scarred,
-A callous youth,
-A conscience charred -
-Apathy’s the truth.<br /><br />
-Hazy pictures,
-A could’ve been,
-Chants of scriptures,
-For a lost kin.</p>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">try</span><span class="p">:</span>
+    <span class="c"># Some code</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span></code></pre></div>
+
+<p>Or this variation written by another apostate (me, a few days ago):</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">try</span><span class="p">:</span>
+    <span class="c"># Some code</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span></code></pre></div>
+
+<p>While we may be blinded in the present, at some point your future-self will want to travel back in time
+and smack you for your idiocy, like I wanted to, for this mea cupla.<br /><br />
+The fundamental issue with <strong>bare excepts</strong> as they’re called in <em>idiomatic python</em> is, - as mentioned earlier -
+these gremlins come back and bite you. <br /><br />
+While trying to automate file uploads from my laptop to a cloud storage, I had a rogue IO function which
+once, stalled indefinitely. Since I was uploading multiple files in sequence, this would halt the entire
+program; (yes, I could use threads but that discussion is best left for another day).
+Since this was all wrapped up in a busy loop which watched for changes, I was okay with one off failures.
+In an attempt to tame the function I decided to use <em>SIGALRM</em> and this is when my foolishness dawned upon
+me.<br /><br /></p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">signal</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">class</span> <span class="nc">ProcessTimeoutException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">timeout</span><span class="p">():</span>
+    <span class="k">raise</span> <span class="n">ProcessTimeoutException</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">db_call</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;I&#39;m going to eat the error&quot;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">signal</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="n">signal</span><span class="o">.</span><span class="n">SIGALRM</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">timeout</span><span class="p">())</span>
+
+    <span class="n">signal</span><span class="o">.</span><span class="n">alarm</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">db_call</span><span class="p">()</span>
+    <span class="k">except</span> <span class="n">ProcessTimeoutException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;Never reaches&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span></code></pre></div>
+
+<p>Can you notice what’s wrong with the above snippet? <strong>db_call</strong> ends up eating <em>all</em> exceptions, which renders
+my timeout logic ineffective.<br /><br />
+The solution, you ask? Well, there’s little that we can do without using <em>threads</em> or a <em>monitor process</em> which
+kills this script when it notices there’s no progress (the monitor in turn ascertain progress using the OS
+or IPC flags).<br /><br />
+So, as a favour to your future self, kindly avoid going bare (with exceptions).</p>
 
       <hr />
       <footer role="contentinfo">
@@ -205,17 +244,17 @@ For a lost kin.</p>
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/poems/apathy/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/technical/honey-i-did-a-bare-except/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/poems/apathy/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/technical/honey-i-did-a-bare-except/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=//srijanshetty.in/poems/apathy/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=//srijanshetty.in/technical/honey-i-did-a-bare-except/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>Apathy</strong> was published on <time datetime="2014-06-03T08:33:24+05:30">June 03, 2014</time>.</p>
+        <p class="byline"><strong>Honey, I Did a Bare Except</strong> was published on <time datetime="2018-05-25T11:10:19+05:30">May 25, 2018</time> and last modified on <time datetime="2018-05-25">May 25, 2018</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -230,11 +269,11 @@ For a lost kin.</p>
   <h4>You might also enjoy <small class="pull-right">(<a href="//srijanshetty.in/posts/">View all posts</a>)</small></h4>
     <ul>
     
-      <li><a href="//srijanshetty.in/technical/honey-i-did-a-bare-except/" title="Honey, I Did a Bare Except">Honey, I Did a Bare Except</a></li>
-    
       <li><a href="//srijanshetty.in/technical/zombie-children-eating-memory/" title="Zombie Children Eating Memory">Zombie Children Eating Memory</a></li>
     
       <li><a href="//srijanshetty.in/technical/installing-scikit-and-numpy-in-ubuntu/" title="Installing Scikit and Numpy in Ubuntu">Installing Scikit and Numpy in Ubuntu</a></li>
+    
+      <li><a href="//srijanshetty.in/tasker/tasker/" title="Tasker Appendix">Tasker Appendix</a></li>
     
     </ul>
     <hr />
