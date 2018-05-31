@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="//srijanshetty.in/feed.xml" />
 <link rel="alternate" type="text/html" href="//srijanshetty.in" />
-<updated>2018-05-26T13:43:25+05:30</updated>
+<updated>2018-05-31T10:22:08+05:30</updated>
 <id>//srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
@@ -96,7 +96,7 @@ So, as a favour to your future self, kindly avoid going bare (with exceptions).&
   
 
 <entry>
-  <title type="html"><![CDATA[Zombie Children Eating Memory]]></title>
+  <title type="html"><![CDATA[Zombieland: Zombie Children Eating Memory]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/zombie-children-eating-memory/" />
   <id>//srijanshetty.in/technical/zombie-children-eating-memory</id>
   <updated>2018-05-16 00:24:38 +0530T00:00:00-00:00</updated>
@@ -152,7 +152,36 @@ which will convert it to a non blocking call.)&lt;br /&gt;&lt;br /&gt;
 At this point if the zombies don’t die, your only option is to wait for the apocalypse. Or you could
 nuke the parent and hope the zombies don’t become orphan zombies. (Yikes)&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/zombie-children-eating-memory/&quot;&gt;Zombie Children Eating Memory&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on May 15, 2018.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/zombie-children-eating-memory/&quot;&gt;Zombieland: Zombie Children Eating Memory&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on May 15, 2018.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Afflatus Begins]]></title>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/prose/afflatus-begins/" />
+  <id>//srijanshetty.in/prose/afflatus-begins</id>
+  <updated>2018-05-07 10:58:38 +0530T00:00:00-00:00</updated>
+  <published>2018-05-07T10:58:38+05:30</published>
+  
+  <author>
+    <name>Srijan R. Shetty</name>
+    <uri>//srijanshetty.in</uri>
+    <email>srijan.shetty+code@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;I would be lying to you if I told you that this is the first time I’ve tried to pen down this particular post. The idea of this blog post has existed for quite some time; but each half baked attempt has ended up in the bottomless pit of my unpublished ramblings.&lt;/p&gt;
+
+&lt;p&gt;Alas, life is transitory and I’ve decided that I no longer will seek absolution in my words. That hope is forlorn.&lt;/p&gt;
+
+&lt;p&gt;The modus operandi of this blog will be simple. At times, I intend to present coherent arguments for both sides of a debate; but mostly, it’ll be excerpts and ramblings from a mind addled by a quarter life crisis. Or it’ll be a technical post, to keep all things balanced.&lt;/p&gt;
+
+&lt;p&gt;So, let’s hope that the afflatus stays for long. If not, the depression of social media would be my only recourse.&lt;/p&gt;
+
+
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/prose/afflatus-begins/&quot;&gt;Afflatus Begins&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on May 07, 2018.&lt;/p&gt;
   </content>
 </entry>
 
@@ -929,88 +958,6 @@ installation.&lt;/p&gt;
 &lt;p&gt;And viola! All was back to normal in Linux Land.&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/shell-magic/&quot;&gt;Shell Magic&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on May 04, 2015.&lt;/p&gt;
-  </content>
-</entry>
-
-
-  
-
-<entry>
-  <title type="html"><![CDATA[First Programming Bug]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/first-programming-bug/" />
-  <id>//srijanshetty.in/technical/first-programming-bug</id>
-  <updated>Sat Apr  4 20:44:37 IST 2015T00:00:00-00:00</updated>
-  <published>2015-04-04T18:23:20+05:30</published>
-  
-  <author>
-    <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
-    <email>srijan.shetty+code@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;blockquote&gt;
-  &lt;p&gt;This article has been featured on this blog for the sole purpose of embarrassing the author, who incidentally is also the author of this post.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Prima facie, ECMAScript – the most popular language of the world – appears to be an innocuous, straightforward language; but once you start getting serious with it, it is only then that it will reveal its myriad idiosyncrasies. What is truly remarkable is the fact that despite the fact that many seasoned veterans have been confounded by this language, it has now become ubiquitous in the world of computers.
-My first encounter with this language left me exasperated. I was fairly competent in C/C++ and in my hubris thought not much of this “petty scripting language”, and surely I was in for a surprise. Having spent a long 20 minutes on a comprehensive three page ECMAScript primer, I proceeded to write a simple program. The program was to subtract two numbers and return the result.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sub&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;A bit too simple for someone who has vanquished behemoths like C, so I increased the repertoire of this function. I recalled that the primer had a section on object literals, which seemed like a great feature to test. I modified the program to add abilities of subtraction and multiplication using an object literal.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;calc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-           &lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-           &lt;span class=&quot;nx&quot;&gt;sub&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-           &lt;span class=&quot;nx&quot;&gt;mul&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;After this ostensibly trivial change, I tried running the program but in vain, for, for every input, the computer adamantly spewed the same output: “undefined”. This was nothing out of the ordinary, and I proceeded with an error correction drill which was ingrained in my brain after all the hours of programming in C.  I checked for syntax errors - none.  Then I tried to narrow down the possibilities of error and commented out various portions of the code — which as you can see was very easy.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;calc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-           &lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// sub&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// mul&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The program still did not budge. Ideally I would have turned to a debugger and tried out various sophisticated debugging techniques (read ‘stare at the program and plead for mercy’); but ECMAScript was an altogether new beast, I was at loss. So, with no solution in sight, I turned to my my final recourse - google. After a few hours of searching and reading thread after thread of solutions, I finally found the error. The correct code was:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;calc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-           &lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;And viola, the bug was fixed. Yes, the difference between my original code and the correct code is not evident at first sight, but nevertheless, was significant. The placement of the brace matters in ECMAScript because, of something known as semicolon insertion performed by the ECMAScript engines. A statement like&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;is translated into&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;undefined&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;And so my program always produced “undefined” as its result.&lt;/p&gt;
-
-&lt;p&gt;This particular vignette taught me humility, and ever since then, I’ve never started writing a computer program in an alien language without spending sufficient time going through the documentation and specification of the language.&lt;/p&gt;
-
-
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/first-programming-bug/&quot;&gt;First Programming Bug&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on April 04, 2015.&lt;/p&gt;
   </content>
 </entry>
 
