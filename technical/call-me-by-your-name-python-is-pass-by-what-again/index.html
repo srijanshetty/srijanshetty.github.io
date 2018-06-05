@@ -5,15 +5,15 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Purgation &#8211; Lost Echoes</title>
-<meta name="description" content="Purgation for the coming year">
-<meta name="keywords" content="poems, purgation, new year, resolutions">
+<title>Call (Me) by (Your) Name: Python Is Pass by What Again? &#8211; Lost Echoes</title>
+<meta name="description" content="Python is neither call-by-value nor call-by-reference">
+<meta name="keywords" content="python, call-by-value, call-by-reference, call-by-object, java, js, c, languages">
 
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Purgation">
-<meta name="twitter:description" content="Purgation for the coming year">
+<meta name="twitter:title" content="Call (Me) by (Your) Name: Python Is Pass by What Again?">
+<meta name="twitter:description" content="Python is neither call-by-value nor call-by-reference">
 <meta name="twitter:site" content="@srijanshetty">
 <meta name="twitter:creator" content="@srijanshetty">
 
@@ -23,9 +23,9 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Purgation">
-<meta property="og:description" content="Purgation for the coming year">
-<meta property="og:url" content="//srijanshetty.in/poems/purgation/">
+<meta property="og:title" content="Call (Me) by (Your) Name: Python Is Pass by What Again?">
+<meta property="og:description" content="Python is neither call-by-value nor call-by-reference">
+<meta property="og:url" content="//srijanshetty.in/technical/call-me-by-your-name-python-is-pass-by-what-again/">
 <meta property="og:site_name" content="Lost Echoes">
 
 <meta property="og:image" content="//srijanshetty.in/images/default-thumb.png">
@@ -35,7 +35,7 @@
 
 
 
-<link rel="canonical" href="//srijanshetty.in/poems/purgation/">
+<link rel="canonical" href="//srijanshetty.in/technical/call-me-by-your-name-python-is-pass-by-what-again/">
 <link href="//srijanshetty.in/feed.xml" type="application/atom+xml" rel="alternate" title="Lost Echoes Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -174,22 +174,67 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="//srijanshetty.in/poems/purgation/" rel="bookmark" title="Purgation">Purgation</a></h1>
+        <h1><a href="//srijanshetty.in/technical/call-me-by-your-name-python-is-pass-by-what-again/" rel="bookmark" title="Call (Me) by (Your) Name: Python Is Pass by What Again?">Call (Me) by (Your) Name: Python Is Pass by What Again?</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>Those ghastly shadows,<br />
-The evils of my kin,<br />
-Those sickening gallows,<br />
-The penitence of my sin.<br /><br />
-A painful sorrow,<br />
-And a yesterday beset,<br />
-A new tomorrow,<br />
-With burdens to forget.<br /><br />
-A haunted past,<br />
-A life that had been,<br />
-Purgation at last,<br />
-For the demons within.<br /><br /></p>
+      <p>Full disclosure, I haven’t read the book or watched the film, but the name (pun intended)
+gets across the point I want to make about python <strong>names</strong>. (Note how I use the term <strong>names</strong>
+and not <strong>variables</strong> or <strong>references</strong>, which will strike a chord in a few minutes).<br /><br />
+On the C side of things, you have <em>call-by-value</em>, and on the Java/ECMAScript side of the world,
+you have <em>call-by-reference</em>. But python, is sly, and while on the surface you’ll think python is
+<em>call-by-reference</em>, it’s a different barnacled monstrosity. Python is what you might call,
+<em><a href="https://jeffknupp.com/blog/2012/11/13/is-python-callbyvalue-or-callbyreference-neither/">call-by-name</a></em>.<br /><br />
+Here’s an innocuous piece of code, which for some inexplicable reason doesn’t produce the expected
+output:</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">ls</span><span class="p">):</span>
+    <span class="n">ls</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">ls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">mutate</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+<span class="n">main</span><span class="p">()</span></code></pre></div>
+
+<p>Despite the code being synthetic, it underscores an important point. In this particular example,
+the output on the console is <strong>[1,2]</strong> and not <strong>[1]</strong>. How on earth is that possible, you ask?
+Well, the answer to this mystery lies in the fact that python is <em>call-by-name.</em><br /><br />
+In the <em>call-by-name</em> model, a name (or a variable in common parlance) is bound to an object. In the <em>main</em>,
+<strong>arr</strong> is bound to the object <strong>[1,2]</strong>. Initially in mutate, <strong>ls</strong> is bound to the same object <strong>[1,2]</strong>
+- note, how we say bound to an object and not a reference to a memory location, unlike C/Java/ECMAscript
+- but, on the very first line of <em>mutate</em>, we bind ls to a new object <strong>[]</strong>, and hence forth the binding
+of <strong>[1,2]</strong> is hidden from <em>mutate</em>. Any changes to <strong>ls</strong> will not be reflected back to <strong>arr</strong> as they are bound
+to different objects.<br /><br />
+While this might seem pedantic, and left to language purists. This erudite fact can manifest in hard to
+find bugs. For example, the following code has a surprising output:</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">ls</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="n">ls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">ls</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">ls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">mutate</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="n">mutate</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span></code></pre></div>
+
+<p>The output of this code is as follows:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>python test.py
+<span class="o">[</span>1, 2, 3, 4, 2, 6<span class="o">]</span>
+<span class="o">[</span>1, 2, 3, 4, 2, 6<span class="o">]</span></code></pre></div>
+
+<p>The second conditional becomes a no-op as <strong>arr</strong> won’t be mutated once it’s length is greater than 5. Ipso facto,
+<em>call-by-name</em> is evident right now, but in longer methods its to discern and impossible to debug.<br /><br />
+So, next time recall that python does call (me) by (your) name.</p>
+
 
       <hr />
       <footer role="contentinfo">
@@ -197,17 +242,17 @@ For the demons within.<br /><br /></p>
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/poems/purgation/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/technical/call-me-by-your-name-python-is-pass-by-what-again/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/poems/purgation/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/technical/call-me-by-your-name-python-is-pass-by-what-again/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=//srijanshetty.in/poems/purgation/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=//srijanshetty.in/technical/call-me-by-your-name-python-is-pass-by-what-again/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>Purgation</strong> was published on <time datetime="2014-01-02T05:29:00+05:30">January 02, 2014</time>.</p>
+        <p class="byline"><strong>Call (Me) by (Your) Name: Python Is Pass by What Again?</strong> was published on <time datetime="2018-06-05T10:14:37+05:30">June 05, 2018</time> and last modified on <time datetime="2018-06-05">June 05, 2018</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -222,11 +267,11 @@ For the demons within.<br /><br /></p>
   <h4>You might also enjoy <small class="pull-right">(<a href="//srijanshetty.in/posts/">View all posts</a>)</small></h4>
     <ul>
     
-      <li><a href="//srijanshetty.in/technical/call-me-by-your-name-python-is-pass-by-what-again/" title="Call (Me) by (Your) Name: Python Is Pass by What Again?">Call (Me) by (Your) Name: Python Is Pass by What Again?</a></li>
-    
       <li><a href="//srijanshetty.in/technical/honey-i-did-a-bare-except/" title="Honey, I Did a Bare Except">Honey, I Did a Bare Except</a></li>
     
       <li><a href="//srijanshetty.in/technical/zombie-children-eating-memory/" title="Zombieland: Zombie Children Eating Memory">Zombieland: Zombie Children Eating Memory</a></li>
+    
+      <li><a href="//srijanshetty.in/prose/afflatus-begins/" title="Afflatus Begins">Afflatus Begins</a></li>
     
     </ul>
     <hr />
