@@ -5,37 +5,37 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Shell Magic &#8211; Srijan R. Shetty</title>
-<meta name="description" content="Saving an Ubuntu in distress with some commandline-fu">
-<meta name="keywords" content="linux, sed, awk, grep, apt-get, technical">
+<title>Travelogue - Russia, 2018 &#8211; Srijan R. Shetty</title>
+
+<meta name="keywords" content="russia, fifa, worldcup, football, belgium, france, croatia, england">
 
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Shell Magic">
-<meta name="twitter:description" content="Saving an Ubuntu in distress with some commandline-fu">
+<meta name="twitter:title" content="Travelogue - Russia, 2018">
+
 <meta name="twitter:site" content="@srijanshetty">
 <meta name="twitter:creator" content="@srijanshetty">
 
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="//srijanshetty.in/images/default-thumb.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="//srijanshetty.in/images/kazan_2018.jg">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Shell Magic">
-<meta property="og:description" content="Saving an Ubuntu in distress with some commandline-fu">
-<meta property="og:url" content="//srijanshetty.in/technical/shell-magic/">
+<meta property="og:title" content="Travelogue - Russia, 2018">
+
+<meta property="og:url" content="//srijanshetty.in/travelogue/travelogue-russia-2018/">
 <meta property="og:site_name" content="Srijan R. Shetty">
 
-<meta property="og:image" content="//srijanshetty.in/images/default-thumb.png">
+<meta property="og:image" content="//srijanshetty.in/images/kazan_2018.jg">
 
 
 
 
 
 
-<link rel="canonical" href="//srijanshetty.in/technical/shell-magic/">
+<link rel="canonical" href="//srijanshetty.in/travelogue/travelogue-russia-2018/">
 <link href="//srijanshetty.in/feed.xml" type="application/atom+xml" rel="alternate" title="Srijan R. Shetty Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -133,6 +133,15 @@
 </div><!-- /.navigation-wrapper -->
 
 
+  <div class="image-wrap">
+  <img src=
+    
+      "//srijanshetty.in/images/kazan_2018.jg"
+    
+  alt="Travelogue - Russia, 2018 feature image">
+  
+  </div><!-- /.image-wrap -->
+
 
 <div id="main" role="main">
   <div class="article-author-side">
@@ -174,50 +183,11 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="//srijanshetty.in/technical/shell-magic/" rel="bookmark" title="Shell Magic">Shell Magic</a></h1>
+        <h1><a href="//srijanshetty.in/travelogue/travelogue-russia-2018/" rel="bookmark" title="Travelogue - Russia, 2018">Travelogue - Russia, 2018</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>The other day, a friend of mine ran the following command in an attempt to remove wine and it’s dependants.</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>sudo apt-get purge wine *</code></pre></div>
-
-<p>Unfortunately for him, the command worked and did end up removing wine with a whole lot of other system critical
-packages. In an attempt to resuscitate his computer, he tried rebooting it and in the moments that ensued, I can
-swear I saw the living daylights sucked out of his face. But every cloud has a silver lining and despite the fact
-that we could not boot into X, we did have shell access. <br /><br />
-Fortunately for us, <strong>apt</strong> maintains a log of all the operations it performs in <em>/var/log/apt/term.log</em> and while
-it would have been easy to just manually make a list of programs that were uninstalled, it wasn’t <a href="https://www.youtube.com/watch?v=sCZJblyT_XM">half-assed
-</a> enough. Instead, we summoned the Gods of the shell to aid us in
-this conquest.<br /><br />
-We began by getting the relevant portion of the log file to another file (while it is possible to work with the
-same log file, we didn’t want to go through the hassle of using <strong>sudo</strong> every time we had to access the log file.)</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>sudo tail -177 /var/log/apt/term.log &gt; temp.log</code></pre></div>
-
-<p>I’ll admit, we cheated a bit by using <strong>177</strong> and while it could have been programmed easily using <strong>grep</strong>, we were
-more excited about what we had to do next to really worry about making all of this reproducible.</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">Log started: 2015-05-01  10:36:15
-Removing cmake
-Processing triggers <span class="k">for</span> man-db
-Log ended: 2015-05-01  10:36:29</code></pre></div>
-
-<p>As you can see above, <strong>apt</strong> logs all removed programs as *Removing <program_name>*, so a simple **grep** search
-would list all the lines containing the removed programs and the second field of these lines would get us
-a list of all the programs which were removed by this operation. <br /></program_name></p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>cat temp.log <span class="p">|</span> grep <span class="s1">&#39;^Removing&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;{print \$2}&#39;</span></code></pre></div>
-
-<p>The carat in <strong>grep</strong>’s argument signifies that we want all lines starting with the word ‘Removing’. Also,
-we use <strong>awk</strong> to obtain the second field of the lines (an astute reader may suggest alternatives like
-<strong>cut</strong> as well). <br /><br />
-Now that we had a list of the uninstalled programs, all that is left is feeding this list to <strong>apt</strong> for
-installation.</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>cat temp.log <span class="p">|</span> grep <span class="s1">&#39;^Removing&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;{print \$2}&#39;</span> <span class="p">|</span> xargs sudo apt-get install -y</code></pre></div>
-
-<p>And viola! All was back to normal in Linux Land.</p>
+      <p>Goodbyes are hard, and seldom perfect, especially when humdrum lives that lay ahead sink in. Standing at the prow of the cruise basking in the millions lights of Moscow, I felt debilitated by reality - these ten days were whimsical, yet I felt it slipping away and the harder I tried to capture it, the faster it slipped. In our foolhardy attempts to capture the moment, we’ve forgotten how to live them. Not everything needs the testimony of a photograph, not every memory needs to be validation of your fraternity. Some moments are inexorably lived then and there and left to the agency of the human mind. And so I let myself go, emboldened by the wine, I let the warmth of my friends sink in to the bittersweet symphony of endings.</p>
 
       <hr />
       <footer role="contentinfo">
@@ -225,17 +195,17 @@ installation.</p>
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/technical/shell-magic/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/travelogue/travelogue-russia-2018/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/technical/shell-magic/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/travelogue/travelogue-russia-2018/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=//srijanshetty.in/technical/shell-magic/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=//srijanshetty.in/travelogue/travelogue-russia-2018/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>Shell Magic</strong> was published on <time datetime="2015-05-04T15:45:32+05:30">May 04, 2015</time>.</p>
+        <p class="byline"><strong>Travelogue - Russia, 2018</strong> was published on <time datetime="2018-08-12T20:39:01+05:30">August 12, 2018</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -250,11 +220,11 @@ installation.</p>
   <h4>You might also enjoy <small class="pull-right">(<a href="//srijanshetty.in/posts/">View all posts</a>)</small></h4>
     <ul>
     
-      <li><a href="//srijanshetty.in/travelogue/travelogue-russia-2018/" title="Travelogue - Russia, 2018">Travelogue - Russia, 2018</a></li>
-    
       <li><a href="//srijanshetty.in/technical/call-me-by-your-name-python-is-pass-by-what-again/" title="Call (Me) by (Your) Name: Python Is Pass by What Again?">Call (Me) by (Your) Name: Python Is Pass by What Again?</a></li>
     
       <li><a href="//srijanshetty.in/technical/honey-i-did-a-bare-except/" title="Honey, I Did a Bare Except">Honey, I Did a Bare Except</a></li>
+    
+      <li><a href="//srijanshetty.in/technical/zombie-children-eating-memory/" title="Zombieland: Zombie Children Eating Memory">Zombieland: Zombie Children Eating Memory</a></li>
     
     </ul>
     <hr />
