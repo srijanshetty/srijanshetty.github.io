@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
-<title type="text">Lost Echoes</title>
+<title type="text">Srijan R. Shetty</title>
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="//srijanshetty.in/feed.xml" />
 <link rel="alternate" type="text/html" href="//srijanshetty.in" />
-<updated>2018-06-05T10:32:35+05:30</updated>
+<updated>2018-08-12T20:20:42+05:30</updated>
 <id>//srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
@@ -86,7 +86,7 @@ find bugs. For example, the following code has a surprising output:&lt;/p&gt;
 So, next time recall that python does call (me) by (your) name.&lt;/p&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/call-me-by-your-name-python-is-pass-by-what-again/&quot;&gt;Call (Me) by (Your) Name: Python Is Pass by What Again?&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on June 05, 2018.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/call-me-by-your-name-python-is-pass-by-what-again/&quot;&gt;Call (Me) by (Your) Name: Python Is Pass by What Again?&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on June 05, 2018.&lt;/p&gt;
   </content>
 </entry>
 
@@ -166,7 +166,7 @@ kills this script when it notices there’s no progress (the monitor in turn asc
 or IPC flags).&lt;br /&gt;&lt;br /&gt;
 So, as a favour to your future self, kindly avoid going bare (with exceptions).&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/honey-i-did-a-bare-except/&quot;&gt;Honey, I Did a Bare Except&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on May 25, 2018.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/honey-i-did-a-bare-except/&quot;&gt;Honey, I Did a Bare Except&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on May 25, 2018.&lt;/p&gt;
   </content>
 </entry>
 
@@ -230,7 +230,7 @@ which will convert it to a non blocking call.)&lt;br /&gt;&lt;br /&gt;
 At this point if the zombies don’t die, your only option is to wait for the apocalypse. Or you could
 nuke the parent and hope the zombies don’t become orphan zombies. (Yikes)&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/zombie-children-eating-memory/&quot;&gt;Zombieland: Zombie Children Eating Memory&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on May 15, 2018.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/zombie-children-eating-memory/&quot;&gt;Zombieland: Zombie Children Eating Memory&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on May 15, 2018.&lt;/p&gt;
   </content>
 </entry>
 
@@ -259,7 +259,7 @@ nuke the parent and hope the zombies don’t become orphan zombies. (Yikes)&lt;/
 &lt;p&gt;So, let’s hope that the afflatus stays for long. If not, the depression of social media would be my only recourse.&lt;/p&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/prose/afflatus-begins/&quot;&gt;Afflatus Begins&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on May 07, 2018.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/prose/afflatus-begins/&quot;&gt;Afflatus Begins&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on May 07, 2018.&lt;/p&gt;
   </content>
 </entry>
 
@@ -289,7 +289,7 @@ nuke the parent and hope the zombies don’t become orphan zombies. (Yikes)&lt;/
 &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install scipy numpy &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;use pyenv, not sudo&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/installing-scikit-and-numpy-in-ubuntu/&quot;&gt;Installing Scikit and Numpy in Ubuntu&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on February 14, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/installing-scikit-and-numpy-in-ubuntu/&quot;&gt;Installing Scikit and Numpy in Ubuntu&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on February 14, 2016.&lt;/p&gt;
   </content>
 </entry>
 
@@ -323,7 +323,7 @@ nuke the parent and hope the zombies don’t become orphan zombies. (Yikes)&lt;/
 &lt;p&gt;Until the next post.&lt;/p&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/tasker/tasker/&quot;&gt;Tasker Appendix&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on January 31, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/tasker/tasker/&quot;&gt;Tasker Appendix&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on January 31, 2016.&lt;/p&gt;
   </content>
 </entry>
 
@@ -356,7 +356,7 @@ a sullen brow, a callous hide,&lt;br /&gt;
 a tale to tell, a pen to confide.&lt;br /&gt;&lt;/p&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/travelogue/travelogue-paris/&quot;&gt;Travelogue - Paris&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on November 28, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/travelogue/travelogue-paris/&quot;&gt;Travelogue - Paris&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on November 28, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -385,7 +385,7 @@ Lost cause and no ambition,&lt;br /&gt;
 Dead men seeking salvation.&lt;br /&gt;&lt;/p&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/poems/wastelands/&quot;&gt;Wastelands&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on October 10, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/poems/wastelands/&quot;&gt;Wastelands&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on October 10, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -491,7 +491,7 @@ peru sync&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;I hope that you have fun using these tools as much as I do. PRs are encouraged.&lt;br /&gt;&lt;br /&gt;
 Fin.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/cli-goodies/&quot;&gt;CLI Goodies&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on September 27, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/cli-goodies/&quot;&gt;CLI Goodies&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 27, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -544,7 +544,7 @@ For example, I’ll show you how to automate searching within the settings of ch
 &lt;/ul&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/hacks/mastering-search-in-chrome/&quot;&gt;Mastering Custom Site Search in Chrome&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on September 13, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/hacks/mastering-search-in-chrome/&quot;&gt;Mastering Custom Site Search in Chrome&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 13, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -580,7 +580,7 @@ Hell and heaven were never the artifacts of religion,&lt;br /&gt;
 They’ve been our inability to reconcile nothingness.&lt;br /&gt;&lt;/p&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/poems/nothingness/&quot;&gt;Nothingness&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on September 03, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/poems/nothingness/&quot;&gt;Nothingness&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 03, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -606,7 +606,7 @@ They’ve been our inability to reconcile nothingness.&lt;br /&gt;&lt;/p&gt;
 &lt;p&gt;After trying to get &lt;a href=&quot;https://github.com/albfan/miraclecast&quot;&gt;Miraclecast&lt;/a&gt; working with &lt;strong&gt;Elementary OS Freya&lt;/strong&gt;,a couple of times,I finally bit the bullet and bought a Chromecast. In retrospect, I took the decision in impulse and didn’t do the necessary due diligence before making the purchase. I loved the Chromecast from the moment I started playing with it and it worked seemlessly with my Android Phone but imagine the trauma I had to go through when I realized that Chromecast is not officially supported on linux. And while there were many hacks namely using samba server or Plex to get it working with Linux - and I’m always game for a hack - it was a very baffling that Chromecast, which works on Windows doesn’t work on Linux, because both have the same underlying engine - Chrome. So, I decided to give the chrome extension a whirl on Linux and to my pleasant surprise - it worked.&lt;/p&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/hacks/chromecast-and-linux/&quot;&gt;Chromecast and Linux&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on August 23, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/hacks/chromecast-and-linux/&quot;&gt;Chromecast and Linux&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on August 23, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -652,7 +652,7 @@ And even if I yearned, or asked for more,&lt;br /&gt;
 The deed was done, no wise of what it meant.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/poems/estranged/&quot;&gt;Estranged&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on August 20, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/poems/estranged/&quot;&gt;Estranged&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on August 20, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -684,7 +684,7 @@ A desire to transcend,&lt;br /&gt;
 To nourish, to create,&lt;br /&gt;
 To leave, and to move.&lt;br /&gt;&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/travelogue/travelogue-central-park-ny/&quot;&gt;Travelogue - Central Park, NY&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on August 04, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/travelogue/travelogue-central-park-ny/&quot;&gt;Travelogue - Central Park, NY&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on August 04, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -732,7 +732,7 @@ it faltered and restart.&lt;/li&gt;
 &lt;iframe src=&quot;https://player.vimeo.com/video/9270320&quot; width=&quot;500&quot; height=&quot;281&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 &lt;p&gt;&lt;a href=&quot;https://vimeo.com/9270320&quot;&gt;Greg Wilson - What We Actually Know About Software Development, and Why We Believe It&amp;#039;s True&lt;/a&gt; from &lt;a href=&quot;https://vimeo.com/cusec&quot;&gt;CUSEC&lt;/a&gt; on &lt;a href=&quot;https://vimeo.com&quot;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/greg-wilson-what-we-know-about-software/&quot;&gt;Greg Wilson - What We Know About Software&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on June 27, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/greg-wilson-what-we-know-about-software/&quot;&gt;Greg Wilson - What We Know About Software&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on June 27, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -780,7 +780,7 @@ Hope this will be of some use.&lt;br /&gt;
 Live long and prosper&lt;br /&gt;
 Shetty.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/write-ups/computer-science-and-engineering-iit-kanpur/&quot;&gt;Computer Science and Engineering, IIT Kanpur&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on June 11, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/write-ups/computer-science-and-engineering-iit-kanpur/&quot;&gt;Computer Science and Engineering, IIT Kanpur&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on June 11, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -819,7 +819,7 @@ is, you need to tell vim to use time travel.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p&gt;And now even if you go on an editing rampage, vim will save the day. The next time, I shall introduce you
 to vim’s other superpower - the ability to use the multi-verse.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/time-travelling-with-vim/&quot;&gt;Time Travelling With Vim&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on May 30, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/time-travelling-with-vim/&quot;&gt;Time Travelling With Vim&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on May 30, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -858,7 +858,7 @@ We wish All The Best to Srijan for his future endeavours !!&lt;/p&gt;
 	&lt;a href=&quot;/images/acp-27-05-2015.jpg&quot;&gt;&lt;img src=&quot;/images/acp-27-05-2015.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/write-ups/officially-an-alumni-of-iit-kanpur/&quot;&gt;Officially an Alumni of IIT Kanpur&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on May 30, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/write-ups/officially-an-alumni-of-iit-kanpur/&quot;&gt;Officially an Alumni of IIT Kanpur&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on May 30, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -939,7 +939,7 @@ the chicken-egg problem). The steps have bee illustrated below for the curious.&
 &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gpg --import-ownertrust srijanshetty-ownertrust-gpg.txt&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/safely-storing-gpg-keys/&quot;&gt;Safely Storing GPG Keys&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on May 23, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/safely-storing-gpg-keys/&quot;&gt;Safely Storing GPG Keys&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on May 23, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -975,7 +975,7 @@ memory and trying to fight for the things that I cherish. &lt;br /&gt;&lt;br /&g
 And maybe I’m wrong about all of this, but it’s a thought worth a minute.&lt;/p&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/philosophy/on-photographs/&quot;&gt;On Photographs&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Lost Echoes&lt;/a&gt; on May 09, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/philosophy/on-photographs/&quot;&gt;On Photographs&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on May 09, 2015.&lt;/p&gt;
   </content>
 </entry>
 
