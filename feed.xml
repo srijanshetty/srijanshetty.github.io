@@ -4,13 +4,65 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="//srijanshetty.in/feed.xml" />
 <link rel="alternate" type="text/html" href="//srijanshetty.in" />
-<updated>2018-08-12T22:49:46+05:30</updated>
+<updated>2018-08-19T16:38:14+05:30</updated>
 <id>//srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
   <uri>//srijanshetty.in/</uri>
   <email>srijan.shetty+code@gmail.com</email>
 </author>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[How to Train Your Python - 2.7]]></title>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/how-to-train-your-python-2-7/" />
+  <id>//srijanshetty.in/technical/how-to-train-your-python-2-7</id>
+  <published>2018-08-17T00:41:54+05:30</published>
+  <updated>2018-08-17T00:41:54+05:30</updated>
+  <author>
+    <name>Srijan R. Shetty</name>
+    <uri>//srijanshetty.in</uri>
+    <email>srijan.shetty+code@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;The travails of the noble warriors who’ve tried to walk the path of the dependency hell of python have been immortalized in the travelogues of the internet. From &lt;a href=&quot;https://xkcd.com/1987/&quot;&gt;mosaics&lt;/a&gt; ornamenting the holy shrines of &lt;a href=&quot;https://xkcd.com/1987/&quot;&gt;xkcd&lt;/a&gt;, to gospels written in the blogosphere; we’ve been plagued with tales of valour. And yet, python like the heads of the hydra grows two more if you’ve managed to chop one off.&lt;br /&gt;&lt;br /&gt;
+Our hero, chose the path of pyenv - a recondite cult who claim to have conquered the versions of python. While all was the well in the land of pyenv’s python-2.7.9, until one day when he had to tackle a new villan in town - data visualizations. His best bet was to use jupyter - no, ipython wasn’t enough - and so he embarked on a perilous path. In his first attempt he used the incantation of:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install jupyter&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Things worked well and a kernel appeared to fulfil his commands until asked to plot, when kernel came crashing down.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;ModuleNotFoundError: No module named &lt;span class=&quot;s1&quot;&gt;&amp;#39;_tkinter&amp;#39;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#_ This comment preserves formatting in vim&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The helpful folks from the land of stackoverflow suggested a spell to resusicate the kernel.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip uninstall jupyter numpy pandas matplotlib
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo apt-get install tk-dev
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install jupyter numpy pandas matplotlib&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;And viola, and darkness took over and python-2.7.9. Scared and lonely in the world of the internet, our hero did the only logical thing.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pyenv uninstall 2.7.9&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;He took over the responsibility of the python world and anihilated it. Sometimes you have to let go of the past. Kill it if you have to. So he did, only to create a new one like the Oracle in Matrix. But this time he was determined, he went throught the valleys of medium, the hills of stackoverflow and the plains of github to learn of the one true spell.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pyenv install 2.7.9
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install --upgrade pip
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip uninstall enum enum34
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install enum34 --upgrade
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install cryptography
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install numpy
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install pandas
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install matplotlib
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install jupyter&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;And in the moment he saw the reflection of the one true UNIX kernel. He had done it, he had vanquished data visualizations and walked the fiery dependency hell of python.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/how-to-train-your-python-2-7/&quot;&gt;How to Train Your Python - 2.7&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on August 17, 2018.&lt;/p&gt;
+  </content>
+</entry>
 
 
   
@@ -796,7 +848,7 @@ Science Options are courses in other Science discipline like Physics and Chemist
 &lt;p&gt;The flexibility of IITK’s new academic programme was what made it an obvious choice for me. You can take up minors in departments which interest you, or take up a secondary major in an another department altogether, you are also given the option for dual degrees. Also with a new branch change policy in place, I believe that it will be easier for students to get a branch change.
 (The new academic curriculum is finally stabilizing and only a few minors kinks need to be ironed out).&lt;br /&gt;&lt;br /&gt;
 Finally I would like to say: IITK has shaped the person that I’ve become today. In IITK, I developed a new found vigour towards learning in general, which is veritably unlike the rote learning I did in school. I believe this is partly because of professors who spend hours preparing for our next lectures and partly because of the students over here who never fail to me amaze me with what they are capable of (both in life and academics). I’ve been showered with opportunities and I’ve met people who I’ll cherish for a lifetime.&lt;br /&gt;&lt;br /&gt;
-Feel free to ask any questions, you could drop a mail at &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#115;&amp;#114;&amp;#105;&amp;#106;&amp;#097;&amp;#110;&amp;#115;&amp;#064;&amp;#105;&amp;#105;&amp;#116;&amp;#107;&amp;#046;&amp;#097;&amp;#099;&amp;#046;&amp;#105;&amp;#110;&quot;&gt;&amp;#115;&amp;#114;&amp;#105;&amp;#106;&amp;#097;&amp;#110;&amp;#115;&amp;#064;&amp;#105;&amp;#105;&amp;#116;&amp;#107;&amp;#046;&amp;#097;&amp;#099;&amp;#046;&amp;#105;&amp;#110;&lt;/a&gt; or you could ping me on facebook, &lt;a href=&quot;https://www.facebook.com/srijanrshetty&quot;&gt;Srijan R Shetty | Facebook&lt;/a&gt;.&lt;br /&gt;&lt;br /&gt;
+Feel free to ask any questions, you could drop a mail at &lt;a href=&quot;mailto:srijans@iitk.ac.in&quot;&gt;srijans@iitk.ac.in&lt;/a&gt; or you could ping me on facebook, &lt;a href=&quot;https://www.facebook.com/srijanrshetty&quot;&gt;Srijan R Shetty | Facebook&lt;/a&gt;.&lt;br /&gt;&lt;br /&gt;
 Hope this will be of some use.&lt;br /&gt;
 Live long and prosper&lt;br /&gt;
 Shetty.&lt;/p&gt;
@@ -880,87 +932,6 @@ We wish All The Best to Srijan for his future endeavours !!&lt;/p&gt;
 &lt;/figure&gt;
 
     &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/write-ups/officially-an-alumni-of-iit-kanpur/&quot;&gt;Officially an Alumni of IIT Kanpur&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on May 30, 2015.&lt;/p&gt;
-  </content>
-</entry>
-
-
-  
-
-<entry>
-  <title type="html"><![CDATA[Safely Storing GPG Keys]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/safely-storing-gpg-keys/" />
-  <id>//srijanshetty.in/technical/safely-storing-gpg-keys</id>
-  <updated>Sat May 23 17:24:35 IST 2015T00:00:00-00:00</updated>
-  <published>2015-05-23T16:59:33+05:30</published>
-  
-  <author>
-    <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
-    <email>srijan.shetty+code@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;blockquote&gt;
-  &lt;p&gt;TL;DR: The next few paragraphs are mindless rants on the chicken-egg safety problem,
-any sane person - you I presume - is better off not reading them and directly going to
-&lt;a href=&quot;#encryption&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I’m very paranoid when it comes to managing private information like GPG Keys, SSH Keys, and
-other sensitive information. (What I call private information is essentially arbitrary, I tend to
-use the thumb rule that any kind of key, its meta-data and other information that I wouldn’t want
-people reading is private). At the same time, I’m also paranoid of my beloved computer crashing on
-me - I know, the thought itself is terrifying but a harsh reality that we need to face. A very nice
-quote which is vaguely relevant to this topic by Leslie Lamport:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;You know you have a distributed system when the crash of a computer you’ve never
-heard of stops you from getting any work done.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;After a lot of soul searching – on Google lasting for 10 minutes, I found
-&lt;strong&gt;&lt;a href=&quot;https://github.com/StackExchange/blackbox&quot;&gt;blackbox&lt;/a&gt;&lt;/strong&gt;, a set of git hooks used by the holy
-monks of StackExchange to encrypt all data using GPG Keys before adding it version control.
-I suddenly felt complete, I was in bliss; I created a git repo, loaded it with all the
-private information I wanted and pushed it to git (a private git hosting service and not
-GitHub, just for an extra bit of security). I thought that I was done for life, and then
-it suddenly struck me, the problem of encryption is essentially a chicken-egg problem. I
-still needed a way to secure my GPG Keys and make copies.&lt;br /&gt;&lt;br /&gt;
-Detested, I went in for another round of soul searching and now I just AES256 encrypt my GPG Keys,
-Base64 encode it (to make them look all nice and clean) and store them in LastPass. (Still stuck in
-the chicken-egg problem). The steps have bee illustrated below for the curious.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;encryption&quot;&gt;Encryption&lt;/h2&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# copy all the relevant information&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;cp ~/.gnupg/pubring.gpg gpgkeys/
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;cp ~/.gnupg/secring.gpg gpgkeys/
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;cp ~/.gnupg/trustdb.gpg gpgkeys/
-
-&lt;span class=&quot;c&quot;&gt;# or, instead of backing up trustdb ..&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gpg --export-ownertrust &amp;gt; gpgkeys/srijanshetty-ownertrust-gpg.txt
-
-&lt;span class=&quot;c&quot;&gt;# tar the folder&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;tar cvzf gpgkeys.tar.gz gpgkeys
-
-&lt;span class=&quot;c&quot;&gt;# encrypt and base64 encode&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;openssl aes-256-cbc -in gpgkeys.tar.gz -out gpgkeys.tar.gz.enc -a&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;decryption&quot;&gt;Decryption&lt;/h2&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# decypt and base64 decode&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;openssl aes-256-cbc -d -in gpgkeys.tar.gz.enc -out gpgkeys.tar.gz -a
-
-&lt;span class=&quot;c&quot;&gt;# untar&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;tar xvzf gpgkeys.tar.gz.enc
-
-&lt;span class=&quot;c&quot;&gt;# copy back to gnupg folder&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;cp gpgkeys/*.gpg ~/.gnupg/
-
-&lt;span class=&quot;c&quot;&gt;# or, if you exported the ownertrust&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gpg --import-ownertrust srijanshetty-ownertrust-gpg.txt&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/safely-storing-gpg-keys/&quot;&gt;Safely Storing GPG Keys&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on May 23, 2015.&lt;/p&gt;
   </content>
 </entry>
 

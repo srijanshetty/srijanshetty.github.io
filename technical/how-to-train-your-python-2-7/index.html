@@ -5,37 +5,37 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Travelogue - Paris &#8211; Srijan R. Shetty</title>
-<meta name="description" content="The city of lights">
-<meta name="keywords" content="paris, prayforparis, travelogue, lights, eiffel tower, montmarte">
+<title>How to Train Your Python - 2.7 &#8211; Srijan R. Shetty</title>
+<meta name="description" content="Walking the dependency hell of python to install plottable jupyter">
+<meta name="keywords" content="python, jupyter, plot, matplotlib, error, dependency, pyenv, tkinter, pip, data">
 
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Travelogue - Paris">
-<meta name="twitter:description" content="The city of lights">
+<meta name="twitter:title" content="How to Train Your Python - 2.7">
+<meta name="twitter:description" content="Walking the dependency hell of python to install plottable jupyter">
 <meta name="twitter:site" content="@srijanshetty">
 <meta name="twitter:creator" content="@srijanshetty">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="//srijanshetty.in/images/paris_15.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="//srijanshetty.in/images/default-thumb.png">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Travelogue - Paris">
-<meta property="og:description" content="The city of lights">
-<meta property="og:url" content="//srijanshetty.in/travelogue/travelogue-paris/">
+<meta property="og:title" content="How to Train Your Python - 2.7">
+<meta property="og:description" content="Walking the dependency hell of python to install plottable jupyter">
+<meta property="og:url" content="//srijanshetty.in/technical/how-to-train-your-python-2-7/">
 <meta property="og:site_name" content="Srijan R. Shetty">
 
-<meta property="og:image" content="//srijanshetty.in/images/paris_15.jpg">
+<meta property="og:image" content="//srijanshetty.in/images/default-thumb.png">
 
 
 
 
 
 
-<link rel="canonical" href="//srijanshetty.in/travelogue/travelogue-paris/">
+<link rel="canonical" href="//srijanshetty.in/technical/how-to-train-your-python-2-7/">
 <link href="//srijanshetty.in/feed.xml" type="application/atom+xml" rel="alternate" title="Srijan R. Shetty Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -133,15 +133,6 @@
 </div><!-- /.navigation-wrapper -->
 
 
-  <div class="image-wrap">
-  <img src=
-    
-      "//srijanshetty.in/images/paris_15.jpg"
-    
-  alt="Travelogue - Paris feature image">
-  
-  </div><!-- /.image-wrap -->
-
 
 <div id="main" role="main">
   <div class="article-author-side">
@@ -183,23 +174,42 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="//srijanshetty.in/travelogue/travelogue-paris/" rel="bookmark" title="Travelogue - Paris">Travelogue - Paris</a></h1>
+        <h1><a href="//srijanshetty.in/technical/how-to-train-your-python-2-7/" rel="bookmark" title="How to Train Your Python - 2.7">How to Train Your Python - 2.7</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>Alas there were more than two,<br />
-A beautiful maid - male a few.<br />
-Willing caught in this deja - vu,<br />
-the young lad; his story anew,<br />
-still at odds in the battle of two.<br />
-Lest he was cursed, it had to be;<br />
-The one scarred - couldn’t see.<br />
-It stirred, the dove was set free;<br />
-stoic his aide, oblivion enemy,<br />
-the vanguard so took his stride,<br />
-a sullen brow, a callous hide,<br />
-a tale to tell, a pen to confide.<br /></p>
+      <p>The travails of the noble warriors who’ve tried to walk the path of the dependency hell of python have been immortalized in the travelogues of the internet. From <a href="https://xkcd.com/1987/">mosaics</a> ornamenting the holy shrines of <a href="https://xkcd.com/1987/">xkcd</a>, to gospels written in the blogosphere; we’ve been plagued with tales of valour. And yet, python like the heads of the hydra grows two more if you’ve managed to chop one off.<br /><br />
+Our hero, chose the path of pyenv - a recondite cult who claim to have conquered the versions of python. While all was the well in the land of pyenv’s python-2.7.9, until one day when he had to tackle a new villan in town - data visualizations. His best bet was to use jupyter - no, ipython wasn’t enough - and so he embarked on a perilous path. In his first attempt he used the incantation of:</p>
 
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>pip install jupyter</code></pre></div>
+
+<p>Things worked well and a kernel appeared to fulfil his commands until asked to plot, when kernel came crashing down.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">ModuleNotFoundError: No module named <span class="s1">&#39;_tkinter&#39;</span> <span class="c">#_ This comment preserves formatting in vim</span></code></pre></div>
+
+<p>The helpful folks from the land of stackoverflow suggested a spell to resusicate the kernel.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>pip uninstall jupyter numpy pandas matplotlib
+<span class="nv">$ </span>sudo apt-get install tk-dev
+<span class="nv">$ </span>pip install jupyter numpy pandas matplotlib</code></pre></div>
+
+<p>And viola, and darkness took over and python-2.7.9. Scared and lonely in the world of the internet, our hero did the only logical thing.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>pyenv uninstall 2.7.9</code></pre></div>
+
+<p>He took over the responsibility of the python world and anihilated it. Sometimes you have to let go of the past. Kill it if you have to. So he did, only to create a new one like the Oracle in Matrix. But this time he was determined, he went throught the valleys of medium, the hills of stackoverflow and the plains of github to learn of the one true spell.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>pyenv install 2.7.9
+<span class="nv">$ </span>pip install --upgrade pip
+<span class="nv">$ </span>pip uninstall enum enum34
+<span class="nv">$ </span>pip install enum34 --upgrade
+<span class="nv">$ </span>pip install cryptography
+<span class="nv">$ </span>pip install numpy
+<span class="nv">$ </span>pip install pandas
+<span class="nv">$ </span>pip install matplotlib
+<span class="nv">$ </span>pip install jupyter</code></pre></div>
+
+<p>And in the moment he saw the reflection of the one true UNIX kernel. He had done it, he had vanquished data visualizations and walked the fiery dependency hell of python.</p>
 
       <hr />
       <footer role="contentinfo">
@@ -207,17 +217,17 @@ a tale to tell, a pen to confide.<br /></p>
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/travelogue/travelogue-paris/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/technical/how-to-train-your-python-2-7/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/travelogue/travelogue-paris/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/technical/how-to-train-your-python-2-7/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=//srijanshetty.in/travelogue/travelogue-paris/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=//srijanshetty.in/technical/how-to-train-your-python-2-7/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>Travelogue - Paris</strong> was published on <time datetime="2015-11-28T13:50:03+05:30">November 28, 2015</time>.</p>
+        <p class="byline"><strong>How to Train Your Python - 2.7</strong> was published on <time datetime="2018-08-17T00:41:54+05:30">August 17, 2018</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -232,11 +242,11 @@ a tale to tell, a pen to confide.<br /></p>
   <h4>You might also enjoy <small class="pull-right">(<a href="//srijanshetty.in/posts/">View all posts</a>)</small></h4>
     <ul>
     
-      <li><a href="//srijanshetty.in/technical/how-to-train-your-python-2-7/" title="How to Train Your Python - 2.7">How to Train Your Python - 2.7</a></li>
-    
       <li><a href="//srijanshetty.in/travelogue/travelogue-russia-2018/" title="Travelogue - Russia, 2018">Travelogue - Russia, 2018</a></li>
     
       <li><a href="//srijanshetty.in/technical/call-me-by-your-name-python-is-pass-by-what-again/" title="Call (Me) by (Your) Name: Python Is Pass by What Again?">Call (Me) by (Your) Name: Python Is Pass by What Again?</a></li>
+    
+      <li><a href="//srijanshetty.in/technical/honey-i-did-a-bare-except/" title="Honey, I Did a Bare Except">Honey, I Did a Bare Except</a></li>
     
     </ul>
     <hr />
