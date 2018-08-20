@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="//srijanshetty.in/feed.xml" />
 <link rel="alternate" type="text/html" href="//srijanshetty.in" />
-<updated>2018-08-19T16:38:14+05:30</updated>
+<updated>2018-08-20T22:38:56+05:30</updated>
 <id>//srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
@@ -27,7 +27,7 @@
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
-    &lt;p&gt;The travails of the noble warriors who’ve tried to walk the path of the dependency hell of python have been immortalized in the travelogues of the internet. From &lt;a href=&quot;https://xkcd.com/1987/&quot;&gt;mosaics&lt;/a&gt; ornamenting the holy shrines of &lt;a href=&quot;https://xkcd.com/1987/&quot;&gt;xkcd&lt;/a&gt;, to gospels written in the blogosphere; we’ve been plagued with tales of valour. And yet, python like the heads of the hydra grows two more if you’ve managed to chop one off.&lt;br /&gt;&lt;br /&gt;
+    &lt;p&gt;The travails of the noble warriors who’ve tried to walk the path of the dependency hell of python have been immortalized in the travelogues of the internet. From &lt;a href=&quot;https://xkcd.com/1987/&quot;&gt;mosaics&lt;/a&gt; ornamenting the holy shrines of &lt;a href=&quot;https://xkcd.com/1987/&quot;&gt;xkcd&lt;/a&gt;, to gospels written in the blogosphere; we’ve been plagued with tales of valor. And yet, python like the heads of the hydra grows two more if you’ve managed to chop one off.&lt;br /&gt;&lt;br /&gt;
 Our hero, chose the path of pyenv - a recondite cult who claim to have conquered the versions of python. While all was the well in the land of pyenv’s python-2.7.9, until one day when he had to tackle a new villan in town - data visualizations. His best bet was to use jupyter - no, ipython wasn’t enough - and so he embarked on a perilous path. In his first attempt he used the incantation of:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install jupyter&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -36,7 +36,7 @@ Our hero, chose the path of pyenv - a recondite cult who claim to have conquered
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;ModuleNotFoundError: No module named &lt;span class=&quot;s1&quot;&gt;&amp;#39;_tkinter&amp;#39;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#_ This comment preserves formatting in vim&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;The helpful folks from the land of stackoverflow suggested a spell to resusicate the kernel.&lt;/p&gt;
+&lt;p&gt;The helpful folks from the land of stackoverflow suggested a spell to resuscitate the kernel.&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip uninstall jupyter numpy pandas matplotlib
 &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo apt-get install tk-dev
@@ -46,7 +46,7 @@ Our hero, chose the path of pyenv - a recondite cult who claim to have conquered
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pyenv uninstall 2.7.9&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;He took over the responsibility of the python world and anihilated it. Sometimes you have to let go of the past. Kill it if you have to. So he did, only to create a new one like the Oracle in Matrix. But this time he was determined, he went throught the valleys of medium, the hills of stackoverflow and the plains of github to learn of the one true spell.&lt;/p&gt;
+&lt;p&gt;He took over the responsibility of the python world and annihilated it. Sometimes you have to let go of the past. Kill it if you have to. So he did, only to create a new one like the Oracle in Matrix. But this time he was determined, he went through the valleys of medium, the hills of StackOverflow and the plains of GitHub to learn of the one true spell.&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pyenv install 2.7.9
 &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install --upgrade pip
