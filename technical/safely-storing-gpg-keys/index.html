@@ -238,6 +238,22 @@ the chicken-egg problem). The steps have bee illustrated below for the curious.<
 <span class="c"># or, if you exported the ownertrust</span>
 <span class="nv">$ </span>gpg --import-ownertrust srijanshetty-ownertrust-gpg.txt</code></pre></div>
 
+<p><strong>Update</strong>: Three years down the line and this still proves to be an effective solution.
+The only issue has been incompatibilities between openssl library which leads to the
+following error in Ubuntu 18.04:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># decypt and base64 decode</span>
+<span class="nv">$ </span>openssl aes-256-cbc -d -in gpgkeys.tar.gz.enc -out gpgkeys.tar.gz -a
+enter aes-256-cbc decryption password:
+bad decrypt
+&lt;number&gt;:error:&lt;number&gt;:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt:../crypto/evp/evp_enc.c:536:</code></pre></div>
+
+<p>After going down the rabbit hole of the internet, the solution is a simple addition of a md5
+flag on the decryption encantation as follows:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># decypt and base64 decode</span>
+<span class="nv">$ </span>openssl aes-256-cbc -d -in gpgkeys.tar.gz.enc -out gpgkeys.tar.gz -a -md md5</code></pre></div>
+
 
       <hr />
       <footer role="contentinfo">
@@ -255,7 +271,7 @@ the chicken-egg problem). The steps have bee illustrated below for the curious.<
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>Safely Storing GPG Keys</strong> was published on <time datetime="2015-05-23T16:59:33+05:30">May 23, 2015</time> and last modified on <time datetime="2015-05-23">May 23, 2015</time>.</p>
+        <p class="byline"><strong>Safely Storing GPG Keys</strong> was published on <time datetime="2015-05-23T16:59:33+05:30">May 23, 2015</time> and last modified on <time datetime="2018-09-04">September 04, 2018</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
