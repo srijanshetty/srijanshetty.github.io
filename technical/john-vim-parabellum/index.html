@@ -5,15 +5,15 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Act III : Downfall &#8211; Srijan R. Shetty</title>
-<meta name="description" content="Act III : Climax">
-<meta name="keywords" content="poetic prose, poem, prose, court, climax">
+<title>John Vim - Parabellum &#8211; Srijan R. Shetty</title>
+<meta name="description" content="Compling vim from source">
+<meta name="keywords" content="vim, development, compile, install, js, go, vim8, vim8.1">
 
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Act III : Downfall">
-<meta name="twitter:description" content="Act III : Climax">
+<meta name="twitter:title" content="John Vim - Parabellum">
+<meta name="twitter:description" content="Compling vim from source">
 
 
 
@@ -23,9 +23,9 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Act III : Downfall">
-<meta property="og:description" content="Act III : Climax">
-<meta property="og:url" content="//srijanshetty.in/poetic-prose/act-iii-downfall/">
+<meta property="og:title" content="John Vim - Parabellum">
+<meta property="og:description" content="Compling vim from source">
+<meta property="og:url" content="//srijanshetty.in/technical/john-vim-parabellum/">
 <meta property="og:site_name" content="Srijan R. Shetty">
 
 <meta property="og:image" content="//srijanshetty.in/images/default-thumb.png">
@@ -35,7 +35,7 @@
 
 
 
-<link rel="canonical" href="//srijanshetty.in/poetic-prose/act-iii-downfall/">
+<link rel="canonical" href="//srijanshetty.in/technical/john-vim-parabellum/">
 <link href="//srijanshetty.in/feed.xml" type="application/atom+xml" rel="alternate" title="Srijan R. Shetty Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -174,48 +174,54 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="//srijanshetty.in/poetic-prose/act-iii-downfall/" rel="bookmark" title="Act III : Downfall">Act III : Downfall</a></h1>
+        <h1><a href="//srijanshetty.in/technical/john-vim-parabellum/" rel="bookmark" title="John Vim - Parabellum">John Vim - Parabellum</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>And then came winter with a war in store,<br />
-A battle for power, of blood and gore.<br />
-Unaware, our man and his best,<br />
-were caught in action, put through a test,<br />
-A valiant general, an old friend,<br />
-A Nobel heart, with a mission to mend,<br />
-Seeked council, and honest advice,<br />
-As he sparred with a cunning vice;<br />
-A crooked heart, a master of deceit,<br />
-A worthy opponent, a man to beat.<br />
-Fuelled more by emotion, less by insight.<br />
-Our man, a fool, thought that he might<br />
-aid the general, show the people light.<br />
-But all went astray, when another front<br />
-a brother in arms, pulled a blinder - a stunt;<br />
-never did a councilman come to war.<br />
-He should’ve know - this would scar,<br />
-all he had, his council, his men,<br />
-alas! he could only wait; when.<br />
-If only, he hadn’t been so brave,<br />
-If only, he hadn’t erred so grave.<br />
-Two honourable men, two close friends,<br />
-Three men, battling for different ends.<br />
-Knowing all too well our man resigned -<br />
-power could corrupt, any pious mind.<br />
-Our man didn’t lose much, he lost a lot.<br />
-The vice would fight fair - or so he thought,<br />
-The gullible general, his army bribed,<br />
-An unwinnable fight, with men who lied.<br />
-The councilman won a battle or two,<br />
-But in the end that proved too few,<br />
-The general lost, the councilman was defaced,<br />
-Both wallowed in pity as the vice embraced<br />
-the throne he craved. But to all’s surprise,<br />
-In a public hearing, the cunning vice,<br />
-Sentenced the men, they were exiled,<br />
-Their glories, their victories all defiled.<br /></p>
+      <p>I would be digressing but the parallels between John Wick and Vim are too many.
+Both of them are fine craftsmen of their meteir, surgical and deliberate at every
+step, at their prime all their actions are well thought of and are operatic. It’s
+not what they do, but how they accomplish their raison d’etre that makes them what
+they are today.<br /><br />
+Vim8 was a big bang release unleashing a wealth of goodies to all us vim enthusiasts.
+But trying the latest vim out was challenging, because I was circumscribe by my choice
+of linux distribution. A PPA is definitely a way out of my quagmire, but I prefer not to
+use a random PPA for the lack of trust. Vim8 was a dream that I forgot about until my
+laptop crashed and I bought an OTC Ubuntu 18.04 laptop.<br /><br />
+8.1 is a minor release but I couldn’t wait another laptop cycle to get my hands on. So,
+I decided to chose the <a href="https://en.wikipedia.org/wiki/Red_pill_and_blue_pill">red pill</a>
+and compile vim from source.<br /><br />
+Theoretically compiling vim from source should be simple:<br /></p>
 
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git clone https://github.com/vim <span class="o">&amp;&amp;</span> <span class="nb">cd </span>vim
+<span class="nv">$ </span>./configure
+<span class="nv">$ </span>make <span class="o">&amp;&amp;</span> make install</code></pre></div>
+
+<p>But the devil is in the details. Here’s the exact steps that one needs to follow:<br /><br /></p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git clone https://github.com/vim <span class="o">&amp;&amp;</span> <span class="nb">cd </span>vim
+<span class="nv">$ </span>./configure <span class="se">\</span>
+--with-features<span class="o">=</span>huge <span class="se">\</span>
+--enable-multibyte <span class="se">\</span>
+--enable-rubyinterp<span class="o">=</span>yes <span class="se">\</span>
+--enable-python3interp<span class="o">=</span>yes <span class="se">\</span>
+--with-python3-config-dir<span class="o">=</span>/usr/lib/python3.6/config-3.6m-x86_64-linux-gnu/ <span class="se">\</span>
+--enable-perlinterp<span class="o">=</span>yes <span class="se">\</span>
+--enable-luainterp<span class="o">=</span>yes <span class="se">\</span>
+--enable-gui<span class="o">=</span>gtk <span class="se">\</span>
+--enable-cscope <span class="se">\</span>
+--prefix<span class="o">=</span><span class="k">${</span><span class="nv">local_bin</span><span class="k">}</span> <span class="se">\</span>
+<span class="nv">$ </span>make <span class="o">&amp;&amp;</span> make install</code></pre></div>
+
+<p>Some salient points in this setup are:</p>
+
+<ol>
+  <li>I tried using pyenv’s path for python3-config-dir, it does not work.</li>
+  <li>Python 2 and 3 cannot interop in ubuntu as explained
+<a href="https://stackoverflow.com/questions/23023783/vim-compiled-with-python-support-but-cant-see-sys-version">here</a></li>
+</ol>
+
+<p>Hopefully, this helps a forlorn developer searching for the oasis.</p>
 
       <hr />
       <footer role="contentinfo">
@@ -223,17 +229,17 @@ Their glories, their victories all defiled.<br /></p>
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/poetic-prose/act-iii-downfall/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/technical/john-vim-parabellum/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/poetic-prose/act-iii-downfall/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/technical/john-vim-parabellum/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=//srijanshetty.in/poetic-prose/act-iii-downfall/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=//srijanshetty.in/technical/john-vim-parabellum/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>Act III : Downfall</strong> was published on <time datetime="2013-11-16T09:28:04+05:30">November 16, 2013</time>.</p>
+        <p class="byline"><strong>John Vim - Parabellum</strong> was published on <time datetime="2019-06-28T09:21:32+05:30">June 28, 2019</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -248,11 +254,11 @@ Their glories, their victories all defiled.<br /></p>
   <h4>You might also enjoy <small class="pull-right">(<a href="//srijanshetty.in/posts/">View all posts</a>)</small></h4>
     <ul>
     
-      <li><a href="//srijanshetty.in/technical/john-vim-parabellum/" title="John Vim - Parabellum">John Vim - Parabellum</a></li>
-    
       <li><a href="//srijanshetty.in/prose/modern-love/" title="Modern Love">Modern Love</a></li>
     
       <li><a href="//srijanshetty.in/technical/how-to-train-your-python-2-7/" title="How to Train Your Python - 2.7">How to Train Your Python - 2.7</a></li>
+    
+      <li><a href="//srijanshetty.in/travelogue/travelogue-russia-2018/" title="Travelogue - Russia, 2018">Travelogue - Russia, 2018</a></li>
     
     </ul>
     <hr />

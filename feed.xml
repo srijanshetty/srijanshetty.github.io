@@ -4,13 +4,77 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="//srijanshetty.in/feed.xml" />
 <link rel="alternate" type="text/html" href="//srijanshetty.in" />
-<updated>2018-09-05T00:10:24+05:30</updated>
+<updated>2019-07-14T20:57:59+05:30</updated>
 <id>//srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
   <uri>//srijanshetty.in/</uri>
   <email>srijan.shetty+code@gmail.com</email>
 </author>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[John Vim - Parabellum]]></title>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/john-vim-parabellum/" />
+  <id>//srijanshetty.in/technical/john-vim-parabellum</id>
+  <published>2019-06-28T09:21:32+05:30</published>
+  <updated>2019-06-28T09:21:32+05:30</updated>
+  <author>
+    <name>Srijan R. Shetty</name>
+    <uri>//srijanshetty.in</uri>
+    <email>srijan.shetty+code@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;I would be digressing but the parallels between John Wick and Vim are too many.
+Both of them are fine craftsmen of their meteir, surgical and deliberate at every
+step, at their prime all their actions are well thought of and are operatic. It’s
+not what they do, but how they accomplish their raison d’etre that makes them what
+they are today.&lt;br /&gt;&lt;br /&gt;
+Vim8 was a big bang release unleashing a wealth of goodies to all us vim enthusiasts.
+But trying the latest vim out was challenging, because I was circumscribe by my choice
+of linux distribution. A PPA is definitely a way out of my quagmire, but I prefer not to
+use a random PPA for the lack of trust. Vim8 was a dream that I forgot about until my
+laptop crashed and I bought an OTC Ubuntu 18.04 laptop.&lt;br /&gt;&lt;br /&gt;
+8.1 is a minor release but I couldn’t wait another laptop cycle to get my hands on. So,
+I decided to chose the &lt;a href=&quot;https://en.wikipedia.org/wiki/Red_pill_and_blue_pill&quot;&gt;red pill&lt;/a&gt;
+and compile vim from source.&lt;br /&gt;&lt;br /&gt;
+Theoretically compiling vim from source should be simple:&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone https://github.com/vim &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;vim
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./configure
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;make &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; make install&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;But the devil is in the details. Here’s the exact steps that one needs to follow:&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone https://github.com/vim &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;vim
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./configure &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+--with-features&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;huge &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+--enable-multibyte &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+--enable-rubyinterp&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;yes &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+--enable-python3interp&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;yes &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+--with-python3-config-dir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/lib/python3.6/config-3.6m-x86_64-linux-gnu/ &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+--enable-perlinterp&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;yes &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+--enable-luainterp&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;yes &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+--enable-gui&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;gtk &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+--enable-cscope &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+--prefix&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;local_bin&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;make &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; make install&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Some salient points in this setup are:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;I tried using pyenv’s path for python3-config-dir, it does not work.&lt;/li&gt;
+  &lt;li&gt;Python 2 and 3 cannot interop in ubuntu as explained
+&lt;a href=&quot;https://stackoverflow.com/questions/23023783/vim-compiled-with-python-support-but-cant-see-sys-version&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Hopefully, this helps a forlorn developer searching for the oasis.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/john-vim-parabellum/&quot;&gt;John Vim - Parabellum&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on June 28, 2019.&lt;/p&gt;
+  </content>
+</entry>
 
 
   
@@ -879,45 +943,6 @@ Live long and prosper&lt;br /&gt;
 Shetty.&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/write-ups/computer-science-and-engineering-iit-kanpur/&quot;&gt;Computer Science and Engineering, IIT Kanpur&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on June 11, 2015.&lt;/p&gt;
-  </content>
-</entry>
-
-
-  
-
-<entry>
-  <title type="html"><![CDATA[Time Travelling With Vim]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/time-travelling-with-vim/" />
-  <id>//srijanshetty.in/technical/time-travelling-with-vim</id>
-  <published>2015-05-30T12:06:18+05:30</published>
-  <updated>2015-05-30T12:06:18+05:30</updated>
-  <author>
-    <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
-    <email>srijan.shetty+code@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;I usually work on many projects at a time and as a consequence, I tend to open many files. Having all
-of my data backed in a VCS saves me the hassle of losing any committed data, but it’s always possible to
-shoot yourself in the foot by messing up the work tree; and this is where the editor of my choice -
-the mighty and glorious - vim comes to the rescue. A little know fact - vim is a superhero - and
-one of vim’s superpowers is time travel - and not just any time travel - time travel on steroids.&lt;br /&gt;&lt;br /&gt;
-Other folks may call it persistent undo, but there’s no fooling us! But being the humble superhero that vim
-is, you need to tell vim to use time travel.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;First create an undodir for vim.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mkdir -p ~/.vim/undodir&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Next you need to enable persistent undo by including the following lines in your vimrc:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;undofile
-&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;undodir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;~/.vim/undodir&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;And now even if you go on an editing rampage, vim will save the day. The next time, I shall introduce you
-to vim’s other superpower - the ability to use the multi-verse.&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/time-travelling-with-vim/&quot;&gt;Time Travelling With Vim&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on May 30, 2015.&lt;/p&gt;
   </content>
 </entry>
 
