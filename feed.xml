@@ -4,13 +4,37 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="//srijanshetty.in/feed.xml" />
 <link rel="alternate" type="text/html" href="//srijanshetty.in" />
-<updated>2019-07-14T20:57:59+05:30</updated>
+<updated>2019-08-18T18:11:41+05:30</updated>
 <id>//srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
   <uri>//srijanshetty.in/</uri>
   <email>srijan.shetty+code@gmail.com</email>
 </author>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[JCIP - Java Concurrency in Practice 2019 Review]]></title>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/jcip-java-concurrency-in-practice-2019-review/" />
+  <id>//srijanshetty.in/technical/jcip-java-concurrency-in-practice-2019-review</id>
+  <published>2019-08-18T17:50:38+05:30</published>
+  <updated>2019-08-18T17:50:38+05:30</updated>
+  <author>
+    <name>Srijan R. Shetty</name>
+    <uri>//srijanshetty.in</uri>
+    <email>srijan.shetty+code@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;As of writing, &lt;code&gt;Java 13&lt;/code&gt; has a release candidate and JCIP still refers to &lt;code&gt;Java 6&lt;/code&gt; as the latest and greatest of Java. It’s no wonder that Java forums are replete with questions on the relevance of JCIP - full disclosure, I posed the same question when I emailed Heinz Kabutz. After spending 6 months with the books (you read that right, and this wasn’t the only book I was reading), I’ve realized how wrong my Java programs have been. &lt;br /&gt;&lt;br /&gt;
+In the age of fast paced evolution of programming languages, most programming language books age badly. JCIP is not in that ilk, the fundamental point of contention in JCIP is writing highly scalable and correct concurrent code and not Java. JCIP excels in imparting a fundamental understanding of concurrency, and dissecting core issues a developer might face when architecting concurrent programs.&lt;br /&gt;&lt;br /&gt;
+Caveat emptor. It’s a dense read, ideas are succinct and compact and rarely prolix. Which makes it easy to read and hard to grasp. There have been times wherein I’ve spent hours understanding the implication of concepts such as &lt;code&gt;Initialization safety&lt;/code&gt;, &lt;code&gt;safe publication&lt;/code&gt;, &lt;code&gt;happens-before relationships&lt;/code&gt;; these concepts have inexorably changed my mental model of concurrent programming for the better.&lt;br /&gt;&lt;br /&gt;
+I would definitely urge serious Java programmers to try and work through JCIP, and maybe have an epiphany of their own.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/jcip-java-concurrency-in-practice-2019-review/&quot;&gt;JCIP - Java Concurrency in Practice 2019 Review&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on August 18, 2019.&lt;/p&gt;
+  </content>
+</entry>
 
 
   
@@ -895,54 +919,6 @@ it faltered and restart.&lt;/li&gt;
 &lt;p&gt;&lt;a href=&quot;https://vimeo.com/9270320&quot;&gt;Greg Wilson - What We Actually Know About Software Development, and Why We Believe It&amp;#039;s True&lt;/a&gt; from &lt;a href=&quot;https://vimeo.com/cusec&quot;&gt;CUSEC&lt;/a&gt; on &lt;a href=&quot;https://vimeo.com&quot;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/greg-wilson-what-we-know-about-software/&quot;&gt;Greg Wilson - What We Know About Software&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on June 27, 2015.&lt;/p&gt;
-  </content>
-</entry>
-
-
-  
-
-<entry>
-  <title type="html"><![CDATA[Computer Science and Engineering, IIT Kanpur]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/write-ups/computer-science-and-engineering-iit-kanpur/" />
-  <id>//srijanshetty.in/write-ups/computer-science-and-engineering-iit-kanpur</id>
-  <updated>Thu Jun 11 16:01:43 IST 2015T00:00:00-00:00</updated>
-  <published>2015-06-11T15:53:22+05:30</published>
-  
-  <author>
-    <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
-    <email>srijan.shetty+code@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;First of all, I would like to congratulate you and your family for this outstanding feat of clearing JEE ‘15.&lt;br /&gt;&lt;br /&gt; Introductions are in order, I am Srijan R Shetty, an alum - it’ll take considerable time to digest that fact - of the Department of Computer Science and Engineering at IIT Kanpur.&lt;br /&gt;&lt;br /&gt;
-Before you embark upon the tedious journey of reading through this entire post, I would urge you to go through Professor Dheeraj Sanghi’s blog “A Guide to JEE Counselling”. Additionally, he’s active on Quora; and most certainly will answer pertinent questions. &lt;br /&gt;&lt;br /&gt;
-There are some excellent posts written by my peers at IITK out in the wild and as my computer science education has taught me not to reinvent the wheel, I shall compile the best bits from their articles.&lt;br /&gt;&lt;br /&gt;
-Why IITK? &lt;a href=&quot;https://www.quora.com/Shashwat-Chandra&quot;&gt;Shashwat Chandra&lt;/a&gt; does an excellent job of answering this question:&lt;br /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Why IIT Kanpur? The cultural festival of IIT Kanpur, Antaragni, is run virtually entirely by students. The Students’ Gymkhana is a body made of students of all batches. The New SAC (Students’ Activity Centre, a place for people to hang out) was majorly planned by the students of three batches, and the franchises selected for its food court were selected by a panel of students. The degree of freedom given to students at IIT Kanpur is, in my opinion, definitely larger than most other institutes. IIT Kanpur also has the distinct advantage of being in a city that is much lesser developed than places like Mumbai and Delhi. Why is this an advantage? IIT Kanpur has become self-contained, because there is a larger incentive to make everything available on campus. The choices of extra-curricular activities are larger, the food options are cheap and more varied, and all sections of the campus are together, making it a tighter, closer-knit location. Each club has its own advantages. Some clubs improve your speaking skill; others teach you a new art; even others let you hone your intellect in the direction you want. Art, music, literature, dance, electronics, robotics, photography, whatever your interest, there is going to be an outlet. If there isn’t, it is not hard to create an outlet or a club for an interest you feel will benefit you. There are certain to be more people interested in the things you like.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;IITK’s academic curriculum was revised in 2011 and the new curriculum was one of the primary reasons why I joined IITK. The curriculum contains two parts: a departmental core and a compulsory core.&lt;br /&gt;&lt;br /&gt;
-In the very first year, all courses are department neutral. You will get to learn Mechanics and Electromagnetic Theory in Physics, Organic, Inorganic and Physical Chemistry in Chemistry, Basic Life Sciences (yes Biology!), Engineering Graphics, Linear Algebra and Calculus in Mathematics and (the dreaded) morning exercises. Having the first year being departmental neutral works out for students who change their branches. (A side note on branch changes, don’t bank on them. Albeit I managed to change my branch from Civil to Computer Science, they are a tricky slope to ascend.) To break the monotony and gain a broader outlook, you will be doing at least five Humanities and Social Sciences Courses in your stay at IITK. (I’ve done courses in Philosophy, Psychology, Art, Human Rights and will be doing one in Economics next fall. While people may disagree, I’ve found these courses liberating - pun intended.)&lt;br /&gt;&lt;br /&gt;
-The CSE course curriculum looks as follows: &lt;a href=&quot;http://www.iitk.ac.in/doaa/DOAA/arc2012templete.pdf&quot;&gt;CSE Course Template&lt;/a&gt;, you can cross reference the course numbers from &lt;a href=&quot;http://cse.iitk.ac.in/pages/Courses.html&quot;&gt;Department of Computer Science and Engineering&lt;/a&gt;.&lt;br /&gt;&lt;br /&gt;
-&lt;a href=&quot;https://www.quora.com/Priyank-Jaini&quot;&gt;Priyank Jaini&lt;/a&gt; gave a very good overview of how your curriculum will work: (I did make a few changes so that the data matches with that of CSE)&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;While pursuing CSE at IITK, you will have the option of taking 6 Open Electives(OE), 4 Engineering Science Options(ESO), 4 Departmental Electives(DE), UGP-I(Undergraduate Project)(optional) and UGP-II &amp;amp; III (Undergraduate Project II which can be substituted with another DE or OE) and UGP-IV(this is to earn extra credits), 5 HSS courses(2 from level-I HSS and 3 from Level-II HSS bracket).&lt;br /&gt;&lt;br /&gt;
-Open Electives as the name suggests are courses you can opt from any department including your own. These are the courses which render flexibility to your programme. But choosing these courses from a discipline which interests you, you can even go for a Minor in that discipline provided you fulfil the criteria set. For example you are interested in Computer Science, you can take OE’s accordingly that make you eligible to obtain a Minor in CSE after 4years with a Major in Maths(Note: From the current status, CSE Dept. of IIT-Kanpur has offered no Minors and hence the example is a purely hypothetical one.&lt;br /&gt;&lt;br /&gt;
-Science Options are courses in other Science discipline like Physics and Chemistry. You will have to choose a total of 2 such courses. Departmental Electives are courses you can choose from your own Department template subject to what courses are offered in the semester.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;The flexibility of IITK’s new academic programme was what made it an obvious choice for me. You can take up minors in departments which interest you, or take up a secondary major in an another department altogether, you are also given the option for dual degrees. Also with a new branch change policy in place, I believe that it will be easier for students to get a branch change.
-(The new academic curriculum is finally stabilizing and only a few minors kinks need to be ironed out).&lt;br /&gt;&lt;br /&gt;
-Finally I would like to say: IITK has shaped the person that I’ve become today. In IITK, I developed a new found vigour towards learning in general, which is veritably unlike the rote learning I did in school. I believe this is partly because of professors who spend hours preparing for our next lectures and partly because of the students over here who never fail to me amaze me with what they are capable of (both in life and academics). I’ve been showered with opportunities and I’ve met people who I’ll cherish for a lifetime.&lt;br /&gt;&lt;br /&gt;
-Feel free to ask any questions, you could drop a mail at &lt;a href=&quot;mailto:srijans@iitk.ac.in&quot;&gt;srijans@iitk.ac.in&lt;/a&gt; or you could ping me on facebook, &lt;a href=&quot;https://www.facebook.com/srijanrshetty&quot;&gt;Srijan R Shetty | Facebook&lt;/a&gt;.&lt;br /&gt;&lt;br /&gt;
-Hope this will be of some use.&lt;br /&gt;
-Live long and prosper&lt;br /&gt;
-Shetty.&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/write-ups/computer-science-and-engineering-iit-kanpur/&quot;&gt;Computer Science and Engineering, IIT Kanpur&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on June 11, 2015.&lt;/p&gt;
   </content>
 </entry>
 
