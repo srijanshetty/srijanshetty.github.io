@@ -4,13 +4,67 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="//srijanshetty.in/feed.xml" />
 <link rel="alternate" type="text/html" href="//srijanshetty.in" />
-<updated>2019-09-12T09:02:54+05:30</updated>
+<updated>2019-10-06T23:54:30+05:30</updated>
 <id>//srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
   <uri>//srijanshetty.in/</uri>
   <email>srijan.shetty+code@gmail.com</email>
 </author>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Finally Gitting Hooks]]></title>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/finally-gitting-hooks/" />
+  <id>//srijanshetty.in/finally-gitting-hooks</id>
+  <published>2019-10-06T23:31:27+05:30</published>
+  <updated>2019-10-06T23:31:27+05:30</updated>
+  <author>
+    <name>Srijan R. Shetty</name>
+    <uri>//srijanshetty.in</uri>
+    <email>srijan.shetty+code@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;I’ve always loved the concept of &lt;code&gt;git hooks&lt;/code&gt;, but it’s setup has always troubled me as being &lt;code&gt;snowflaky&lt;/code&gt;.
+Sharing hooks across a development team was awkward and there was no &lt;a href=&quot;https://www.martinfowler.com/bliki/UbiquitousLanguage.html&quot;&gt;Ubiquitous
+Language&lt;/a&gt;.&lt;br /&gt;&lt;br /&gt;
+After struggling with bespoke solutions in the lingua franca of bash,
+I rolled my own solutions which has been lost (fortunately) to Father Time.
+My Eureka moment happened last week when I came across &lt;a href=&quot;https://commitlint.js.org/#/guides-local-setup&quot;&gt;commitlint&lt;/a&gt;
+and the &lt;a href=&quot;https://www.conventionalcommits.org/en/v1.0.0/&quot;&gt;Conventional Commits&lt;/a&gt; spec 
+(an admirable way to manage releases and make commits more readable).
+In trying to integrate Conventional Commits to my &lt;a href=&quot;https://github.com/srijanshetty/minimal-mistakes&quot;&gt;website&lt;/a&gt;, 
+I’ve come across a solution that works perfect for me.&lt;br /&gt;&lt;br /&gt;
+The current setup uses &lt;code&gt;husky&lt;/code&gt; as a dev-dependency in &lt;code&gt;package.json&lt;/code&gt; which sets up a &lt;code&gt;commit-msg&lt;/code&gt; hook as follows:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;npm init
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;npm install --save-dev husky&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;quot;...&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;other parameters&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;quot;commitlint&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;quot;extends&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;@commitlint/config-conventional&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;quot;rules&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;nt&quot;&gt;&amp;quot;type-enum&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;always&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;feat&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;fix&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;docs&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;build&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;refactor&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;revert&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;post&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;quot;husky&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;quot;hooks&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;nt&quot;&gt;&amp;quot;commit-msg&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;commitlint -E HUSKY_GIT_PARAMS&amp;quot;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The great part of this setup is that it ties everything into a single &lt;code&gt;package.json&lt;/code&gt; file. 
+The npm eco-system is a cesspool when it comes to security but it does make developer tooling a breeze.
+The community converging on using a single &lt;code&gt;package.json&lt;/code&gt; is a god-send, over the alternative of a bunch of .rc files spewed all across; adding &lt;code&gt;git hooks&lt;/code&gt; is the natural evolution to the puzzle.&lt;br /&gt;&lt;br /&gt;
+It’s great how sometimes your problems solve themselves if you let them be for years.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/finally-gitting-hooks/&quot;&gt;Finally Gitting Hooks&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on October 06, 2019.&lt;/p&gt;
+  </content>
+</entry>
 
 
   
@@ -871,54 +925,6 @@ To nourish, to create,&lt;br /&gt;
 To leave, and to move.&lt;br /&gt;&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/travelogue/travelogue-central-park-ny/&quot;&gt;Travelogue - Central Park, NY&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on August 04, 2015.&lt;/p&gt;
-  </content>
-</entry>
-
-
-  
-
-<entry>
-  <title type="html"><![CDATA[Greg Wilson - What We Know About Software]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/greg-wilson-what-we-know-about-software/" />
-  <id>//srijanshetty.in/technical/greg-wilson-what-we-know-about-software</id>
-  <published>2015-06-27T22:15:23+05:30</published>
-  <updated>2015-06-27T22:15:23+05:30</updated>
-  <author>
-    <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
-    <email>srijan.shetty+code@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;A few key takeaways and fun quotes from the insightful talk by &lt;a href=&quot;http://www.cs.toronto.edu/~gvwilson/&quot;&gt;Greg Wilson&lt;/a&gt; titled “What We Actually Know About Software Development, and Why We Believe It’s True”:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;A programmer should be willing to burn the entire code base down and rebuild if the project
-reaches such a stage.&lt;/li&gt;
-  &lt;li&gt;Code reviews. Just do them.&lt;/li&gt;
-  &lt;li&gt;We know nothing about estimating the completion time of software projects.&lt;/li&gt;
-  &lt;li&gt;Conway’s Law: The code structure closely resembles the structure of the organization.&lt;/li&gt;
-  &lt;li&gt;As programmers, we can understand only small patches. (It’s because coding is a very complex task.)&lt;/li&gt;
-  &lt;li&gt;Engineering is the love-child of Science and Economics.&lt;/li&gt;
-  &lt;li&gt;Ask for citations, back everything with data.&lt;/li&gt;
-  &lt;li&gt;Increasing the problem complexity non linearly increases the solution complexity.&lt;/li&gt;
-  &lt;li&gt;Platform independent code provides platform independent performance.&lt;/li&gt;
-  &lt;li&gt;Coders produce the same number of lines of code disregarding the language they code in.
-As a consequence, we should be coding in a language higher up in the abstraction pyramid.&lt;/li&gt;
-  &lt;li&gt;We as a society have very low standards of proof.&lt;/li&gt;
-  &lt;li&gt;Most OOP metrics perform no better than a simple LOC measurement.&lt;/li&gt;
-  &lt;li&gt;Most of the time of developing a project lies in requirements and design phase.&lt;/li&gt;
-  &lt;li&gt;A possible reason while agile works is that we work on smaller parts of the project and hence
-this might lead to reduced time in requirements phase. &lt;em&gt;Research Needed&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;All progress in science isn’t forward, sometimes science has to take a step back, accept that
-it faltered and restart.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;I would urge all of you to watch the talk:&lt;/p&gt;
-
-&lt;iframe src=&quot;https://player.vimeo.com/video/9270320&quot; width=&quot;500&quot; height=&quot;281&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-&lt;p&gt;&lt;a href=&quot;https://vimeo.com/9270320&quot;&gt;Greg Wilson - What We Actually Know About Software Development, and Why We Believe It&amp;#039;s True&lt;/a&gt; from &lt;a href=&quot;https://vimeo.com/cusec&quot;&gt;CUSEC&lt;/a&gt; on &lt;a href=&quot;https://vimeo.com&quot;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/greg-wilson-what-we-know-about-software/&quot;&gt;Greg Wilson - What We Know About Software&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on June 27, 2015.&lt;/p&gt;
   </content>
 </entry>
 

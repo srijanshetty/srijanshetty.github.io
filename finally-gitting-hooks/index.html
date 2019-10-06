@@ -5,37 +5,37 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Travelogue - Russia, 2018 &#8211; Srijan R. Shetty</title>
-<meta name="description" content="The land of the white night and many colors">
-<meta name="keywords" content="russia, fifa, worldcup, football, belgium, france, croatia, england, whitenight">
+<title>Finally Gitting Hooks &#8211; Srijan R. Shetty</title>
+<meta name="description" content="Perfect workflow for setting up git hooks">
+<meta name="keywords" content="git, devops, tooling, hooks, commit, lint, node, npm">
 
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Travelogue - Russia, 2018">
-<meta name="twitter:description" content="The land of the white night and many colors">
+<meta name="twitter:title" content="Finally Gitting Hooks">
+<meta name="twitter:description" content="Perfect workflow for setting up git hooks">
 
 
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="//srijanshetty.in/images/kazan_2018.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="//srijanshetty.in/images/default-thumb.png">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Travelogue - Russia, 2018">
-<meta property="og:description" content="The land of the white night and many colors">
-<meta property="og:url" content="//srijanshetty.in/travelogue/travelogue-russia-2018/">
+<meta property="og:title" content="Finally Gitting Hooks">
+<meta property="og:description" content="Perfect workflow for setting up git hooks">
+<meta property="og:url" content="//srijanshetty.in/finally-gitting-hooks/">
 <meta property="og:site_name" content="Srijan R. Shetty">
 
-<meta property="og:image" content="//srijanshetty.in/images/kazan_2018.jpg">
+<meta property="og:image" content="//srijanshetty.in/images/default-thumb.png">
 
 
 
 
 
 
-<link rel="canonical" href="//srijanshetty.in/travelogue/travelogue-russia-2018/">
+<link rel="canonical" href="//srijanshetty.in/finally-gitting-hooks/">
 <link href="//srijanshetty.in/feed.xml" type="application/atom+xml" rel="alternate" title="Srijan R. Shetty Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -133,15 +133,6 @@
 </div><!-- /.navigation-wrapper -->
 
 
-  <div class="image-wrap">
-  <img src=
-    
-      "//srijanshetty.in/images/kazan_2018.jpg"
-    
-  alt="Travelogue - Russia, 2018 feature image">
-  
-  </div><!-- /.image-wrap -->
-
 
 <div id="main" role="main">
   <div class="article-author-side">
@@ -183,11 +174,44 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="//srijanshetty.in/travelogue/travelogue-russia-2018/" rel="bookmark" title="Travelogue - Russia, 2018">Travelogue - Russia, 2018</a></h1>
+        <h1><a href="//srijanshetty.in/finally-gitting-hooks/" rel="bookmark" title="Finally Gitting Hooks">Finally Gitting Hooks</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>Goodbyes are hard, and seldom perfect, especially when humdrum lives that lay ahead sink in. Standing at the prow of the cruise basking in the millions lights of Moscow, I felt debilitated by reality - these ten days were whimsical, yet I felt it slipping away and the harder I tried to capture it, the faster it slipped. In our foolhardy attempts to capture the moment, we’ve forgotten how to live them. Not everything needs the testimony of a photograph, not every memory needs to be validation of your fraternity. Some moments are inexorably lived then and there and left to the agency of the human mind. And so I let myself go, emboldened by the wine, I let the warmth of my friends sink in to the bittersweet symphony of endings.</p>
+      <p>I’ve always loved the concept of <code>git hooks</code>, but it’s setup has always troubled me as being <code>snowflaky</code>.
+Sharing hooks across a development team was awkward and there was no <a href="https://www.martinfowler.com/bliki/UbiquitousLanguage.html">Ubiquitous
+Language</a>.<br /><br />
+After struggling with bespoke solutions in the lingua franca of bash,
+I rolled my own solutions which has been lost (fortunately) to Father Time.
+My Eureka moment happened last week when I came across <a href="https://commitlint.js.org/#/guides-local-setup">commitlint</a>
+and the <a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a> spec 
+(an admirable way to manage releases and make commits more readable).
+In trying to integrate Conventional Commits to my <a href="https://github.com/srijanshetty/minimal-mistakes">website</a>, 
+I’ve come across a solution that works perfect for me.<br /><br />
+The current setup uses <code>husky</code> as a dev-dependency in <code>package.json</code> which sets up a <code>commit-msg</code> hook as follows:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>npm init
+<span class="nv">$ </span>npm install --save-dev husky</code></pre></div>
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&quot;...&quot;</span><span class="p">:</span> <span class="s2">&quot;other parameters&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;commitlint&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;extends&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;@commitlint/config-conventional&quot;</span> <span class="p">],</span>
+      <span class="nt">&quot;rules&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;type-enum&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;always&quot;</span><span class="p">,</span> <span class="p">[</span> <span class="s2">&quot;feat&quot;</span><span class="p">,</span> <span class="s2">&quot;fix&quot;</span><span class="p">,</span> <span class="s2">&quot;docs&quot;</span><span class="p">,</span> <span class="s2">&quot;build&quot;</span><span class="p">,</span> <span class="s2">&quot;refactor&quot;</span><span class="p">,</span> <span class="s2">&quot;revert&quot;</span><span class="p">,</span> <span class="s2">&quot;post&quot;</span> <span class="p">]</span> <span class="p">]</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;husky&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;hooks&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;commit-msg&quot;</span><span class="p">:</span> <span class="s2">&quot;commitlint -E HUSKY_GIT_PARAMS&quot;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>The great part of this setup is that it ties everything into a single <code>package.json</code> file. 
+The npm eco-system is a cesspool when it comes to security but it does make developer tooling a breeze.
+The community converging on using a single <code>package.json</code> is a god-send, over the alternative of a bunch of .rc files spewed all across; adding <code>git hooks</code> is the natural evolution to the puzzle.<br /><br />
+It’s great how sometimes your problems solve themselves if you let them be for years.</p>
 
       <hr />
       <footer role="contentinfo">
@@ -195,17 +219,17 @@
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/travelogue/travelogue-russia-2018/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/finally-gitting-hooks/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/travelogue/travelogue-russia-2018/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/finally-gitting-hooks/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=//srijanshetty.in/travelogue/travelogue-russia-2018/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=//srijanshetty.in/finally-gitting-hooks/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>Travelogue - Russia, 2018</strong> was published on <time datetime="2018-08-12T20:39:01+05:30">August 12, 2018</time>.</p>
+        <p class="byline"><strong>Finally Gitting Hooks</strong> was published on <time datetime="2019-10-06T23:31:27+05:30">October 06, 2019</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -220,11 +244,11 @@
   <h4>You might also enjoy <small class="pull-right">(<a href="//srijanshetty.in/posts/">View all posts</a>)</small></h4>
     <ul>
     
-      <li><a href="//srijanshetty.in/finally-gitting-hooks/" title="Finally Gitting Hooks">Finally Gitting Hooks</a></li>
-    
       <li><a href="//srijanshetty.in/technical/jcip-java-concurrency-in-practice-2019-review/" title="JCIP - Java Concurrency in Practice 2019 Review">JCIP - Java Concurrency in Practice 2019 Review</a></li>
     
       <li><a href="//srijanshetty.in/technical/john-vim-parabellum/" title="John Vim - Parabellum">John Vim - Parabellum</a></li>
+    
+      <li><a href="//srijanshetty.in/prose/modern-love/" title="Modern Love">Modern Love</a></li>
     
     </ul>
     <hr />
