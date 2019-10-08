@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="//srijanshetty.in/feed.xml" />
 <link rel="alternate" type="text/html" href="//srijanshetty.in" />
-<updated>2019-10-07T00:10:46+05:30</updated>
+<updated>2019-10-08T10:09:23+05:30</updated>
 <id>//srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
@@ -16,9 +16,9 @@
   
 
 <entry>
-  <title type="html"><![CDATA[Finally Gitting Hooks]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/finally-gitting-hooks/" />
-  <id>//srijanshetty.in/finally-gitting-hooks</id>
+  <title type="html"><![CDATA[Gitting Hooks setups]]></title>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/gitting-hooks-setup/" />
+  <id>//srijanshetty.in/gitting-hooks-setup</id>
   <published>2019-10-06T23:31:27+05:30</published>
   <updated>2019-10-06T23:31:27+05:30</updated>
   <author>
@@ -62,7 +62,7 @@ The npm eco-system is a cesspool when it comes to security but it does make deve
 The community converging on using a single &lt;code&gt;package.json&lt;/code&gt; is a god-send, over the alternative of a bunch of .rc files spewed all across; adding &lt;code&gt;git hooks&lt;/code&gt; is the natural evolution to the puzzle.&lt;br /&gt;&lt;br /&gt;
 It’s great how sometimes your problems solve themselves if you let them be for years.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/finally-gitting-hooks/&quot;&gt;Finally Gitting Hooks&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on October 06, 2019.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/gitting-hooks-setup/&quot;&gt;Gitting Hooks setups&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on October 06, 2019.&lt;/p&gt;
   </content>
 </entry>
 
