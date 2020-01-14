@@ -10,7 +10,6 @@
 <meta name="keywords" content="technical, javascript, js, ECMA">
 
 
-
 <!-- Twitter Cards -->
 <meta name="twitter:title" content="First Programming Bug">
 <meta name="twitter:description" content="The first programming that I encountered with JS">
@@ -88,32 +87,20 @@
 		    <ul>
 		        
 				    
-				        
-				    
 				    <li><a href="//srijanshetty.in/about/" >About</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="//srijanshetty.in/cv/cv.pdf" >CV</a></li>
 				
 				    
-				        
-				    
 				    <li><a href="//srijanshetty.in/posts/" >Blog</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="//srijanshetty.in/posts/category-wise.html" >Categories</a></li>
 				
 				    
-				        
-				    
 				    <li><a href="//srijanshetty.in/projects.html" >Projects</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="//srijanshetty.in/almanac.html" >Almanac</a></li>
 				
@@ -127,7 +114,6 @@
 <div id="main" role="main">
   <div class="article-author-side">
     
-
 
 <div itemscope itemtype="http://schema.org/Person">
 
@@ -175,55 +161,55 @@
 <p>Prima facie, ECMAScript – the most popular language of the world – appears to be an innocuous, straightforward language; but once you start getting serious with it, it is only then that it will reveal its myriad idiosyncrasies. What is truly remarkable is the fact that despite the fact that many seasoned veterans have been confounded by this language, it has now become ubiquitous in the world of computers.
 My first encounter with this language left me exasperated. I was fairly competent in C/C++ and in my hubris thought not much of this “petty scripting language”, and surely I was in for a surprise. Having spent a long 20 minutes on a comprehensive three page ECMAScript primer, I proceeded to write a simple program. The program was to subtract two numbers and return the result.</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">sub</span><span class="p">(</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span> <span class="p">)</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">sub</span><span class="p">(</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span> <span class="p">)</span>
 <span class="p">{</span>
     <span class="k">return</span> <span class="nx">a</span><span class="o">-</span><span class="nx">b</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>A bit too simple for someone who has vanquished behemoths like C, so I increased the repertoire of this function. I recalled that the primer had a section on object literals, which seemed like a great feature to test. I modified the program to add abilities of subtraction and multiplication using an object literal.</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">calc</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">calc</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">return</span>
     <span class="p">{</span>
-           <span class="nx">add</span><span class="o">:</span> <span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">,</span>
-           <span class="nx">sub</span><span class="o">:</span> <span class="nx">a</span><span class="o">-</span><span class="nx">b</span><span class="p">,</span>
-           <span class="nx">mul</span><span class="o">:</span> <span class="nx">a</span><span class="o">*</span><span class="nx">b</span>
+           <span class="na">add</span><span class="p">:</span> <span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">,</span>
+           <span class="na">sub</span><span class="p">:</span> <span class="nx">a</span><span class="o">-</span><span class="nx">b</span><span class="p">,</span>
+           <span class="na">mul</span><span class="p">:</span> <span class="nx">a</span><span class="o">*</span><span class="nx">b</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>After this ostensibly trivial change, I tried running the program but in vain, for, for every input, the computer adamantly spewed the same output: “undefined”. This was nothing out of the ordinary, and I proceeded with an error correction drill which was ingrained in my brain after all the hours of programming in C.  I checked for syntax errors - none.  Then I tried to narrow down the possibilities of error and commented out various portions of the code — which as you can see was very easy.</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">calc</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">calc</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">return</span>
     <span class="p">{</span>
-           <span class="nx">add</span><span class="o">:</span> <span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">,</span>
+           <span class="na">add</span><span class="p">:</span> <span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">,</span>
         <span class="c1">// sub</span>
         <span class="c1">// mul</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>The program still did not budge. Ideally I would have turned to a debugger and tried out various sophisticated debugging techniques (read ‘stare at the program and plead for mercy’); but ECMAScript was an altogether new beast, I was at loss. So, with no solution in sight, I turned to my my final recourse - google. After a few hours of searching and reading thread after thread of solutions, I finally found the error. The correct code was:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">calc</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">calc</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">return</span> <span class="p">{</span>
-           <span class="nx">add</span><span class="o">:</span> <span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">,</span>
+           <span class="na">add</span><span class="p">:</span> <span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">,</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>And viola, the bug was fixed. Yes, the difference between my original code and the correct code is not evident at first sight, but nevertheless, was significant. The placement of the brace matters in ECMAScript because, of something known as semicolon insertion performed by the ECMAScript engines. A statement like</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">return</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">return</span>
 <span class="p">{</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>is translated into</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">return</span> <span class="kc">undefined</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">return</span> <span class="kc">undefined</span><span class="p">;</span>
 <span class="p">{</span>
-<span class="p">};</span></code></pre></div>
+<span class="p">};</span></code></pre></figure>
 
 <p>And so my program always produced “undefined” as its result.</p>
 
@@ -261,11 +247,11 @@ My first encounter with this language left me exasperated. I was fairly competen
   <h4>You might also enjoy <small class="pull-right">(<a href="//srijanshetty.in/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="//srijanshetty.in/storing-cookies-with-httpie/" title="Storing Cookies With Httpie">Storing Cookies With Httpie</a></li>
+    
+      <li><a href="//srijanshetty.in/technical/hulk-squash-a-better-git-squash-workflow/" title="Hulk Squash - a Better Git Squash Workflow">Hulk Squash - a Better Git Squash Workflow</a></li>
+    
       <li><a href="//srijanshetty.in/gitting-hooks-setup/" title="Gitting Hooks setups">Gitting Hooks setups</a></li>
-    
-      <li><a href="//srijanshetty.in/technical/jcip-java-concurrency-in-practice-2019-review/" title="JCIP - Java Concurrency in Practice 2019 Review">JCIP - Java Concurrency in Practice 2019 Review</a></li>
-    
-      <li><a href="//srijanshetty.in/technical/john-vim-parabellum/" title="John Vim - Parabellum">John Vim - Parabellum</a></li>
     
     </ul>
     <hr />
@@ -274,7 +260,7 @@ My first encounter with this language left me exasperated. I was fairly competen
   <footer>
     
 
-<span>&copy; 2019 Srijan R. Shetty. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2020 Srijan R. Shetty. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

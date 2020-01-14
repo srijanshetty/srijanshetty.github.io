@@ -5,14 +5,14 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Safely Storing GPG Keys &#8211; Srijan R. Shetty</title>
-<meta name="description" content="An easy way to store GPG Keys">
-<meta name="keywords" content="blackbox, encryption, security, GPG, openssl, aes, update, 2019, store, secure">
+<title>Hulk Squash - a Better Git Squash Workflow &#8211; Srijan R. Shetty</title>
+<meta name="description" content="a better git squash workflow">
+<meta name="keywords" content="git, squash, commit, fixup, fzf">
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Safely Storing GPG Keys">
-<meta name="twitter:description" content="An easy way to store GPG Keys">
+<meta name="twitter:title" content="Hulk Squash - a Better Git Squash Workflow">
+<meta name="twitter:description" content="a better git squash workflow">
 
 
 
@@ -22,9 +22,9 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Safely Storing GPG Keys">
-<meta property="og:description" content="An easy way to store GPG Keys">
-<meta property="og:url" content="//srijanshetty.in/technical/safely-storing-gpg-keys/">
+<meta property="og:title" content="Hulk Squash - a Better Git Squash Workflow">
+<meta property="og:description" content="a better git squash workflow">
+<meta property="og:url" content="//srijanshetty.in/technical/hulk-squash-a-better-git-squash-workflow/">
 <meta property="og:site_name" content="Srijan R. Shetty">
 
 <meta property="og:image" content="//srijanshetty.in/images/default-thumb.png">
@@ -34,7 +34,7 @@
 
 
 
-<link rel="canonical" href="//srijanshetty.in/technical/safely-storing-gpg-keys/">
+<link rel="canonical" href="//srijanshetty.in/technical/hulk-squash-a-better-git-squash-workflow/">
 <link href="//srijanshetty.in/feed.xml" type="application/atom+xml" rel="alternate" title="Srijan R. Shetty Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -150,88 +150,48 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="//srijanshetty.in/technical/safely-storing-gpg-keys/" rel="bookmark" title="Safely Storing GPG Keys">Safely Storing GPG Keys</a></h1>
+        <h1><a href="//srijanshetty.in/technical/hulk-squash-a-better-git-squash-workflow/" rel="bookmark" title="Hulk Squash - a Better Git Squash Workflow">Hulk Squash - a Better Git Squash Workflow</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <blockquote>
-  <p>TL;DR: The next few paragraphs are mindless rants on the chicken-egg safety problem,
-any sane person - you I presume - is better off not reading them and directly going to
-<a href="#encryption">here</a></p>
-</blockquote>
+      <p>Sometimes while fixing multiple bugs related to a <code class="highlighter-rouge">feature branch</code> you might come across
+the peculiar situation that you want to add some more files to an older commit. Hitherto,
+my workflow was a patchwork of creating a new commit with <code class="highlighter-rouge">squash!</code> prefix and then clumsily
+performing an interactive rebase to position the commit on the correct SHA.<br /><br />
+Fortunately, I’ve found a much better flow which greatly simplifies development. Two tools
+are critical in helping me with this workflow. <code class="highlighter-rouge">git</code> being the usual suspect, but <code class="highlighter-rouge">fzf</code> is
+the secret sauce. I have the following snippet in my <code class="highlighter-rouge">zsh</code> sourced files:</p>
 
-<p>I’m very paranoid when it comes to managing private information like GPG Keys, SSH Keys, and
-other sensitive information. (What I call private information is essentially arbitrary, I tend to
-use the thumb rule that any kind of key, its meta-data and other information that I wouldn’t want
-people reading is private). At the same time, I’m also paranoid of my beloved computer crashing on
-me - I know, the thought itself is terrifying but a harsh reality that we need to face. A very nice
-quote which is vaguely relevant to this topic by Leslie Lamport:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function </span>is_in_git_repo<span class="o">()</span> <span class="o">{</span>
+    git rev-parse HEAD <span class="o">&gt;</span> /dev/null 2&gt;&amp;1
+<span class="o">}</span>
 
-<blockquote>
-  <p>You know you have a distributed system when the crash of a computer you’ve never
-heard of stops you from getting any work done.</p>
-</blockquote>
+<span class="k">function </span>fzf-down<span class="o">()</span> <span class="o">{</span>
+    fzf <span class="nt">--height</span> 50% <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span> <span class="nt">--border</span>
+<span class="o">}</span>
 
-<p>After a lot of soul searching – on Google lasting for 10 minutes, I found
-<strong><a href="https://github.com/StackExchange/blackbox">blackbox</a></strong>, a set of git hooks used by the holy
-monks of StackExchange to encrypt all data using GPG Keys before adding it version control.
-I suddenly felt complete, I was in bliss; I created a git repo, loaded it with all the
-private information I wanted and pushed it to git (a private git hosting service and not
-GitHub, just for an extra bit of security). I thought that I was done for life, and then
-it suddenly struck me, the problem of encryption is essentially a chicken-egg problem. I
-still needed a way to secure my GPG Keys and make copies.<br /><br />
-Detested, I went in for another round of soul searching and now I just AES256 encrypt my GPG Keys,
-Base64 encode it (to make them look all nice and clean) and store them in LastPass. (Still stuck in
-the chicken-egg problem). The steps have bee illustrated below for the curious.<br /><br /></p>
+<span class="k">function </span>gh<span class="o">()</span> <span class="o">{</span>
+    is_in_git_repo <span class="o">||</span> <span class="k">return
+    </span>git log <span class="nt">--date</span><span class="o">=</span>short <span class="nt">--format</span><span class="o">=</span><span class="s2">"%C(green)%C(bold)%cd %C(auto)%h%d %s (%an)"</span> <span class="nt">--graph</span> <span class="nt">--color</span><span class="o">=</span>always |
+        fzf-down <span class="nt">--ansi</span> <span class="nt">--no-sort</span> <span class="nt">--reverse</span> <span class="nt">--multi</span> <span class="nt">--bind</span> <span class="s1">'ctrl-s:toggle-sort'</span> <span class="se">\</span>
+        <span class="nt">--header</span> <span class="s1">'Press CTRL-S to toggle sort'</span> <span class="se">\</span>
+        <span class="nt">--preview</span> <span class="s1">'grep -o "[a-f0-9]\{7,\}" &lt;&lt;&lt; {} | xargs git show --color=always | head -'</span><span class="nv">$LINES</span> |
+        <span class="nb">grep</span> <span class="nt">-o</span> <span class="s2">"[a-f0-9]</span><span class="se">\{</span><span class="s2">7,</span><span class="se">\}</span><span class="s2">"</span>
+    <span class="o">}</span>
 
-<h2 id="encryption">Encryption</h2>
+<span class="k">function </span>bind-git-helper<span class="o">()</span> <span class="o">{</span>
+    <span class="nb">local </span>c
+    <span class="k">for </span>c <span class="k">in</span> <span class="nv">$@</span><span class="p">;</span> <span class="k">do
+        </span><span class="nb">eval</span> <span class="s2">"fzf-g</span><span class="nv">$c</span><span class="s2">-widget() { local result=</span><span class="se">\$</span><span class="s2">(g</span><span class="nv">$c</span><span class="s2"> | join-lines); zle reset-prompt; LBUFFER+=</span><span class="se">\$</span><span class="s2">result }"</span>
+        <span class="nb">eval</span> <span class="s2">"zle -N fzf-g</span><span class="nv">$c</span><span class="s2">-widget"</span>
+        <span class="nb">eval</span> <span class="s2">"bindkey '^k^</span><span class="nv">$c</span><span class="s2">' fzf-g</span><span class="nv">$c</span><span class="s2">-widget"</span>
+    <span class="k">done</span>
+<span class="o">}</span>
+bind-git-helper h
+<span class="nb">unset</span> <span class="nt">-f</span> bind-git-helper
+</code></pre></div></div>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># copy all the relevant information</span>
-<span class="nv">$ </span><span class="nb">cp</span> ~/.gnupg/pubring.gpg gpgkeys/
-<span class="nv">$ </span><span class="nb">cp</span> ~/.gnupg/secring.gpg gpgkeys/
-<span class="nv">$ </span><span class="nb">cp</span> ~/.gnupg/trustdb.gpg gpgkeys/
-
-<span class="c"># or, instead of backing up trustdb ..</span>
-<span class="nv">$ </span>gpg <span class="nt">--export-ownertrust</span> <span class="o">&gt;</span> gpgkeys/srijanshetty-ownertrust-gpg.txt
-
-<span class="c"># tar the folder</span>
-<span class="nv">$ </span><span class="nb">tar </span>cvzf gpgkeys.tar.gz gpgkeys
-
-<span class="c"># encrypt and base64 encode</span>
-<span class="nv">$ </span>openssl aes-256-cbc <span class="nt">-in</span> gpgkeys.tar.gz <span class="nt">-out</span> gpgkeys.tar.gz.enc <span class="nt">-a</span> <span class="nt">-md</span> sha512 <span class="nt">-pbkdf2</span> <span class="nt">-iter</span> 1000 <span class="nt">-salt</span> <span class="nt">--base64</span></code></pre></figure>
-
-<h2 id="decryption">Decryption</h2>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># decypt and base64 decode</span>
-<span class="nv">$ </span>openssl aes-256-cbc <span class="nt">-d</span> <span class="nt">-in</span> gpgkeys.tar.gz.enc <span class="nt">-out</span> gpgkeys.tar.gz <span class="nt">-a</span> <span class="nt">-md</span> sha512 <span class="nt">-pbkdf2</span> <span class="nt">-iter</span> 1000 <span class="nt">-salt</span> <span class="nt">--base64</span>
-
-<span class="c"># untar</span>
-<span class="nv">$ </span><span class="nb">tar </span>xvzf gpgkeys.tar.gz.enc
-
-<span class="c"># copy back to gnupg folder</span>
-<span class="nv">$ </span><span class="nb">cp </span>gpgkeys/<span class="k">*</span>.gpg ~/.gnupg/
-
-<span class="c"># or, if you exported the ownertrust</span>
-<span class="nv">$ </span>gpg <span class="nt">--import-ownertrust</span> srijanshetty-ownertrust-gpg.txt</code></pre></figure>
-
-<p><strong>Update</strong>: Three years down the line and this still proves to be an effective solution.
-The only issue has been incompatibilities between openssl library which leads to the
-following error in Ubuntu 18.04:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># encrpyt and base64 decode (Used in the previous version)</span>
-<span class="nv">$ </span>openssl aes-256-cbc <span class="nt">-in</span> gpgkeys.tar.gz <span class="nt">-out</span> gpgkeys.tar.gz.enc <span class="nt">-a</span>
-
-<span class="c"># decypt and base64 decode</span>
-<span class="nv">$ </span>openssl aes-256-cbc <span class="nt">-d</span> <span class="nt">-in</span> gpgkeys.tar.gz.enc <span class="nt">-out</span> gpgkeys.tar.gz <span class="nt">-a</span>
-enter aes-256-cbc decryption password:
-bad decrypt
-&lt;number&gt;:error:&lt;number&gt;:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt:../crypto/evp/evp_enc.c:536:</code></pre></figure>
-
-<p>After going down the rabbit hole of the internet, the solution is a simple addition of a md5
-flag on the decryption encantation as follows:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># decypt and base64 decode</span>
-<span class="nv">$ </span>openssl aes-256-cbc <span class="nt">-d</span> <span class="nt">-in</span> gpgkeys.tar.gz.enc <span class="nt">-out</span> gpgkeys.tar.gz <span class="nt">-a</span> <span class="nt">-md</span> md5</code></pre></figure>
+<p>This allows me to hit <C-k>h in a project managed by git which opens up a view</C-k></p>
 
 
       <hr />
@@ -240,17 +200,17 @@ flag on the decryption encantation as follows:</p>
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/technical/safely-storing-gpg-keys/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/technical/hulk-squash-a-better-git-squash-workflow/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/technical/safely-storing-gpg-keys/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/technical/hulk-squash-a-better-git-squash-workflow/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=//srijanshetty.in/technical/safely-storing-gpg-keys/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=//srijanshetty.in/technical/hulk-squash-a-better-git-squash-workflow/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>Safely Storing GPG Keys</strong> was published on <time datetime="2015-05-23T16:59:33+05:30">May 23, 2015</time> and last modified on <time datetime="2019-09-10">September 10, 2019</time>.</p>
+        <p class="byline"><strong>Hulk Squash - a Better Git Squash Workflow</strong> was published on <time datetime="2019-12-26T01:11:38+05:30">December 26, 2019</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -267,9 +227,9 @@ flag on the decryption encantation as follows:</p>
     
       <li><a href="//srijanshetty.in/storing-cookies-with-httpie/" title="Storing Cookies With Httpie">Storing Cookies With Httpie</a></li>
     
-      <li><a href="//srijanshetty.in/technical/hulk-squash-a-better-git-squash-workflow/" title="Hulk Squash - a Better Git Squash Workflow">Hulk Squash - a Better Git Squash Workflow</a></li>
-    
       <li><a href="//srijanshetty.in/gitting-hooks-setup/" title="Gitting Hooks setups">Gitting Hooks setups</a></li>
+    
+      <li><a href="//srijanshetty.in/technical/jcip-java-concurrency-in-practice-2019-review/" title="JCIP - Java Concurrency in Practice 2019 Review">JCIP - Java Concurrency in Practice 2019 Review</a></li>
     
     </ul>
     <hr />

@@ -10,7 +10,6 @@
 <meta name="keywords" content="python, call-by-value, call-by-reference, call-by-object, java, js, c, languages">
 
 
-
 <!-- Twitter Cards -->
 <meta name="twitter:title" content="Call (Me) by (Your) Name: Python Is Pass by What Again?">
 <meta name="twitter:description" content="Python is neither call-by-value nor call-by-reference">
@@ -88,32 +87,20 @@
 		    <ul>
 		        
 				    
-				        
-				    
 				    <li><a href="//srijanshetty.in/about/" >About</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="//srijanshetty.in/cv/cv.pdf" >CV</a></li>
 				
 				    
-				        
-				    
 				    <li><a href="//srijanshetty.in/posts/" >Blog</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="//srijanshetty.in/posts/category-wise.html" >Categories</a></li>
 				
 				    
-				        
-				    
 				    <li><a href="//srijanshetty.in/projects.html" >Projects</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="//srijanshetty.in/almanac.html" >Almanac</a></li>
 				
@@ -127,7 +114,6 @@
 <div id="main" role="main">
   <div class="article-author-side">
     
-
 
 <div itemscope itemtype="http://schema.org/Person">
 
@@ -178,7 +164,7 @@ you have <em>call-by-reference</em>. But python, is sly, and while on the surfac
 Here’s an innocuous piece of code, which for some inexplicable reason doesn’t produce the expected
 output:</p>
 
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">ls</span><span class="p">):</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">ls</span><span class="p">):</span>
     <span class="n">ls</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">ls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
@@ -187,21 +173,23 @@ output:</p>
     <span class="n">mutate</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
 
-<span class="n">main</span><span class="p">()</span></code></pre></div>
+<span class="n">main</span><span class="p">()</span></code></pre></figure>
 
 <p>Despite the code being synthetic, it underscores an important point. In this particular example,
 the output on the console is <strong>[1,2]</strong> and not <strong>[1]</strong>. How on earth is that possible, you ask?
 Well, the answer to this mystery lies in the fact that python is <em>call-by-name.</em><br /><br />
 In the <em>call-by-name</em> model, a name (or a variable in common parlance) is bound to an object. In the <em>main</em>,
-<strong>arr</strong> is bound to the object <strong>[1,2]</strong>. Initially in mutate, <strong>ls</strong> is bound to the same object <strong>[1,2]</strong>
-- note, how we say bound to an object and not a reference to a memory location, unlike C/Java/ECMAscript
-- but, on the very first line of <em>mutate</em>, we bind ls to a new object <strong>[]</strong>, and hence forth the binding
+<strong>arr</strong> is bound to the object <strong>[1,2]</strong>. Initially in mutate, <strong>ls</strong> is bound to the same object <strong>[1,2]</strong></p>
+<ul>
+  <li>note, how we say bound to an object and not a reference to a memory location, unlike C/Java/ECMAscript</li>
+  <li>but, on the very first line of <em>mutate</em>, we bind ls to a new object <strong>[]</strong>, and hence forth the binding
 of <strong>[1,2]</strong> is hidden from <em>mutate</em>. Any changes to <strong>ls</strong> will not be reflected back to <strong>arr</strong> as they are bound
 to different objects.<br /><br />
 While this might seem pedantic, and left to language purists. This erudite fact can manifest in hard to
-find bugs. For example, the following code has a surprising output:</p>
+find bugs. For example, the following code has a surprising output:</li>
+</ul>
 
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">ls</span><span class="p">):</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">ls</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
         <span class="n">ls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
@@ -213,13 +201,13 @@ find bugs. For example, the following code has a surprising output:</p>
 <span class="n">mutate</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
 <span class="n">mutate</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span></code></pre></div>
+<span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span></code></pre></figure>
 
 <p>The output of this code is as follows:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>python test.py
-<span class="o">[</span>1, 2, 3, 4, 2, 6<span class="o">]</span>
-<span class="o">[</span>1, 2, 3, 4, 2, 6<span class="o">]</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>python test.py
+<span class="o">[</span>1, 2, 3, 4, 2, 6]
+<span class="o">[</span>1, 2, 3, 4, 2, 6]</code></pre></figure>
 
 <p>The second conditional becomes a no-op as <strong>arr</strong> won’t be mutated once it’s length is greater than 5. Ipso facto,
 <em>call-by-name</em> is evident right now, but in longer methods its to discern and impossible to debug.<br /><br />
@@ -257,11 +245,11 @@ So, next time recall that python does call (me) by (your) name.</p>
   <h4>You might also enjoy <small class="pull-right">(<a href="//srijanshetty.in/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="//srijanshetty.in/storing-cookies-with-httpie/" title="Storing Cookies With Httpie">Storing Cookies With Httpie</a></li>
+    
+      <li><a href="//srijanshetty.in/technical/hulk-squash-a-better-git-squash-workflow/" title="Hulk Squash - a Better Git Squash Workflow">Hulk Squash - a Better Git Squash Workflow</a></li>
+    
       <li><a href="//srijanshetty.in/gitting-hooks-setup/" title="Gitting Hooks setups">Gitting Hooks setups</a></li>
-    
-      <li><a href="//srijanshetty.in/technical/jcip-java-concurrency-in-practice-2019-review/" title="JCIP - Java Concurrency in Practice 2019 Review">JCIP - Java Concurrency in Practice 2019 Review</a></li>
-    
-      <li><a href="//srijanshetty.in/technical/john-vim-parabellum/" title="John Vim - Parabellum">John Vim - Parabellum</a></li>
     
     </ul>
     <hr />
@@ -270,7 +258,7 @@ So, next time recall that python does call (me) by (your) name.</p>
   <footer>
     
 
-<span>&copy; 2019 Srijan R. Shetty. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2020 Srijan R. Shetty. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

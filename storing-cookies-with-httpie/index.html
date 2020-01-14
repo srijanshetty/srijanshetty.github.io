@@ -5,14 +5,16 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Safely Storing GPG Keys &#8211; Srijan R. Shetty</title>
-<meta name="description" content="An easy way to store GPG Keys">
-<meta name="keywords" content="blackbox, encryption, security, GPG, openssl, aes, update, 2019, store, secure">
+<title>Storing Cookies With Httpie &#8211; Srijan R. Shetty</title>
+<meta name="description" content="
+">
+<meta name="keywords" content="">
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Safely Storing GPG Keys">
-<meta name="twitter:description" content="An easy way to store GPG Keys">
+<meta name="twitter:title" content="Storing Cookies With Httpie">
+<meta name="twitter:description" content="
+">
 
 
 
@@ -22,9 +24,10 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Safely Storing GPG Keys">
-<meta property="og:description" content="An easy way to store GPG Keys">
-<meta property="og:url" content="//srijanshetty.in/technical/safely-storing-gpg-keys/">
+<meta property="og:title" content="Storing Cookies With Httpie">
+<meta property="og:description" content="
+">
+<meta property="og:url" content="//srijanshetty.in/storing-cookies-with-httpie/">
 <meta property="og:site_name" content="Srijan R. Shetty">
 
 <meta property="og:image" content="//srijanshetty.in/images/default-thumb.png">
@@ -34,7 +37,7 @@
 
 
 
-<link rel="canonical" href="//srijanshetty.in/technical/safely-storing-gpg-keys/">
+<link rel="canonical" href="//srijanshetty.in/storing-cookies-with-httpie/">
 <link href="//srijanshetty.in/feed.xml" type="application/atom+xml" rel="alternate" title="Srijan R. Shetty Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -150,89 +153,11 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="//srijanshetty.in/technical/safely-storing-gpg-keys/" rel="bookmark" title="Safely Storing GPG Keys">Safely Storing GPG Keys</a></h1>
+        <h1><a href="//srijanshetty.in/storing-cookies-with-httpie/" rel="bookmark" title="Storing Cookies With Httpie">Storing Cookies With Httpie</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <blockquote>
-  <p>TL;DR: The next few paragraphs are mindless rants on the chicken-egg safety problem,
-any sane person - you I presume - is better off not reading them and directly going to
-<a href="#encryption">here</a></p>
-</blockquote>
-
-<p>I’m very paranoid when it comes to managing private information like GPG Keys, SSH Keys, and
-other sensitive information. (What I call private information is essentially arbitrary, I tend to
-use the thumb rule that any kind of key, its meta-data and other information that I wouldn’t want
-people reading is private). At the same time, I’m also paranoid of my beloved computer crashing on
-me - I know, the thought itself is terrifying but a harsh reality that we need to face. A very nice
-quote which is vaguely relevant to this topic by Leslie Lamport:</p>
-
-<blockquote>
-  <p>You know you have a distributed system when the crash of a computer you’ve never
-heard of stops you from getting any work done.</p>
-</blockquote>
-
-<p>After a lot of soul searching – on Google lasting for 10 minutes, I found
-<strong><a href="https://github.com/StackExchange/blackbox">blackbox</a></strong>, a set of git hooks used by the holy
-monks of StackExchange to encrypt all data using GPG Keys before adding it version control.
-I suddenly felt complete, I was in bliss; I created a git repo, loaded it with all the
-private information I wanted and pushed it to git (a private git hosting service and not
-GitHub, just for an extra bit of security). I thought that I was done for life, and then
-it suddenly struck me, the problem of encryption is essentially a chicken-egg problem. I
-still needed a way to secure my GPG Keys and make copies.<br /><br />
-Detested, I went in for another round of soul searching and now I just AES256 encrypt my GPG Keys,
-Base64 encode it (to make them look all nice and clean) and store them in LastPass. (Still stuck in
-the chicken-egg problem). The steps have bee illustrated below for the curious.<br /><br /></p>
-
-<h2 id="encryption">Encryption</h2>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># copy all the relevant information</span>
-<span class="nv">$ </span><span class="nb">cp</span> ~/.gnupg/pubring.gpg gpgkeys/
-<span class="nv">$ </span><span class="nb">cp</span> ~/.gnupg/secring.gpg gpgkeys/
-<span class="nv">$ </span><span class="nb">cp</span> ~/.gnupg/trustdb.gpg gpgkeys/
-
-<span class="c"># or, instead of backing up trustdb ..</span>
-<span class="nv">$ </span>gpg <span class="nt">--export-ownertrust</span> <span class="o">&gt;</span> gpgkeys/srijanshetty-ownertrust-gpg.txt
-
-<span class="c"># tar the folder</span>
-<span class="nv">$ </span><span class="nb">tar </span>cvzf gpgkeys.tar.gz gpgkeys
-
-<span class="c"># encrypt and base64 encode</span>
-<span class="nv">$ </span>openssl aes-256-cbc <span class="nt">-in</span> gpgkeys.tar.gz <span class="nt">-out</span> gpgkeys.tar.gz.enc <span class="nt">-a</span> <span class="nt">-md</span> sha512 <span class="nt">-pbkdf2</span> <span class="nt">-iter</span> 1000 <span class="nt">-salt</span> <span class="nt">--base64</span></code></pre></figure>
-
-<h2 id="decryption">Decryption</h2>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># decypt and base64 decode</span>
-<span class="nv">$ </span>openssl aes-256-cbc <span class="nt">-d</span> <span class="nt">-in</span> gpgkeys.tar.gz.enc <span class="nt">-out</span> gpgkeys.tar.gz <span class="nt">-a</span> <span class="nt">-md</span> sha512 <span class="nt">-pbkdf2</span> <span class="nt">-iter</span> 1000 <span class="nt">-salt</span> <span class="nt">--base64</span>
-
-<span class="c"># untar</span>
-<span class="nv">$ </span><span class="nb">tar </span>xvzf gpgkeys.tar.gz.enc
-
-<span class="c"># copy back to gnupg folder</span>
-<span class="nv">$ </span><span class="nb">cp </span>gpgkeys/<span class="k">*</span>.gpg ~/.gnupg/
-
-<span class="c"># or, if you exported the ownertrust</span>
-<span class="nv">$ </span>gpg <span class="nt">--import-ownertrust</span> srijanshetty-ownertrust-gpg.txt</code></pre></figure>
-
-<p><strong>Update</strong>: Three years down the line and this still proves to be an effective solution.
-The only issue has been incompatibilities between openssl library which leads to the
-following error in Ubuntu 18.04:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># encrpyt and base64 decode (Used in the previous version)</span>
-<span class="nv">$ </span>openssl aes-256-cbc <span class="nt">-in</span> gpgkeys.tar.gz <span class="nt">-out</span> gpgkeys.tar.gz.enc <span class="nt">-a</span>
-
-<span class="c"># decypt and base64 decode</span>
-<span class="nv">$ </span>openssl aes-256-cbc <span class="nt">-d</span> <span class="nt">-in</span> gpgkeys.tar.gz.enc <span class="nt">-out</span> gpgkeys.tar.gz <span class="nt">-a</span>
-enter aes-256-cbc decryption password:
-bad decrypt
-&lt;number&gt;:error:&lt;number&gt;:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt:../crypto/evp/evp_enc.c:536:</code></pre></figure>
-
-<p>After going down the rabbit hole of the internet, the solution is a simple addition of a md5
-flag on the decryption encantation as follows:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># decypt and base64 decode</span>
-<span class="nv">$ </span>openssl aes-256-cbc <span class="nt">-d</span> <span class="nt">-in</span> gpgkeys.tar.gz.enc <span class="nt">-out</span> gpgkeys.tar.gz <span class="nt">-a</span> <span class="nt">-md</span> md5</code></pre></figure>
-
+      
 
       <hr />
       <footer role="contentinfo">
@@ -240,17 +165,17 @@ flag on the decryption encantation as follows:</p>
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/technical/safely-storing-gpg-keys/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/storing-cookies-with-httpie/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/technical/safely-storing-gpg-keys/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/storing-cookies-with-httpie/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=//srijanshetty.in/technical/safely-storing-gpg-keys/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=//srijanshetty.in/storing-cookies-with-httpie/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>Safely Storing GPG Keys</strong> was published on <time datetime="2015-05-23T16:59:33+05:30">May 23, 2015</time> and last modified on <time datetime="2019-09-10">September 10, 2019</time>.</p>
+        <p class="byline"><strong>Storing Cookies With Httpie</strong> was published on <time datetime="2020-01-14T12:34:57+05:30">January 14, 2020</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -265,11 +190,11 @@ flag on the decryption encantation as follows:</p>
   <h4>You might also enjoy <small class="pull-right">(<a href="//srijanshetty.in/posts/">View all posts</a>)</small></h4>
     <ul>
     
-      <li><a href="//srijanshetty.in/storing-cookies-with-httpie/" title="Storing Cookies With Httpie">Storing Cookies With Httpie</a></li>
-    
       <li><a href="//srijanshetty.in/technical/hulk-squash-a-better-git-squash-workflow/" title="Hulk Squash - a Better Git Squash Workflow">Hulk Squash - a Better Git Squash Workflow</a></li>
     
       <li><a href="//srijanshetty.in/gitting-hooks-setup/" title="Gitting Hooks setups">Gitting Hooks setups</a></li>
+    
+      <li><a href="//srijanshetty.in/technical/jcip-java-concurrency-in-practice-2019-review/" title="JCIP - Java Concurrency in Practice 2019 Review">JCIP - Java Concurrency in Practice 2019 Review</a></li>
     
     </ul>
     <hr />

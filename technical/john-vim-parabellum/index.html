@@ -10,7 +10,6 @@
 <meta name="keywords" content="vim, development, compile, install, js, go, vim8, vim8.1">
 
 
-
 <!-- Twitter Cards -->
 <meta name="twitter:title" content="John Vim - Parabellum">
 <meta name="twitter:description" content="Compling vim from source">
@@ -88,32 +87,20 @@
 		    <ul>
 		        
 				    
-				        
-				    
 				    <li><a href="//srijanshetty.in/about/" >About</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="//srijanshetty.in/cv/cv.pdf" >CV</a></li>
 				
 				    
-				        
-				    
 				    <li><a href="//srijanshetty.in/posts/" >Blog</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="//srijanshetty.in/posts/category-wise.html" >Categories</a></li>
 				
 				    
-				        
-				    
 				    <li><a href="//srijanshetty.in/projects.html" >Projects</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="//srijanshetty.in/almanac.html" >Almanac</a></li>
 				
@@ -127,7 +114,6 @@
 <div id="main" role="main">
   <div class="article-author-side">
     
-
 
 <div itemscope itemtype="http://schema.org/Person">
 
@@ -183,25 +169,25 @@ I decided to chose the <a href="https://en.wikipedia.org/wiki/Red_pill_and_blue_
 and compile vim from source.<br /><br />
 Theoretically compiling vim from source should be simple:<br /></p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git clone https://github.com/vim <span class="o">&amp;&amp;</span> <span class="nb">cd </span>vim
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git clone https://github.com/vim <span class="o">&amp;&amp;</span> <span class="nb">cd </span>vim
 <span class="nv">$ </span>./configure
-<span class="nv">$ </span>make <span class="o">&amp;&amp;</span> make install</code></pre></div>
+<span class="nv">$ </span>make <span class="o">&amp;&amp;</span> make <span class="nb">install</span></code></pre></figure>
 
 <p>But the devil is in the details. Here’s the exact steps that one needs to follow:<br /><br /></p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git clone https://github.com/vim <span class="o">&amp;&amp;</span> <span class="nb">cd </span>vim
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git clone https://github.com/vim <span class="o">&amp;&amp;</span> <span class="nb">cd </span>vim
 <span class="nv">$ </span>./configure <span class="se">\</span>
---with-features<span class="o">=</span>huge <span class="se">\</span>
---enable-multibyte <span class="se">\</span>
---enable-rubyinterp<span class="o">=</span>yes <span class="se">\</span>
---enable-python3interp<span class="o">=</span>yes <span class="se">\</span>
---with-python3-config-dir<span class="o">=</span>/usr/lib/python3.6/config-3.6m-x86_64-linux-gnu/ <span class="se">\</span>
---enable-perlinterp<span class="o">=</span>yes <span class="se">\</span>
---enable-luainterp<span class="o">=</span>yes <span class="se">\</span>
---enable-gui<span class="o">=</span>gtk <span class="se">\</span>
---enable-cscope <span class="se">\</span>
---prefix<span class="o">=</span><span class="k">${</span><span class="nv">local_bin</span><span class="k">}</span> <span class="se">\</span>
-<span class="nv">$ </span>make <span class="o">&amp;&amp;</span> make install</code></pre></div>
+<span class="nt">--with-features</span><span class="o">=</span>huge <span class="se">\</span>
+<span class="nt">--enable-multibyte</span> <span class="se">\</span>
+<span class="nt">--enable-rubyinterp</span><span class="o">=</span><span class="nb">yes</span> <span class="se">\</span>
+<span class="nt">--enable-python3interp</span><span class="o">=</span><span class="nb">yes</span> <span class="se">\</span>
+<span class="nt">--with-python3-config-dir</span><span class="o">=</span>/usr/lib/python3.6/config-3.6m-x86_64-linux-gnu/ <span class="se">\</span>
+<span class="nt">--enable-perlinterp</span><span class="o">=</span><span class="nb">yes</span> <span class="se">\</span>
+<span class="nt">--enable-luainterp</span><span class="o">=</span><span class="nb">yes</span> <span class="se">\</span>
+<span class="nt">--enable-gui</span><span class="o">=</span>gtk <span class="se">\</span>
+<span class="nt">--enable-cscope</span> <span class="se">\</span>
+<span class="nt">--prefix</span><span class="o">=</span><span class="k">${</span><span class="nv">local_bin</span><span class="k">}</span> <span class="se">\</span>
+<span class="nv">$ </span>make <span class="o">&amp;&amp;</span> make <span class="nb">install</span></code></pre></figure>
 
 <p>Some salient points in this setup are:</p>
 
@@ -244,11 +230,11 @@ Theoretically compiling vim from source should be simple:<br /></p>
   <h4>You might also enjoy <small class="pull-right">(<a href="//srijanshetty.in/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="//srijanshetty.in/storing-cookies-with-httpie/" title="Storing Cookies With Httpie">Storing Cookies With Httpie</a></li>
+    
+      <li><a href="//srijanshetty.in/technical/hulk-squash-a-better-git-squash-workflow/" title="Hulk Squash - a Better Git Squash Workflow">Hulk Squash - a Better Git Squash Workflow</a></li>
+    
       <li><a href="//srijanshetty.in/gitting-hooks-setup/" title="Gitting Hooks setups">Gitting Hooks setups</a></li>
-    
-      <li><a href="//srijanshetty.in/technical/jcip-java-concurrency-in-practice-2019-review/" title="JCIP - Java Concurrency in Practice 2019 Review">JCIP - Java Concurrency in Practice 2019 Review</a></li>
-    
-      <li><a href="//srijanshetty.in/prose/modern-love/" title="Modern Love">Modern Love</a></li>
     
     </ul>
     <hr />
@@ -257,7 +243,7 @@ Theoretically compiling vim from source should be simple:<br /></p>
   <footer>
     
 
-<span>&copy; 2019 Srijan R. Shetty. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2020 Srijan R. Shetty. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

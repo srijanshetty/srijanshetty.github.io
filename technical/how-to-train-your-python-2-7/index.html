@@ -10,7 +10,6 @@
 <meta name="keywords" content="python, jupyter, plot, matplotlib, error, dependency, pyenv, tkinter, pip, data">
 
 
-
 <!-- Twitter Cards -->
 <meta name="twitter:title" content="How to Train Your Python - 2.7">
 <meta name="twitter:description" content="Walking the dependency hell of python to install plottable jupyter">
@@ -88,32 +87,20 @@
 		    <ul>
 		        
 				    
-				        
-				    
 				    <li><a href="//srijanshetty.in/about/" >About</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="//srijanshetty.in/cv/cv.pdf" >CV</a></li>
 				
 				    
-				        
-				    
 				    <li><a href="//srijanshetty.in/posts/" >Blog</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="//srijanshetty.in/posts/category-wise.html" >Categories</a></li>
 				
 				    
-				        
-				    
 				    <li><a href="//srijanshetty.in/projects.html" >Projects</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="//srijanshetty.in/almanac.html" >Almanac</a></li>
 				
@@ -127,7 +114,6 @@
 <div id="main" role="main">
   <div class="article-author-side">
     
-
 
 <div itemscope itemtype="http://schema.org/Person">
 
@@ -171,33 +157,33 @@
       <p>The travails of the noble warriors who’ve tried to walk the path of the dependency hell of python have been immortalized in the travelogues of the internet. From <a href="https://xkcd.com/1987/">mosaics</a> ornamenting the holy shrines of <a href="https://xkcd.com/1987/">xkcd</a>, to gospels written in the blogosphere; we’ve been plagued with tales of valor. And yet, python like the heads of the hydra grows two more if you’ve managed to chop one off.<br /><br />
 Our hero, chose the path of pyenv - a recondite cult who claim to have conquered the versions of python. While all was the well in the land of pyenv’s python-2.7.9, until one day when he had to tackle a new villan in town - data visualizations. His best bet was to use jupyter - no, ipython wasn’t enough - and so he embarked on a perilous path. In his first attempt he used the incantation of:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>pip install jupyter</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>pip <span class="nb">install </span>jupyter</code></pre></figure>
 
 <p>Things worked well and a kernel appeared to fulfil his commands until asked to plot, when kernel came crashing down.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">ModuleNotFoundError: No module named <span class="s1">&#39;_tkinter&#39;</span> <span class="c">#_ This comment preserves formatting in vim</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ModuleNotFoundError: No module named <span class="s1">'_tkinter'</span> <span class="c">#_ This comment preserves formatting in vim</span></code></pre></figure>
 
 <p>The helpful folks from the land of stackoverflow suggested a spell to resuscitate the kernel.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>pip uninstall jupyter numpy pandas matplotlib
-<span class="nv">$ </span>sudo apt-get install tk-dev
-<span class="nv">$ </span>pip install jupyter numpy pandas matplotlib</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>pip uninstall jupyter numpy pandas matplotlib
+<span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>tk-dev
+<span class="nv">$ </span>pip <span class="nb">install </span>jupyter numpy pandas matplotlib</code></pre></figure>
 
 <p>And viola, and darkness took over and python-2.7.9. Scared and lonely in the world of the internet, our hero did the only logical thing.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>pyenv uninstall 2.7.9</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>pyenv uninstall 2.7.9</code></pre></figure>
 
 <p>He took over the responsibility of the python world and annihilated it. Sometimes you have to let go of the past. Kill it if you have to. So he did, only to create a new one like the Oracle in Matrix. But this time he was determined, he went through the valleys of medium, the hills of StackOverflow and the plains of GitHub to learn of the one true spell.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>pyenv install 2.7.9
-<span class="nv">$ </span>pip install --upgrade pip
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>pyenv <span class="nb">install </span>2.7.9
+<span class="nv">$ </span>pip <span class="nb">install</span> <span class="nt">--upgrade</span> pip
 <span class="nv">$ </span>pip uninstall enum enum34
-<span class="nv">$ </span>pip install enum34 --upgrade
-<span class="nv">$ </span>pip install cryptography
-<span class="nv">$ </span>pip install numpy
-<span class="nv">$ </span>pip install pandas
-<span class="nv">$ </span>pip install matplotlib
-<span class="nv">$ </span>pip install jupyter</code></pre></div>
+<span class="nv">$ </span>pip <span class="nb">install </span>enum34 <span class="nt">--upgrade</span>
+<span class="nv">$ </span>pip <span class="nb">install </span>cryptography
+<span class="nv">$ </span>pip <span class="nb">install </span>numpy
+<span class="nv">$ </span>pip <span class="nb">install </span>pandas
+<span class="nv">$ </span>pip <span class="nb">install </span>matplotlib
+<span class="nv">$ </span>pip <span class="nb">install </span>jupyter</code></pre></figure>
 
 <p>And in the moment he saw the reflection of the one true UNIX kernel. He had done it, he had vanquished data visualizations and walked the fiery dependency hell of python.</p>
 
@@ -232,11 +218,11 @@ Our hero, chose the path of pyenv - a recondite cult who claim to have conquered
   <h4>You might also enjoy <small class="pull-right">(<a href="//srijanshetty.in/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="//srijanshetty.in/storing-cookies-with-httpie/" title="Storing Cookies With Httpie">Storing Cookies With Httpie</a></li>
+    
+      <li><a href="//srijanshetty.in/technical/hulk-squash-a-better-git-squash-workflow/" title="Hulk Squash - a Better Git Squash Workflow">Hulk Squash - a Better Git Squash Workflow</a></li>
+    
       <li><a href="//srijanshetty.in/gitting-hooks-setup/" title="Gitting Hooks setups">Gitting Hooks setups</a></li>
-    
-      <li><a href="//srijanshetty.in/technical/jcip-java-concurrency-in-practice-2019-review/" title="JCIP - Java Concurrency in Practice 2019 Review">JCIP - Java Concurrency in Practice 2019 Review</a></li>
-    
-      <li><a href="//srijanshetty.in/technical/john-vim-parabellum/" title="John Vim - Parabellum">John Vim - Parabellum</a></li>
     
     </ul>
     <hr />
@@ -245,7 +231,7 @@ Our hero, chose the path of pyenv - a recondite cult who claim to have conquered
   <footer>
     
 
-<span>&copy; 2019 Srijan R. Shetty. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2020 Srijan R. Shetty. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

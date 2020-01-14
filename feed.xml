@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="//srijanshetty.in/feed.xml" />
 <link rel="alternate" type="text/html" href="//srijanshetty.in" />
-<updated>2019-12-20T22:56:02+05:30</updated>
+<updated>2020-01-14T12:41:26+05:30</updated>
 <id>//srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
@@ -13,7 +13,81 @@
 </author>
 
 
-  
+<entry>
+  <title type="html"><![CDATA[Storing Cookies With Httpie]]></title>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/storing-cookies-with-httpie/" />
+  <id>//srijanshetty.in/storing-cookies-with-httpie</id>
+  <published>2020-01-14T12:34:57+05:30</published>
+  <updated>2020-01-14T12:34:57+05:30</updated>
+  <author>
+    <name>Srijan R. Shetty</name>
+    <uri>//srijanshetty.in</uri>
+    <email>srijan.shetty+code@gmail.com</email>
+  </author>
+  <content type="html">
+    
+
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/storing-cookies-with-httpie/&quot;&gt;Storing Cookies With Httpie&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on January 14, 2020.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Hulk Squash - a Better Git Squash Workflow]]></title>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/hulk-squash-a-better-git-squash-workflow/" />
+  <id>//srijanshetty.in/technical/hulk-squash-a-better-git-squash-workflow</id>
+  <published>2019-12-26T01:11:38+05:30</published>
+  <updated>2019-12-26T01:11:38+05:30</updated>
+  <author>
+    <name>Srijan R. Shetty</name>
+    <uri>//srijanshetty.in</uri>
+    <email>srijan.shetty+code@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Sometimes while fixing multiple bugs related to a &lt;code class=&quot;highlighter-rouge&quot;&gt;feature branch&lt;/code&gt; you might come across
+the peculiar situation that you want to add some more files to an older commit. Hitherto,
+my workflow was a patchwork of creating a new commit with &lt;code class=&quot;highlighter-rouge&quot;&gt;squash!&lt;/code&gt; prefix and then clumsily
+performing an interactive rebase to position the commit on the correct SHA.&lt;br /&gt;&lt;br /&gt;
+Fortunately, I’ve found a much better flow which greatly simplifies development. Two tools
+are critical in helping me with this workflow. &lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt; being the usual suspect, but &lt;code class=&quot;highlighter-rouge&quot;&gt;fzf&lt;/code&gt; is
+the secret sauce. I have the following snippet in my &lt;code class=&quot;highlighter-rouge&quot;&gt;zsh&lt;/code&gt; sourced files:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;function &lt;/span&gt;is_in_git_repo&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    git rev-parse HEAD &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; /dev/null 2&amp;gt;&amp;amp;1
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;function &lt;/span&gt;fzf-down&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    fzf &lt;span class=&quot;nt&quot;&gt;--height&lt;/span&gt; 50% &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$@&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--border&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;function &lt;/span&gt;gh&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    is_in_git_repo &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return
+    &lt;/span&gt;git log &lt;span class=&quot;nt&quot;&gt;--date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;short &lt;span class=&quot;nt&quot;&gt;--format&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;%C(green)%C(bold)%cd %C(auto)%h%d %s (%an)&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--graph&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;always |
+        fzf-down &lt;span class=&quot;nt&quot;&gt;--ansi&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--no-sort&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--reverse&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--multi&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--bind&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'ctrl-s:toggle-sort'&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;--header&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Press CTRL-S to toggle sort'&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;--preview&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'grep -o &quot;[a-f0-9]\{7,\}&quot; &amp;lt;&amp;lt;&amp;lt; {} | xargs git show --color=always | head -'&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$LINES&lt;/span&gt; |
+        &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;[a-f0-9]&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;7,&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;function &lt;/span&gt;bind-git-helper&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;local &lt;/span&gt;c
+    &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;c &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$@&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do
+        &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;fzf-g&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$c&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;-widget() { local result=&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\$&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;(g&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$c&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; | join-lines); zle reset-prompt; LBUFFER+=&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\$&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;result }&quot;&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;zle -N fzf-g&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$c&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;-widget&quot;&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;bindkey '^k^&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$c&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;' fzf-g&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$c&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;-widget&quot;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+bind-git-helper h
+&lt;span class=&quot;nb&quot;&gt;unset&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; bind-git-helper
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This allows me to hit &lt;C-k&gt;h in a project managed by git which opens up a view&lt;/C-k&gt;&lt;/p&gt;
+
+
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/hulk-squash-a-better-git-squash-workflow/&quot;&gt;Hulk Squash - a Better Git Squash Workflow&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on December 26, 2019.&lt;/p&gt;
+  </content>
+</entry>
+
 
 <entry>
   <title type="html"><![CDATA[Gitting Hooks setups]]></title>
@@ -27,7 +101,7 @@
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
-    &lt;p&gt;I’ve always loved the concept of &lt;code&gt;git hooks&lt;/code&gt;, but it’s setup has always troubled me as being &lt;code&gt;snowflaky&lt;/code&gt;.
+    &lt;p&gt;I’ve always loved the concept of &lt;code class=&quot;highlighter-rouge&quot;&gt;git hooks&lt;/code&gt;, but it’s setup has always troubled me as being &lt;code class=&quot;highlighter-rouge&quot;&gt;snowflaky&lt;/code&gt;.
 Sharing hooks across a development team was awkward and there was no &lt;a href=&quot;https://www.martinfowler.com/bliki/UbiquitousLanguage.html&quot;&gt;Ubiquitous
 Language&lt;/a&gt;.&lt;br /&gt;&lt;br /&gt;
 After struggling with bespoke solutions in the lingua franca of bash,
@@ -37,37 +111,35 @@ and the &lt;a href=&quot;https://www.conventionalcommits.org/en/v1.0.0/&quot;&gt
 (an admirable way to manage releases and make commits more readable).
 In trying to integrate Conventional Commits to my &lt;a href=&quot;https://github.com/srijanshetty/minimal-mistakes&quot;&gt;website&lt;/a&gt;, 
 I’ve come across a solution that works perfect for me.&lt;br /&gt;&lt;br /&gt;
-The current setup uses &lt;code&gt;husky&lt;/code&gt; as a dev-dependency in &lt;code&gt;package.json&lt;/code&gt; which sets up a &lt;code&gt;commit-msg&lt;/code&gt; hook as follows:&lt;/p&gt;
+The current setup uses &lt;code class=&quot;highlighter-rouge&quot;&gt;husky&lt;/code&gt; as a dev-dependency in &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; which sets up a &lt;code class=&quot;highlighter-rouge&quot;&gt;commit-msg&lt;/code&gt; hook as follows:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;npm init
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;npm install --save-dev husky&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;npm init
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--save-dev&lt;/span&gt; husky&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;quot;...&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;other parameters&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;quot;commitlint&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;quot;extends&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;@commitlint/config-conventional&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;quot;rules&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-          &lt;span class=&quot;nt&quot;&gt;&amp;quot;type-enum&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;always&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;feat&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;fix&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;docs&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;build&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;refactor&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;revert&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;post&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;quot;husky&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;quot;hooks&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-          &lt;span class=&quot;nt&quot;&gt;&amp;quot;commit-msg&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;commitlint -E HUSKY_GIT_PARAMS&amp;quot;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;...&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;other parameters&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;commitlint&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;extends&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;@commitlint/config-conventional&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;rules&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type-enum&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;always&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;feat&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;fix&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;docs&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;build&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;refactor&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;revert&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;post&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;husky&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;hooks&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;commit-msg&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;commitlint -E HUSKY_GIT_PARAMS&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;The great part of this setup is that it ties everything into a single &lt;code&gt;package.json&lt;/code&gt; file. 
+&lt;p&gt;The great part of this setup is that it ties everything into a single &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; file. 
 The npm eco-system is a cesspool when it comes to security but it does make developer tooling a breeze.
-The community converging on using a single &lt;code&gt;package.json&lt;/code&gt; is a god-send, over the alternative of a bunch of .rc files spewed all across; adding &lt;code&gt;git hooks&lt;/code&gt; is the natural evolution to the puzzle.&lt;br /&gt;&lt;br /&gt;
+The community converging on using a single &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; is a god-send, over the alternative of a bunch of .rc files spewed all across; adding &lt;code class=&quot;highlighter-rouge&quot;&gt;git hooks&lt;/code&gt; is the natural evolution to the puzzle.&lt;br /&gt;&lt;br /&gt;
 It’s great how sometimes your problems solve themselves if you let them be for years.&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/gitting-hooks-setup/&quot;&gt;Gitting Hooks setups&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on October 06, 2019.&lt;/p&gt;
   </content>
 </entry>
 
-
-  
 
 <entry>
   <title type="html"><![CDATA[JCIP - Java Concurrency in Practice 2019 Review]]></title>
@@ -81,17 +153,15 @@ It’s great how sometimes your problems solve themselves if you let them be for
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
-    &lt;p&gt;As of writing, &lt;code&gt;Java 13&lt;/code&gt; has a release candidate and JCIP still refers to &lt;code&gt;Java 6&lt;/code&gt; as the latest and greatest of Java. It’s no wonder that Java forums are replete with questions on the relevance of JCIP - full disclosure, I posed the same question when I emailed Heinz Kabutz. After spending 6 months with the books (you read that right, and this wasn’t the only book I was reading), I’ve realized how wrong my Java programs have been. &lt;br /&gt;&lt;br /&gt;
+    &lt;p&gt;As of writing, &lt;code class=&quot;highlighter-rouge&quot;&gt;Java 13&lt;/code&gt; has a release candidate and JCIP still refers to &lt;code class=&quot;highlighter-rouge&quot;&gt;Java 6&lt;/code&gt; as the latest and greatest of Java. It’s no wonder that Java forums are replete with questions on the relevance of JCIP - full disclosure, I posed the same question when I emailed Heinz Kabutz. After spending 6 months with the books (you read that right, and this wasn’t the only book I was reading), I’ve realized how wrong my Java programs have been. &lt;br /&gt;&lt;br /&gt;
 In the age of fast paced evolution of programming languages, most programming language books age badly. JCIP is not in that ilk, the fundamental point of contention in JCIP is writing highly scalable and correct concurrent code and not Java. JCIP excels in imparting a fundamental understanding of concurrency, and dissecting core issues a developer might face when architecting concurrent programs.&lt;br /&gt;&lt;br /&gt;
-Caveat emptor. It’s a dense read, ideas are succinct and compact and rarely prolix. Which makes it easy to read and hard to grasp. There have been times wherein I’ve spent hours understanding the implication of concepts such as &lt;code&gt;Initialization safety&lt;/code&gt;, &lt;code&gt;safe publication&lt;/code&gt;, &lt;code&gt;happens-before relationships&lt;/code&gt;; these concepts have inexorably changed my mental model of concurrent programming for the better.&lt;br /&gt;&lt;br /&gt;
+Caveat emptor. It’s a dense read, ideas are succinct and compact and rarely prolix. Which makes it easy to read and hard to grasp. There have been times wherein I’ve spent hours understanding the implication of concepts such as &lt;code class=&quot;highlighter-rouge&quot;&gt;Initialization safety&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;safe publication&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;happens-before relationships&lt;/code&gt;; these concepts have inexorably changed my mental model of concurrent programming for the better.&lt;br /&gt;&lt;br /&gt;
 I would definitely urge serious Java programmers to try and work through JCIP, and maybe have an epiphany of their own.&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/jcip-java-concurrency-in-practice-2019-review/&quot;&gt;JCIP - Java Concurrency in Practice 2019 Review&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on August 18, 2019.&lt;/p&gt;
   </content>
 </entry>
 
-
-  
 
 <entry>
   <title type="html"><![CDATA[John Vim - Parabellum]]></title>
@@ -120,25 +190,25 @@ I decided to chose the &lt;a href=&quot;https://en.wikipedia.org/wiki/Red_pill_a
 and compile vim from source.&lt;br /&gt;&lt;br /&gt;
 Theoretically compiling vim from source should be simple:&lt;br /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone https://github.com/vim &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;vim
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone https://github.com/vim &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;vim
 &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./configure
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;make &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; make install&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;make &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; make &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;But the devil is in the details. Here’s the exact steps that one needs to follow:&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone https://github.com/vim &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;vim
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone https://github.com/vim &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;vim
 &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./configure &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
---with-features&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;huge &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
---enable-multibyte &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
---enable-rubyinterp&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;yes &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
---enable-python3interp&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;yes &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
---with-python3-config-dir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/lib/python3.6/config-3.6m-x86_64-linux-gnu/ &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
---enable-perlinterp&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;yes &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
---enable-luainterp&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;yes &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
---enable-gui&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;gtk &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
---enable-cscope &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
---prefix&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;local_bin&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;make &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; make install&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;nt&quot;&gt;--with-features&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;huge &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--enable-multibyte&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--enable-rubyinterp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;yes&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--enable-python3interp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;yes&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--with-python3-config-dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/lib/python3.6/config-3.6m-x86_64-linux-gnu/ &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--enable-perlinterp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;yes&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--enable-luainterp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;yes&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--enable-gui&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;gtk &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--enable-cscope&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--prefix&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;local_bin&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;make &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; make &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Some salient points in this setup are:&lt;/p&gt;
 
@@ -154,8 +224,6 @@ Theoretically compiling vim from source should be simple:&lt;br /&gt;&lt;/p&gt;
   </content>
 </entry>
 
-
-  
 
 <entry>
   <title type="html"><![CDATA[Modern Love]]></title>
@@ -180,8 +248,6 @@ Modern love is strange, and hopefully we come to see of it more like friendship;
 </entry>
 
 
-  
-
 <entry>
   <title type="html"><![CDATA[How to Train Your Python - 2.7]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/how-to-train-your-python-2-7/" />
@@ -197,33 +263,33 @@ Modern love is strange, and hopefully we come to see of it more like friendship;
     &lt;p&gt;The travails of the noble warriors who’ve tried to walk the path of the dependency hell of python have been immortalized in the travelogues of the internet. From &lt;a href=&quot;https://xkcd.com/1987/&quot;&gt;mosaics&lt;/a&gt; ornamenting the holy shrines of &lt;a href=&quot;https://xkcd.com/1987/&quot;&gt;xkcd&lt;/a&gt;, to gospels written in the blogosphere; we’ve been plagued with tales of valor. And yet, python like the heads of the hydra grows two more if you’ve managed to chop one off.&lt;br /&gt;&lt;br /&gt;
 Our hero, chose the path of pyenv - a recondite cult who claim to have conquered the versions of python. While all was the well in the land of pyenv’s python-2.7.9, until one day when he had to tackle a new villan in town - data visualizations. His best bet was to use jupyter - no, ipython wasn’t enough - and so he embarked on a perilous path. In his first attempt he used the incantation of:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install jupyter&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;jupyter&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Things worked well and a kernel appeared to fulfil his commands until asked to plot, when kernel came crashing down.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;ModuleNotFoundError: No module named &lt;span class=&quot;s1&quot;&gt;&amp;#39;_tkinter&amp;#39;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#_ This comment preserves formatting in vim&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;ModuleNotFoundError: No module named &lt;span class=&quot;s1&quot;&gt;'_tkinter'&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#_ This comment preserves formatting in vim&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;The helpful folks from the land of stackoverflow suggested a spell to resuscitate the kernel.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip uninstall jupyter numpy pandas matplotlib
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo apt-get install tk-dev
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install jupyter numpy pandas matplotlib&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip uninstall jupyter numpy pandas matplotlib
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;tk-dev
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;jupyter numpy pandas matplotlib&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;And viola, and darkness took over and python-2.7.9. Scared and lonely in the world of the internet, our hero did the only logical thing.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pyenv uninstall 2.7.9&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pyenv uninstall 2.7.9&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;He took over the responsibility of the python world and annihilated it. Sometimes you have to let go of the past. Kill it if you have to. So he did, only to create a new one like the Oracle in Matrix. But this time he was determined, he went through the valleys of medium, the hills of StackOverflow and the plains of GitHub to learn of the one true spell.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pyenv install 2.7.9
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install --upgrade pip
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pyenv &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;2.7.9
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--upgrade&lt;/span&gt; pip
 &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip uninstall enum enum34
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install enum34 --upgrade
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install cryptography
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install numpy
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install pandas
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install matplotlib
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install jupyter&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;enum34 &lt;span class=&quot;nt&quot;&gt;--upgrade&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;cryptography
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;numpy
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;pandas
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;matplotlib
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;jupyter&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;And in the moment he saw the reflection of the one true UNIX kernel. He had done it, he had vanquished data visualizations and walked the fiery dependency hell of python.&lt;/p&gt;
 
@@ -231,8 +297,6 @@ Our hero, chose the path of pyenv - a recondite cult who claim to have conquered
   </content>
 </entry>
 
-
-  
 
 <entry>
   <title type="html"><![CDATA[Travelogue - Russia, 2018]]></title>
@@ -252,8 +316,6 @@ Our hero, chose the path of pyenv - a recondite cult who claim to have conquered
   </content>
 </entry>
 
-
-  
 
 <entry>
   <title type="html"><![CDATA[Call (Me) by (Your) Name: Python Is Pass by What Again?]]></title>
@@ -278,7 +340,7 @@ you have &lt;em&gt;call-by-reference&lt;/em&gt;. But python, is sly, and while o
 Here’s an innocuous piece of code, which for some inexplicable reason doesn’t produce the expected
 output:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;mutate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;mutate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;ls&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
@@ -287,21 +349,23 @@ output:&lt;/p&gt;
     &lt;span class=&quot;n&quot;&gt;mutate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Despite the code being synthetic, it underscores an important point. In this particular example,
 the output on the console is &lt;strong&gt;[1,2]&lt;/strong&gt; and not &lt;strong&gt;[1]&lt;/strong&gt;. How on earth is that possible, you ask?
 Well, the answer to this mystery lies in the fact that python is &lt;em&gt;call-by-name.&lt;/em&gt;&lt;br /&gt;&lt;br /&gt;
 In the &lt;em&gt;call-by-name&lt;/em&gt; model, a name (or a variable in common parlance) is bound to an object. In the &lt;em&gt;main&lt;/em&gt;,
-&lt;strong&gt;arr&lt;/strong&gt; is bound to the object &lt;strong&gt;[1,2]&lt;/strong&gt;. Initially in mutate, &lt;strong&gt;ls&lt;/strong&gt; is bound to the same object &lt;strong&gt;[1,2]&lt;/strong&gt;
-- note, how we say bound to an object and not a reference to a memory location, unlike C/Java/ECMAscript
-- but, on the very first line of &lt;em&gt;mutate&lt;/em&gt;, we bind ls to a new object &lt;strong&gt;[]&lt;/strong&gt;, and hence forth the binding
+&lt;strong&gt;arr&lt;/strong&gt; is bound to the object &lt;strong&gt;[1,2]&lt;/strong&gt;. Initially in mutate, &lt;strong&gt;ls&lt;/strong&gt; is bound to the same object &lt;strong&gt;[1,2]&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;note, how we say bound to an object and not a reference to a memory location, unlike C/Java/ECMAscript&lt;/li&gt;
+  &lt;li&gt;but, on the very first line of &lt;em&gt;mutate&lt;/em&gt;, we bind ls to a new object &lt;strong&gt;[]&lt;/strong&gt;, and hence forth the binding
 of &lt;strong&gt;[1,2]&lt;/strong&gt; is hidden from &lt;em&gt;mutate&lt;/em&gt;. Any changes to &lt;strong&gt;ls&lt;/strong&gt; will not be reflected back to &lt;strong&gt;arr&lt;/strong&gt; as they are bound
 to different objects.&lt;br /&gt;&lt;br /&gt;
 While this might seem pedantic, and left to language purists. This erudite fact can manifest in hard to
-find bugs. For example, the following code has a surprising output:&lt;/p&gt;
+find bugs. For example, the following code has a surprising output:&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;mutate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;mutate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;ls&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
@@ -313,13 +377,13 @@ find bugs. For example, the following code has a surprising output:&lt;/p&gt;
 &lt;span class=&quot;n&quot;&gt;mutate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;mutate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;The output of this code is as follows:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python test.py
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;1, 2, 3, 4, 2, 6&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;1, 2, 3, 4, 2, 6&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python test.py
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;1, 2, 3, 4, 2, 6]
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;1, 2, 3, 4, 2, 6]&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;The second conditional becomes a no-op as &lt;strong&gt;arr&lt;/strong&gt; won’t be mutated once it’s length is greater than 5. Ipso facto,
 &lt;em&gt;call-by-name&lt;/em&gt; is evident right now, but in longer methods its to discern and impossible to debug.&lt;br /&gt;&lt;br /&gt;
@@ -330,8 +394,6 @@ So, next time recall that python does call (me) by (your) name.&lt;/p&gt;
   </content>
 </entry>
 
-
-  
 
 <entry>
   <title type="html"><![CDATA[Honey, I Did a Bare Except]]></title>
@@ -348,17 +410,17 @@ So, next time recall that python does call (me) by (your) name.&lt;/p&gt;
   <content type="html">
     &lt;p&gt;So, what you might ask? In fact you might have seen this blasphemy time and time again:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;# Some code&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;ne&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# Some code
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Or this variation written by another apostate (me, a few days ago):&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;# Some code&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;except&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# Some code
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;except&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;While we may be blinded in the present, at some point your future-self will want to travel back in time
 and smack you for your idiocy, like I wanted to, for this mea cupla.&lt;br /&gt;&lt;br /&gt;
@@ -371,10 +433,10 @@ Since this was all wrapped up in a busy loop which watched for changes, I was ok
 In an attempt to tame the function I decided to use &lt;em&gt;SIGALRM&lt;/em&gt; and this is when my foolishness dawned upon
 me.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;signal&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;signal&lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;time&lt;/span&gt;
 
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ProcessTimeoutException&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ne&quot;&gt;Exception&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ProcessTimeoutException&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Exception&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;timeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
@@ -383,8 +445,8 @@ me.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;db_call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;ne&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;I&amp;#39;m going to eat the error&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;I'm going to eat the error&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
@@ -394,10 +456,10 @@ me.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
     &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;db_call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ProcessTimeoutException&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;Never reaches&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Never reaches'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;__main__&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;__main__&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Can you notice what’s wrong with the above snippet? &lt;strong&gt;db_call&lt;/strong&gt; ends up eating &lt;em&gt;all&lt;/em&gt; exceptions, which renders
 my timeout logic ineffective.&lt;br /&gt;&lt;br /&gt;
@@ -410,8 +472,6 @@ So, as a favour to your future self, kindly avoid going bare (with exceptions).&
   </content>
 </entry>
 
-
-  
 
 <entry>
   <title type="html"><![CDATA[Zombieland: Zombie Children Eating Memory]]></title>
@@ -430,11 +490,11 @@ So, as a favour to your future self, kindly avoid going bare (with exceptions).&
 zombies - just in case, I’m talking about process children in linux (don’t arrest me please).&lt;br /&gt;&lt;br /&gt;
 Here’s a snippet of code from a personal project:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;child_pid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;signal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SIGTERM&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;ne&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Can you notice what’s wrong with the above snippet? (Apart from the horrid error handling,
 and the fact that I’ve ignored that the children must have async-signal-safe signal handlers
@@ -443,21 +503,21 @@ You’ll be leaving zombies all over the OS!&lt;br /&gt;&lt;br /&gt;
 It took me a while to figure out the (mostly) correct way to handle killing your own (process’)
 children safely:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;signal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SIGTERM&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;signal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SIGTERM&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;psutil&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;terminate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wait&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;timeout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;45&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Wow. your children are really obedient&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Wow. your children are really obedient&quot;&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;psutil&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TimeoutExpired&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;# For a bad process this will ensure that we send it a sigkill&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;send_signal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;signal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SIGKILL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# For a bad process this will ensure that we send it a sigkill
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;send_signal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;signal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SIGKILL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wait&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;timeout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Close call, we need the big guns, but at least they&amp;#39;re dead now&amp;quot;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Close call, we need the big guns, but at least they're dead now&quot;&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;psutil&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TimeoutExpired&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Zombies have escaped. I repeat, zombies have escaped&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Zombies have escaped. I repeat, zombies have escaped&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Let me explain what’s going on here. The first &lt;em&gt;terminate&lt;/em&gt; sends a &lt;strong&gt;SIGTERM&lt;/strong&gt; to the child and then we
 do a blocking 45 seconds wait on the child process in order to reap it. If all goes according to plan,
@@ -474,8 +534,6 @@ nuke the parent and hope the zombies don’t become orphan zombies. (Yikes)&lt;/
   </content>
 </entry>
 
-
-  
 
 <entry>
   <title type="html"><![CDATA[Afflatus Begins]]></title>
@@ -504,8 +562,6 @@ nuke the parent and hope the zombies don’t become orphan zombies. (Yikes)&lt;/
 </entry>
 
 
-  
-
 <entry>
   <title type="html"><![CDATA[Installing Scikit and Numpy in Ubuntu]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/installing-scikit-and-numpy-in-ubuntu/" />
@@ -520,21 +576,19 @@ nuke the parent and hope the zombies don’t become orphan zombies. (Yikes)&lt;/
   <content type="html">
     &lt;p&gt;After sifting through multiple stack-overflow answers and blog posts, here is a list of consolidated steps to install scipy stack on Ubuntu 14.04. (I’m currently using Elementary OS Freya which is a derivative of Ubuntu 14.04).&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo apt-get install python-pip python-setuptools python-dev
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo apt-get install libjpeg-dev zlib1g-dev &lt;span class=&quot;c&quot;&gt;# Pillow build dependencies&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo apt-get install libblas-dev libatlas-dev liblapack-dev gfortran &lt;span class=&quot;c&quot;&gt;# Scipy dependencies&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo apt-get install g++ &lt;span class=&quot;c&quot;&gt;# Sciki-lean dependency&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo apt-get install cython &lt;span class=&quot;c&quot;&gt;# Scikit-image dependency&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo apt-get install libenchant-dev &lt;span class=&quot;c&quot;&gt;# PyEnchant dependency&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install scipy numpy &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;use pyenv, not sudo&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;python-pip python-setuptools python-dev
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;libjpeg-dev zlib1g-dev &lt;span class=&quot;c&quot;&gt;# Pillow build dependencies&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;libblas-dev libatlas-dev liblapack-dev gfortran &lt;span class=&quot;c&quot;&gt;# Scipy dependencies&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;g++ &lt;span class=&quot;c&quot;&gt;# Sciki-lean dependency&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;cython &lt;span class=&quot;c&quot;&gt;# Scikit-image dependency&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;libenchant-dev &lt;span class=&quot;c&quot;&gt;# PyEnchant dependency&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;scipy numpy &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;use pyenv, not &lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
     &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/installing-scikit-and-numpy-in-ubuntu/&quot;&gt;Installing Scikit and Numpy in Ubuntu&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on February 14, 2016.&lt;/p&gt;
   </content>
 </entry>
 
-
-  
 
 <entry>
   <title type="html"><![CDATA[Tasker Appendix]]></title>
@@ -568,8 +622,6 @@ nuke the parent and hope the zombies don’t become orphan zombies. (Yikes)&lt;/
 </entry>
 
 
-  
-
 <entry>
   <title type="html"><![CDATA[Travelogue - Paris]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/travelogue/travelogue-paris/" />
@@ -601,8 +653,6 @@ a tale to tell, a pen to confide.&lt;br /&gt;&lt;/p&gt;
 </entry>
 
 
-  
-
 <entry>
   <title type="html"><![CDATA[Wastelands]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/poems/wastelands/" />
@@ -630,8 +680,6 @@ Dead men seeking salvation.&lt;br /&gt;&lt;/p&gt;
 </entry>
 
 
-  
-
 <entry>
   <title type="html"><![CDATA[CLI Goodies]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/cli-goodies/" />
@@ -645,56 +693,56 @@ Dead men seeking salvation.&lt;br /&gt;&lt;/p&gt;
   </author>
   <content type="html">
     &lt;blockquote&gt;
-  &lt;p&gt;Today, I finally have most of the goodness of my shell packed as a single repository. I say most because, I still have some things stuck in antigen with no clear migration path. Until then give these goodies a whirl, and do give a shout out to me if you need any help setting them up; I’ve added instructions of getting them up and ready with the common - a metric defined by the number of GitHub stars the framework has - frameworks out there. (My favourite is undoubtedly &lt;code&gt;Prezto&lt;/code&gt; for it’s super fast startup).&lt;/p&gt;
+  &lt;p&gt;Today, I finally have most of the goodness of my shell packed as a single repository. I say most because, I still have some things stuck in antigen with no clear migration path. Until then give these goodies a whirl, and do give a shout out to me if you need any help setting them up; I’ve added instructions of getting them up and ready with the common - a metric defined by the number of GitHub stars the framework has - frameworks out there. (My favourite is undoubtedly &lt;code class=&quot;highlighter-rouge&quot;&gt;Prezto&lt;/code&gt; for it’s super fast startup).&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+&lt;p&gt;##Installation&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Installing under &lt;a href=&quot;https://github.com/sorin-ionescu/prezto&quot;&gt;Prezto&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; .zprezto
-  git submodule add https://github.com/srijanshetty/cli-goodies.git modules/cli-goodies&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;  &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; .zprezto
+  git submodule add https://github.com/srijanshetty/cli-goodies.git modules/cli-goodies&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Add &lt;code&gt;cli-goodies&lt;/code&gt; to your &lt;code&gt;.zpreztorc&lt;/code&gt; file:&lt;/p&gt;
+&lt;p&gt;Add &lt;code class=&quot;highlighter-rouge&quot;&gt;cli-goodies&lt;/code&gt; to your &lt;code class=&quot;highlighter-rouge&quot;&gt;.zpreztorc&lt;/code&gt; file:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;# Set the Prezto modules to load (browse modules).
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;  # Set the Prezto modules to load (browse modules).
   # The order matters.
-  zstyle &amp;#39;:prezto:load&amp;#39; pmodule \
-    &amp;#39;environment&amp;#39; \
-    &amp;#39;terminal&amp;#39; \
-    &amp;#39;editor&amp;#39; \
-    &amp;#39;history&amp;#39; \
-    &amp;#39;directory&amp;#39; \
-    &amp;#39;spectrum&amp;#39; \
-    &amp;#39;utility&amp;#39; \
-    &amp;#39;completion&amp;#39; \
-    &amp;#39;prompt&amp;#39; \
-    &amp;#39;cli-goodies&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  zstyle ':prezto:load' pmodule \
+    'environment' \
+    'terminal' \
+    'editor' \
+    'history' \
+    'directory' \
+    'spectrum' \
+    'utility' \
+    'completion' \
+    'prompt' \
+    'cli-goodies'&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;strong&gt;Installing under oh-my-zsh&lt;/strong&gt;&lt;br /&gt;
-I haven’t tried using &lt;code&gt;cli-goodies&lt;/code&gt; with &lt;code&gt;oh-my-zsh&lt;/code&gt; and I think the following should work in theory.&lt;/p&gt;
+I haven’t tried using &lt;code class=&quot;highlighter-rouge&quot;&gt;cli-goodies&lt;/code&gt; with &lt;code class=&quot;highlighter-rouge&quot;&gt;oh-my-zsh&lt;/code&gt; and I think the following should work in theory.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;wget https://raw.github.com/srijanshetty/cli-goodies/master/init.zsh -O &lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;/.oh-my-zsh/custom/cli-goodies.zsh&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    wget https://raw.github.com/srijanshetty/cli-goodies/master/init.zsh &lt;span class=&quot;nt&quot;&gt;-O&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;/.oh-my-zsh/custom/cli-goodies.zsh&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;strong&gt;Installing using &lt;a href=&quot;https://github.com/zsh-users/antigen&quot;&gt;Antigen&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
-If you use &lt;a href=&quot;https://github.com/zsh-users/antigen&quot;&gt;Antigen&lt;/a&gt;, adding the following line to &lt;code&gt;.zshrc&lt;/code&gt; should load &lt;code&gt;cli-goodies&lt;/code&gt;.&lt;/p&gt;
+If you use &lt;a href=&quot;https://github.com/zsh-users/antigen&quot;&gt;Antigen&lt;/a&gt;, adding the following line to &lt;code class=&quot;highlighter-rouge&quot;&gt;.zshrc&lt;/code&gt; should load &lt;code class=&quot;highlighter-rouge&quot;&gt;cli-goodies&lt;/code&gt;.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;antigen-bundle srijanshetty/zsh-dwim&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    antigen-bundle srijanshetty/zsh-dwim&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;strong&gt;Using &lt;code&gt;cli-goodies&lt;/code&gt; anywhere else&lt;/strong&gt;&lt;br /&gt;
-Anyone running &lt;code&gt;zsh&lt;/code&gt; should only need to add the following line to their &lt;code&gt;.zshrc&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Using &lt;code class=&quot;highlighter-rouge&quot;&gt;cli-goodies&lt;/code&gt; anywhere else&lt;/strong&gt;&lt;br /&gt;
+Anyone running &lt;code class=&quot;highlighter-rouge&quot;&gt;zsh&lt;/code&gt; should only need to add the following line to their &lt;code class=&quot;highlighter-rouge&quot;&gt;.zshrc&lt;/code&gt;:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;source &lt;/span&gt;init.zsh&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    &lt;span class=&quot;nb&quot;&gt;source &lt;/span&gt;init.zsh&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h2 id=&quot;dependencies&quot;&gt;Dependencies&lt;/h2&gt;
+&lt;p&gt;##Dependencies&lt;/p&gt;
 
-&lt;p&gt;You’ll need to install &lt;code&gt;peru&lt;/code&gt; to get the completions working. Peru is a simple file downloader with a declarative syntax. While &lt;code&gt;curl&lt;/code&gt; could be used to accomplish the same, &lt;code&gt;peru&lt;/code&gt; is simpler to read.&lt;/p&gt;
+&lt;p&gt;You’ll need to install &lt;code class=&quot;highlighter-rouge&quot;&gt;peru&lt;/code&gt; to get the completions working. Peru is a simple file downloader with a declarative syntax. While &lt;code class=&quot;highlighter-rouge&quot;&gt;curl&lt;/code&gt; could be used to accomplish the same, &lt;code class=&quot;highlighter-rouge&quot;&gt;peru&lt;/code&gt; is simpler to read.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;pip install peru
-peru sync&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;peru
+peru &lt;span class=&quot;nb&quot;&gt;sync&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Completions&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;##Features
+&lt;strong&gt;Completions&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/sampsyo/beets/blob/master/extra/_beet&quot;&gt;_beet&lt;/a&gt;&lt;/li&gt;
@@ -736,8 +784,6 @@ Fin.&lt;/p&gt;
 </entry>
 
 
-  
-
 <entry>
   <title type="html"><![CDATA[Mastering Custom Site Search in Chrome]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/hacks/mastering-search-in-chrome/" />
@@ -750,7 +796,7 @@ Fin.&lt;/p&gt;
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
-    &lt;p&gt;Chrome was the shiny, fast browser which caused me to shift from firefox; and even after chrome has become the still shiny, slow mess that it has become, I find it hard to move away due to some really awesome inbuilt features of chrome. My favourite amongst them is the ability to leverage any site’s search functionality. I’m pretty sure that you might have noticed that pressing &lt;code&gt;[Tab]&lt;/code&gt; after typing youtube in the search bar allows you to search youtube directly from the search bar. What’s really fun is that this functionality can be extended to any website as long as it searched using a URL query.&lt;br /&gt;&lt;br /&gt;
+    &lt;p&gt;Chrome was the shiny, fast browser which caused me to shift from firefox; and even after chrome has become the still shiny, slow mess that it has become, I find it hard to move away due to some really awesome inbuilt features of chrome. My favourite amongst them is the ability to leverage any site’s search functionality. I’m pretty sure that you might have noticed that pressing &lt;code class=&quot;highlighter-rouge&quot;&gt;[Tab]&lt;/code&gt; after typing youtube in the search bar allows you to search youtube directly from the search bar. What’s really fun is that this functionality can be extended to any website as long as it searched using a URL query.&lt;br /&gt;&lt;br /&gt;
 For example, I’ll show you how to automate searching within the settings of chrome.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -767,12 +813,12 @@ For example, I’ll show you how to automate searching within the settings of ch
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;Scroll to the end of the list of search engines, where it says that you can &lt;code&gt;Add a new search engine&lt;/code&gt;.&lt;/p&gt;
+    &lt;p&gt;Scroll to the end of the list of search engines, where it says that you can &lt;code class=&quot;highlighter-rouge&quot;&gt;Add a new search engine&lt;/code&gt;.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;To add a new search engine, you need to name it and additionally give it a &lt;code&gt;trigger&lt;/code&gt;. The trigger
- is the key which followed by a &lt;code&gt;Tab&lt;/code&gt; on the omnibar lets chrome know your intent of searching the site
- instead of merely visiting it. Here I’ve used &lt;code&gt;csettings&lt;/code&gt; as a trigger.&lt;/p&gt;
+    &lt;p&gt;To add a new search engine, you need to name it and additionally give it a &lt;code class=&quot;highlighter-rouge&quot;&gt;trigger&lt;/code&gt;. The trigger
+ is the key which followed by a &lt;code class=&quot;highlighter-rouge&quot;&gt;Tab&lt;/code&gt; on the omnibar lets chrome know your intent of searching the site
+ instead of merely visiting it. Here I’ve used &lt;code class=&quot;highlighter-rouge&quot;&gt;csettings&lt;/code&gt; as a trigger.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 &lt;figure&gt;
@@ -788,8 +834,6 @@ For example, I’ll show you how to automate searching within the settings of ch
   </content>
 </entry>
 
-
-  
 
 <entry>
   <title type="html"><![CDATA[Nothingness]]></title>
@@ -825,8 +869,6 @@ They’ve been our inability to reconcile nothingness.&lt;br /&gt;&lt;/p&gt;
 </entry>
 
 
-  
-
 <entry>
   <title type="html"><![CDATA[Chromecast and Linux]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/hacks/chromecast-and-linux/" />
@@ -847,84 +889,6 @@ They’ve been our inability to reconcile nothingness.&lt;br /&gt;&lt;/p&gt;
 
 
     &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/hacks/chromecast-and-linux/&quot;&gt;Chromecast and Linux&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on August 23, 2015.&lt;/p&gt;
-  </content>
-</entry>
-
-
-  
-
-<entry>
-  <title type="html"><![CDATA[Estranged]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/poems/estranged/" />
-  <id>//srijanshetty.in/poems/estranged</id>
-  <published>2015-08-20T22:23:15+05:30</published>
-  <updated>2015-08-20T22:23:15+05:30</updated>
-  <author>
-    <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
-    <email>srijan.shetty+code@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;blockquote&gt;
-  &lt;p&gt;Two roads diverged in a wood, and estranged they stood.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;For a minute there I wanted time to stop,&lt;br /&gt;
-A thousand answers whirred by,&lt;br /&gt;
-With no semblance to the question at top.&lt;br /&gt;&lt;br /&gt;
-Words felt heavy, and my breath was lost,&lt;br /&gt;
-A wandering spirit, a guilt, and a rumour of loss,&lt;br /&gt;
-Not reason, it was absolution I sought.&lt;br /&gt;&lt;br /&gt;
-We had trudged along, enduring our plight,&lt;br /&gt;
-Numbed by our pain, seeking respite,&lt;br /&gt;
-Dreaming together, in the search of light.&lt;br /&gt;&lt;br /&gt;
-No direction, and this inheritance of loss,&lt;br /&gt;
-In our love of shared pain, and lost cause,&lt;br /&gt;
-Being alone, with each other, in this chaos.&lt;br /&gt;&lt;br /&gt;
-Yes, I’d erred, I had lost her hand,&lt;br /&gt;
-Not knowing what that had meant,&lt;br /&gt;
-I’m now left with ruins in the sand.&lt;br /&gt;&lt;br /&gt;
-These echoes of silence, my hopeless cries,&lt;br /&gt;
-Hallow my way - the scars of a past life,&lt;br /&gt;
-Guiding my path, amidst these many lies.&lt;br /&gt;&lt;br /&gt;
-The minute was gone, the thought was spent,&lt;br /&gt;
-And even if I yearned, or asked for more,&lt;br /&gt;
-The deed was done, no wise of what it meant.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/poems/estranged/&quot;&gt;Estranged&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on August 20, 2015.&lt;/p&gt;
-  </content>
-</entry>
-
-
-  
-
-<entry>
-  <title type="html"><![CDATA[Travelogue - Central Park, NY]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/travelogue/travelogue-central-park-ny/" />
-  <id>//srijanshetty.in/travelogue/travelogue-central-park-ny</id>
-  <published>2015-08-03T22:46:40-04:00</published>
-  <updated>2015-08-03T22:46:40-04:00</updated>
-  <author>
-    <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
-    <email>srijan.shetty+code@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;It’s the search of greener pastures,&lt;br /&gt;
-The fear of these barren lands,&lt;br /&gt;
-The tireless flow of currents,&lt;br /&gt;
-The fear of being left ashore.&lt;br /&gt;&lt;br /&gt;
-The pursuit of infinity,&lt;br /&gt;
-The fear of being average.&lt;br /&gt;
-The search of Neverland,&lt;br /&gt;
-Lest you remain anchored.&lt;br /&gt;&lt;br /&gt;
-Fuels an eclectic passion,&lt;br /&gt;
-A desire to transcend,&lt;br /&gt;
-To nourish, to create,&lt;br /&gt;
-To leave, and to move.&lt;br /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/travelogue/travelogue-central-park-ny/&quot;&gt;Travelogue - Central Park, NY&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on August 03, 2015.&lt;/p&gt;
   </content>
 </entry>
 

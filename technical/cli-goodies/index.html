@@ -10,7 +10,6 @@
 <meta name="keywords" content="CLI, zsh, bash, prezto, antigen, prompt, technical, productivity, tools, plugins, completions, linux, unix">
 
 
-
 <!-- Twitter Cards -->
 <meta name="twitter:title" content="CLI Goodies">
 <meta name="twitter:description" content="My commandline productivity toolkit">
@@ -88,32 +87,20 @@
 		    <ul>
 		        
 				    
-				        
-				    
 				    <li><a href="//srijanshetty.in/about/" >About</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="//srijanshetty.in/cv/cv.pdf" >CV</a></li>
 				
 				    
-				        
-				    
 				    <li><a href="//srijanshetty.in/posts/" >Blog</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="//srijanshetty.in/posts/category-wise.html" >Categories</a></li>
 				
 				    
-				        
-				    
 				    <li><a href="//srijanshetty.in/projects.html" >Projects</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="//srijanshetty.in/almanac.html" >Almanac</a></li>
 				
@@ -138,7 +125,6 @@
 <div id="main" role="main">
   <div class="article-author-side">
     
-
 
 <div itemscope itemtype="http://schema.org/Person">
 
@@ -180,56 +166,56 @@
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
       <blockquote>
-  <p>Today, I finally have most of the goodness of my shell packed as a single repository. I say most because, I still have some things stuck in antigen with no clear migration path. Until then give these goodies a whirl, and do give a shout out to me if you need any help setting them up; I’ve added instructions of getting them up and ready with the common - a metric defined by the number of GitHub stars the framework has - frameworks out there. (My favourite is undoubtedly <code>Prezto</code> for it’s super fast startup).</p>
+  <p>Today, I finally have most of the goodness of my shell packed as a single repository. I say most because, I still have some things stuck in antigen with no clear migration path. Until then give these goodies a whirl, and do give a shout out to me if you need any help setting them up; I’ve added instructions of getting them up and ready with the common - a metric defined by the number of GitHub stars the framework has - frameworks out there. (My favourite is undoubtedly <code class="highlighter-rouge">Prezto</code> for it’s super fast startup).</p>
 </blockquote>
 
-<h2 id="installation">Installation</h2>
+<p>##Installation</p>
 
 <p><strong>Installing under <a href="https://github.com/sorin-ionescu/prezto">Prezto</a></strong></p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> .zprezto
-  git submodule add https://github.com/srijanshetty/cli-goodies.git modules/cli-goodies</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  <span class="nb">cd</span> .zprezto
+  git submodule add https://github.com/srijanshetty/cli-goodies.git modules/cli-goodies</code></pre></figure>
 
-<p>Add <code>cli-goodies</code> to your <code>.zpreztorc</code> file:</p>
+<p>Add <code class="highlighter-rouge">cli-goodies</code> to your <code class="highlighter-rouge">.zpreztorc</code> file:</p>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text"># Set the Prezto modules to load (browse modules).
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  # Set the Prezto modules to load (browse modules).
   # The order matters.
-  zstyle &#39;:prezto:load&#39; pmodule \
-    &#39;environment&#39; \
-    &#39;terminal&#39; \
-    &#39;editor&#39; \
-    &#39;history&#39; \
-    &#39;directory&#39; \
-    &#39;spectrum&#39; \
-    &#39;utility&#39; \
-    &#39;completion&#39; \
-    &#39;prompt&#39; \
-    &#39;cli-goodies&#39;</code></pre></div>
+  zstyle ':prezto:load' pmodule \
+    'environment' \
+    'terminal' \
+    'editor' \
+    'history' \
+    'directory' \
+    'spectrum' \
+    'utility' \
+    'completion' \
+    'prompt' \
+    'cli-goodies'</code></pre></figure>
 
 <p><strong>Installing under oh-my-zsh</strong><br />
-I haven’t tried using <code>cli-goodies</code> with <code>oh-my-zsh</code> and I think the following should work in theory.</p>
+I haven’t tried using <code class="highlighter-rouge">cli-goodies</code> with <code class="highlighter-rouge">oh-my-zsh</code> and I think the following should work in theory.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">wget https://raw.github.com/srijanshetty/cli-goodies/master/init.zsh -O <span class="nv">$HOME</span>/.oh-my-zsh/custom/cli-goodies.zsh</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">    wget https://raw.github.com/srijanshetty/cli-goodies/master/init.zsh <span class="nt">-O</span> <span class="nv">$HOME</span>/.oh-my-zsh/custom/cli-goodies.zsh</code></pre></figure>
 
 <p><strong>Installing using <a href="https://github.com/zsh-users/antigen">Antigen</a></strong><br />
-If you use <a href="https://github.com/zsh-users/antigen">Antigen</a>, adding the following line to <code>.zshrc</code> should load <code>cli-goodies</code>.</p>
+If you use <a href="https://github.com/zsh-users/antigen">Antigen</a>, adding the following line to <code class="highlighter-rouge">.zshrc</code> should load <code class="highlighter-rouge">cli-goodies</code>.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">antigen-bundle srijanshetty/zsh-dwim</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">    antigen-bundle srijanshetty/zsh-dwim</code></pre></figure>
 
-<p><strong>Using <code>cli-goodies</code> anywhere else</strong><br />
-Anyone running <code>zsh</code> should only need to add the following line to their <code>.zshrc</code>:</p>
+<p><strong>Using <code class="highlighter-rouge">cli-goodies</code> anywhere else</strong><br />
+Anyone running <code class="highlighter-rouge">zsh</code> should only need to add the following line to their <code class="highlighter-rouge">.zshrc</code>:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">source </span>init.zsh</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">    <span class="nb">source </span>init.zsh</code></pre></figure>
 
-<h2 id="dependencies">Dependencies</h2>
+<p>##Dependencies</p>
 
-<p>You’ll need to install <code>peru</code> to get the completions working. Peru is a simple file downloader with a declarative syntax. While <code>curl</code> could be used to accomplish the same, <code>peru</code> is simpler to read.</p>
+<p>You’ll need to install <code class="highlighter-rouge">peru</code> to get the completions working. Peru is a simple file downloader with a declarative syntax. While <code class="highlighter-rouge">curl</code> could be used to accomplish the same, <code class="highlighter-rouge">peru</code> is simpler to read.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">pip install peru
-peru sync</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">pip <span class="nb">install </span>peru
+peru <span class="nb">sync</span></code></pre></figure>
 
-<h2 id="features">Features</h2>
-<p><strong>Completions</strong></p>
+<p>##Features
+<strong>Completions</strong></p>
 
 <ul>
   <li><a href="https://github.com/sampsyo/beets/blob/master/extra/_beet">_beet</a></li>
@@ -297,11 +283,11 @@ Fin.</p>
   <h4>You might also enjoy <small class="pull-right">(<a href="//srijanshetty.in/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="//srijanshetty.in/storing-cookies-with-httpie/" title="Storing Cookies With Httpie">Storing Cookies With Httpie</a></li>
+    
+      <li><a href="//srijanshetty.in/technical/hulk-squash-a-better-git-squash-workflow/" title="Hulk Squash - a Better Git Squash Workflow">Hulk Squash - a Better Git Squash Workflow</a></li>
+    
       <li><a href="//srijanshetty.in/gitting-hooks-setup/" title="Gitting Hooks setups">Gitting Hooks setups</a></li>
-    
-      <li><a href="//srijanshetty.in/technical/jcip-java-concurrency-in-practice-2019-review/" title="JCIP - Java Concurrency in Practice 2019 Review">JCIP - Java Concurrency in Practice 2019 Review</a></li>
-    
-      <li><a href="//srijanshetty.in/technical/john-vim-parabellum/" title="John Vim - Parabellum">John Vim - Parabellum</a></li>
     
     </ul>
     <hr />
@@ -310,7 +296,7 @@ Fin.</p>
   <footer>
     
 
-<span>&copy; 2019 Srijan R. Shetty. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2020 Srijan R. Shetty. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

@@ -10,7 +10,6 @@
 <meta name="keywords" content="vcsh, mr, dotfiles, shell, zsh">
 
 
-
 <!-- Twitter Cards -->
 <meta name="twitter:title" content="Vcsh, Mr - Dotfiles Nirvana">
 <meta name="twitter:description" content="dotfiles nirvana using vcsh and mr">
@@ -88,32 +87,20 @@
 		    <ul>
 		        
 				    
-				        
-				    
 				    <li><a href="//srijanshetty.in/about/" >About</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="//srijanshetty.in/cv/cv.pdf" >CV</a></li>
 				
 				    
-				        
-				    
 				    <li><a href="//srijanshetty.in/posts/" >Blog</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="//srijanshetty.in/posts/category-wise.html" >Categories</a></li>
 				
 				    
-				        
-				    
 				    <li><a href="//srijanshetty.in/projects.html" >Projects</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="//srijanshetty.in/almanac.html" >Almanac</a></li>
 				
@@ -127,7 +114,6 @@
 <div id="main" role="main">
   <div class="article-author-side">
     
-
 
 <div itemscope itemtype="http://schema.org/Person">
 
@@ -197,9 +183,9 @@
 
 <h2 id="bootstrapping">Bootstrapping</h2>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">sudo apt-get install -y vcsh myrepos
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> vcsh myrepos
 git clone git@github.com:srijanshetty/vcsh-mr.git
-mr up</code></pre></div>
+mr up</code></pre></figure>
 
 <p>Want to get down and dirty? You need to go <a href="#walk-through">here</a></p>
 
@@ -220,7 +206,7 @@ mr up</code></pre></div>
   </li>
 </ol>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">~/.config/mr/
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">~/.config/mr/
     ├── available.d
     │   ├── beets.vcsh
     │   ├── git.vcsh
@@ -240,12 +226,14 @@ mr up</code></pre></div>
         ├── mr.vcsh -&gt; ../available.d/mr.vcsh
         ├── tmux.vcsh -&gt; ../available.d/tmux.vcsh
         ├── vim.vcsh -&gt; ../available.d/vim.vcsh
-        └── zsh.vcsh -&gt; ../available.d/zsh.vcsh</code></pre></div>
+        └── zsh.vcsh -&gt; ../available.d/zsh.vcsh</code></pre></figure>
 
-<p>Some salient points about this directory structure are:
-- <strong>available.d</strong> serves as a store for different available configurations.
-- active configurations are symlinked in <strong>config.d</strong>.
-- mr acts only on the configurations listed in <strong>config.d</strong>.</p>
+<p>Some salient points about this directory structure are:</p>
+<ul>
+  <li><strong>available.d</strong> serves as a store for different available configurations.</li>
+  <li>active configurations are symlinked in <strong>config.d</strong>.</li>
+  <li>mr acts only on the configurations listed in <strong>config.d</strong>.</li>
+</ul>
 
 <p>What’s wonderful about these three tools is that they were written by the same author and work together seamlessly!!</p>
 
@@ -265,60 +253,60 @@ mr up</code></pre></div>
   <li>Create a new remote repository for the tool you want to manage with vcsh.</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">vcsh init ack</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">vcsh init ack</code></pre></figure>
 
 <ul>
   <li>The URL to clone that repository might look like: <em>git@github.com/vcsh-ack.git</em>.</li>
   <li>Add new myrepos config file <em>~/.config/mr/available.d/ack.vcsh</em>, which might look as follows:</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-ini" data-lang="ini"><span class="k">[$HOME/.config/vcsh/repo.d/ack.git]</span>
-<span class="na">checkout</span> <span class="o">=</span> <span class="s">vcsh clone git@github.com:srijanshetty/vcsh-ack.git ack</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-ini" data-lang="ini"><span class="nn">[$HOME/.config/vcsh/repo.d/ack.git]</span>
+<span class="py">checkout</span> <span class="p">=</span> <span class="s">vcsh clone git@github.com:srijanshetty/vcsh-ack.git ack</span></code></pre></figure>
 
 <ul>
   <li>Create a symbolic link to tell mr to include this repository:</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~/.config/mr/config.d/
-ln -s ../available.d/ack.vcsh .</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~/.config/mr/config.d/
+<span class="nb">ln</span> <span class="nt">-s</span> ../available.d/ack.vcsh .</code></pre></figure>
 
 <ul>
   <li>Commit and push your changes in your local myrepos repository:</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">vcsh mr add ~/.config/mr
-vcsh mr commit -m <span class="s2">&quot;[ack] add vcsh repository&quot;</span>
-vcsh mr push</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">vcsh mr add ~/.config/mr
+vcsh mr commit <span class="nt">-m</span> <span class="s2">"[ack] add vcsh repository"</span>
+vcsh mr push</code></pre></figure>
 
 <ul>
   <li>Add the tool’s dotfiles by to vcsh.</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">vcsh ack add .ackrc</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">vcsh ack add .ackrc</code></pre></figure>
 
 <ul>
   <li>Create, customize, and add the tool-specific excludesfile. (More info about it over <a href="#gitignore">here</a>)</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">vcsh write-gitignore ack
-vcsh ack add -f .gitignore.d/ack
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">vcsh write-gitignore ack
+vcsh ack add <span class="nt">-f</span> .gitignore.d/ack
 vcsh write-gitignore ack
-vcsh ack add .gitignore.d/ack</code></pre></div>
+vcsh ack add .gitignore.d/ack</code></pre></figure>
 
 <ul>
   <li>Commit and push your changes in your local ack repository:</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">vcsh ack commit -m <span class="s2">&quot;[Initial Commit] add initial ackrc file&quot;</span>
-vcsh ack push</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">vcsh ack commit <span class="nt">-m</span> <span class="s2">"[Initial Commit] add initial ackrc file"</span>
+vcsh ack push</code></pre></figure>
 
 <p>Yes, the initial configuration is quite complicated. But the effort is well worth what comes next.</p>
 
 <h3 id="reproduction-of-configuration">Reproduction of configuration</h3>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">sudo apt-get install -y vcsh myrepos
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> vcsh myrepos
 vcsh clone git@github.com:srijanshetty/vcsh-mr.git
-mr up</code></pre></div>
+mr up</code></pre></figure>
 
 <p>Bam! It’s done!</p>
 
@@ -330,22 +318,22 @@ mr up</code></pre></div>
   <li>After updating the files or adding new files, run:</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">vcsh &lt;REPO_NAME&gt; add &lt;FILE_NAME&gt;</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">vcsh &lt;REPO_NAME&gt; add &lt;FILE_NAME&gt;</code></pre></figure>
 
 <ul>
   <li>Then commit the changes and push</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">vcsh &lt;REPO_NAME&gt; commit -m <span class="s2">&quot;Yowza!&quot;</span>
-vcsh &lt;REPO_NAME&gt; push</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">vcsh &lt;REPO_NAME&gt; commit <span class="nt">-m</span> <span class="s2">"Yowza!"</span>
+vcsh &lt;REPO_NAME&gt; push</code></pre></figure>
 
 <p>As can be seen, vcsh supports all common VCS commands. An easier work-flow is to enter a <em>vcsh chroot</em>, demonstrated as follows:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">vcsh enter REPO_NAME
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">vcsh enter REPO_NAME
 ga &lt;FILE_NAME&gt;
-gcm <span class="s2">&quot;Yowza!&quot;</span>
+gcm <span class="s2">"Yowza!"</span>
 git push
-<span class="nb">exit</span></code></pre></div>
+<span class="nb">exit</span></code></pre></figure>
 
 <p>Not only does this enable the git prompt, but also you can use those aliases that you set. Could this get any better?</p>
 
@@ -355,44 +343,46 @@ git push
 
 <p>To get around this problem, we need to define a <em>gitignore/excludesfile</em>. And through <em>vcsh write-gitignore</em>, vcsh provides us the means to do so. The generated excludesfile is a white-list, for the ack example above, the final generated .gitignore.d/ack file is as follows</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">*
-!.ackrc
-!.gitignore.d/
-!.gitignore.d/ack</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="k">*</span>
+<span class="o">!</span>.ackrc
+<span class="o">!</span>.gitignore.d/
+<span class="o">!</span>.gitignore.d/ack</code></pre></figure>
 
 <p>The first line ignores all files in $HOME and then starts including the files we’re tracking one by one. While this is well and good for normal use-cases, it does cause you to forget adding new files. For example, the generated excludesfile for mr is</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">*
-!.config
-!.config/mr
-!.config/mr/available.d
-!.config/mr/available.d/mr.vcsh
-!.config/mr/available.d/git.vcsh
-!.config/mr/config.d
-!.config/mr/config.d/mr.vcsh
-!.config/mr/config.d/git.vcsh
-!.gitignore.d/
-!.gitignore.d/mr
-!.mrconfig</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="k">*</span>
+<span class="o">!</span>.config
+<span class="o">!</span>.config/mr
+<span class="o">!</span>.config/mr/available.d
+<span class="o">!</span>.config/mr/available.d/mr.vcsh
+<span class="o">!</span>.config/mr/available.d/git.vcsh
+<span class="o">!</span>.config/mr/config.d
+<span class="o">!</span>.config/mr/config.d/mr.vcsh
+<span class="o">!</span>.config/mr/config.d/git.vcsh
+<span class="o">!</span>.gitignore.d/
+<span class="o">!</span>.gitignore.d/mr
+<span class="o">!</span>.mrconfig</code></pre></figure>
 
 <p>Do you see the problem? Okay let me tell you, any new file in <em>available.d/ or config.d/</em> is ignored by default. So, I’d advise using the following <em>.gitignore.d/mr</em> file which tracks files by default.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">*
-!.config
-!.config/mr
-!.config/mr/available.d
-!.config/mr/available.d/*
-!.config/mr/config.d
-!.config/mr/config.d/*
-!.gitignore.d
-!.gitignore.d/mr
-!.mrconfig</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="k">*</span>
+<span class="o">!</span>.config
+<span class="o">!</span>.config/mr
+<span class="o">!</span>.config/mr/available.d
+<span class="o">!</span>.config/mr/available.d/<span class="k">*</span>
+<span class="o">!</span>.config/mr/config.d
+<span class="o">!</span>.config/mr/config.d/<span class="k">*</span>
+<span class="o">!</span>.gitignore.d
+<span class="o">!</span>.gitignore.d/mr
+<span class="o">!</span>.mrconfig</code></pre></figure>
 
-<p>A final note on the four sub steps required in Step 9 of [Adding a new repository].
-1. Generate a gitignore file.
-2. Force add the gitignore file to index, which is ignored up till now.
-3. Regenerate the gitignore file (this time it will include the gitignore file itself).
-4. Add the now modified gitignore file.</p>
+<p>A final note on the four sub steps required in Step 9 of [Adding a new repository].</p>
+<ol>
+  <li>Generate a gitignore file.</li>
+  <li>Force add the gitignore file to index, which is ignored up till now.</li>
+  <li>Regenerate the gitignore file (this time it will include the gitignore file itself).</li>
+  <li>Add the now modified gitignore file.</li>
+</ol>
 
 <h2 id="caveats">Caveats</h2>
 
@@ -444,11 +434,11 @@ git push
   <h4>You might also enjoy <small class="pull-right">(<a href="//srijanshetty.in/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="//srijanshetty.in/storing-cookies-with-httpie/" title="Storing Cookies With Httpie">Storing Cookies With Httpie</a></li>
+    
+      <li><a href="//srijanshetty.in/technical/hulk-squash-a-better-git-squash-workflow/" title="Hulk Squash - a Better Git Squash Workflow">Hulk Squash - a Better Git Squash Workflow</a></li>
+    
       <li><a href="//srijanshetty.in/gitting-hooks-setup/" title="Gitting Hooks setups">Gitting Hooks setups</a></li>
-    
-      <li><a href="//srijanshetty.in/technical/jcip-java-concurrency-in-practice-2019-review/" title="JCIP - Java Concurrency in Practice 2019 Review">JCIP - Java Concurrency in Practice 2019 Review</a></li>
-    
-      <li><a href="//srijanshetty.in/technical/john-vim-parabellum/" title="John Vim - Parabellum">John Vim - Parabellum</a></li>
     
     </ul>
     <hr />
@@ -457,7 +447,7 @@ git push
   <footer>
     
 
-<span>&copy; 2019 Srijan R. Shetty. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2020 Srijan R. Shetty. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

@@ -10,7 +10,6 @@
 <meta name="keywords" content="git, devops, tooling, hooks, commit, lint, node, npm">
 
 
-
 <!-- Twitter Cards -->
 <meta name="twitter:title" content="Gitting Hooks setups">
 <meta name="twitter:description" content="Perfect workflow for setting up git hooks">
@@ -88,32 +87,20 @@
 		    <ul>
 		        
 				    
-				        
-				    
 				    <li><a href="//srijanshetty.in/about/" >About</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="//srijanshetty.in/cv/cv.pdf" >CV</a></li>
 				
 				    
-				        
-				    
 				    <li><a href="//srijanshetty.in/posts/" >Blog</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="//srijanshetty.in/posts/category-wise.html" >Categories</a></li>
 				
 				    
-				        
-				    
 				    <li><a href="//srijanshetty.in/projects.html" >Projects</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="//srijanshetty.in/almanac.html" >Almanac</a></li>
 				
@@ -127,7 +114,6 @@
 <div id="main" role="main">
   <div class="article-author-side">
     
-
 
 <div itemscope itemtype="http://schema.org/Person">
 
@@ -168,7 +154,7 @@
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>I’ve always loved the concept of <code>git hooks</code>, but it’s setup has always troubled me as being <code>snowflaky</code>.
+      <p>I’ve always loved the concept of <code class="highlighter-rouge">git hooks</code>, but it’s setup has always troubled me as being <code class="highlighter-rouge">snowflaky</code>.
 Sharing hooks across a development team was awkward and there was no <a href="https://www.martinfowler.com/bliki/UbiquitousLanguage.html">Ubiquitous
 Language</a>.<br /><br />
 After struggling with bespoke solutions in the lingua franca of bash,
@@ -178,29 +164,29 @@ and the <a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Co
 (an admirable way to manage releases and make commits more readable).
 In trying to integrate Conventional Commits to my <a href="https://github.com/srijanshetty/minimal-mistakes">website</a>, 
 I’ve come across a solution that works perfect for me.<br /><br />
-The current setup uses <code>husky</code> as a dev-dependency in <code>package.json</code> which sets up a <code>commit-msg</code> hook as follows:</p>
+The current setup uses <code class="highlighter-rouge">husky</code> as a dev-dependency in <code class="highlighter-rouge">package.json</code> which sets up a <code class="highlighter-rouge">commit-msg</code> hook as follows:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>npm init
-<span class="nv">$ </span>npm install --save-dev husky</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>npm init
+<span class="nv">$ </span>npm <span class="nb">install</span> <span class="nt">--save-dev</span> husky</code></pre></figure>
 
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&quot;...&quot;</span><span class="p">:</span> <span class="s2">&quot;other parameters&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;commitlint&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;extends&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;@commitlint/config-conventional&quot;</span> <span class="p">],</span>
-      <span class="nt">&quot;rules&quot;</span><span class="p">:</span> <span class="p">{</span>
-          <span class="nt">&quot;type-enum&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;always&quot;</span><span class="p">,</span> <span class="p">[</span> <span class="s2">&quot;feat&quot;</span><span class="p">,</span> <span class="s2">&quot;fix&quot;</span><span class="p">,</span> <span class="s2">&quot;docs&quot;</span><span class="p">,</span> <span class="s2">&quot;build&quot;</span><span class="p">,</span> <span class="s2">&quot;refactor&quot;</span><span class="p">,</span> <span class="s2">&quot;revert&quot;</span><span class="p">,</span> <span class="s2">&quot;post&quot;</span> <span class="p">]</span> <span class="p">]</span>
-      <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;husky&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;hooks&quot;</span><span class="p">:</span> <span class="p">{</span>
-          <span class="nt">&quot;commit-msg&quot;</span><span class="p">:</span> <span class="s2">&quot;commitlint -E HUSKY_GIT_PARAMS&quot;</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="nl">"..."</span><span class="p">:</span><span class="w"> </span><span class="s2">"other parameters"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"commitlint"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"extends"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"@commitlint/config-conventional"</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"rules"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type-enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"always"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"feat"</span><span class="p">,</span><span class="w"> </span><span class="s2">"fix"</span><span class="p">,</span><span class="w"> </span><span class="s2">"docs"</span><span class="p">,</span><span class="w"> </span><span class="s2">"build"</span><span class="p">,</span><span class="w"> </span><span class="s2">"refactor"</span><span class="p">,</span><span class="w"> </span><span class="s2">"revert"</span><span class="p">,</span><span class="w"> </span><span class="s2">"post"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"husky"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"hooks"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"commit-msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"commitlint -E HUSKY_GIT_PARAMS"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
-<p>The great part of this setup is that it ties everything into a single <code>package.json</code> file. 
+<p>The great part of this setup is that it ties everything into a single <code class="highlighter-rouge">package.json</code> file. 
 The npm eco-system is a cesspool when it comes to security but it does make developer tooling a breeze.
-The community converging on using a single <code>package.json</code> is a god-send, over the alternative of a bunch of .rc files spewed all across; adding <code>git hooks</code> is the natural evolution to the puzzle.<br /><br />
+The community converging on using a single <code class="highlighter-rouge">package.json</code> is a god-send, over the alternative of a bunch of .rc files spewed all across; adding <code class="highlighter-rouge">git hooks</code> is the natural evolution to the puzzle.<br /><br />
 It’s great how sometimes your problems solve themselves if you let them be for years.</p>
 
       <hr />
@@ -234,11 +220,11 @@ It’s great how sometimes your problems solve themselves if you let them be for
   <h4>You might also enjoy <small class="pull-right">(<a href="//srijanshetty.in/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="//srijanshetty.in/storing-cookies-with-httpie/" title="Storing Cookies With Httpie">Storing Cookies With Httpie</a></li>
+    
+      <li><a href="//srijanshetty.in/technical/hulk-squash-a-better-git-squash-workflow/" title="Hulk Squash - a Better Git Squash Workflow">Hulk Squash - a Better Git Squash Workflow</a></li>
+    
       <li><a href="//srijanshetty.in/technical/jcip-java-concurrency-in-practice-2019-review/" title="JCIP - Java Concurrency in Practice 2019 Review">JCIP - Java Concurrency in Practice 2019 Review</a></li>
-    
-      <li><a href="//srijanshetty.in/technical/john-vim-parabellum/" title="John Vim - Parabellum">John Vim - Parabellum</a></li>
-    
-      <li><a href="//srijanshetty.in/prose/modern-love/" title="Modern Love">Modern Love</a></li>
     
     </ul>
     <hr />
@@ -247,7 +233,7 @@ It’s great how sometimes your problems solve themselves if you let them be for
   <footer>
     
 
-<span>&copy; 2019 Srijan R. Shetty. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2020 Srijan R. Shetty. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->
