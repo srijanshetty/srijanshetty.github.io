@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="//srijanshetty.in/feed.xml" />
 <link rel="alternate" type="text/html" href="//srijanshetty.in" />
-<updated>2020-01-14T12:41:26+05:30</updated>
+<updated>2020-01-16T19:08:00+05:30</updated>
 <id>//srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
@@ -25,7 +25,51 @@
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
-    
+    &lt;p&gt;I’m trying a new series of posts with gist kind of content.&lt;br /&gt;&lt;br /&gt;
+I’m a huge fan of &lt;a href=&quot;https://httpie.org/&quot;&gt;httpie&lt;/a&gt;, it has a natural syntax and covers more than 90% of the use-cases
+required during the development of a REST service. Session support out of the box was a huge surprise, but at the same
+time, it was a let-down as it did not relay back cookies in HTTP headers.&lt;br /&gt;&lt;br /&gt;
+After copy pasting &lt;em&gt;Set-Cookie&lt;/em&gt; header in a session.json every time I pulled down docker image, the coder in me wanted
+to automate the mundane. The following is the output of a few hours wasted, feel free to add it to your own shellrc.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Use session file if present for http&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;function &lt;/span&gt;http&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;hash &lt;/span&gt;http &amp;amp;&amp;gt; /dev/null&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then
+        &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;command &lt;/span&gt;http &lt;span class=&quot;nt&quot;&gt;--session&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;./.session.json &lt;span class=&quot;nv&quot;&gt;$@&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else
+        &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;command is not installed&quot;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# This function extracts cookie information from the headers of&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# an httpie request and then stores it in a .session-file&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;function &lt;/span&gt;set-cookie&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    setopt clobber
+
+    &lt;span class=&quot;c&quot;&gt;# Extract bookie after login&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;COOKIE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;http &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$@&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;h | &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Cookie'&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;cut&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt;: &lt;span class=&quot;nt&quot;&gt;-f2&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;cut&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-c2-&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;The cookie is: &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$COOKIE&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+
+    &lt;span class=&quot;c&quot;&gt;# Create a session file using HERE DOC&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; .session.json &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;EOF&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;
+{
+    &quot;headers&quot;: {
+        &quot;Cookie&quot;: &quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;COOKIE&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;
+    }
+}
+&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;EOF
+
+&lt;/span&gt;    &lt;span class=&quot;c&quot;&gt;# Remove line endings&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;sed&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'s/\r//g'&lt;/span&gt; .session.json
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;There are two pieces to the httpie sessions puzzle. The command &lt;strong&gt;set-cookie&lt;/strong&gt; extracts the &lt;em&gt;Set-Cookie&lt;/em&gt; header from the
+request, stripes it of whitespaces and stores it down to a new &lt;em&gt;session.json&lt;/em&gt; file. The &lt;em&gt;clobber&lt;/em&gt; option will rewrite an
+existing &lt;em&gt;.session.json&lt;/em&gt; file if present. I’ve also created a new &lt;strong&gt;http&lt;/strong&gt; function which uses a session file
+always.&lt;br /&gt;&lt;br /&gt;
+My workflow now is to call set-cokkie to the authentication end-point which sets the session file. Followed by calls to
+end-points which require authentication.&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/storing-cookies-with-httpie/&quot;&gt;Storing Cookies With Httpie&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on January 14, 2020.&lt;/p&gt;
   </content>

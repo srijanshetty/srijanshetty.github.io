@@ -6,15 +6,13 @@
 <head>
 <meta charset="utf-8">
 <title>Storing Cookies With Httpie &#8211; Srijan R. Shetty</title>
-<meta name="description" content="
-">
-<meta name="keywords" content="">
+<meta name="description" content="Automating session creation in httpie">
+<meta name="keywords" content="httpie, REST, testing, cookies, auth, sessions, session, store, disk, docker">
 
 
 <!-- Twitter Cards -->
 <meta name="twitter:title" content="Storing Cookies With Httpie">
-<meta name="twitter:description" content="
-">
+<meta name="twitter:description" content="Automating session creation in httpie">
 
 
 
@@ -25,8 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Storing Cookies With Httpie">
-<meta property="og:description" content="
-">
+<meta property="og:description" content="Automating session creation in httpie">
 <meta property="og:url" content="//srijanshetty.in/storing-cookies-with-httpie/">
 <meta property="og:site_name" content="Srijan R. Shetty">
 
@@ -157,7 +154,51 @@
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      
+      <p>I’m trying a new series of posts with gist kind of content.<br /><br />
+I’m a huge fan of <a href="https://httpie.org/">httpie</a>, it has a natural syntax and covers more than 90% of the use-cases
+required during the development of a REST service. Session support out of the box was a huge surprise, but at the same
+time, it was a let-down as it did not relay back cookies in HTTP headers.<br /><br />
+After copy pasting <em>Set-Cookie</em> header in a session.json every time I pulled down docker image, the coder in me wanted
+to automate the mundane. The following is the output of a few hours wasted, feel free to add it to your own shellrc.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Use session file if present for http</span>
+<span class="k">function </span>http<span class="o">()</span> <span class="o">{</span>
+    <span class="k">if </span><span class="nb">hash </span>http &amp;&gt; /dev/null<span class="p">;</span> <span class="k">then
+        </span><span class="nb">command </span>http <span class="nt">--session</span><span class="o">=</span>./.session.json <span class="nv">$@</span>
+    <span class="k">else
+        </span><span class="nb">echo</span> <span class="s2">"command is not installed"</span>
+    <span class="k">fi</span>
+<span class="o">}</span>
+
+<span class="c"># This function extracts cookie information from the headers of</span>
+<span class="c"># an httpie request and then stores it in a .session-file</span>
+<span class="k">function </span>set-cookie<span class="o">()</span> <span class="o">{</span>
+    setopt clobber
+
+    <span class="c"># Extract bookie after login</span>
+    <span class="nv">COOKIE</span><span class="o">=</span><span class="si">$(</span>http <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span> <span class="nt">--print</span><span class="o">=</span>h | <span class="nb">grep</span> <span class="s1">'Cookie'</span> | <span class="nb">cut</span> <span class="nt">-d</span>: <span class="nt">-f2</span> | <span class="nb">cut</span> <span class="nt">-c2-</span><span class="si">)</span>
+    <span class="nb">echo</span> <span class="s2">"The cookie is: </span><span class="nv">$COOKIE</span><span class="s2">"</span>
+
+    <span class="c"># Create a session file using HERE DOC</span>
+    <span class="nb">cat</span> <span class="o">&gt;</span> .session.json <span class="o">&lt;&lt;-</span> <span class="no">EOF</span><span class="sh">
+{
+    "headers": {
+        "Cookie": "</span><span class="k">${</span><span class="nv">COOKIE</span><span class="k">}</span><span class="sh">"
+    }
+}
+</span><span class="no">EOF
+
+</span>    <span class="c"># Remove line endings</span>
+    <span class="nb">sed</span> <span class="nt">-i</span> <span class="s1">'s/\r//g'</span> .session.json
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>There are two pieces to the httpie sessions puzzle. The command <strong>set-cookie</strong> extracts the <em>Set-Cookie</em> header from the
+request, stripes it of whitespaces and stores it down to a new <em>session.json</em> file. The <em>clobber</em> option will rewrite an
+existing <em>.session.json</em> file if present. I’ve also created a new <strong>http</strong> function which uses a session file
+always.<br /><br />
+My workflow now is to call set-cokkie to the authentication end-point which sets the session file. Followed by calls to
+end-points which require authentication.</p>
 
       <hr />
       <footer role="contentinfo">
