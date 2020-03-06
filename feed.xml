@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="//srijanshetty.in/feed.xml" />
 <link rel="alternate" type="text/html" href="//srijanshetty.in" />
-<updated>2020-02-10T19:57:48+05:30</updated>
+<updated>2020-03-06T14:31:27+05:30</updated>
 <id>//srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
@@ -72,63 +72,6 @@ My workflow now is to call set-cokkie to the authentication end-point which sets
 end-points which require authentication.&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/storing-cookies-with-httpie/&quot;&gt;Storing Cookies With Httpie&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on January 14, 2020.&lt;/p&gt;
-  </content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Hulk Squash - a Better Git Squash Workflow]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/hulk-squash-a-better-git-squash-workflow/" />
-  <id>//srijanshetty.in/technical/hulk-squash-a-better-git-squash-workflow</id>
-  <published>2019-12-26T01:11:38+05:30</published>
-  <updated>2019-12-26T01:11:38+05:30</updated>
-  <author>
-    <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
-    <email>srijan.shetty+code@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;Sometimes while fixing multiple bugs related to a &lt;code class=&quot;highlighter-rouge&quot;&gt;feature branch&lt;/code&gt; you might come across
-the peculiar situation that you want to add some more files to an older commit. Hitherto,
-my workflow was a patchwork of creating a new commit with &lt;code class=&quot;highlighter-rouge&quot;&gt;squash!&lt;/code&gt; prefix and then clumsily
-performing an interactive rebase to position the commit on the correct SHA.&lt;br /&gt;&lt;br /&gt;
-Fortunately, I’ve found a much better flow which greatly simplifies development. Two tools
-are critical in helping me with this workflow. &lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt; being the usual suspect, but &lt;code class=&quot;highlighter-rouge&quot;&gt;fzf&lt;/code&gt; is
-the secret sauce. I have the following snippet in my &lt;code class=&quot;highlighter-rouge&quot;&gt;zsh&lt;/code&gt; sourced files:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;function &lt;/span&gt;is_in_git_repo&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    git rev-parse HEAD &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; /dev/null 2&amp;gt;&amp;amp;1
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;function &lt;/span&gt;fzf-down&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    fzf &lt;span class=&quot;nt&quot;&gt;--height&lt;/span&gt; 50% &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$@&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--border&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;function &lt;/span&gt;gh&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    is_in_git_repo &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return
-    &lt;/span&gt;git log &lt;span class=&quot;nt&quot;&gt;--date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;short &lt;span class=&quot;nt&quot;&gt;--format&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;%C(green)%C(bold)%cd %C(auto)%h%d %s (%an)&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--graph&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;always |
-        fzf-down &lt;span class=&quot;nt&quot;&gt;--ansi&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--no-sort&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--reverse&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--multi&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--bind&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'ctrl-s:toggle-sort'&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;--header&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Press CTRL-S to toggle sort'&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;--preview&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'grep -o &quot;[a-f0-9]\{7,\}&quot; &amp;lt;&amp;lt;&amp;lt; {} | xargs git show --color=always | head -'&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$LINES&lt;/span&gt; |
-        &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;[a-f0-9]&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;7,&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;function &lt;/span&gt;bind-git-helper&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;local &lt;/span&gt;c
-    &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;c &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$@&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do
-        &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;fzf-g&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$c&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;-widget() { local result=&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\$&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;(g&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$c&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; | join-lines); zle reset-prompt; LBUFFER+=&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\$&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;result }&quot;&lt;/span&gt;
-        &lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;zle -N fzf-g&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$c&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;-widget&quot;&lt;/span&gt;
-        &lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;bindkey '^k^&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$c&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;' fzf-g&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$c&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;-widget&quot;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-bind-git-helper h
-&lt;span class=&quot;nb&quot;&gt;unset&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; bind-git-helper
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;This allows me to hit &lt;C-k&gt;h in a project managed by git which opens up a view&lt;/C-k&gt;&lt;/p&gt;
-
-
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/hulk-squash-a-better-git-squash-workflow/&quot;&gt;Hulk Squash - a Better Git Squash Workflow&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on December 26, 2019.&lt;/p&gt;
   </content>
 </entry>
 
@@ -933,6 +876,50 @@ They’ve been our inability to reconcile nothingness.&lt;br /&gt;&lt;/p&gt;
 
 
     &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/hacks/chromecast-and-linux/&quot;&gt;Chromecast and Linux&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on August 23, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Estranged]]></title>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/poems/estranged/" />
+  <id>//srijanshetty.in/poems/estranged</id>
+  <published>2015-08-20T22:23:15+05:30</published>
+  <updated>2015-08-20T22:23:15+05:30</updated>
+  <author>
+    <name>Srijan R. Shetty</name>
+    <uri>//srijanshetty.in</uri>
+    <email>srijan.shetty+code@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;blockquote&gt;
+  &lt;p&gt;Two roads diverged in a wood, and estranged they stood.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;For a minute there I wanted time to stop,&lt;br /&gt;
+A thousand answers whirred by,&lt;br /&gt;
+With no semblance to the question at top.&lt;br /&gt;&lt;br /&gt;
+Words felt heavy, and my breath was lost,&lt;br /&gt;
+A wandering spirit, a guilt, and a rumour of loss,&lt;br /&gt;
+Not reason, it was absolution I sought.&lt;br /&gt;&lt;br /&gt;
+We had trudged along, enduring our plight,&lt;br /&gt;
+Numbed by our pain, seeking respite,&lt;br /&gt;
+Dreaming together, in the search of light.&lt;br /&gt;&lt;br /&gt;
+No direction, and this inheritance of loss,&lt;br /&gt;
+In our love of shared pain, and lost cause,&lt;br /&gt;
+Being alone, with each other, in this chaos.&lt;br /&gt;&lt;br /&gt;
+Yes, I’d erred, I had lost her hand,&lt;br /&gt;
+Not knowing what that had meant,&lt;br /&gt;
+I’m now left with ruins in the sand.&lt;br /&gt;&lt;br /&gt;
+These echoes of silence, my hopeless cries,&lt;br /&gt;
+Hallow my way - the scars of a past life,&lt;br /&gt;
+Guiding my path, amidst these many lies.&lt;br /&gt;&lt;br /&gt;
+The minute was gone, the thought was spent,&lt;br /&gt;
+And even if I yearned, or asked for more,&lt;br /&gt;
+The deed was done, no wise of what it meant.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/poems/estranged/&quot;&gt;Estranged&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on August 20, 2015.&lt;/p&gt;
   </content>
 </entry>
 
