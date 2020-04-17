@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="//srijanshetty.in/feed.xml" />
 <link rel="alternate" type="text/html" href="//srijanshetty.in" />
-<updated>2020-04-14T22:33:14+05:30</updated>
+<updated>2020-04-17T16:43:35+05:30</updated>
 <id>//srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
@@ -27,9 +27,8 @@
   <content type="html">
     &lt;p&gt;As engineers, we go overboard with engineering. Consider a recent &lt;strong&gt;bete noire&lt;/strong&gt; was the lack of a good API to get NAV
 for mutual funds in India. &lt;a href=&quot;https://www.amfiindia.com/&quot;&gt;AMFI&lt;/a&gt;, the association for mutual funds in India maintains a
-text file containing all the NAVs at open &lt;a href=&quot;https://www.amfiindia.com/spages/NAVAll.txt&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The first attempt I did to query the API was to write a python behemoth to which did a simple search after converting
+text file containing all the NAVs at open &lt;a href=&quot;https://www.amfiindia.com/spages/NAVAll.txt&quot;&gt;here&lt;/a&gt;. &lt;br /&gt;&lt;br /&gt;
+The first attempt I did to query the API was to write a python behemoth to which did a simple search after converting
 the data into json, and is hosted &lt;a href=&quot;https://github.com/srijanshetty/amfitools&quot;&gt;here&lt;/a&gt;.  Pleased with my prowess of python,
 I decided to implement fuzzy-search as well. After spending a few minutes pondering the correct interface of the
 commandline, I thought I should give bash a chance to solve the issue. &lt;a href=&quot;https://github.com/junegunn/fzf&quot;&gt;fzf&lt;/a&gt;, is
