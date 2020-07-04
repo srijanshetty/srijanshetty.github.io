@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="//srijanshetty.in/feed.xml" />
 <link rel="alternate" type="text/html" href="//srijanshetty.in" />
-<updated>2020-07-04T19:24:55+05:30</updated>
+<updated>2020-07-04T19:30:36+05:30</updated>
 <id>//srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
@@ -27,7 +27,7 @@
   <content type="html">
     &lt;p&gt;There are complex solutions available for server management, some of you might even be on the &lt;em&gt;containerization train&lt;/em&gt;.
 Sometimes you just want to run a quick command on every server, it could be a one off to check &lt;code class=&quot;highlighter-rouge&quot;&gt;uptime&lt;/code&gt; or a simple
-check for &lt;code class=&quot;highlighter-rouge&quot;&gt;lockfiles&lt;/code&gt;. Here’s a simple script which runs a shell command on a list o&lt;/p&gt;
+check for &lt;code class=&quot;highlighter-rouge&quot;&gt;lockfiles&lt;/code&gt;. Here’s a simple script which runs a shell command on a list of servers.&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
 
@@ -39,23 +39,24 @@ check for &lt;code class=&quot;highlighter-rouge&quot;&gt;lockfiles&lt;/code&gt;
 &lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ./scripts/lib.sh
 
 &lt;span class=&quot;c&quot;&gt;# Expand host string&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;HOSTS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;GET_HOSTS &lt;span class=&quot;nv&quot;&gt;$HOST&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;                  &lt;span class=&quot;c&quot;&gt;# GET_HOSTS is a function defined in lib.sh to fetch hosts&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;HOSTS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;GET_HOSTS &lt;span class=&quot;nv&quot;&gt;$HOST&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;            &lt;span class=&quot;c&quot;&gt;# GET_HOSTS is a lists all hosts&lt;/span&gt;
 
 &lt;span class=&quot;c&quot;&gt;# Command to SSH&lt;/span&gt;
 SSH_COMMAND&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;local &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;GET_IP &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;                 &lt;span class=&quot;c&quot;&gt;# GET_IP is defined in scripts/lib.sh to map hostname to IP&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;local &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;GET_IP &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;           &lt;span class=&quot;c&quot;&gt;# GET_IP is maps hostname to IP&lt;/span&gt;
     ssh &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;TARGET_USER&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ip&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$2&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 
 &lt;span class=&quot;c&quot;&gt;# Run command for each host&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;declare&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-A&lt;/span&gt; results
 &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;H &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$HOSTS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;# Redirect output to a temp file, this is later compiled and shown in stdout&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# Redirect output to a temp file, later redirect back to stdio&lt;/span&gt;
     &lt;span class=&quot;nv&quot;&gt;temp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;mktemp&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; &amp;amp;&amp;gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;temp&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
 
     &lt;span class=&quot;c&quot;&gt;# Not the '&amp;amp;', this creates a background process.&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;# We also source the env on the host, as .bashrc and .bash_profile are finicky at times&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# We also source the env on the host,&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# as .bashrc and .bash_profile are finicky at times&lt;/span&gt;
     &lt;span class=&quot;nb&quot;&gt;printf&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Running command %s %s &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ACTION&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;H&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
     SSH_COMMAND &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$H&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;source ~/app/scripts/env.sh; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ACTION&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &amp;amp; 
 

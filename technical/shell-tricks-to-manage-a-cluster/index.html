@@ -156,7 +156,7 @@
     <div class="article-wrap">
       <p>There are complex solutions available for server management, some of you might even be on the <em>containerization train</em>.
 Sometimes you just want to run a quick command on every server, it could be a one off to check <code class="highlighter-rouge">uptime</code> or a simple
-check for <code class="highlighter-rouge">lockfiles</code>. Here’s a simple script which runs a shell command on a list o</p>
+check for <code class="highlighter-rouge">lockfiles</code>. Here’s a simple script which runs a shell command on a list of servers.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
 
@@ -168,23 +168,24 @@ check for <code class="highlighter-rouge">lockfiles</code>. Here’s a simple sc
 <span class="nb">source</span> ./scripts/lib.sh
 
 <span class="c"># Expand host string</span>
-<span class="nv">HOSTS</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span>GET_HOSTS <span class="nv">$HOST</span><span class="si">)</span><span class="s2">"</span>                  <span class="c"># GET_HOSTS is a function defined in lib.sh to fetch hosts</span>
+<span class="nv">HOSTS</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span>GET_HOSTS <span class="nv">$HOST</span><span class="si">)</span><span class="s2">"</span>            <span class="c"># GET_HOSTS is a lists all hosts</span>
 
 <span class="c"># Command to SSH</span>
 SSH_COMMAND<span class="o">()</span> <span class="o">{</span>
-    <span class="nb">local </span><span class="nv">ip</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span>GET_IP <span class="nv">$1</span><span class="si">)</span><span class="s2">"</span>                 <span class="c"># GET_IP is defined in scripts/lib.sh to map hostname to IP</span>
+    <span class="nb">local </span><span class="nv">ip</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span>GET_IP <span class="nv">$1</span><span class="si">)</span><span class="s2">"</span>           <span class="c"># GET_IP is maps hostname to IP</span>
     ssh <span class="s2">"</span><span class="k">${</span><span class="nv">TARGET_USER</span><span class="k">}</span><span class="s2">@</span><span class="k">${</span><span class="nv">ip</span><span class="k">}</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$2</span><span class="s2">"</span>
 <span class="o">}</span>
 
 <span class="c"># Run command for each host</span>
 <span class="nb">declare</span> <span class="nt">-A</span> results
 <span class="k">for </span>H <span class="k">in</span> <span class="nv">$HOSTS</span><span class="p">;</span> <span class="k">do</span>
-    <span class="c"># Redirect output to a temp file, this is later compiled and shown in stdout</span>
+    <span class="c"># Redirect output to a temp file, later redirect back to stdio</span>
     <span class="nv">temp</span><span class="o">=</span><span class="si">$(</span><span class="nb">mktemp</span><span class="si">)</span>
     <span class="nb">exec</span> &amp;&gt; <span class="k">${</span><span class="nv">temp</span><span class="k">}</span>
 
     <span class="c"># Not the '&amp;', this creates a background process.</span>
-    <span class="c"># We also source the env on the host, as .bashrc and .bash_profile are finicky at times</span>
+    <span class="c"># We also source the env on the host,</span>
+    <span class="c"># as .bashrc and .bash_profile are finicky at times</span>
     <span class="nb">printf</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">Running command %s %s </span><span class="se">\n</span><span class="s2">"</span> <span class="s2">"</span><span class="k">${</span><span class="nv">ACTION</span><span class="k">}</span><span class="s2"> </span><span class="k">${</span><span class="nv">H</span><span class="k">}</span><span class="s2">"</span>
     SSH_COMMAND <span class="s2">"</span><span class="nv">$H</span><span class="s2">"</span> <span class="s2">"source ~/app/scripts/env.sh; </span><span class="k">${</span><span class="nv">ACTION</span><span class="k">}</span><span class="s2">"</span> &amp; 
 
