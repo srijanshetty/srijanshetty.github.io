@@ -5,36 +5,36 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Modern Love &#8211; Srijan R. Shetty</title>
-<meta name="description" content="Modern love is strange, and hopefully we come to see of it more like friendship">
-<meta name="keywords" content="love, romance, friendship. prose, strange">
+<title>Shell tricks to manage a cluster &#8211; Srijan R. Shetty</title>
+<meta name="description" content="use shell features to manage a cluster of servers with docker et al">
+<meta name="keywords" content="zsh, bash, shell, management, ssh, tricks, docker, containers">
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Modern Love">
-<meta name="twitter:description" content="Modern love is strange, and hopefully we come to see of it more like friendship">
+<meta name="twitter:title" content="Shell tricks to manage a cluster">
+<meta name="twitter:description" content="use shell features to manage a cluster of servers with docker et al">
 <meta name="twitter:site" content="@srijanshetty">
 <meta name="twitter:creator" content="@srijanshetty">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="//srijanshetty.in/images/paris_locks_15.jpeg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="//srijanshetty.in/images/default-thumb.png">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Modern Love">
-<meta property="og:description" content="Modern love is strange, and hopefully we come to see of it more like friendship">
-<meta property="og:url" content="//srijanshetty.in/prose/modern-love/">
+<meta property="og:title" content="Shell tricks to manage a cluster">
+<meta property="og:description" content="use shell features to manage a cluster of servers with docker et al">
+<meta property="og:url" content="//srijanshetty.in/technical/shell-tricks-to-manage-a-cluster/">
 <meta property="og:site_name" content="Srijan R. Shetty">
 
-<meta property="og:image" content="//srijanshetty.in/images/paris_locks_15.jpeg">
+<meta property="og:image" content="//srijanshetty.in/images/default-thumb.png">
 
 
 
 
 
 
-<link rel="canonical" href="//srijanshetty.in/prose/modern-love/">
+<link rel="canonical" href="//srijanshetty.in/technical/shell-tricks-to-manage-a-cluster/">
 <link href="//srijanshetty.in/feed.xml" type="application/atom+xml" rel="alternate" title="Srijan R. Shetty Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -110,15 +110,6 @@
 </div><!-- /.navigation-wrapper -->
 
 
-  <div class="image-wrap">
-  <img src=
-    
-      "//srijanshetty.in/images/paris_locks_15.jpeg"
-    
-  alt="Modern Love feature image">
-  
-  </div><!-- /.image-wrap -->
-
 
 <div id="main" role="main">
   <div class="article-author-side">
@@ -159,15 +150,71 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="//srijanshetty.in/prose/modern-love/" rel="bookmark" title="Modern Love">Modern Love</a></h1>
+        <h1><a href="//srijanshetty.in/technical/shell-tricks-to-manage-a-cluster/" rel="bookmark" title="Shell tricks to manage a cluster">Shell tricks to manage a cluster</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>The problem has always been that we’re presented with such a romanticized version of love stories. The brooding byronic hero’s love is an inescapable force and the damsel/strong women gravitates towards it. It’s a singular love, it’s either make it or break it, their communion was destined and they’re unbreakable; but is it true? Does modern love really resemble what’s been foretold for centuries, and if we’re being honest here, I would like to ask if any love is of this kind?<br /><br />
-On the other hand we have the archetypal bad boy, who wins over woman with his enigma or emotional unavailability; another stereotype which manifests in possessive other halves who don’t let the other breathe. Love was never meant to be suffocating - well, not always - it’s interesting that we stand at destiny’s crossroads today, trying to decipher what love is, and more importantly what it should be, for after all it’s the gestalt of the cultural zeitgeist.<br /><br />
-I would define love as a little more than friendship, it has the emotional availability of friendship; the zing that it brings along. It’s a little more than friendship considering there’s that physical connect which might or might not be in a friendship. Love and friendship are very much alike, to the extend that I would make the apposite claim that I love all my best friends. (This might invoke the collective groan of a lot of readers who either haven’t loved or who fail to see love to be anything beyond the physical realm).<br /><br />
-Love is a synergistic bond, you let each other grow, you let each other fail, you scuffle, you make up, you stay put for each other - like friends do. In fact, friendship is not an exclusive relationship, you can be really close with a few different people; modern times juxtapose love to friendship by invoking the exclusivity clause - which is not fine by me, for it abases love to be merely physical. Love is more than that, love demands no sacrifice, you need not give up your friendships to taste the forbidden fruit.<br /><br />
-Modern love is strange, and hopefully we come to see of it more like friendship; and less contractual</p>
+      <p>There are complex solutions available for server management, some of you might even be on the <em>containerization train</em>.
+Sometimes you just want to run a quick command on every server, it could be a one off to check <code class="highlighter-rouge">uptime</code> or a simple
+check for <code class="highlighter-rouge">lockfiles</code>. Here’s a simple script which runs a shell command on a list o</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
+
+<span class="nb">set</span> <span class="nt">-u</span>
+
+<span class="nv">ACTION</span><span class="o">=</span><span class="k">${</span><span class="nv">1</span>:?<span class="s2">"Must supply action"</span><span class="k">}</span>
+<span class="nv">HOST</span><span class="o">=</span><span class="k">${</span><span class="nv">2</span>:?<span class="s2">"Must supply host name"</span><span class="k">}</span>
+
+<span class="nb">source</span> ./scripts/lib.sh
+
+<span class="c"># Expand host string</span>
+<span class="nv">HOSTS</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span>GET_HOSTS <span class="nv">$HOST</span><span class="si">)</span><span class="s2">"</span>                  <span class="c"># GET_HOSTS is a function defined in lib.sh to fetch hosts</span>
+
+<span class="c"># Command to SSH</span>
+SSH_COMMAND<span class="o">()</span> <span class="o">{</span>
+    <span class="nb">local </span><span class="nv">ip</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span>GET_IP <span class="nv">$1</span><span class="si">)</span><span class="s2">"</span>                 <span class="c"># GET_IP is defined in scripts/lib.sh to map hostname to IP</span>
+    ssh <span class="s2">"</span><span class="k">${</span><span class="nv">TARGET_USER</span><span class="k">}</span><span class="s2">@</span><span class="k">${</span><span class="nv">ip</span><span class="k">}</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$2</span><span class="s2">"</span>
+<span class="o">}</span>
+
+<span class="c"># Run command for each host</span>
+<span class="nb">declare</span> <span class="nt">-A</span> results
+<span class="k">for </span>H <span class="k">in</span> <span class="nv">$HOSTS</span><span class="p">;</span> <span class="k">do</span>
+    <span class="c"># Redirect output to a temp file, this is later compiled and shown in stdout</span>
+    <span class="nv">temp</span><span class="o">=</span><span class="si">$(</span><span class="nb">mktemp</span><span class="si">)</span>
+    <span class="nb">exec</span> &amp;&gt; <span class="k">${</span><span class="nv">temp</span><span class="k">}</span>
+
+    <span class="c"># Not the '&amp;', this creates a background process.</span>
+    <span class="c"># We also source the env on the host, as .bashrc and .bash_profile are finicky at times</span>
+    <span class="nb">printf</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">Running command %s %s </span><span class="se">\n</span><span class="s2">"</span> <span class="s2">"</span><span class="k">${</span><span class="nv">ACTION</span><span class="k">}</span><span class="s2"> </span><span class="k">${</span><span class="nv">H</span><span class="k">}</span><span class="s2">"</span>
+    SSH_COMMAND <span class="s2">"</span><span class="nv">$H</span><span class="s2">"</span> <span class="s2">"source ~/app/scripts/env.sh; </span><span class="k">${</span><span class="nv">ACTION</span><span class="k">}</span><span class="s2">"</span> &amp; 
+
+    <span class="c"># '$!' is the PID which maps to the correct temp file</span>
+    results[<span class="nv">$!</span><span class="o">]=</span><span class="nv">$temp</span>
+<span class="k">done</span>
+
+<span class="c"># Restore stdout and stderr</span>
+<span class="nb">exec</span> &amp;&gt; /dev/tty
+
+<span class="c"># Wait for the jobs that were executed</span>
+<span class="k">for </span>pid <span class="k">in</span> <span class="s2">"</span><span class="k">${</span><span class="p">!results[@]</span><span class="k">}</span><span class="s2">"</span><span class="p">;</span> <span class="k">do
+    </span><span class="nb">wait</span> <span class="nv">$pid</span>
+    <span class="nb">cat</span> <span class="s2">"</span><span class="k">${</span><span class="nv">results</span><span class="p">[</span><span class="nv">$pid</span><span class="p">]</span><span class="k">}</span><span class="s2">"</span>
+<span class="k">done</span>
+</code></pre></div></div>
+
+<p>There’s a lot to dissect in this little snippet. Let’s get right to it.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">set -u</code>:  Most bash guides will ask you to use <code class="highlighter-rouge">set -eEuo pipefail</code>, but you would not want to use that especially
+when you parallelize using background proccesses in bash. This would mean partial execution and we want to avoid that
+all costs. The only error that we care about is <em>undefined variables</em>, hence the <em>set -u</em></li>
+  <li><code class="highlighter-rouge">GET HOSTS</code>: A simple function to generate a list of hosts that you want to run the command on.</li>
+  <li><code class="highlighter-rouge">exec &amp;&gt; ${temp} and exec &amp;&gt; /dev/tty</code>: This redirects the output temporarily and later resets it to the terminal.</li>
+  <li><code class="highlighter-rouge">results[$!]=$temp</code>: To keep track of which pid points to which output file.</li>
+  <li><code class="highlighter-rouge">for pid in "${!results[@]}"</code>: Traverse over every pid in the map and wait on it.</li>
+</ul>
+
+<p>This simple scripts saves a lot of time especially when you’re managing a cluster of servers.</p>
 
       <hr />
       <footer role="contentinfo">
@@ -175,17 +222,17 @@ Modern love is strange, and hopefully we come to see of it more like friendship;
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/prose/modern-love/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/technical/shell-tricks-to-manage-a-cluster/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/prose/modern-love/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/technical/shell-tricks-to-manage-a-cluster/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=//srijanshetty.in/prose/modern-love/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=//srijanshetty.in/technical/shell-tricks-to-manage-a-cluster/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>Modern Love</strong> was published on <time datetime="2018-08-26T17:50:51+05:30">August 26, 2018</time>.</p>
+        <p class="byline"><strong>Shell tricks to manage a cluster</strong> was published on <time datetime="2020-07-04T18:48:51+05:30">July 04, 2020</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -200,11 +247,11 @@ Modern love is strange, and hopefully we come to see of it more like friendship;
   <h4>You might also enjoy <small class="pull-right">(<a href="//srijanshetty.in/posts/">View all posts</a>)</small></h4>
     <ul>
     
-      <li><a href="//srijanshetty.in/technical/shell-tricks-to-manage-a-cluster/" title="Shell tricks to manage a cluster">Shell tricks to manage a cluster</a></li>
-    
       <li><a href="//srijanshetty.in/technical/kiss-unix-and-composition/" title="KISS - UNIX and Composition">KISS - UNIX and Composition</a></li>
     
       <li><a href="//srijanshetty.in/storing-cookies-with-httpie/" title="Storing Cookies With Httpie">Storing Cookies With Httpie</a></li>
+    
+      <li><a href="//srijanshetty.in/gitting-hooks-setup/" title="Gitting Hooks setups">Gitting Hooks setups</a></li>
     
     </ul>
     <hr />
