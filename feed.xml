@@ -4,13 +4,49 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="//srijanshetty.in/feed.xml" />
 <link rel="alternate" type="text/html" href="//srijanshetty.in" />
-<updated>2020-07-12T02:01:31+05:30</updated>
+<updated>2020-07-18T14:33:52+05:30</updated>
 <id>//srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
   <uri>//srijanshetty.in/</uri>
   <email>srijan.shetty+code@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Custom DNS Using Pihole]]></title>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/custom-dns-using-pihole/" />
+  <id>//srijanshetty.in/technical/custom-dns-using-pihole</id>
+  <published>2020-07-18T14:23:15+05:30</published>
+  <updated>2020-07-18T14:23:15+05:30</updated>
+  <author>
+    <name>Srijan R. Shetty</name>
+    <uri>//srijanshetty.in</uri>
+    <email>srijan.shetty+code@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;I finally managed to setup custom DNS routes at my home server (a repurposed laptop with a bust screen, a post for
+another day).&lt;br /&gt;&lt;br /&gt;
+I installed &lt;a href=&quot;https://pi-hole.net&quot;&gt;pihole&lt;/a&gt; on my local server and was struggling with setting up custom
+routes for my local router, and some AWS and GCP boxes that I run. My first attempt was modifying
+&lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/pihole/local.list&lt;/code&gt; with the following values:&lt;/p&gt;
+
+&lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;0.0.0.1 test.lan
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This configuration worked, until pihole updated gravity database and &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/pihole/local.list&lt;/code&gt; was cleaned up.&lt;br /&gt;&lt;br /&gt;
+After searching the rabbit hole of the internet, I was stuck with the epiphany of modifying &lt;code class=&quot;highlighter-rouge&quot;&gt;dnsmasq&lt;/code&gt; to add the
+entries. The following configuration did the trick:&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;address=/test.lan/0.0.0.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;My only pet-peeve is the default behaviour of browsers like firefox and chrome to interpret &lt;code class=&quot;highlighter-rouge&quot;&gt;.lan&lt;/code&gt; entries as search
+queries instead of domain names.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/custom-dns-using-pihole/&quot;&gt;Custom DNS Using Pihole&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on July 18, 2020.&lt;/p&gt;
+  </content>
+</entry>
 
 
 <entry>
@@ -940,40 +976,6 @@ For example, I’ll show you how to automate searching within the settings of ch
 
 
     &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/hacks/mastering-search-in-chrome/&quot;&gt;Mastering Custom Site Search in Chrome&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 13, 2015.&lt;/p&gt;
-  </content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Nothingness]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/poems/nothingness/" />
-  <id>//srijanshetty.in/poems/nothingness</id>
-  <published>2015-09-03T23:20:38+05:30</published>
-  <updated>2015-09-03T23:20:38+05:30</updated>
-  <author>
-    <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
-    <email>srijan.shetty+code@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;blockquote&gt;
-  &lt;p&gt;An attempt at free verse.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;The light at the end of the tunnel,&lt;br /&gt;
-Unrequited hope and unending faith -&lt;br /&gt;
-All artifacts of our weak minds,&lt;br /&gt;
-Desperate cries of pitiful hearts.&lt;br /&gt;&lt;br /&gt;
-We crave endings, seek meanings,&lt;br /&gt;
-For we don’t want, we can’t bear,&lt;br /&gt;
-The dark reality, the sad tragedy,&lt;br /&gt;
-Of living without consequence,&lt;br /&gt;
-Of dying without resurgence.&lt;br /&gt;&lt;br /&gt;
-Hell and heaven were never the artifacts of religion,&lt;br /&gt;
-They’ve been our inability to reconcile nothingness.&lt;br /&gt;&lt;/p&gt;
-
-
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/poems/nothingness/&quot;&gt;Nothingness&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 03, 2015.&lt;/p&gt;
   </content>
 </entry>
 

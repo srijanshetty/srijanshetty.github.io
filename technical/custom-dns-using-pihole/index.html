@@ -5,14 +5,14 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Travelogues - Chapora Fort, Goa &#8211; Srijan R. Shetty</title>
-<meta name="description" content="And then he went in a direction new, Never to look back at those waters blue.">
-<meta name="keywords" content="travelogue, goa, dil chahta hai, chapora, fort, sea, oceans">
+<title>Custom DNS Using Pihole &#8211; Srijan R. Shetty</title>
+<meta name="description" content="custom DNS routes on pihole">
+<meta name="keywords" content="privacy, dns, pihole, ad blocking, routes">
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Travelogues - Chapora Fort, Goa">
-<meta name="twitter:description" content="And then he went in a direction new, Never to look back at those waters blue.">
+<meta name="twitter:title" content="Custom DNS Using Pihole">
+<meta name="twitter:description" content="custom DNS routes on pihole">
 <meta name="twitter:site" content="@srijanshetty">
 <meta name="twitter:creator" content="@srijanshetty">
 
@@ -22,9 +22,9 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Travelogues - Chapora Fort, Goa">
-<meta property="og:description" content="And then he went in a direction new, Never to look back at those waters blue.">
-<meta property="og:url" content="//srijanshetty.in/travelogue/travelogue-chapora-fort-goa/">
+<meta property="og:title" content="Custom DNS Using Pihole">
+<meta property="og:description" content="custom DNS routes on pihole">
+<meta property="og:url" content="//srijanshetty.in/technical/custom-dns-using-pihole/">
 <meta property="og:site_name" content="Srijan R. Shetty">
 
 <meta property="og:image" content="//srijanshetty.in/images/default-thumb.png">
@@ -34,7 +34,7 @@
 
 
 
-<link rel="canonical" href="//srijanshetty.in/travelogue/travelogue-chapora-fort-goa/">
+<link rel="canonical" href="//srijanshetty.in/technical/custom-dns-using-pihole/">
 <link href="//srijanshetty.in/feed.xml" type="application/atom+xml" rel="alternate" title="Srijan R. Shetty Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -150,30 +150,28 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="//srijanshetty.in/travelogue/travelogue-chapora-fort-goa/" rel="bookmark" title="Travelogues - Chapora Fort, Goa">Travelogues - Chapora Fort, Goa</a></h1>
+        <h1><a href="//srijanshetty.in/technical/custom-dns-using-pihole/" rel="bookmark" title="Custom DNS Using Pihole">Custom DNS Using Pihole</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>The shore was calm, the winds silently blew,<br />
-Memories rushed by, and a grin silently grew.<br />&lt;/br/&gt;
-Myriad streams inched ahead relentlessly,<br />
-And random thoughts crossed by aimlessly.<br />
-There were no thoughts in particular,<br />
-The waves splashed around in a blur.<br /><br />
-Vignettes of what had once been,<br />
-Pebbles that would later gleam.<br />
-Apprehensions about times yet to come,<br />
-Wafts of water evaporated by the sun.<br /><br />
-His mind was lost to the waters iridescent,<br />
-Events had transpired, the air smelt different.<br />
-It was hard to believe how life had turned,<br />
-He was far ahead from the last he burned.<br /><br />
-And as a maroon spread in the sky,<br />
-He realised it’s time for good bye,<br />
-He picked his satchel, stole one last glance,<br />
-Savoured a view that had come by chance,<br />
-And then he went in a direction new,<br />
-Never to look back at those waters blue.<br /><br /></p>
+      <p>I finally managed to setup custom DNS routes at my home server (a repurposed laptop with a bust screen, a post for
+another day).<br /><br />
+I installed <a href="https://pi-hole.net">pihole</a> on my local server and was struggling with setting up custom
+routes for my local router, and some AWS and GCP boxes that I run. My first attempt was modifying
+<code class="highlighter-rouge">/etc/pihole/local.list</code> with the following values:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.0.0.1 test.lan
+</code></pre></div></div>
+
+<p>This configuration worked, until pihole updated gravity database and <code class="highlighter-rouge">/etc/pihole/local.list</code> was cleaned up.<br /><br />
+After searching the rabbit hole of the internet, I was stuck with the epiphany of modifying <code class="highlighter-rouge">dnsmasq</code> to add the
+entries. The following configuration did the trick:<br /><br /></p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>address=/test.lan/0.0.0.1
+</code></pre></div></div>
+
+<p>My only pet-peeve is the default behaviour of browsers like firefox and chrome to interpret <code class="highlighter-rouge">.lan</code> entries as search
+queries instead of domain names.</p>
 
       <hr />
       <footer role="contentinfo">
@@ -181,17 +179,17 @@ Never to look back at those waters blue.<br /><br /></p>
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/travelogue/travelogue-chapora-fort-goa/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/technical/custom-dns-using-pihole/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/travelogue/travelogue-chapora-fort-goa/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/technical/custom-dns-using-pihole/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=//srijanshetty.in/travelogue/travelogue-chapora-fort-goa/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=//srijanshetty.in/technical/custom-dns-using-pihole/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>Travelogues - Chapora Fort, Goa</strong> was published on <time datetime="2014-03-25T08:41:49+05:30">March 25, 2014</time>.</p>
+        <p class="byline"><strong>Custom DNS Using Pihole</strong> was published on <time datetime="2020-07-18T14:23:15+05:30">July 18, 2020</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -206,11 +204,11 @@ Never to look back at those waters blue.<br /><br /></p>
   <h4>You might also enjoy <small class="pull-right">(<a href="//srijanshetty.in/posts/">View all posts</a>)</small></h4>
     <ul>
     
-      <li><a href="//srijanshetty.in/technical/custom-dns-using-pihole/" title="Custom DNS Using Pihole">Custom DNS Using Pihole</a></li>
-    
       <li><a href="//srijanshetty.in/technical/shell-tricks-to-manage-a-cluster/" title="Shell tricks to manage a cluster">Shell tricks to manage a cluster</a></li>
     
       <li><a href="//srijanshetty.in/technical/kiss-unix-and-composition/" title="KISS - UNIX and Composition">KISS - UNIX and Composition</a></li>
+    
+      <li><a href="//srijanshetty.in/storing-cookies-with-httpie/" title="Storing Cookies With Httpie">Storing Cookies With Httpie</a></li>
     
     </ul>
     <hr />
