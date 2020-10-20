@@ -6,35 +6,13 @@
 <head>
 <meta charset="utf-8">
 <title>How Do Gulp Typescript Without Module Loaders &#8211; Srijan R. Shetty</title>
-<meta name="description" content="Call me old school but I still use gulp, because it’s easy to comprehend over the monster webpack is. I can write
-a gulpfile.js from scratch and modify it using streams but I wouldn’t remember how to start a webpack project
-without create-app-starter.
-Also, I lied, you can’t do this without module loaders, but you can almost do it without them. Confused? So was I,
-the idea is to use the module loader to do the minimum amount of work and not disrupt your workflow by a lot!
-My current predicament has been my own doing, and this is probably the universe sending me a signal
-My project consisted of a single js/booking.js file which I wanted to port over to typescript which I love.
-I was foolish to think that this would take me an hour or two, I was not ready for the Pandora’s box that I was about to
-open.
-Prima Facie, my assumption was that npm i -D typescript gulp-typescript and a simple recipe to transform should do the
-job. It wasn’t that simple and boiled down to multiple reasons:
-">
+<meta name="description" content="Using gulp to transpile typescript and use in the browser without module loaders">
 <meta name="keywords" content="vue, gulp, typescript, module loader, js, ts, gulp-typescript, systemjs">
 
 
 <!-- Twitter Cards -->
 <meta name="twitter:title" content="How Do Gulp Typescript Without Module Loaders">
-<meta name="twitter:description" content="Call me old school but I still use gulp, because it’s easy to comprehend over the monster webpack is. I can write
-a gulpfile.js from scratch and modify it using streams but I wouldn’t remember how to start a webpack project
-without create-app-starter.
-Also, I lied, you can’t do this without module loaders, but you can almost do it without them. Confused? So was I,
-the idea is to use the module loader to do the minimum amount of work and not disrupt your workflow by a lot!
-My current predicament has been my own doing, and this is probably the universe sending me a signal
-My project consisted of a single js/booking.js file which I wanted to port over to typescript which I love.
-I was foolish to think that this would take me an hour or two, I was not ready for the Pandora’s box that I was about to
-open.
-Prima Facie, my assumption was that npm i -D typescript gulp-typescript and a simple recipe to transform should do the
-job. It wasn’t that simple and boiled down to multiple reasons:
-">
+<meta name="twitter:description" content="Using gulp to transpile typescript and use in the browser without module loaders">
 <meta name="twitter:site" content="@srijanshetty">
 <meta name="twitter:creator" content="@srijanshetty">
 
@@ -45,18 +23,7 @@ job. It wasn’t that simple and boiled down to multiple reasons:
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How Do Gulp Typescript Without Module Loaders">
-<meta property="og:description" content="Call me old school but I still use gulp, because it’s easy to comprehend over the monster webpack is. I can write
-a gulpfile.js from scratch and modify it using streams but I wouldn’t remember how to start a webpack project
-without create-app-starter.
-Also, I lied, you can’t do this without module loaders, but you can almost do it without them. Confused? So was I,
-the idea is to use the module loader to do the minimum amount of work and not disrupt your workflow by a lot!
-My current predicament has been my own doing, and this is probably the universe sending me a signal
-My project consisted of a single js/booking.js file which I wanted to port over to typescript which I love.
-I was foolish to think that this would take me an hour or two, I was not ready for the Pandora’s box that I was about to
-open.
-Prima Facie, my assumption was that npm i -D typescript gulp-typescript and a simple recipe to transform should do the
-job. It wasn’t that simple and boiled down to multiple reasons:
-">
+<meta property="og:description" content="Using gulp to transpile typescript and use in the browser without module loaders">
 <meta property="og:url" content="//srijanshetty.in/technical/how-do-gulp-typescript-without-module-loaders/">
 <meta property="og:site_name" content="Srijan R. Shetty">
 
