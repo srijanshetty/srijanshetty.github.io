@@ -4,13 +4,116 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="//srijanshetty.in/feed.xml" />
 <link rel="alternate" type="text/html" href="//srijanshetty.in" />
-<updated>2020-09-25T14:57:31+05:30</updated>
+<updated>2020-10-20T18:28:39+05:30</updated>
 <id>//srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
   <uri>//srijanshetty.in/</uri>
   <email>srijan.shetty+code@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[How Do Gulp Typescript Without Module Loaders]]></title>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/how-do-gulp-typescript-without-module-loaders/" />
+  <id>//srijanshetty.in/technical/how-do-gulp-typescript-without-module-loaders</id>
+  <published>2020-10-20T18:10:00+05:30</published>
+  <updated>2020-10-20T18:10:00+05:30</updated>
+  <author>
+    <name>Srijan R. Shetty</name>
+    <uri>//srijanshetty.in</uri>
+    <email>srijan.shetty+code@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Call me old school but I still use gulp, because it’s easy to comprehend over the monster webpack is. I can write
+a &lt;code class=&quot;highlighter-rouge&quot;&gt;gulpfile.js&lt;/code&gt; from scratch and modify it using streams but I wouldn’t remember how to start a webpack project
+without &lt;code class=&quot;highlighter-rouge&quot;&gt;create-app-starter&lt;/code&gt;.&lt;br /&gt;&lt;br /&gt;
+Also, I lied, you can’t do this without module loaders, but you can &lt;strong&gt;almost&lt;/strong&gt; do it without them. Confused? So was I,
+the idea is to use the module loader to do the minimum amount of work and not disrupt your workflow by a lot!&lt;br /&gt;&lt;br /&gt;
+My current predicament has been my own doing, and this is probably the universe sending me a signal&lt;br /&gt;&lt;br /&gt;
+My project consisted of a single &lt;code class=&quot;highlighter-rouge&quot;&gt;js/booking.js&lt;/code&gt; file which I wanted to port over to &lt;em&gt;typescript&lt;/em&gt; which I love.
+I was foolish to think that this would take me an hour or two, I was not ready for the Pandora’s box that I was about to
+open.&lt;br /&gt;&lt;br /&gt;
+Prima Facie, my assumption was that &lt;code class=&quot;highlighter-rouge&quot;&gt;npm i -D typescript gulp-typescript&lt;/code&gt; and a simple recipe to transform should do the
+job. It wasn’t that simple and boiled down to multiple reasons:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;You cannot use &lt;em&gt;typescript&lt;/em&gt; &lt;strong&gt;without&lt;/strong&gt; a module loader. Battered and bruised, I finally resorted to using &lt;code class=&quot;highlighter-rouge&quot;&gt;SystemJS&lt;/code&gt;
+because &lt;code class=&quot;highlighter-rouge&quot;&gt;amd&lt;/code&gt; does not support &lt;code class=&quot;highlighter-rouge&quot;&gt;top-level await&lt;/code&gt;. You have to add &lt;strong&gt;module: “system”&lt;/strong&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;tsconfig&lt;/code&gt; for this to
+work.&lt;/li&gt;
+  &lt;li&gt;You need to use the &lt;code class=&quot;highlighter-rouge&quot;&gt;outFile&lt;/code&gt; option in &lt;code class=&quot;highlighter-rouge&quot;&gt;tsconfig.json&lt;/code&gt; for it to generate a standalone file.&lt;/li&gt;
+  &lt;li&gt;Only &lt;code class=&quot;highlighter-rouge&quot;&gt;SystemJS&lt;/code&gt; does not cut it and you need to import &lt;code class=&quot;highlighter-rouge&quot;&gt;/extras/named-register.min.js&lt;/code&gt; because &lt;code class=&quot;highlighter-rouge&quot;&gt;gulp-typescript&lt;/code&gt;
+creates a named module.&lt;/li&gt;
+  &lt;li&gt;You have to import the created module in your &lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt; using &lt;code class=&quot;highlighter-rouge&quot;&gt;System.import('booking.js')&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Do not use &lt;code class=&quot;highlighter-rouge&quot;&gt;import Vue from 'vue'&lt;/code&gt; syntax, instead use &lt;code class=&quot;highlighter-rouge&quot;&gt;import type Vue from 'vue'&lt;/code&gt;. This will save you a whole lot
+of pain in trying to resolve dependencies in your files. After this, you can use a bare script tag to import Vue as a
+global in the browser.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I’m listing down the main components of all the files for your reference.&lt;/p&gt;
+
+&lt;h3 id=&quot;gulpfilejs&quot;&gt;gulpfile.js&lt;/h3&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;gulp-typescript&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;tsconfig&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;./tsconfig.json&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;js&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;ts/booking.ts&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;eslint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;eslint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;eslint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;failAfterError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tsconfig&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;compilerOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;outFile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;booking.js&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}))&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;./dist/js&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;browsersync&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stream&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;tsconfigjson&quot;&gt;tsconfig.json&lt;/h3&gt;
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;compilerOptions&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;moduleResolution&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;node&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;target&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;es2017&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;sourceMap&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;module&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;system&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;removeComments&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;esModuleInterop&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;strict&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;allowSyntheticDefaultImports&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;experimentalDecorators&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;noUnusedLocals&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;noUnusedParameters&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;noImplicitReturns&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;noFallthroughCasesInSwitch&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;forceConsistentCasingInFileNames&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;typeRoots&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ts/declaration.d.ts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;node_modules/@types&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;indexhtml&quot;&gt;index.html&lt;/h3&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;path-to-vue&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;path-to-systemjs&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;path-to-systemjs-named-register&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;path-to-generated-booking.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;booking&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Hope this helps saves a few hours of desperate &lt;em&gt;wuts&lt;/em&gt;.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/how-do-gulp-typescript-without-module-loaders/&quot;&gt;How Do Gulp Typescript Without Module Loaders&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on October 20, 2020.&lt;/p&gt;
+  </content>
+</entry>
 
 
 <entry>
@@ -962,110 +1065,6 @@ Dead men seeking salvation.&lt;br /&gt;&lt;/p&gt;
 
 
     &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/poems/wastelands/&quot;&gt;Wastelands&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on October 10, 2015.&lt;/p&gt;
-  </content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[CLI Goodies]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/cli-goodies/" />
-  <id>//srijanshetty.in/technical/cli-goodies</id>
-  <published>2015-09-27T17:43:02+05:30</published>
-  <updated>2015-09-27T17:43:02+05:30</updated>
-  <author>
-    <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
-    <email>srijan.shetty+code@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;blockquote&gt;
-  &lt;p&gt;Today, I finally have most of the goodness of my shell packed as a single repository. I say most because, I still have some things stuck in antigen with no clear migration path. Until then give these goodies a whirl, and do give a shout out to me if you need any help setting them up; I’ve added instructions of getting them up and ready with the common - a metric defined by the number of GitHub stars the framework has - frameworks out there. (My favourite is undoubtedly &lt;code class=&quot;highlighter-rouge&quot;&gt;Prezto&lt;/code&gt; for it’s super fast startup).&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;##Installation&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Installing under &lt;a href=&quot;https://github.com/sorin-ionescu/prezto&quot;&gt;Prezto&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;  &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; .zprezto
-  git submodule add https://github.com/srijanshetty/cli-goodies.git modules/cli-goodies&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Add &lt;code class=&quot;highlighter-rouge&quot;&gt;cli-goodies&lt;/code&gt; to your &lt;code class=&quot;highlighter-rouge&quot;&gt;.zpreztorc&lt;/code&gt; file:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;  # Set the Prezto modules to load (browse modules).
-  # The order matters.
-  zstyle ':prezto:load' pmodule \
-    'environment' \
-    'terminal' \
-    'editor' \
-    'history' \
-    'directory' \
-    'spectrum' \
-    'utility' \
-    'completion' \
-    'prompt' \
-    'cli-goodies'&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;Installing under oh-my-zsh&lt;/strong&gt;&lt;br /&gt;
-I haven’t tried using &lt;code class=&quot;highlighter-rouge&quot;&gt;cli-goodies&lt;/code&gt; with &lt;code class=&quot;highlighter-rouge&quot;&gt;oh-my-zsh&lt;/code&gt; and I think the following should work in theory.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    wget https://raw.github.com/srijanshetty/cli-goodies/master/init.zsh &lt;span class=&quot;nt&quot;&gt;-O&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;/.oh-my-zsh/custom/cli-goodies.zsh&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;Installing using &lt;a href=&quot;https://github.com/zsh-users/antigen&quot;&gt;Antigen&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
-If you use &lt;a href=&quot;https://github.com/zsh-users/antigen&quot;&gt;Antigen&lt;/a&gt;, adding the following line to &lt;code class=&quot;highlighter-rouge&quot;&gt;.zshrc&lt;/code&gt; should load &lt;code class=&quot;highlighter-rouge&quot;&gt;cli-goodies&lt;/code&gt;.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    antigen-bundle srijanshetty/zsh-dwim&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;Using &lt;code class=&quot;highlighter-rouge&quot;&gt;cli-goodies&lt;/code&gt; anywhere else&lt;/strong&gt;&lt;br /&gt;
-Anyone running &lt;code class=&quot;highlighter-rouge&quot;&gt;zsh&lt;/code&gt; should only need to add the following line to their &lt;code class=&quot;highlighter-rouge&quot;&gt;.zshrc&lt;/code&gt;:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    &lt;span class=&quot;nb&quot;&gt;source &lt;/span&gt;init.zsh&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;##Dependencies&lt;/p&gt;
-
-&lt;p&gt;You’ll need to install &lt;code class=&quot;highlighter-rouge&quot;&gt;peru&lt;/code&gt; to get the completions working. Peru is a simple file downloader with a declarative syntax. While &lt;code class=&quot;highlighter-rouge&quot;&gt;curl&lt;/code&gt; could be used to accomplish the same, &lt;code class=&quot;highlighter-rouge&quot;&gt;peru&lt;/code&gt; is simpler to read.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;peru
-peru &lt;span class=&quot;nb&quot;&gt;sync&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;##Features
-&lt;strong&gt;Completions&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/sampsyo/beets/blob/master/extra/_beet&quot;&gt;_beet&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/s7anley/zsh-geeknote/master/_geeknote&quot;&gt;_geeknote&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/Schnouki/git-annex-zsh-completion/master/_git-annex&quot;&gt;_git-annex&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/gruntjs/grunt-cli/master/completion/zsh&quot;&gt;_grunt&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/srijanshetty/gulp-autocompletion-zsh/master/_gulp&quot;&gt;_gulp&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/srijanshetty/zsh-pip-completion/master/_pip&quot;&gt;_pip&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/srijanshetty/zsh-pandoc-completion/master/_pandoc&quot;&gt;_pandoc&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/rvm/rvm/master/scripts/extras/completion.zsh/_rvm&quot;&gt;_rvm&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/oscardelben/sheet/master/contrib/completion/sheet.zsh&quot;&gt;_sheet&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/github/hub/blob/master/etc/hub.zsh_completion&quot;&gt;_hub&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/srijanshetty/offline/blob/master/_offline&quot;&gt;_offline&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://raw.githubusercontent.com/srijanshetty/sdp/master/_sdp&quot;&gt;_sdp&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;functions/_repos&quot;&gt;_repos&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Scripts/Functions&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/srijanshetty/cron-wallpaper&quot;&gt;cron-wallpaper&lt;/a&gt;: Change wallpapers using cron.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/srijanshetty/dnd&quot;&gt;dnd&lt;/a&gt;: DND mode for Elementary OS.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/srijanshetty/folder2md&quot;&gt;folder2md&lt;/a&gt;: Convert a directory tree to markdown.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/srijanshetty/offline&quot;&gt;offline&lt;/a&gt;: Stores commands when offline and execute later in batch.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;functions/pastebin&quot;&gt;pastebin&lt;/a&gt;: Create a pastie using &lt;a href=&quot;http://sprunge.us&quot;&gt;sprunge.us&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;functions/proxy&quot;&gt;proxy&lt;/a&gt;: Enable/disable proxy settings.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;functions/repos&quot;&gt;repos&lt;/a&gt;: Helper for &lt;a href=&quot;myrepos.branchable.com&quot;&gt;myrepos&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/srijanshetty/sdp&quot;&gt;sdp&lt;/a&gt;: scp for directories.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;functions/showtoiletfonts&quot;&gt;showtoiletfonts&lt;/a&gt;: Show available toilet fonts.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/srijanshetty/stats-cli&quot;&gt;stats-cli&lt;/a&gt;: Compute avg, sd, min, max from a list.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://transfer.sh&quot;&gt;transfer&lt;/a&gt;: Use &lt;a href=&quot;https://transfer.sh&quot;&gt;transfer.sh&lt;/a&gt; to transfer files from the CLI.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I hope that you have fun using these tools as much as I do. PRs are encouraged.&lt;br /&gt;&lt;br /&gt;
-Fin.&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/cli-goodies/&quot;&gt;CLI Goodies&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 27, 2015.&lt;/p&gt;
   </content>
 </entry>
 
