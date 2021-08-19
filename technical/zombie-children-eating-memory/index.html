@@ -156,7 +156,7 @@ zombies - just in case, I’m talking about process children in linux (don’t a
 Here’s a snippet of code from a personal project:</p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">try</span><span class="p">:</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">kill</span><span class="p">(</span><span class="n">child_pid</span><span class="p">,</span> <span class="n">signal</span><span class="o">.</span><span class="n">SIGTERM</span><span class="p">)</span>
+    <span class="n">os</span><span class="p">.</span><span class="n">kill</span><span class="p">(</span><span class="n">child_pid</span><span class="p">,</span> <span class="n">signal</span><span class="p">.</span><span class="n">SIGTERM</span><span class="p">)</span>
     <span class="k">return</span> <span class="bp">True</span>
 <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span></code></pre></figure>
@@ -168,20 +168,20 @@ You’ll be leaving zombies all over the OS!<br /><br />
 It took me a while to figure out the (mostly) correct way to handle killing your own (process’)
 children safely:</p>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">os</span><span class="o">.</span><span class="n">kill</span><span class="p">(</span><span class="n">pid</span><span class="p">,</span> <span class="n">signal</span><span class="o">.</span><span class="n">SIGTERM</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">os</span><span class="p">.</span><span class="n">kill</span><span class="p">(</span><span class="n">pid</span><span class="p">,</span> <span class="n">signal</span><span class="p">.</span><span class="n">SIGTERM</span><span class="p">)</span>
 
 <span class="k">try</span><span class="p">:</span>
-    <span class="n">p</span> <span class="o">=</span> <span class="n">psutil</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">pid</span><span class="p">)</span>
-    <span class="n">p</span><span class="o">.</span><span class="n">terminate</span><span class="p">()</span>
-    <span class="n">p</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">psutil</span><span class="p">.</span><span class="n">Process</span><span class="p">(</span><span class="n">pid</span><span class="p">)</span>
+    <span class="n">p</span><span class="p">.</span><span class="n">terminate</span><span class="p">()</span>
+    <span class="n">p</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
     <span class="n">msg</span> <span class="o">=</span> <span class="s">"Wow. your children are really obedient"</span>
-<span class="k">except</span> <span class="n">psutil</span><span class="o">.</span><span class="n">TimeoutExpired</span><span class="p">:</span>
+<span class="k">except</span> <span class="n">psutil</span><span class="p">.</span><span class="n">TimeoutExpired</span><span class="p">:</span>
     <span class="c1"># For a bad process this will ensure that we send it a sigkill
-</span>    <span class="n">p</span><span class="o">.</span><span class="n">send_signal</span><span class="p">(</span><span class="n">signal</span><span class="o">.</span><span class="n">SIGKILL</span><span class="p">)</span>
+</span>    <span class="n">p</span><span class="p">.</span><span class="n">send_signal</span><span class="p">(</span><span class="n">signal</span><span class="p">.</span><span class="n">SIGKILL</span><span class="p">)</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">p</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        <span class="n">p</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
         <span class="n">msg</span> <span class="o">=</span> <span class="s">"Close call, we need the big guns, but at least they're dead now"</span>
-    <span class="k">except</span> <span class="n">psutil</span><span class="o">.</span><span class="n">TimeoutExpired</span><span class="p">:</span>
+    <span class="k">except</span> <span class="n">psutil</span><span class="p">.</span><span class="n">TimeoutExpired</span><span class="p">:</span>
         <span class="n">msg</span> <span class="o">=</span> <span class="s">"Zombies have escaped. I repeat, zombies have escaped"</span></code></pre></figure>
 
 <p>Let me explain what’s going on here. The first <em>terminate</em> sends a <strong>SIGTERM</strong> to the child and then we
@@ -239,7 +239,7 @@ nuke the parent and hope the zombies don’t become orphan zombies. (Yikes)</p>
   <footer>
     
 
-<span>&copy; 2020 Srijan R. Shetty. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2021 Srijan R. Shetty. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

@@ -181,14 +181,14 @@ worse than a single threaded job.<br /><br />
 Setting up such a sidecar takes some time to get used to, but is easier in python 3.7+:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sidecar_thread</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">sidecar_thread</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span>
-            <span class="n">target</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_create_sidecar</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">loop</span><span class="p">,)</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">sidecar_thread</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">sidecar_thread</span> <span class="o">=</span> <span class="n">threading</span><span class="p">.</span><span class="n">Thread</span><span class="p">(</span>
+            <span class="n">target</span><span class="o">=</span><span class="bp">self</span><span class="p">.</span><span class="n">_create_sidecar</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">loop</span><span class="p">,)</span>
         <span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">sidecar_thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">sidecar_thread</span><span class="p">.</span><span class="n">start</span><span class="p">()</span>
 
 
-<span class="k">def</span> <span class="nf">_create_sidecar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">loop</span><span class="p">:</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">BaseEventLoop</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">_create_sidecar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">loop</span><span class="p">:</span> <span class="n">asyncio</span><span class="p">.</span><span class="n">BaseEventLoop</span><span class="p">):</span>
     <span class="s">"""
     Initialize the eventloop and setup a listener
     """</span>
@@ -197,13 +197,13 @@ Setting up such a sidecar takes some time to get used to, but is easier in pytho
 </span>    <span class="c1"># over here. This allows us to submit requests on a synchronous
 </span>    <span class="c1"># fashion using create_task on the main thread and processing
 </span>    <span class="c1"># happens in the sidecar
-</span>    <span class="n">asyncio</span><span class="o">.</span><span class="n">set_event_loop</span><span class="p">(</span><span class="n">loop</span><span class="p">)</span>
+</span>    <span class="n">asyncio</span><span class="p">.</span><span class="n">set_event_loop</span><span class="p">(</span><span class="n">loop</span><span class="p">)</span>
 
     <span class="c1"># Register a task for socket manager setup
 </span>    <span class="k">try</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_listener</span><span class="p">())</span>
-    <span class="k">except</span> <span class="n">concurrent</span><span class="o">.</span><span class="n">futures</span><span class="o">.</span><span class="n">CancelledError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">"Loop got shutdown, due to </span><span class="si">%</span><span class="s">s"</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">loop</span><span class="p">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">_listener</span><span class="p">())</span>
+    <span class="k">except</span> <span class="n">concurrent</span><span class="p">.</span><span class="n">futures</span><span class="p">.</span><span class="n">CancelledError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">logging</span><span class="p">.</span><span class="n">error</span><span class="p">(</span><span class="s">"Loop got shutdown, due to %s"</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
 
 
 <span class="k">async</span> <span class="k">def</span> <span class="nf">_listener</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -212,27 +212,27 @@ Setting up such a sidecar takes some time to get used to, but is easier in pytho
     """</span>
 
     <span class="k">try</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_ws</span> <span class="o">=</span> <span class="k">await</span> <span class="n">websockets</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_uri</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">_ws</span> <span class="o">=</span> <span class="k">await</span> <span class="n">websockets</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">_uri</span><span class="p">)</span>
 
-        <span class="k">async</span> <span class="k">for</span> <span class="n">msg</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ws</span><span class="p">:</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_has_error</span><span class="o">.</span><span class="n">is_set</span><span class="p">():</span>
-                <span class="k">raise</span> <span class="n">errors</span><span class="o">.</span><span class="n">WebSocketError</span><span class="p">()</span>
+        <span class="k">async</span> <span class="k">for</span> <span class="n">msg</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">.</span><span class="n">_ws</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">_has_error</span><span class="p">.</span><span class="n">is_set</span><span class="p">():</span>
+                <span class="k">raise</span> <span class="n">errors</span><span class="p">.</span><span class="n">WebSocketError</span><span class="p">()</span>
 
             <span class="c1"># self._closing is called by exit which is described later
-</span>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_closing</span><span class="p">:</span>
+</span>            <span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">_closing</span><span class="p">:</span>
                 <span class="k">break</span>
 
             <span class="c1"># Process messages here:
-</span>    <span class="k">except</span> <span class="bp">self</span><span class="o">.</span><span class="n">errors</span> <span class="k">as</span> <span class="n">b</span><span class="p">:</span>
+</span>    <span class="k">except</span> <span class="bp">self</span><span class="p">.</span><span class="n">errors</span> <span class="k">as</span> <span class="n">b</span><span class="p">:</span>
         <span class="c1"># _has_error is ane Event to indicate that the socket has an error
-</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_has_error</span><span class="o">.</span><span class="nb">set</span><span class="p">()</span>
-        <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s">"Error </span><span class="si">%</span><span class="s">s in WS, will raise WebSocketError"</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">_has_error</span><span class="p">.</span><span class="nb">set</span><span class="p">()</span>
+        <span class="n">logging</span><span class="p">.</span><span class="n">warning</span><span class="p">(</span><span class="s">"Error %s in WS, will raise WebSocketError"</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
     <span class="k">finally</span><span class="p">:</span>
         <span class="c1"># Close the connection and signal that we are done
-</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ws</span><span class="p">:</span>
-            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ws</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span>        <span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">_ws</span><span class="p">:</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="p">.</span><span class="n">_ws</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">_ws_has_closed</span><span class="o">.</span><span class="nb">set</span><span class="p">()</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">_ws_has_closed</span><span class="p">.</span><span class="nb">set</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>The code takes getting used to. Hopefully the comments help in exposition. To be honest, in an earlier version,
@@ -245,41 +245,41 @@ multiple iterations, but now has been perfected:</p>
     exit is called on the main thread and not on the sidecar
     """</span>
     <span class="c1"># Indicates the listener to stop processing any new messages
-</span>    <span class="bp">self</span><span class="o">.</span><span class="n">_closing</span> <span class="o">=</span> <span class="bp">True</span>
+</span>    <span class="bp">self</span><span class="p">.</span><span class="n">_closing</span> <span class="o">=</span> <span class="bp">True</span>
 
     <span class="c1"># Busy loop and waits for the socket to close
 </span>    <span class="c1"># NOTE: assumption is that listener gets triggered frequently
-</span>    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+</span>    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
     <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ws_has_closed</span><span class="o">.</span><span class="n">is_set</span><span class="p">():</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">_ws_has_closed</span><span class="p">.</span><span class="n">is_set</span><span class="p">():</span>
             <span class="k">break</span>
 
         <span class="c1"># If more than one minute is taken, just break the connection
 </span>        <span class="c1"># NOTE: only minute is the max latency the application can tolerate,
 </span>        <span class="c1"># before it gets repead by the scheduler in our case.
-</span>        <span class="n">time_elapsed</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span>
-        <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
-            <span class="s">"Busy looping to close websocket, time elapsed </span><span class="si">%</span><span class="s">s"</span><span class="p">,</span> <span class="n">time_elapsed</span>
+</span>        <span class="n">time_elapsed</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span>
+        <span class="n">logging</span><span class="p">.</span><span class="n">warning</span><span class="p">(</span>
+            <span class="s">"Busy looping to close websocket, time elapsed %s"</span><span class="p">,</span> <span class="n">time_elapsed</span>
         <span class="p">)</span>
-        <span class="k">if</span> <span class="n">time_elapsed</span> <span class="o">&gt;</span> <span class="n">consts</span><span class="o">.</span><span class="n">ONE_MINUTE</span><span class="p">:</span>
-            <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">"Existing web socket without clearing connection"</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">time_elapsed</span> <span class="o">&gt;</span> <span class="n">consts</span><span class="p">.</span><span class="n">ONE_MINUTE</span><span class="p">:</span>
+            <span class="n">logging</span><span class="p">.</span><span class="n">error</span><span class="p">(</span><span class="s">"Existing web socket without clearing connection"</span><span class="p">)</span>
             <span class="k">break</span>
 
         <span class="c1"># Busy loop
-</span>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">consts</span><span class="o">.</span><span class="n">TEN_SECONDS</span><span class="p">)</span>
+</span>        <span class="n">time</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">consts</span><span class="p">.</span><span class="n">TEN_SECONDS</span><span class="p">)</span>
 
     <span class="c1"># Stop the loop now
-</span>    <span class="bp">self</span><span class="o">.</span><span class="n">loop</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</span>    <span class="bp">self</span><span class="p">.</span><span class="n">loop</span><span class="p">.</span><span class="n">stop</span><span class="p">()</span>
 
     <span class="c1"># Clean up all pending tasks
-</span>    <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">all_tasks</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">loop</span><span class="p">):</span>
-        <span class="n">task</span><span class="o">.</span><span class="n">cancel</span><span class="p">()</span>
+</span>    <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">asyncio</span><span class="p">.</span><span class="n">all_tasks</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">loop</span><span class="p">):</span>
+        <span class="n">task</span><span class="p">.</span><span class="n">cancel</span><span class="p">()</span>
 
     <span class="c1"># Join with the sidecar
-</span>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sidecar_thread</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">sidecar_thread</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">constants</span><span class="o">.</span><span class="n">THREAD_JOIN_TIMEOUT</span><span class="p">)</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sidecar_thread</span><span class="o">.</span><span class="n">isAlive</span><span class="p">():</span>
-            <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">"Unable to clear up sidecar"</span><span class="p">)</span>
+</span>    <span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">sidecar_thread</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">sidecar_thread</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">constants</span><span class="p">.</span><span class="n">THREAD_JOIN_TIMEOUT</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">sidecar_thread</span><span class="p">.</span><span class="n">isAlive</span><span class="p">():</span>
+            <span class="n">logging</span><span class="p">.</span><span class="n">error</span><span class="p">(</span><span class="s">"Unable to clear up sidecar"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Every article on <code class="highlighter-rouge">asyncio</code> will advice you to close the thread and clean up pending tasks. But not article will tell you
@@ -340,7 +340,7 @@ granted in languages which support such idioms out of the box like Java.</p>
   <footer>
     
 
-<span>&copy; 2020 Srijan R. Shetty. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2021 Srijan R. Shetty. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->
