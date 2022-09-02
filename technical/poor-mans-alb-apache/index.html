@@ -5,14 +5,14 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>A Tale of Two Pickpockets - Round One &#8211; Srijan R. Shetty</title>
-<meta name="description" content="Round One - The pickpocket wins">
-<meta name="keywords" content="write-ups, bangalore, pickpocket">
+<title>Poor Man's ALB - Apache &#8211; Srijan R. Shetty</title>
+<meta name="description" content="Using apache as a poor man's ALB - you gotta do what you gotta do">
+<meta name="keywords" content="apache, shell, devops, alb, aws, infrastructure">
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="A Tale of Two Pickpockets - Round One">
-<meta name="twitter:description" content="Round One - The pickpocket wins">
+<meta name="twitter:title" content="Poor Man's ALB - Apache">
+<meta name="twitter:description" content="Using apache as a poor man's ALB - you gotta do what you gotta do">
 <meta name="twitter:site" content="@srijanshetty">
 <meta name="twitter:creator" content="@srijanshetty">
 
@@ -22,9 +22,9 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="A Tale of Two Pickpockets - Round One">
-<meta property="og:description" content="Round One - The pickpocket wins">
-<meta property="og:url" content="http://localhost:4000/write-ups/a-tale-of-two-pickpockets-round-one/">
+<meta property="og:title" content="Poor Man's ALB - Apache">
+<meta property="og:description" content="Using apache as a poor man's ALB - you gotta do what you gotta do">
+<meta property="og:url" content="http://localhost:4000/technical/poor-mans-alb-apache/">
 <meta property="og:site_name" content="Srijan R. Shetty">
 
 <meta property="og:image" content="http://localhost:4000/images/default-thumb.png">
@@ -34,7 +34,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/write-ups/a-tale-of-two-pickpockets-round-one/">
+<link rel="canonical" href="http://localhost:4000/technical/poor-mans-alb-apache/">
 <link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Srijan R. Shetty Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -147,25 +147,44 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="http://localhost:4000/write-ups/a-tale-of-two-pickpockets-round-one/" rel="bookmark" title="A Tale of Two Pickpockets - Round One">A Tale of Two Pickpockets - Round One</a></h1>
+        <h1><a href="http://localhost:4000/technical/poor-mans-alb-apache/" rel="bookmark" title="Poor Man's ALB - Apache">Poor Man's ALB - Apache</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>I think Hermes has taken a liking to me of late. With these frequent cameos of pickpockets in the past few weeks, I’ve started to feel like some kind of pseudo demigod now. So, my not so happy story - happy for the pickpocket - begins with the first bout on June 6thy 2013.<br /><br />
-In my defence I was a naive, blissfully unaware code monkey lost in the world of music. To add to it, I was taken completely off guard in a battlefield bent in the favour of my masterful opponent. (In retrospect, I should have been more careful after seeing a couple of mobile phones being lost; but then, I was busy mocking the foolishness of the owners to take notice. I guess these things come back to bite you.)<br /><br />
-For the readers who don’t know much about Shivajinagar Bus Station and the commute from Shivajinagar to Yeshwantpur, it’s almost impossible to miss out on a Yeshwantpur bus; over the course of my stay here, I’ve found the following two step process to be very useful:<br /></p>
-<ol>
-  <li>Get some peanuts (preferably roasted).</li>
-  <li>Enjoy the peanuts.</li>
-</ol>
+      <p>One complicated aspect of SEO is hosting your blog on the same domain as the rest of the site. This is arguably very
+simple on AWS via ALB which allows sublocation routing, but it became a nightmare when we had to move our resources
+awayt from AWS once we had to shutdown our startups and keep the blog churning content.<br /><br />
+Wordpress is a lingua franca for most content online, but the way it handles URLs internally is aggregious. My first
+instinct was to host wordpress via nginx, using <code class="highlighter-rouge">proxy_pass</code> and <code class="highlighter-rouge">SSL termination</code> at <code class="highlighter-rouge">nginx</code>. But wordpress decided to
+act like a brashful teenager. Finally I caved and hosted wordpress with <code class="highlighter-rouge">apache</code> on a <code class="highlighter-rouge">/blog</code> subdomain here <a href="https://allround.club/blog">allround
+blog</a>.<br /><br />
+The second part of the problem was running <code class="highlighter-rouge">next.js</code> on the same host on the <code class="highlighter-rouge">/</code> path. Apache has <code class="highlighter-rouge">ProxyPass</code>, but my
+first attempt wasn’t very succesful and after some researching (sic) on the internet, this was the final solution that
+worked.</p>
 
-<p>(You’ll know a Yeshwantpur bus when you see one - the platform 2 bus being trailed by tens of crazy commuters like a piece of living flesh being hounded by a mob of zombies, yes that’s the one!)<br /><br />
-That day, I was the perfect victim. I trailed the bus like every other zombie until the doors of hell opened. And this is when my stupidity dawned upon me, I was surrounded by hungry zombies waiting to devour the bus. I had to save myself from this outbreak. Fighting these horrid creatures, I somehow paved a way onto the bus.<br /><br />
-I was preening myself for making it on alive and thought that this deserved a victory song  - I had switched off the music while trying to board the bus - when it hit me that my earphones missed a crucial component - the phone. I was heartbroken, and dolefully I got out of the bus with false hopes of finding it lying on the floor.<br /><br />
-After a few minutes of trying to find my phone in vain, I gave up, boarded the next bus to Yeshwantpur - this time I stayed away from the zombie mob - and thought only about revenge. (Which I sort of got in the second round).</p>
+<figure class="highlight"><pre><code class="language-apache" data-lang="apache"><span class="nc">ProxyPass</span> /blog !
+<span class="nc">Alias</span> /blog /path/to/wordpress
 
-<p>To be continued ……..</p>
+<span class="p">&lt;</span><span class="nl">Directory</span><span class="sr"> /path/to/wordpress</span><span class="p">&gt;
+</span>    <span class="nc">Options</span> <span class="ss">FollowSymLinks</span>
+    <span class="nc">AllowOverride</span> <span class="ss">Limit</span> <span class="ss">Options</span> <span class="ss">FileInfo</span>
+    <span class="nc">DirectoryIndex</span> index.php
+    <span class="nc">Order</span> allow,deny
+    <span class="nc">Allow</span> <span class="ss">from</span> <span class="ss">all</span>
+<span class="p">&lt;/</span><span class="nl">Directory</span><span class="p">&gt;
+&lt;</span><span class="nl">Directory</span><span class="sr"> /path/to/wordpress/wp-content</span><span class="p">&gt;
+</span>    <span class="nc">Options</span> <span class="ss">FollowSymLinks</span>
+    <span class="nc">Order</span> allow,deny
+    <span class="nc">Allow</span> <span class="ss">from</span> <span class="ss">all</span>
+<span class="p">&lt;/</span><span class="nl">Directory</span><span class="p">&gt;
+</span>
+<span class="nc">ProxyPass</span> 		/ http://localhost:3001/
+<span class="nc">ProxyPassReverse</span> 	/ http://localhost:3001/
+<span class="nc">ProxyPreserveHost</span> <span class="ss">on</span>
+<span class="nc">LogLevel</span> warn</code></pre></figure>
 
+<p>The trick was <code class="highlighter-rouge">ProxyPass /blog !</code> which ensured that we can use apache for sublocation routing. On port 3001, <code class="highlighter-rouge">next.js</code>
+was running <code class="highlighter-rouge">supervisor</code> (my goto solution for running apps on a box).</p>
 
       <hr />
       <footer role="contentinfo">
@@ -173,17 +192,17 @@ After a few minutes of trying to find my phone in vain, I gave up, boarded the n
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/write-ups/a-tale-of-two-pickpockets-round-one/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/technical/poor-mans-alb-apache/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/write-ups/a-tale-of-two-pickpockets-round-one/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/technical/poor-mans-alb-apache/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=http://localhost:4000/write-ups/a-tale-of-two-pickpockets-round-one/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/technical/poor-mans-alb-apache/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>A Tale of Two Pickpockets - Round One</strong> was published on <time datetime="2013-06-15T09:15:49+05:30">June 15, 2013</time>.</p>
+        <p class="byline"><strong>Poor Man's ALB - Apache</strong> was published on <time datetime="2022-09-02T00:41:54+05:30">September 02, 2022</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -198,11 +217,11 @@ After a few minutes of trying to find my phone in vain, I gave up, boarded the n
   <h4>You might also enjoy <small class="pull-right">(<a href="http://localhost:4000/posts/">View all posts</a>)</small></h4>
     <ul>
     
-      <li><a href="http://localhost:4000/technical/poor-mans-alb-apache/" title="Poor Man's ALB - Apache">Poor Man's ALB - Apache</a></li>
-    
       <li><a href="http://localhost:4000/technical/how-do-gulp-typescript-without-module-loaders/" title="How Do Gulp Typescript Without Module Loaders">How Do Gulp Typescript Without Module Loaders</a></li>
     
       <li><a href="http://localhost:4000/technical/leaving-your-sock-et-s-hanging/" title="Leaving Your Sock(et)s Hanging">Leaving Your Sock(et)s Hanging</a></li>
+    
+      <li><a href="http://localhost:4000/technical/custom-dns-using-pihole/" title="Custom DNS Using Pihole">Custom DNS Using Pihole</a></li>
     
     </ul>
     <hr />
