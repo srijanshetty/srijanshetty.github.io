@@ -2,26 +2,26 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 <title type="text">Srijan R. Shetty</title>
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
-<link rel="alternate" type="text/html" href="http://localhost:4000" />
-<updated>2022-09-02T10:35:33+05:30</updated>
-<id>http://localhost:4000/</id>
+<link rel="self" type="application/atom+xml" href="//srijanshetty.in/feed.xml" />
+<link rel="alternate" type="text/html" href="//srijanshetty.in" />
+<updated>2022-09-02T10:37:44+05:30</updated>
+<id>//srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
-  <uri>http://localhost:4000/</uri>
+  <uri>//srijanshetty.in/</uri>
   <email>srijan.shetty+code@gmail.com</email>
 </author>
 
 
 <entry>
   <title type="html"><![CDATA[Poor Man's ALB - Apache]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/technical/poor-mans-alb-apache/" />
-  <id>http://localhost:4000/technical/poor-mans-alb-apache</id>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/poor-mans-alb-apache/" />
+  <id>//srijanshetty.in/technical/poor-mans-alb-apache</id>
   <published>2022-09-02T00:41:54+05:30</published>
   <updated>2022-09-02T00:41:54+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>http://localhost:4000</uri>
+    <uri>//srijanshetty.in</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -60,20 +60,20 @@ worked.&lt;/p&gt;
 &lt;p&gt;The trick was &lt;code class=&quot;highlighter-rouge&quot;&gt;ProxyPass /blog !&lt;/code&gt; which ensured that we can use apache for sublocation routing. On port 3001, &lt;code class=&quot;highlighter-rouge&quot;&gt;next.js&lt;/code&gt;
 was running &lt;code class=&quot;highlighter-rouge&quot;&gt;supervisor&lt;/code&gt; (my goto solution for running apps on a box).&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/technical/poor-mans-alb-apache/&quot;&gt;Poor Man's ALB - Apache&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 02, 2022.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/poor-mans-alb-apache/&quot;&gt;Poor Man's ALB - Apache&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 02, 2022.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[How Do Gulp Typescript Without Module Loaders]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/technical/how-do-gulp-typescript-without-module-loaders/" />
-  <id>http://localhost:4000/technical/how-do-gulp-typescript-without-module-loaders</id>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/how-do-gulp-typescript-without-module-loaders/" />
+  <id>//srijanshetty.in/technical/how-do-gulp-typescript-without-module-loaders</id>
   <published>2020-10-20T18:10:00+05:30</published>
   <updated>2020-10-20T18:10:00+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>http://localhost:4000</uri>
+    <uri>//srijanshetty.in</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -163,20 +163,20 @@ global in the browser.&lt;/li&gt;
 
 &lt;p&gt;Hope this helps saves a few hours of desperate &lt;em&gt;wuts&lt;/em&gt;.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/technical/how-do-gulp-typescript-without-module-loaders/&quot;&gt;How Do Gulp Typescript Without Module Loaders&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Srijan R. Shetty&lt;/a&gt; on October 20, 2020.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/how-do-gulp-typescript-without-module-loaders/&quot;&gt;How Do Gulp Typescript Without Module Loaders&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on October 20, 2020.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Leaving Your Sock(et)s Hanging]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/technical/leaving-your-sock-et-s-hanging/" />
-  <id>http://localhost:4000/technical/leaving-your-sock-et-s-hanging</id>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/leaving-your-sock-et-s-hanging/" />
+  <id>//srijanshetty.in/technical/leaving-your-sock-et-s-hanging</id>
   <published>2020-07-21T13:12:24+05:30</published>
   <updated>2020-07-21T13:12:24+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>http://localhost:4000</uri>
+    <uri>//srijanshetty.in</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -304,20 +304,20 @@ to figure out the right protocol to correctly close a sidecar thread which uses 
 &lt;p&gt;Missing any one of these steps is a path to an endless pit of &lt;em&gt;wats&lt;/em&gt;. Especially the first two steps, which are taken
 granted in languages which support such idioms out of the box like Java.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/technical/leaving-your-sock-et-s-hanging/&quot;&gt;Leaving Your Sock(et)s Hanging&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Srijan R. Shetty&lt;/a&gt; on July 21, 2020.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/leaving-your-sock-et-s-hanging/&quot;&gt;Leaving Your Sock(et)s Hanging&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on July 21, 2020.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Custom DNS Using Pihole]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/technical/custom-dns-using-pihole/" />
-  <id>http://localhost:4000/technical/custom-dns-using-pihole</id>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/custom-dns-using-pihole/" />
+  <id>//srijanshetty.in/technical/custom-dns-using-pihole</id>
   <published>2020-07-18T14:23:15+05:30</published>
   <updated>2020-07-18T14:23:15+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>http://localhost:4000</uri>
+    <uri>//srijanshetty.in</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -340,20 +340,20 @@ entries. The following configuration did the trick:&lt;br /&gt;&lt;br /&gt;&lt;/
 &lt;p&gt;My only pet-peeve is the default behaviour of browsers like firefox and chrome to interpret &lt;code class=&quot;highlighter-rouge&quot;&gt;.lan&lt;/code&gt; entries as search
 queries instead of domain names.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/technical/custom-dns-using-pihole/&quot;&gt;Custom DNS Using Pihole&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Srijan R. Shetty&lt;/a&gt; on July 18, 2020.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/custom-dns-using-pihole/&quot;&gt;Custom DNS Using Pihole&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on July 18, 2020.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Shell tricks to manage a cluster]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/technical/shell-tricks-to-manage-a-cluster/" />
-  <id>http://localhost:4000/technical/shell-tricks-to-manage-a-cluster</id>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/shell-tricks-to-manage-a-cluster/" />
+  <id>//srijanshetty.in/technical/shell-tricks-to-manage-a-cluster</id>
   <published>2020-07-04T18:48:51+05:30</published>
   <updated>2020-07-04T18:48:51+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>http://localhost:4000</uri>
+    <uri>//srijanshetty.in</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -420,20 +420,20 @@ all costs. The only error that we care about is &lt;em&gt;undefined variables&lt
 
 &lt;p&gt;This simple scripts saves a lot of time especially when you’re managing a cluster of servers.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/technical/shell-tricks-to-manage-a-cluster/&quot;&gt;Shell tricks to manage a cluster&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Srijan R. Shetty&lt;/a&gt; on July 04, 2020.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/shell-tricks-to-manage-a-cluster/&quot;&gt;Shell tricks to manage a cluster&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on July 04, 2020.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[KISS - UNIX and Composition]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/technical/kiss-unix-and-composition/" />
-  <id>http://localhost:4000/technical/kiss-unix-and-composition</id>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/kiss-unix-and-composition/" />
+  <id>//srijanshetty.in/technical/kiss-unix-and-composition</id>
   <published>2020-04-14T14:51:36+05:30</published>
   <updated>2020-04-14T14:51:36+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>http://localhost:4000</uri>
+    <uri>//srijanshetty.in</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -462,20 +462,20 @@ a format feedable to &lt;strong&gt;fzf&lt;/strong&gt; and now I have generic fuz
 &lt;p&gt;The UNIX rule of composition and KISS have stood the test of time. It’s easy to get overboard and reinvent the wheel
 when you could create complex text munging in one liners of shell.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/technical/kiss-unix-and-composition/&quot;&gt;KISS - UNIX and Composition&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Srijan R. Shetty&lt;/a&gt; on April 14, 2020.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/kiss-unix-and-composition/&quot;&gt;KISS - UNIX and Composition&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on April 14, 2020.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Storing Cookies With Httpie]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/storing-cookies-with-httpie/" />
-  <id>http://localhost:4000/storing-cookies-with-httpie</id>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/storing-cookies-with-httpie/" />
+  <id>//srijanshetty.in/storing-cookies-with-httpie</id>
   <published>2020-01-14T12:34:57+05:30</published>
   <updated>2020-01-14T12:34:57+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>http://localhost:4000</uri>
+    <uri>//srijanshetty.in</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -525,20 +525,20 @@ always.&lt;br /&gt;&lt;br /&gt;
 My workflow now is to call set-cokkie to the authentication end-point which sets the session file. Followed by calls to
 end-points which require authentication.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/storing-cookies-with-httpie/&quot;&gt;Storing Cookies With Httpie&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Srijan R. Shetty&lt;/a&gt; on January 14, 2020.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/storing-cookies-with-httpie/&quot;&gt;Storing Cookies With Httpie&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on January 14, 2020.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Gitting Hooks setups]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/gitting-hooks-setup/" />
-  <id>http://localhost:4000/gitting-hooks-setup</id>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/gitting-hooks-setup/" />
+  <id>//srijanshetty.in/gitting-hooks-setup</id>
   <published>2019-10-06T23:31:27+05:30</published>
   <updated>2019-10-06T23:31:27+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>http://localhost:4000</uri>
+    <uri>//srijanshetty.in</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -577,20 +577,20 @@ The npm eco-system is a cesspool when it comes to security but it does make deve
 The community converging on using a single &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; is a god-send, over the alternative of a bunch of .rc files spewed all across; adding &lt;code class=&quot;highlighter-rouge&quot;&gt;git hooks&lt;/code&gt; is the natural evolution to the puzzle.&lt;br /&gt;&lt;br /&gt;
 It’s great how sometimes your problems solve themselves if you let them be for years.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/gitting-hooks-setup/&quot;&gt;Gitting Hooks setups&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Srijan R. Shetty&lt;/a&gt; on October 06, 2019.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/gitting-hooks-setup/&quot;&gt;Gitting Hooks setups&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on October 06, 2019.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[JCIP - Java Concurrency in Practice 2019 Review]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/technical/jcip-java-concurrency-in-practice-2019-review/" />
-  <id>http://localhost:4000/technical/jcip-java-concurrency-in-practice-2019-review</id>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/jcip-java-concurrency-in-practice-2019-review/" />
+  <id>//srijanshetty.in/technical/jcip-java-concurrency-in-practice-2019-review</id>
   <published>2019-08-18T17:50:38+05:30</published>
   <updated>2019-08-18T17:50:38+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>http://localhost:4000</uri>
+    <uri>//srijanshetty.in</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -599,20 +599,20 @@ In the age of fast paced evolution of programming languages, most programming la
 Caveat emptor. It’s a dense read, ideas are succinct and compact and rarely prolix. Which makes it easy to read and hard to grasp. There have been times wherein I’ve spent hours understanding the implication of concepts such as &lt;code class=&quot;highlighter-rouge&quot;&gt;Initialization safety&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;safe publication&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;happens-before relationships&lt;/code&gt;; these concepts have inexorably changed my mental model of concurrent programming for the better.&lt;br /&gt;&lt;br /&gt;
 I would definitely urge serious Java programmers to try and work through JCIP, and maybe have an epiphany of their own.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/technical/jcip-java-concurrency-in-practice-2019-review/&quot;&gt;JCIP - Java Concurrency in Practice 2019 Review&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Srijan R. Shetty&lt;/a&gt; on August 18, 2019.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/jcip-java-concurrency-in-practice-2019-review/&quot;&gt;JCIP - Java Concurrency in Practice 2019 Review&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on August 18, 2019.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[John Vim - Parabellum]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/technical/john-vim-parabellum/" />
-  <id>http://localhost:4000/technical/john-vim-parabellum</id>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/john-vim-parabellum/" />
+  <id>//srijanshetty.in/technical/john-vim-parabellum</id>
   <published>2019-06-28T09:21:32+05:30</published>
   <updated>2019-06-28T09:21:32+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>http://localhost:4000</uri>
+    <uri>//srijanshetty.in</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -661,20 +661,20 @@ Theoretically compiling vim from source should be simple:&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;Hopefully, this helps a forlorn developer searching for the oasis.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/technical/john-vim-parabellum/&quot;&gt;John Vim - Parabellum&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Srijan R. Shetty&lt;/a&gt; on June 28, 2019.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/john-vim-parabellum/&quot;&gt;John Vim - Parabellum&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on June 28, 2019.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Modern Love]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/prose/modern-love/" />
-  <id>http://localhost:4000/prose/modern-love</id>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/prose/modern-love/" />
+  <id>//srijanshetty.in/prose/modern-love</id>
   <published>2018-08-26T17:50:51+05:30</published>
   <updated>2018-08-26T17:50:51+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>http://localhost:4000</uri>
+    <uri>//srijanshetty.in</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -684,20 +684,20 @@ I would define love as a little more than friendship, it has the emotional avail
 Love is a synergistic bond, you let each other grow, you let each other fail, you scuffle, you make up, you stay put for each other - like friends do. In fact, friendship is not an exclusive relationship, you can be really close with a few different people; modern times juxtapose love to friendship by invoking the exclusivity clause - which is not fine by me, for it abases love to be merely physical. Love is more than that, love demands no sacrifice, you need not give up your friendships to taste the forbidden fruit.&lt;br /&gt;&lt;br /&gt;
 Modern love is strange, and hopefully we come to see of it more like friendship; and less contractual&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/prose/modern-love/&quot;&gt;Modern Love&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Srijan R. Shetty&lt;/a&gt; on August 26, 2018.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/prose/modern-love/&quot;&gt;Modern Love&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on August 26, 2018.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[How to Train Your Python - 2.7]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/technical/how-to-train-your-python-2-7/" />
-  <id>http://localhost:4000/technical/how-to-train-your-python-2-7</id>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/how-to-train-your-python-2-7/" />
+  <id>//srijanshetty.in/technical/how-to-train-your-python-2-7</id>
   <published>2018-08-17T00:41:54+05:30</published>
   <updated>2018-08-17T00:41:54+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>http://localhost:4000</uri>
+    <uri>//srijanshetty.in</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -734,40 +734,40 @@ Our hero, chose the path of pyenv - a recondite cult who claim to have conquered
 
 &lt;p&gt;And in the moment he saw the reflection of the one true UNIX kernel. He had done it, he had vanquished data visualizations and walked the fiery dependency hell of python.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/technical/how-to-train-your-python-2-7/&quot;&gt;How to Train Your Python - 2.7&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Srijan R. Shetty&lt;/a&gt; on August 17, 2018.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/how-to-train-your-python-2-7/&quot;&gt;How to Train Your Python - 2.7&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on August 17, 2018.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Travelogue - Russia, 2018]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/travelogue/travelogue-russia-2018/" />
-  <id>http://localhost:4000/travelogue/travelogue-russia-2018</id>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/travelogue/travelogue-russia-2018/" />
+  <id>//srijanshetty.in/travelogue/travelogue-russia-2018</id>
   <published>2018-08-12T20:39:01+05:30</published>
   <updated>2018-08-12T20:39:01+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>http://localhost:4000</uri>
+    <uri>//srijanshetty.in</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
     &lt;p&gt;Goodbyes are hard, and seldom perfect, especially when humdrum lives that lay ahead sink in. Standing at the prow of the cruise basking in the millions lights of Moscow, I felt debilitated by reality - these ten days were whimsical, yet I felt it slipping away and the harder I tried to capture it, the faster it slipped. In our foolhardy attempts to capture the moment, we’ve forgotten how to live them. Not everything needs the testimony of a photograph, not every memory needs to be validation of your fraternity. Some moments are inexorably lived then and there and left to the agency of the human mind. And so I let myself go, emboldened by the wine, I let the warmth of my friends sink in to the bittersweet symphony of endings.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/travelogue/travelogue-russia-2018/&quot;&gt;Travelogue - Russia, 2018&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Srijan R. Shetty&lt;/a&gt; on August 12, 2018.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/travelogue/travelogue-russia-2018/&quot;&gt;Travelogue - Russia, 2018&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on August 12, 2018.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Call (Me) by (Your) Name: Python Is Pass by What Again?]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/technical/call-me-by-your-name-python-is-pass-by-what-again/" />
-  <id>http://localhost:4000/technical/call-me-by-your-name-python-is-pass-by-what-again</id>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/call-me-by-your-name-python-is-pass-by-what-again/" />
+  <id>//srijanshetty.in/technical/call-me-by-your-name-python-is-pass-by-what-again</id>
   <updated>2018-06-05 10:14:37 +0530T00:00:00-00:00</updated>
   <published>2018-06-05T10:14:37+05:30</published>
   
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>http://localhost:4000</uri>
+    <uri>//srijanshetty.in</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -831,21 +831,21 @@ find bugs. For example, the following code has a surprising output:&lt;/li&gt;
 So, next time recall that python does call (me) by (your) name.&lt;/p&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/technical/call-me-by-your-name-python-is-pass-by-what-again/&quot;&gt;Call (Me) by (Your) Name: Python Is Pass by What Again?&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Srijan R. Shetty&lt;/a&gt; on June 05, 2018.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/call-me-by-your-name-python-is-pass-by-what-again/&quot;&gt;Call (Me) by (Your) Name: Python Is Pass by What Again?&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on June 05, 2018.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Honey, I Did a Bare Except]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/technical/honey-i-did-a-bare-except/" />
-  <id>http://localhost:4000/technical/honey-i-did-a-bare-except</id>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/honey-i-did-a-bare-except/" />
+  <id>//srijanshetty.in/technical/honey-i-did-a-bare-except</id>
   <updated>2018-05-25 11:10:19 +0530T00:00:00-00:00</updated>
   <published>2018-05-25T11:10:19+05:30</published>
   
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>http://localhost:4000</uri>
+    <uri>//srijanshetty.in</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -909,21 +909,21 @@ kills this script when it notices there’s no progress (the monitor in turn asc
 or IPC flags).&lt;br /&gt;&lt;br /&gt;
 So, as a favour to your future self, kindly avoid going bare (with exceptions).&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/technical/honey-i-did-a-bare-except/&quot;&gt;Honey, I Did a Bare Except&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Srijan R. Shetty&lt;/a&gt; on May 25, 2018.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/honey-i-did-a-bare-except/&quot;&gt;Honey, I Did a Bare Except&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on May 25, 2018.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Zombieland: Zombie Children Eating Memory]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/technical/zombie-children-eating-memory/" />
-  <id>http://localhost:4000/technical/zombie-children-eating-memory</id>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/zombie-children-eating-memory/" />
+  <id>//srijanshetty.in/technical/zombie-children-eating-memory</id>
   <updated>2018-05-16 00:24:38 +0530T00:00:00-00:00</updated>
   <published>2018-05-15T10:58:38+05:30</published>
   
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>http://localhost:4000</uri>
+    <uri>//srijanshetty.in</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -971,21 +971,21 @@ which will convert it to a non blocking call.)&lt;br /&gt;&lt;br /&gt;
 At this point if the zombies don’t die, your only option is to wait for the apocalypse. Or you could
 nuke the parent and hope the zombies don’t become orphan zombies. (Yikes)&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/technical/zombie-children-eating-memory/&quot;&gt;Zombieland: Zombie Children Eating Memory&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Srijan R. Shetty&lt;/a&gt; on May 15, 2018.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/zombie-children-eating-memory/&quot;&gt;Zombieland: Zombie Children Eating Memory&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on May 15, 2018.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Afflatus Begins]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/prose/afflatus-begins/" />
-  <id>http://localhost:4000/prose/afflatus-begins</id>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/prose/afflatus-begins/" />
+  <id>//srijanshetty.in/prose/afflatus-begins</id>
   <updated>2018-05-07 10:58:38 +0530T00:00:00-00:00</updated>
   <published>2018-05-07T10:58:38+05:30</published>
   
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>http://localhost:4000</uri>
+    <uri>//srijanshetty.in</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -998,20 +998,20 @@ nuke the parent and hope the zombies don’t become orphan zombies. (Yikes)&lt;/
 &lt;p&gt;So, let’s hope that the afflatus stays for long. If not, the depression of social media would be my only recourse.&lt;/p&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/prose/afflatus-begins/&quot;&gt;Afflatus Begins&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Srijan R. Shetty&lt;/a&gt; on May 07, 2018.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/prose/afflatus-begins/&quot;&gt;Afflatus Begins&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on May 07, 2018.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Installing Scikit and Numpy in Ubuntu]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/technical/installing-scikit-and-numpy-in-ubuntu/" />
-  <id>http://localhost:4000/technical/installing-scikit-and-numpy-in-ubuntu</id>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/installing-scikit-and-numpy-in-ubuntu/" />
+  <id>//srijanshetty.in/technical/installing-scikit-and-numpy-in-ubuntu</id>
   <published>2016-02-14T21:15:35+05:30</published>
   <updated>2016-02-14T21:15:35+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>http://localhost:4000</uri>
+    <uri>//srijanshetty.in</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -1026,21 +1026,21 @@ nuke the parent and hope the zombies don’t become orphan zombies. (Yikes)&lt;/
 &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;scipy numpy &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;use pyenv, not &lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/technical/installing-scikit-and-numpy-in-ubuntu/&quot;&gt;Installing Scikit and Numpy in Ubuntu&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Srijan R. Shetty&lt;/a&gt; on February 14, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/installing-scikit-and-numpy-in-ubuntu/&quot;&gt;Installing Scikit and Numpy in Ubuntu&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on February 14, 2016.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Tasker Appendix]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/tasker/tasker/" />
-  <id>http://localhost:4000/tasker/tasker</id>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/tasker/tasker/" />
+  <id>//srijanshetty.in/tasker/tasker</id>
   <updated>2016-01-31 23:42:34 +0530T00:00:00-00:00</updated>
   <published>2016-01-31T23:42:34+05:30</published>
   
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>http://localhost:4000</uri>
+    <uri>//srijanshetty.in</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -1058,20 +1058,20 @@ nuke the parent and hope the zombies don’t become orphan zombies. (Yikes)&lt;/
 &lt;p&gt;Until the next post.&lt;/p&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/tasker/tasker/&quot;&gt;Tasker Appendix&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Srijan R. Shetty&lt;/a&gt; on January 31, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/tasker/tasker/&quot;&gt;Tasker Appendix&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on January 31, 2016.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Travelogue - Paris]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/travelogue/travelogue-paris/" />
-  <id>http://localhost:4000/travelogue/travelogue-paris</id>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/travelogue/travelogue-paris/" />
+  <id>//srijanshetty.in/travelogue/travelogue-paris</id>
   <published>2015-11-28T13:50:03+05:30</published>
   <updated>2015-11-28T13:50:03+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
-    <uri>http://localhost:4000</uri>
+    <uri>//srijanshetty.in</uri>
     <email>srijan.shetty+code@gmail.com</email>
   </author>
   <content type="html">
@@ -1089,7 +1089,7 @@ a sullen brow, a callous hide,&lt;br /&gt;
 a tale to tell, a pen to confide.&lt;br /&gt;&lt;/p&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/travelogue/travelogue-paris/&quot;&gt;Travelogue - Paris&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;http://localhost:4000&quot;&gt;Srijan R. Shetty&lt;/a&gt; on November 28, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/travelogue/travelogue-paris/&quot;&gt;Travelogue - Paris&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on November 28, 2015.&lt;/p&gt;
   </content>
 </entry>
 
