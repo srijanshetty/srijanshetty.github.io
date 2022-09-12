@@ -5,14 +5,14 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Mastering Custom Site Search in Chrome &#8211; Srijan R. Shetty</title>
-<meta name="description" content="The title says it all">
-<meta name="keywords" content="tips, technical, chrome, search, custom site, google, address bar">
+<title>Polygon Devfolio Fellowship &#8211; Srijan R. Shetty</title>
+<meta name="description" content="Wrapping up two months of hacking on Polygon with amazing build00rs">
+<meta name="keywords" content="polygon, blockchain, devfolio, eth, ethereum, fellowship, hackathon, hackerhouse">
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Mastering Custom Site Search in Chrome">
-<meta name="twitter:description" content="The title says it all">
+<meta name="twitter:title" content="Polygon Devfolio Fellowship">
+<meta name="twitter:description" content="Wrapping up two months of hacking on Polygon with amazing build00rs">
 <meta name="twitter:site" content="@srijanshetty">
 <meta name="twitter:creator" content="@srijanshetty">
 
@@ -22,9 +22,9 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mastering Custom Site Search in Chrome">
-<meta property="og:description" content="The title says it all">
-<meta property="og:url" content="http://localhost:4000/hacks/mastering-search-in-chrome/">
+<meta property="og:title" content="Polygon Devfolio Fellowship">
+<meta property="og:description" content="Wrapping up two months of hacking on Polygon with amazing build00rs">
+<meta property="og:url" content="http://localhost:4000/technical/polygon-devfolio-fellowship/">
 <meta property="og:site_name" content="Srijan R. Shetty">
 
 <meta property="og:image" content="http://localhost:4000/images/default-thumb.png">
@@ -34,7 +34,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/hacks/mastering-search-in-chrome/">
+<link rel="canonical" href="http://localhost:4000/technical/polygon-devfolio-fellowship/">
 <link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Srijan R. Shetty Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -147,43 +147,54 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="http://localhost:4000/hacks/mastering-search-in-chrome/" rel="bookmark" title="Mastering Custom Site Search in Chrome">Mastering Custom Site Search in Chrome</a></h1>
+        <h1><a href="http://localhost:4000/technical/polygon-devfolio-fellowship/" rel="bookmark" title="Polygon Devfolio Fellowship">Polygon Devfolio Fellowship</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>Chrome was the shiny, fast browser which caused me to shift from firefox; and even after chrome has become the still shiny, slow mess that it has become, I find it hard to move away due to some really awesome inbuilt features of chrome. My favourite amongst them is the ability to leverage any site’s search functionality. I’m pretty sure that you might have noticed that pressing <code class="highlighter-rouge">[Tab]</code> after typing youtube in the search bar allows you to search youtube directly from the search bar. What’s really fun is that this functionality can be extended to any website as long as it searched using a URL query.<br /><br />
-For example, I’ll show you how to automate searching within the settings of chrome.</p>
+      <p>Hi, “I’m the other Srijan, the one not from Devfolio” was the byline I’ve been forced to use for the past two months as
+a certain <a href="https://twitter.com/srijancse">srijan</a> has monopolized the byline. Yes, it was ardous but at the same time it
+was incredibly fun and that line is probably a concise description of everything I was upto at the
+<a href="https://twitter.com/0xPolygon">0xPolygon</a> x <a href="https://twitter.com/devfolio">devfolio</a> Fellowship.<br /><br />
+I’ll be honest, it wasn’t easy being the amongst the oldest of the lot in a hackerhouse and I’d be lying if I said that
+my age represented the age old wisdom of experience. The fellowship was replete with build00rs of all ages, and every
+minute was spent learning about the amazing ideas that the fellows were working on - from DeFi yield farming to the
+beauties of Account Abstraction, and ingeniuty of MeV searchers. The countless hours discussing the frontier of web3 and
+hacking along with the best of the build00rs of ecosystem is time that I shall definitely cherish.<br /><br />
+My idea for the fellowship was to try and solve the problem of decentralized hiring through
+<a href="https://bytrinity.xyz">Trinity</a>. Hiring is a broken process and it leaves no one happy. Potential candidates are
+optimizing for Data Structures and Algorithms (DSA), while employers are unable to come up with a comprehensive solution
+to test the technical skills of the candidates without any Proof Of Work (PoW). Trinity tries to solve this problem
+using a novel approach of adding a layer of validators who conduct technical interviews of the candidates and provide
+them with skill NFTs (now and Soul Bound Tokens) later to solve the cold-start problem of hiring. If a candidate gets
+hired, the validators earn a small comission from the employer.<br /><br />
+All the code including the smart contract is open source and the links are provided below:<br /></p>
 
-<ul>
-  <li>
-    <p>Firstly navigate to <strong>chrome://settings</strong> - and yes, I like to type that out.</p>
-  </li>
-  <li>
-    <p>In the search section, you’ll see a <strong>Manage Search Engines</strong> option.</p>
-  </li>
-</ul>
-<figure>
-	<a href="/images/manage-search-engines.png"><img src="/images/manage-search-engines.png" /></a>
-</figure>
-
-<ul>
-  <li>
-    <p>Scroll to the end of the list of search engines, where it says that you can <code class="highlighter-rouge">Add a new search engine</code>.</p>
-  </li>
-  <li>
-    <p>To add a new search engine, you need to name it and additionally give it a <code class="highlighter-rouge">trigger</code>. The trigger
- is the key which followed by a <code class="highlighter-rouge">Tab</code> on the omnibar lets chrome know your intent of searching the site
- instead of merely visiting it. Here I’ve used <code class="highlighter-rouge">csettings</code> as a trigger.</p>
-  </li>
-</ul>
-<figure>
-  <a href="/images/example-search-engine.png"><img src="/images/example-search-engine.png" /></a>
-</figure>
-
-<ul>
-  <li>Fin.</li>
-</ul>
-
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Title</th>
+      <th style="text-align: center">Source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Smart Contract</td>
+      <td style="text-align: center"><a href="https://github.com/srijanshetty/trinity">GitHub</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Front End</td>
+      <td style="text-align: center"><a href="https://github.com/srijanshetty/trinity-web">GitHub</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Website</td>
+      <td style="text-align: center"><a href="https://bytrinity.xyz">Link</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Mumbai Contract</td>
+      <td style="text-align: center"><a href="https://mumbai.polygonscan.com/address/0xe87e9c2e04904a42f9d15426fa65d63a1735f52b#code">Contract</a></td>
+    </tr>
+  </tbody>
+</table>
 
       <hr />
       <footer role="contentinfo">
@@ -191,17 +202,17 @@ For example, I’ll show you how to automate searching within the settings of ch
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/hacks/mastering-search-in-chrome/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/technical/polygon-devfolio-fellowship/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/hacks/mastering-search-in-chrome/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/technical/polygon-devfolio-fellowship/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=http://localhost:4000/hacks/mastering-search-in-chrome/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/technical/polygon-devfolio-fellowship/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>Mastering Custom Site Search in Chrome</strong> was published on <time datetime="2015-09-13T19:36:38+05:30">September 13, 2015</time>.</p>
+        <p class="byline"><strong>Polygon Devfolio Fellowship</strong> was published on <time datetime="2022-09-12T18:32:54+05:30">September 12, 2022</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -216,11 +227,11 @@ For example, I’ll show you how to automate searching within the settings of ch
   <h4>You might also enjoy <small class="pull-right">(<a href="http://localhost:4000/posts/">View all posts</a>)</small></h4>
     <ul>
     
-      <li><a href="http://localhost:4000/technical/polygon-devfolio-fellowship/" title="Polygon Devfolio Fellowship">Polygon Devfolio Fellowship</a></li>
-    
       <li><a href="http://localhost:4000/technical/poor-mans-alb-apache/" title="Poor Man's ALB - Apache">Poor Man's ALB - Apache</a></li>
     
       <li><a href="http://localhost:4000/technical/how-do-gulp-typescript-without-module-loaders/" title="How Do Gulp Typescript Without Module Loaders">How Do Gulp Typescript Without Module Loaders</a></li>
+    
+      <li><a href="http://localhost:4000/technical/leaving-your-sock-et-s-hanging/" title="Leaving Your Sock(et)s Hanging">Leaving Your Sock(et)s Hanging</a></li>
     
     </ul>
     <hr />
