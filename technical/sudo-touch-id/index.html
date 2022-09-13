@@ -5,14 +5,14 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Love &#8211; Srijan R. Shetty</title>
-<meta name="description" content="Some love stories were never meant to be">
-<meta name="keywords" content="">
+<title>Using TouchId for sudo in Mac OSX &#8211; Srijan R. Shetty</title>
+<meta name="description" content="Using TouchId for sudo in Mac OSX">
+<meta name="keywords" content="sudo, linux, mac, osx, touchId, cli, commands">
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Love">
-<meta name="twitter:description" content="Some love stories were never meant to be">
+<meta name="twitter:title" content="Using TouchId for sudo in Mac OSX">
+<meta name="twitter:description" content="Using TouchId for sudo in Mac OSX">
 <meta name="twitter:site" content="@srijanshetty">
 <meta name="twitter:creator" content="@srijanshetty">
 
@@ -22,9 +22,9 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Love">
-<meta property="og:description" content="Some love stories were never meant to be">
-<meta property="og:url" content="//srijanshetty.in/poems/love/">
+<meta property="og:title" content="Using TouchId for sudo in Mac OSX">
+<meta property="og:description" content="Using TouchId for sudo in Mac OSX">
+<meta property="og:url" content="//srijanshetty.in/technical/sudo-touch-id/">
 <meta property="og:site_name" content="Srijan R. Shetty">
 
 <meta property="og:image" content="//srijanshetty.in/images/default-thumb.png">
@@ -34,7 +34,7 @@
 
 
 
-<link rel="canonical" href="//srijanshetty.in/poems/love/">
+<link rel="canonical" href="//srijanshetty.in/technical/sudo-touch-id/">
 <link href="//srijanshetty.in/feed.xml" type="application/atom+xml" rel="alternate" title="Srijan R. Shetty Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -147,31 +147,19 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="//srijanshetty.in/poems/love/" rel="bookmark" title="Love">Love</a></h1>
+        <h1><a href="//srijanshetty.in/technical/sudo-touch-id/" rel="bookmark" title="Using TouchId for sudo in Mac OSX">Using TouchId for sudo in Mac OSX</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>Moon and stars a union delight,<br />
-The two meet in this heavenly sight;<br />
-He falls to Venus’ might<br />
-While she is nescient of his plight.<br /><br />
-The spell is cast, a story starts,<br />
-He yearns for her heart;<br />
-yet his love, his precious,<br />
-remains forever oblivious.<br /><br />
-He expresses his love, but in vain,<br />
-For she misunderstands - its his bane;<br />
-The world mocks him insane,<br />
-But only a few understand his pain.<br />
-Despite the anguish, he remains persistent,<br />
-and the unrelenting gods remain adamant.<br /><br />
-Despite his wretched fate,<br />
-nothing but her will satiate<br />
-his implacable thirst,<br />
-as she is his only and first.<br />
-Ergo he wont give up, he will fight,<br />
-for he believes his love is right.<br /><br /></p>
+      <p>This one is short, I wanted to use TouchId for sudo in Mac OSX.</p>
 
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Edit pam.d</span>
+<span class="nb">sudo </span>vi /etc/pam.d/sudo
+
+<span class="c"># Add the following as the first line</span>
+auth sufficient pam_tid.so</code></pre></figure>
+
+<p>Works like a charm.</p>
 
       <hr />
       <footer role="contentinfo">
@@ -179,17 +167,17 @@ for he believes his love is right.<br /><br /></p>
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/poems/love/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/technical/sudo-touch-id/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/poems/love/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/technical/sudo-touch-id/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=//srijanshetty.in/poems/love/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=//srijanshetty.in/technical/sudo-touch-id/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>Love</strong> was published on <time datetime="2013-05-11T09:08:52+05:30">May 11, 2013</time>.</p>
+        <p class="byline"><strong>Using TouchId for sudo in Mac OSX</strong> was published on <time datetime="2022-09-14T00:41:54+05:30">September 14, 2022</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -204,11 +192,11 @@ for he believes his love is right.<br /><br /></p>
   <h4>You might also enjoy <small class="pull-right">(<a href="//srijanshetty.in/posts/">View all posts</a>)</small></h4>
     <ul>
     
-      <li><a href="//srijanshetty.in/technical/sudo-touch-id/" title="Using TouchId for sudo in Mac OSX">Using TouchId for sudo in Mac OSX</a></li>
-    
       <li><a href="//srijanshetty.in/technical/polygon-devfolio-fellowship/" title="Polygon Devfolio Fellowship">Polygon Devfolio Fellowship</a></li>
     
       <li><a href="//srijanshetty.in/technical/poor-mans-alb-apache/" title="Poor Man's ALB - Apache">Poor Man's ALB - Apache</a></li>
+    
+      <li><a href="//srijanshetty.in/technical/how-do-gulp-typescript-without-module-loaders/" title="How Do Gulp Typescript Without Module Loaders">How Do Gulp Typescript Without Module Loaders</a></li>
     
     </ul>
     <hr />

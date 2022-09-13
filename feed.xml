@@ -4,13 +4,40 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="//srijanshetty.in/feed.xml" />
 <link rel="alternate" type="text/html" href="//srijanshetty.in" />
-<updated>2022-09-12T19:15:26+05:30</updated>
+<updated>2022-09-14T01:00:41+05:30</updated>
 <id>//srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
   <uri>//srijanshetty.in/</uri>
   <email>srijan.shetty+code@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Using TouchId for sudo in Mac OSX]]></title>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/sudo-touch-id/" />
+  <id>//srijanshetty.in/technical/sudo-touch-id</id>
+  <published>2022-09-14T00:41:54+05:30</published>
+  <updated>2022-09-14T00:41:54+05:30</updated>
+  <author>
+    <name>Srijan R. Shetty</name>
+    <uri>//srijanshetty.in</uri>
+    <email>srijan.shetty+code@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;This one is short, I wanted to use TouchId for sudo in Mac OSX.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# Edit pam.d&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;vi /etc/pam.d/sudo
+
+&lt;span class=&quot;c&quot;&gt;# Add the following as the first line&lt;/span&gt;
+auth sufficient pam_tid.so&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Works like a charm.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/sudo-touch-id/&quot;&gt;Using TouchId for sudo in Mac OSX&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 14, 2022.&lt;/p&gt;
+  </content>
+</entry>
 
 
 <entry>
@@ -1089,38 +1116,6 @@ nuke the parent and hope the zombies don’t become orphan zombies. (Yikes)&lt;/
 
 
     &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/installing-scikit-and-numpy-in-ubuntu/&quot;&gt;Installing Scikit and Numpy in Ubuntu&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on February 14, 2016.&lt;/p&gt;
-  </content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Tasker Appendix]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/tasker/tasker/" />
-  <id>//srijanshetty.in/tasker/tasker</id>
-  <updated>2016-01-31 23:42:34 +0530T00:00:00-00:00</updated>
-  <published>2016-01-31T23:42:34+05:30</published>
-  
-  <author>
-    <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
-    <email>srijan.shetty+code@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;I’ve been spending a lot of time trying to automate some of the more annoying mundane tasks on my phone using Tasker and the Auto Apps suite of late which has led to the cumulation of a body of knowledge which is relatively hard to find; and in an attempt to give back to society &lt;em&gt;coughs&lt;/em&gt;, here are some handy tricks. (posts coming soon)&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Running AutoInput when the screen is off.&lt;/li&gt;
-  &lt;li&gt;Daily backups using Titanium Backup free version. (buy the full version and support the developer).&lt;/li&gt;
-  &lt;li&gt;Getting Google Play to speak out the artist name when the headset is plugged in.&lt;/li&gt;
-  &lt;li&gt;On Boot Accessibility Jobs.&lt;/li&gt;
-  &lt;li&gt;SMS activated lock screen.&lt;/li&gt;
-  &lt;li&gt;Playing YouTube videos in background.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Until the next post.&lt;/p&gt;
-
-
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/tasker/tasker/&quot;&gt;Tasker Appendix&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on January 31, 2016.&lt;/p&gt;
   </content>
 </entry>
 
