@@ -4,13 +4,64 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="//srijanshetty.in/feed.xml" />
 <link rel="alternate" type="text/html" href="//srijanshetty.in" />
-<updated>2022-09-14T01:03:05+05:30</updated>
+<updated>2022-09-21T19:34:18+05:30</updated>
 <id>//srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
   <uri>//srijanshetty.in/</uri>
   <email>srijan.shetty+code@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[ZSH bindkey in MacOSX for Cmd]]></title>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/hacks/macos-alt-dot-bindkey/" />
+  <id>//srijanshetty.in/hacks/macos-alt-dot-bindkey</id>
+  <published>2022-09-21T00:41:54+05:30</published>
+  <updated>2022-09-21T00:41:54+05:30</updated>
+  <author>
+    <name>Srijan R. Shetty</name>
+    <uri>//srijanshetty.in</uri>
+    <email>srijan.shetty+code@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Another short one but very useful trick in my moving from Linux to Mac series.&lt;br /&gt;&lt;br /&gt;
+One of my most used shortcuts in the terminal is &lt;code class=&quot;highlighter-rouge&quot;&gt;Alt + .&lt;/code&gt;, which I adapted from my &lt;code class=&quot;highlighter-rouge&quot;&gt;bash&lt;/code&gt; workflow to my &lt;code class=&quot;highlighter-rouge&quot;&gt;zsh&lt;/code&gt; workflow
+when I started using zsh. It basically inserts the last word from the previous command. This turns out to be very handy
+and I use it multiple times a day.&lt;br /&gt;&lt;br /&gt;
+There is no out of the box way to accomplish this on Mac, unless you use &lt;code class=&quot;highlighter-rouge&quot;&gt;iTerm&lt;/code&gt;.&lt;br /&gt;&lt;br /&gt;
+The first step is opening up iTerm preferences and navigate to the keybindings section.&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;a href=&quot;/images/mac_zsh_keybinding_1.png&quot;&gt;&lt;img src=&quot;/images/mac_zsh_keybinding_1.png&quot; /&gt;&lt;/a&gt;
+    &lt;figcaption&gt;iTerm &amp;gt; Preferences &amp;gt; Keybindings&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Once in the keybindings section:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Click &lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;In the dialogue select any Keyboard Shortcut you want. I used &lt;code class=&quot;highlighter-rouge&quot;&gt;Cmd + .&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Select &lt;code class=&quot;highlighter-rouge&quot;&gt;Action&lt;/code&gt; as &lt;code class=&quot;highlighter-rouge&quot;&gt;Send Escape Sequence&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Add &lt;code class=&quot;highlighter-rouge&quot;&gt;altdot&lt;/code&gt; as the &lt;code class=&quot;highlighter-rouge&quot;&gt;Escape Sequence&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Hit &lt;code class=&quot;highlighter-rouge&quot;&gt;Save&lt;/code&gt; and we’re done!&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;figure&gt;
+    &lt;a href=&quot;/images/mac_zsh_keybinding_2.png&quot;&gt;&lt;img src=&quot;/images/mac_zsh_keybinding_2.png&quot; /&gt;&lt;/a&gt;
+    &lt;figcaption&gt;Add Keyboard Shorcut with Send Escape Sequence&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The next step is configuring zsh keybindings to process the &lt;code class=&quot;highlighter-rouge&quot;&gt;Escape sequence&lt;/code&gt;.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-zsh&quot; data-lang=&quot;zsh&quot;&gt;&lt;span class=&quot;c&quot;&gt;# somewhere in your zsh config&lt;/span&gt;
+bindkey &lt;span class=&quot;s2&quot;&gt;&quot;^[altdot&quot;&lt;/span&gt; insert-last-word&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;And viola, now the keybindings work. This process works &lt;code class=&quot;highlighter-rouge&quot;&gt;mutatis mundis&lt;/code&gt; for other keybindings that you want to import
+from your workflow in bash/zsh from linux.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/hacks/macos-alt-dot-bindkey/&quot;&gt;ZSH bindkey in MacOSX for Cmd&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 21, 2022.&lt;/p&gt;
+  </content>
+</entry>
 
 
 <entry>
@@ -1088,34 +1139,6 @@ nuke the parent and hope the zombies don’t become orphan zombies. (Yikes)&lt;/
 
 
     &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/prose/afflatus-begins/&quot;&gt;Afflatus Begins&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on May 07, 2018.&lt;/p&gt;
-  </content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Installing Scikit and Numpy in Ubuntu]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/installing-scikit-and-numpy-in-ubuntu/" />
-  <id>//srijanshetty.in/technical/installing-scikit-and-numpy-in-ubuntu</id>
-  <published>2016-02-14T21:15:35+05:30</published>
-  <updated>2016-02-14T21:15:35+05:30</updated>
-  <author>
-    <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
-    <email>srijan.shetty+code@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;After sifting through multiple stack-overflow answers and blog posts, here is a list of consolidated steps to install scipy stack on Ubuntu 14.04. (I’m currently using Elementary OS Freya which is a derivative of Ubuntu 14.04).&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;python-pip python-setuptools python-dev
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;libjpeg-dev zlib1g-dev &lt;span class=&quot;c&quot;&gt;# Pillow build dependencies&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;libblas-dev libatlas-dev liblapack-dev gfortran &lt;span class=&quot;c&quot;&gt;# Scipy dependencies&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;g++ &lt;span class=&quot;c&quot;&gt;# Sciki-lean dependency&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;cython &lt;span class=&quot;c&quot;&gt;# Scikit-image dependency&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;libenchant-dev &lt;span class=&quot;c&quot;&gt;# PyEnchant dependency&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;scipy numpy &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;use pyenv, not &lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/installing-scikit-and-numpy-in-ubuntu/&quot;&gt;Installing Scikit and Numpy in Ubuntu&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on February 14, 2016.&lt;/p&gt;
   </content>
 </entry>
 
