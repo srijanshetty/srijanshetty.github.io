@@ -4,13 +4,80 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="//srijanshetty.in/feed.xml" />
 <link rel="alternate" type="text/html" href="//srijanshetty.in" />
-<updated>2022-09-26T11:36:49+05:30</updated>
+<updated>2022-09-30T10:10:08+05:30</updated>
 <id>//srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
   <uri>//srijanshetty.in/</uri>
   <email>srijan.shetty+code@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Moving 4 TB across cloud storage providers for free]]></title>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/hacks/rclone-moving-files/" />
+  <id>//srijanshetty.in/hacks/rclone-moving-files</id>
+  <published>2022-09-29T00:41:54+05:30</published>
+  <updated>2022-09-29T00:41:54+05:30</updated>
+  <author>
+    <name>Srijan R. Shetty</name>
+    <uri>//srijanshetty.in</uri>
+    <email>srijan.shetty+code@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Ever run into the problem of maxing out your cloud capacity in one provider (most possibly on the free tier) and being
+left with no other solution but to upgrade because you can’t move your data?&lt;br /&gt;&lt;br /&gt;
+Or got into the solution of migrating data from a work account to a backup?&lt;br /&gt;&lt;br /&gt;
+I got into somewhat of a fix lately as I had to transfer over 4TB of data from AWS to a Google Drive account (with
+infinite free storage, courtesty my alma mater). What makes matters worse is that I have only 4TB of metered usuage in
+my broadband network, post which I’m downgraded on speed (and we obviously don’t like slow networks).&lt;br /&gt;&lt;br /&gt;
+The final solution that I came up with didn’t drain by broadband quota and didn’t cost me in time or money, which I
+think is a great outcome.&lt;br /&gt;&lt;br /&gt;
+The trick is to run the transfer on a VPS solution like &lt;a href=&quot;https://digitalocean.com&quot;&gt;digitalocean&lt;/a&gt;, with &lt;code class=&quot;highlighter-rouge&quot;&gt;tmux&lt;/code&gt; to resume
+sessions. This allows you to use the bandwidth of the VPS providers and not your home network!&lt;br /&gt;&lt;br /&gt;
+Let’s get everything setup:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Get a free digital ocean account using this &lt;a href=&quot;https://m.do.co/c/c7d0b328194e&quot;&gt;link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spin up a basic Ubuntu instance on Digital Ocean.&lt;/li&gt;
+  &lt;li&gt;Install &lt;a href=&quot;https://rclone.org/install/&quot;&gt;rclone&lt;/a&gt; using the following command.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; curl https://rclone.org/install.sh | &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;bash&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rclone&lt;/code&gt; is the swiss army knife of transferring files between different service providers, unlike &lt;code class=&quot;highlighter-rouge&quot;&gt;scp&lt;/code&gt; it does allow
+you to transfer between two different hosts and doesn’t have a &lt;code class=&quot;highlighter-rouge&quot;&gt;one local node&lt;/code&gt; policy. With rclone setup, the rest is
+easy.&lt;br /&gt;&lt;br /&gt;
+Install the cloud providers that you want to transfer files between.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;rclone config
+
+Name                 Type
+&lt;span class=&quot;o&quot;&gt;====&lt;/span&gt;                 &lt;span class=&quot;o&quot;&gt;====&lt;/span&gt;
+dropbox              dropbox
+s3                   s3
+
+e&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; Edit existing remote
+n&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; New remote
+d&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; Delete remote
+r&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; Rename remote
+c&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; Copy remote
+s&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; Set configuration password
+q&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; Quit config
+e/n/d/r/c/s/q&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Once you have the source and destination providers setup, the transfer is easy.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;rclone copy s3:bucket.name/ dropbox:backup/ &lt;span class=&quot;nt&quot;&gt;--ignore-existing&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Running with &lt;code class=&quot;highlighter-rouge&quot;&gt;--ignore-existing&lt;/code&gt; makes the process idempotent in case the SSH connection fails. I prefer running the
+command in a &lt;code class=&quot;highlighter-rouge&quot;&gt;tmux&lt;/code&gt; session so that I can reattach the session in a few days when the transfer might have
+completed.&lt;br /&gt;&lt;br /&gt;
+Until the next post!&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/hacks/rclone-moving-files/&quot;&gt;Moving 4 TB across cloud storage providers for free&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 29, 2022.&lt;/p&gt;
+  </content>
+</entry>
 
 
 <entry>
@@ -1147,68 +1214,6 @@ or IPC flags).&lt;br /&gt;&lt;br /&gt;
 So, as a favour to your future self, kindly avoid going bare (with exceptions).&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/honey-i-did-a-bare-except/&quot;&gt;Honey, I Did a Bare Except&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on May 25, 2018.&lt;/p&gt;
-  </content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Zombieland: Zombie Children Eating Memory]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/zombie-children-eating-memory/" />
-  <id>//srijanshetty.in/technical/zombie-children-eating-memory</id>
-  <updated>2018-05-16 00:24:38 +0530T00:00:00-00:00</updated>
-  <published>2018-05-15T10:58:38+05:30</published>
-  
-  <author>
-    <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
-    <email>srijan.shetty+code@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;Children have issues, especially when you try to kill them incorrectly and they come back as
-zombies - just in case, I’m talking about process children in linux (don’t arrest me please).&lt;br /&gt;&lt;br /&gt;
-Here’s a snippet of code from a personal project:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;child_pid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;signal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SIGTERM&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Can you notice what’s wrong with the above snippet? (Apart from the horrid error handling,
-and the fact that I’ve ignored that the children must have async-signal-safe signal handlers
-present.)&lt;br /&gt;&lt;br /&gt;
-You’ll be leaving zombies all over the OS!&lt;br /&gt;&lt;br /&gt;
-It took me a while to figure out the (mostly) correct way to handle killing your own (process’)
-children safely:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;signal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SIGTERM&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;psutil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;terminate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wait&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;timeout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;45&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Wow. your children are really obedient&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;psutil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TimeoutExpired&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# For a bad process this will ensure that we send it a sigkill
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;send_signal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;signal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SIGKILL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wait&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;timeout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Close call, we need the big guns, but at least they're dead now&quot;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;psutil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TimeoutExpired&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Zombies have escaped. I repeat, zombies have escaped&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Let me explain what’s going on here. The first &lt;em&gt;terminate&lt;/em&gt; sends a &lt;strong&gt;SIGTERM&lt;/strong&gt; to the child and then we
-do a blocking 45 seconds wait on the child process in order to reap it. If all goes according to plan,
-we would have successfully killed the process. But if the powers that be conspire, we might have to bring out
-the big guns with &lt;strong&gt;SIGKILL&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
-The second &lt;strong&gt;SIGKILL&lt;/strong&gt; is where things get interesting, all process accept &lt;strong&gt;SIGKILL&lt;/strong&gt; and shold terminate
-in an ideal worldbut they still might remain as zombies - those beautiful adolescent teen years.
-The second wait with a shorter interval tries reaps such processes. (You could ideally keep the timeout at 0,
-which will convert it to a non blocking call.)&lt;br /&gt;&lt;br /&gt;
-At this point if the zombies don’t die, your only option is to wait for the apocalypse. Or you could
-nuke the parent and hope the zombies don’t become orphan zombies. (Yikes)&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/zombie-children-eating-memory/&quot;&gt;Zombieland: Zombie Children Eating Memory&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on May 15, 2018.&lt;/p&gt;
   </content>
 </entry>
 

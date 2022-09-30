@@ -5,14 +5,14 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Installing Scikit and Numpy in Ubuntu &#8211; Srijan R. Shetty</title>
-<meta name="description" content="a consolidated set of steps for installing scipy on Ubuntu">
-<meta name="keywords" content="shell, data, scipy, python, numpy, ubuntu, elementary, freya, 14.04">
+<title>Moving 4 TB across cloud storage providers for free &#8211; Srijan R. Shetty</title>
+<meta name="description" content="rclone - the swiss army knife of cloud storage">
+<meta name="keywords" content="linux, mac, osx, cli, rclone, drive, dropbox, google, storage, aws, storage">
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Installing Scikit and Numpy in Ubuntu">
-<meta name="twitter:description" content="a consolidated set of steps for installing scipy on Ubuntu">
+<meta name="twitter:title" content="Moving 4 TB across cloud storage providers for free">
+<meta name="twitter:description" content="rclone - the swiss army knife of cloud storage">
 <meta name="twitter:site" content="@srijanshetty">
 <meta name="twitter:creator" content="@srijanshetty">
 
@@ -22,9 +22,9 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Installing Scikit and Numpy in Ubuntu">
-<meta property="og:description" content="a consolidated set of steps for installing scipy on Ubuntu">
-<meta property="og:url" content="//srijanshetty.in/technical/installing-scikit-and-numpy-in-ubuntu/">
+<meta property="og:title" content="Moving 4 TB across cloud storage providers for free">
+<meta property="og:description" content="rclone - the swiss army knife of cloud storage">
+<meta property="og:url" content="//srijanshetty.in/hacks/rclone-moving-files/">
 <meta property="og:site_name" content="Srijan R. Shetty">
 
 <meta property="og:image" content="//srijanshetty.in/images/default-thumb.png">
@@ -34,7 +34,7 @@
 
 
 
-<link rel="canonical" href="//srijanshetty.in/technical/installing-scikit-and-numpy-in-ubuntu/">
+<link rel="canonical" href="//srijanshetty.in/hacks/rclone-moving-files/">
 <link href="//srijanshetty.in/feed.xml" type="application/atom+xml" rel="alternate" title="Srijan R. Shetty Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -147,20 +147,59 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="//srijanshetty.in/technical/installing-scikit-and-numpy-in-ubuntu/" rel="bookmark" title="Installing Scikit and Numpy in Ubuntu">Installing Scikit and Numpy in Ubuntu</a></h1>
+        <h1><a href="//srijanshetty.in/hacks/rclone-moving-files/" rel="bookmark" title="Moving 4 TB across cloud storage providers for free">Moving 4 TB across cloud storage providers for free</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>After sifting through multiple stack-overflow answers and blog posts, here is a list of consolidated steps to install scipy stack on Ubuntu 14.04. (I’m currently using Elementary OS Freya which is a derivative of Ubuntu 14.04).</p>
+      <p>Ever run into the problem of maxing out your cloud capacity in one provider (most possibly on the free tier) and being
+left with no other solution but to upgrade because you can’t move your data?<br /><br />
+Or got into the solution of migrating data from a work account to a backup?<br /><br />
+I got into somewhat of a fix lately as I had to transfer over 4TB of data from AWS to a Google Drive account (with
+infinite free storage, courtesty my alma mater). What makes matters worse is that I have only 4TB of metered usuage in
+my broadband network, post which I’m downgraded on speed (and we obviously don’t like slow networks).<br /><br />
+The final solution that I came up with didn’t drain by broadband quota and didn’t cost me in time or money, which I
+think is a great outcome.<br /><br />
+The trick is to run the transfer on a VPS solution like <a href="https://digitalocean.com">digitalocean</a>, with <code class="highlighter-rouge">tmux</code> to resume
+sessions. This allows you to use the bandwidth of the VPS providers and not your home network!<br /><br />
+Let’s get everything setup:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>python-pip python-setuptools python-dev
-<span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>libjpeg-dev zlib1g-dev <span class="c"># Pillow build dependencies</span>
-<span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>libblas-dev libatlas-dev liblapack-dev gfortran <span class="c"># Scipy dependencies</span>
-<span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>g++ <span class="c"># Sciki-lean dependency</span>
-<span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>cython <span class="c"># Scikit-image dependency</span>
-<span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>libenchant-dev <span class="c"># PyEnchant dependency</span>
-<span class="nv">$ </span>pip <span class="nb">install </span>scipy numpy <span class="o">(</span>use pyenv, not <span class="nb">sudo</span><span class="o">)</span></code></pre></figure>
+<ol>
+  <li>Get a free digital ocean account using this <a href="https://m.do.co/c/c7d0b328194e">link</a></li>
+  <li>Spin up a basic Ubuntu instance on Digital Ocean.</li>
+  <li>Install <a href="https://rclone.org/install/">rclone</a> using the following command.</li>
+</ol>
 
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">sudo</span> <span class="nt">-v</span> <span class="p">;</span> curl https://rclone.org/install.sh | <span class="nb">sudo </span>bash</code></pre></figure>
+
+<p><code class="highlighter-rouge">rclone</code> is the swiss army knife of transferring files between different service providers, unlike <code class="highlighter-rouge">scp</code> it does allow
+you to transfer between two different hosts and doesn’t have a <code class="highlighter-rouge">one local node</code> policy. With rclone setup, the rest is
+easy.<br /><br />
+Install the cloud providers that you want to transfer files between.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>rclone config
+
+Name                 Type
+<span class="o">====</span>                 <span class="o">====</span>
+dropbox              dropbox
+s3                   s3
+
+e<span class="o">)</span> Edit existing remote
+n<span class="o">)</span> New remote
+d<span class="o">)</span> Delete remote
+r<span class="o">)</span> Rename remote
+c<span class="o">)</span> Copy remote
+s<span class="o">)</span> Set configuration password
+q<span class="o">)</span> Quit config
+e/n/d/r/c/s/q&gt;</code></pre></figure>
+
+<p>Once you have the source and destination providers setup, the transfer is easy.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>rclone copy s3:bucket.name/ dropbox:backup/ <span class="nt">--ignore-existing</span></code></pre></figure>
+
+<p>Running with <code class="highlighter-rouge">--ignore-existing</code> makes the process idempotent in case the SSH connection fails. I prefer running the
+command in a <code class="highlighter-rouge">tmux</code> session so that I can reattach the session in a few days when the transfer might have
+completed.<br /><br />
+Until the next post!</p>
 
       <hr />
       <footer role="contentinfo">
@@ -168,17 +207,17 @@
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/technical/installing-scikit-and-numpy-in-ubuntu/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/hacks/rclone-moving-files/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/technical/installing-scikit-and-numpy-in-ubuntu/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/hacks/rclone-moving-files/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=//srijanshetty.in/technical/installing-scikit-and-numpy-in-ubuntu/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=//srijanshetty.in/hacks/rclone-moving-files/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>Installing Scikit and Numpy in Ubuntu</strong> was published on <time datetime="2016-02-14T21:15:35+05:30">February 14, 2016</time>.</p>
+        <p class="byline"><strong>Moving 4 TB across cloud storage providers for free</strong> was published on <time datetime="2022-09-29T00:41:54+05:30">September 29, 2022</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -193,11 +232,11 @@
   <h4>You might also enjoy <small class="pull-right">(<a href="//srijanshetty.in/posts/">View all posts</a>)</small></h4>
     <ul>
     
-      <li><a href="//srijanshetty.in/hacks/rclone-moving-files/" title="Moving 4 TB across cloud storage providers for free">Moving 4 TB across cloud storage providers for free</a></li>
-    
       <li><a href="//srijanshetty.in/technical/cloudflare-workers-cors/" title="Handling CORS with cloudflare workers">Handling CORS with cloudflare workers</a></li>
     
       <li><a href="//srijanshetty.in/hacks/macos-alt-dot-bindkey/" title="ZSH bindkey in MacOSX for Cmd">ZSH bindkey in MacOSX for Cmd</a></li>
+    
+      <li><a href="//srijanshetty.in/hacks/sudo-touch-id/" title="Using TouchId for sudo in Mac OSX">Using TouchId for sudo in Mac OSX</a></li>
     
     </ul>
     <hr />
