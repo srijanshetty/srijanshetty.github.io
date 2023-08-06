@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="//srijanshetty.in/feed.xml" />
 <link rel="alternate" type="text/html" href="//srijanshetty.in" />
-<updated>2023-08-06T11:12:42+05:30</updated>
+<updated>2023-08-06T11:14:37+05:30</updated>
 <id>//srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
@@ -34,40 +34,6 @@ We were dumbfounded, for not only did he sign us to a honour contract at the spo
 This was a defining moment because you have to admit that sometimes plain old paper records are a secure format and all our fancy dandy security might fall short. A professor arm twisted young students to be bound by an imaginary honor contract, and three all we did was use our access to build an API so that students could search OARS in a better manner and get to know the top 10 students in each year.&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/write-ups/oars-sql-injections-and-paper-backups/&quot;&gt;OARS, SQL Injections and Paper Backups&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on August 01, 2023.&lt;/p&gt;
-  </content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[The based professors of IIT Kanpur - 2]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/write-ups/a-professor-can-bunk-as-well/" />
-  <id>//srijanshetty.in/write-ups/a-professor-can-bunk-as-well</id>
-  <published>2023-08-01T20:00:00+05:30</published>
-  <updated>2023-08-01T20:00:00+05:30</updated>
-  <author>
-    <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
-    <email>srijan.shetty+code@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;Professors in Indian Institute of Technology, Kanpur are based and here is another story of such a professor.&lt;br /&gt;&lt;br /&gt;
-IIT Kanpur provides complete autonomy to professors, they can run the classes according to their whims and
-fancies.&lt;br /&gt;&lt;br /&gt;
-The reason we don’t have mandatory attendance is the professors only want interested students, and yet some classes are jam packed.&lt;br /&gt;&lt;br /&gt;
-One such professor was Professor TVP. If you imagine professors being grumpy old men with pot bellies, you’ll be wrong more often than not in college.&lt;br /&gt;&lt;br /&gt;
-Professor TVP sported grey hair, but that’s the only indication of him being aged as his energy in the class was infectious.&lt;br /&gt;&lt;br /&gt;
-It’s was April 1st and while everyone was in the class, no one really wanted to study that day. The day was nice and sunny, and considering it was “April’s Fool’s”, the devil is bound to have some fun.&lt;br /&gt;&lt;br /&gt;
-As soon as the professor entered and and before he could utter a single word, a student stood up deadpan and
-said:&lt;br /&gt;&lt;br /&gt;
-“It’s Aprils Fool’s day today and we should not study.”&lt;br /&gt;&lt;br /&gt;
-A normal professor would shut down such a student - but not Professor TVP. In his zest he said.&lt;br /&gt;&lt;br /&gt;
-“I absolutely agree.”&lt;br /&gt;&lt;br /&gt;
-Silence. The students were in shock and awe.&lt;br /&gt;&lt;br /&gt;
-“The day is nice and sunny, let’s go grab some chai in CC canteen. Treat’s on me.”&lt;br /&gt;&lt;br /&gt;
-And so all 40 students, walked to and gheroed CC canteen grabbing some chai amongst some ridiculously nosy peacocks (story for another time).&lt;br /&gt;&lt;br /&gt;
-Told you, never underestimate the Professors of IIT Kanpur. They can surprise you.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/write-ups/a-professor-can-bunk-as-well/&quot;&gt;The based professors of IIT Kanpur - 2&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on August 01, 2023.&lt;/p&gt;
   </content>
 </entry>
 
@@ -1111,6 +1077,29 @@ Theoretically compiling vim from source should be simple:&lt;br /&gt;&lt;/p&gt;
 &lt;p&gt;Hopefully, this helps a forlorn developer searching for the oasis.&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/john-vim-parabellum/&quot;&gt;John Vim - Parabellum&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on June 28, 2019.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Modern Love]]></title>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/prose/modern-love/" />
+  <id>//srijanshetty.in/prose/modern-love</id>
+  <published>2018-08-26T17:50:51+05:30</published>
+  <updated>2018-08-26T17:50:51+05:30</updated>
+  <author>
+    <name>Srijan R. Shetty</name>
+    <uri>//srijanshetty.in</uri>
+    <email>srijan.shetty+code@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;The problem has always been that we’re presented with such a romanticized version of love stories. The brooding byronic hero’s love is an inescapable force and the damsel/strong women gravitates towards it. It’s a singular love, it’s either make it or break it, their communion was destined and they’re unbreakable; but is it true? Does modern love really resemble what’s been foretold for centuries, and if we’re being honest here, I would like to ask if any love is of this kind?&lt;br /&gt;&lt;br /&gt;
+On the other hand we have the archetypal bad boy, who wins over woman with his enigma or emotional unavailability; another stereotype which manifests in possessive other halves who don’t let the other breathe. Love was never meant to be suffocating - well, not always - it’s interesting that we stand at destiny’s crossroads today, trying to decipher what love is, and more importantly what it should be, for after all it’s the gestalt of the cultural zeitgeist.&lt;br /&gt;&lt;br /&gt;
+I would define love as a little more than friendship, it has the emotional availability of friendship; the zing that it brings along. It’s a little more than friendship considering there’s that physical connect which might or might not be in a friendship. Love and friendship are very much alike, to the extend that I would make the apposite claim that I love all my best friends. (This might invoke the collective groan of a lot of readers who either haven’t loved or who fail to see love to be anything beyond the physical realm).&lt;br /&gt;&lt;br /&gt;
+Love is a synergistic bond, you let each other grow, you let each other fail, you scuffle, you make up, you stay put for each other - like friends do. In fact, friendship is not an exclusive relationship, you can be really close with a few different people; modern times juxtapose love to friendship by invoking the exclusivity clause - which is not fine by me, for it abases love to be merely physical. Love is more than that, love demands no sacrifice, you need not give up your friendships to taste the forbidden fruit.&lt;br /&gt;&lt;br /&gt;
+Modern love is strange, and hopefully we come to see of it more like friendship; and less contractual&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/prose/modern-love/&quot;&gt;Modern Love&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on August 26, 2018.&lt;/p&gt;
   </content>
 </entry>
 
