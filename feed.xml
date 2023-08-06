@@ -4,13 +4,136 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="//srijanshetty.in/feed.xml" />
 <link rel="alternate" type="text/html" href="//srijanshetty.in" />
-<updated>2023-08-06T10:59:05+05:30</updated>
+<updated>2023-08-06T11:12:42+05:30</updated>
 <id>//srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
   <uri>//srijanshetty.in/</uri>
   <email>srijan.shetty+code@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[OARS, SQL Injections and Paper Backups]]></title>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/write-ups/oars-sql-injections-and-paper-backups/" />
+  <id>//srijanshetty.in/write-ups/oars-sql-injections-and-paper-backups</id>
+  <published>2023-08-01T20:00:00+05:30</published>
+  <updated>2023-08-01T20:00:00+05:30</updated>
+  <author>
+    <name>Srijan R. Shetty</name>
+    <uri>//srijanshetty.in</uri>
+    <email>srijan.shetty+code@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;OARS - Four letters that could fill any graduate of IIT Kanpur from 2009 to 2015 with abject horror.&lt;br /&gt;&lt;br /&gt;
+While presented as a system to register for courses for the next semester, it was a machine of widespread torture by crushing your hopes and your soul at the exact moment that they are the highest. The beauty of OARS was that it was universally hated by both students and professors, a common themes across most of IIT Kanpur.&lt;br /&gt;&lt;br /&gt;
+An apocryphal story states that OARS was cobbled together by a few undergraduates over a summer, and things turned for the worst when it gained sentience. Probably some reader might shed light on the real origin story of OARS.&lt;br /&gt;&lt;br /&gt;
+This story is not about the origins of OARs though, it’s about how a close friend found out an SQL injection attack that gave them root access to OARS - I would have loved to take credit, but alas that would be a lie. The said friend had access to the academic records of every student on the campus, and since they were honour bound they never did anything more with it (or did they?).&lt;br /&gt;&lt;br /&gt;
+Professor Sanghi was the Dean of Academic Affairs and obviously knew about the shortcomings of OARS - he was also the professor who eventually slayed the demon of OARS to another demon, which I’ve heard doesn’t give students cold sweats a day before registrations. When we approached him with the potential vulnerability, he responded with absolutely no change in expression - “That means that what I’ve been teaching in computer security has been useful to you lot. Also, having access doesn’t really make much difference, we have paper records and emails are triggered on every change. You’re bound by the honour code, so the best you can do is swoop around but that you could do anyway because some of the data on the network in unencrypted.”&lt;br /&gt;&lt;br /&gt;
+We were dumbfounded, for not only did he sign us to a honour contract at the spot, but also told us that we could have a field day because data on our network was unencrypted. It was akin to giving kids unrestricted access to the candy shop.&lt;br /&gt;&lt;br /&gt;
+This was a defining moment because you have to admit that sometimes plain old paper records are a secure format and all our fancy dandy security might fall short. A professor arm twisted young students to be bound by an imaginary honor contract, and three all we did was use our access to build an API so that students could search OARS in a better manner and get to know the top 10 students in each year.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/write-ups/oars-sql-injections-and-paper-backups/&quot;&gt;OARS, SQL Injections and Paper Backups&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on August 01, 2023.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[The based professors of IIT Kanpur - 2]]></title>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/write-ups/a-professor-can-bunk-as-well/" />
+  <id>//srijanshetty.in/write-ups/a-professor-can-bunk-as-well</id>
+  <published>2023-08-01T20:00:00+05:30</published>
+  <updated>2023-08-01T20:00:00+05:30</updated>
+  <author>
+    <name>Srijan R. Shetty</name>
+    <uri>//srijanshetty.in</uri>
+    <email>srijan.shetty+code@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Professors in Indian Institute of Technology, Kanpur are based and here is another story of such a professor.&lt;br /&gt;&lt;br /&gt;
+IIT Kanpur provides complete autonomy to professors, they can run the classes according to their whims and
+fancies.&lt;br /&gt;&lt;br /&gt;
+The reason we don’t have mandatory attendance is the professors only want interested students, and yet some classes are jam packed.&lt;br /&gt;&lt;br /&gt;
+One such professor was Professor TVP. If you imagine professors being grumpy old men with pot bellies, you’ll be wrong more often than not in college.&lt;br /&gt;&lt;br /&gt;
+Professor TVP sported grey hair, but that’s the only indication of him being aged as his energy in the class was infectious.&lt;br /&gt;&lt;br /&gt;
+It’s was April 1st and while everyone was in the class, no one really wanted to study that day. The day was nice and sunny, and considering it was “April’s Fool’s”, the devil is bound to have some fun.&lt;br /&gt;&lt;br /&gt;
+As soon as the professor entered and and before he could utter a single word, a student stood up deadpan and
+said:&lt;br /&gt;&lt;br /&gt;
+“It’s Aprils Fool’s day today and we should not study.”&lt;br /&gt;&lt;br /&gt;
+A normal professor would shut down such a student - but not Professor TVP. In his zest he said.&lt;br /&gt;&lt;br /&gt;
+“I absolutely agree.”&lt;br /&gt;&lt;br /&gt;
+Silence. The students were in shock and awe.&lt;br /&gt;&lt;br /&gt;
+“The day is nice and sunny, let’s go grab some chai in CC canteen. Treat’s on me.”&lt;br /&gt;&lt;br /&gt;
+And so all 40 students, walked to and gheroed CC canteen grabbing some chai amongst some ridiculously nosy peacocks (story for another time).&lt;br /&gt;&lt;br /&gt;
+Told you, never underestimate the Professors of IIT Kanpur. They can surprise you.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/write-ups/a-professor-can-bunk-as-well/&quot;&gt;The based professors of IIT Kanpur - 2&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on August 01, 2023.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[The based professors of IIT Kanpur - Professor TVP]]></title>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/write-ups/based-professors-of-iitk-professor-tvp/" />
+  <id>//srijanshetty.in/write-ups/based-professors-of-iitk-professor-tvp</id>
+  <published>2023-05-01T20:00:00+05:30</published>
+  <updated>2023-05-01T20:00:00+05:30</updated>
+  <author>
+    <name>Srijan R. Shetty</name>
+    <uri>//srijanshetty.in</uri>
+    <email>srijan.shetty+code@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Professors in Indian Institute of Technology, Kanpur are based and here is another story of such a professor.&lt;br /&gt;&lt;br /&gt;
+IIT Kanpur provides complete autonomy to professors, they can run the classes according to their whims and
+fancies.&lt;br /&gt;&lt;br /&gt;
+The reason we don’t have mandatory attendance is the professors only want interested students, and yet some classes are jam packed.&lt;br /&gt;&lt;br /&gt;
+One such professor was Professor TVP. If you imagine professors being grumpy old men with pot bellies, you’ll be wrong more often than not in college.&lt;br /&gt;&lt;br /&gt;
+Professor TVP sported grey hair, but that’s the only indication of him being aged as his energy in the class was infectious.&lt;br /&gt;&lt;br /&gt;
+It’s was April 1st and while everyone was in the class, no one really wanted to study that day. The day was nice and sunny, and considering it was “April’s Fool’s”, the devil is bound to have some fun.&lt;br /&gt;&lt;br /&gt;
+As soon as the professor entered and and before he could utter a single word, a student stood up deadpan and
+said:&lt;br /&gt;&lt;br /&gt;
+“It’s Aprils Fool’s day today and we should not study.”&lt;br /&gt;&lt;br /&gt;
+A normal professor would shut down such a student - but not Professor TVP. In his zest he said.&lt;br /&gt;&lt;br /&gt;
+“I absolutely agree.”&lt;br /&gt;&lt;br /&gt;
+Silence. The students were in shock and awe.&lt;br /&gt;&lt;br /&gt;
+“The day is nice and sunny, let’s go grab some chai in CC canteen. Treat’s on me.”&lt;br /&gt;&lt;br /&gt;
+And so all 40 students, walked to and gheroed CC canteen grabbing some chai amongst some ridiculously nosy peacocks (story for another time).&lt;br /&gt;&lt;br /&gt;
+Told you, never underestimate the Professors of IIT Kanpur. They can surprise you.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/write-ups/based-professors-of-iitk-professor-tvp/&quot;&gt;The based professors of IIT Kanpur - Professor TVP&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on May 01, 2023.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[The based professors of IIT Kanpur - Professor Biswas]]></title>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/write-ups/based-professors-of-iitk-professor-biswas/" />
+  <id>//srijanshetty.in/write-ups/based-professors-of-iitk-professor-biswas</id>
+  <published>2023-03-01T20:00:00+05:30</published>
+  <updated>2023-03-01T20:00:00+05:30</updated>
+  <author>
+    <name>Srijan R. Shetty</name>
+    <uri>//srijanshetty.in</uri>
+    <email>srijan.shetty+code@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;This wasn’t because we had diligent students who attended all classes, on the contrary Indian Institute of Technology, Kanpur didn’t have a mandatory attendance policy.&lt;br /&gt;&lt;br /&gt;
+And yet, the rumour mill didn’t churn with the news of a ‘mass bunk’, until CSE Y11 did.&lt;br /&gt;&lt;br /&gt;
+It was the last class before spring break of 2013 and Professor Biswas was teaching us ‘Abstract Algebra’ (side note, it’s still abstract for me). Ten minutes before the class, a student decides to pull off a legendary coup - he just needs to convince 10 students.&lt;br /&gt;&lt;br /&gt;
+The first seven students are easy to convince, it’s the last three - the most studious of the lot which take the most time. But he prevails and convinces an entire class to ‘mass bunk’.&lt;br /&gt;&lt;br /&gt;
+What happens in the following days is something unique - silence. No angry emails by the professor, no students asked to visit the professor’s cabin. There isn’t even a minor mention in the corridors of the Motwani building.&lt;br /&gt;&lt;br /&gt;
+Post spring-break as we enter Professor Biswas’s class, there is an air of mystery.&lt;br /&gt;&lt;br /&gt;
+Professor Biswas enters the class in his usual style - a grey mane with Rayban aviators, all he needed was a leather jacket to be in an American movie about a renegade teacher. In a very anti-climactic fashion, he pounces straight to the board and starts teaching Chapter 14.&lt;br /&gt;&lt;br /&gt;
+This is when a general dread kicks in across the classroom - we were on Chapter 9. When a brave students points out this discrepancy to the professor, he casually mentions:&lt;br /&gt;&lt;br /&gt;
+“I finished chapters 9 to 14 in the previous class”.&lt;br /&gt;&lt;br /&gt;
+“Also, I conducted a quiz. Students can collect their answer sheets from my cabin later in the day”&lt;br /&gt;&lt;br /&gt;
+It’s time for the students to remain silent. Shell shocked, Professor Biswas had the last laugh.&lt;br /&gt;&lt;br /&gt;
+We learnt a valuable lesson, you don’t mess with professors, especially the professors at IIT Kanpur.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/write-ups/based-professors-of-iitk-professor-biswas/&quot;&gt;The based professors of IIT Kanpur - Professor Biswas&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on March 01, 2023.&lt;/p&gt;
+  </content>
+</entry>
 
 
 <entry>
@@ -988,176 +1111,6 @@ Theoretically compiling vim from source should be simple:&lt;br /&gt;&lt;/p&gt;
 &lt;p&gt;Hopefully, this helps a forlorn developer searching for the oasis.&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/john-vim-parabellum/&quot;&gt;John Vim - Parabellum&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on June 28, 2019.&lt;/p&gt;
-  </content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Modern Love]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/prose/modern-love/" />
-  <id>//srijanshetty.in/prose/modern-love</id>
-  <published>2018-08-26T17:50:51+05:30</published>
-  <updated>2018-08-26T17:50:51+05:30</updated>
-  <author>
-    <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
-    <email>srijan.shetty+code@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;The problem has always been that we’re presented with such a romanticized version of love stories. The brooding byronic hero’s love is an inescapable force and the damsel/strong women gravitates towards it. It’s a singular love, it’s either make it or break it, their communion was destined and they’re unbreakable; but is it true? Does modern love really resemble what’s been foretold for centuries, and if we’re being honest here, I would like to ask if any love is of this kind?&lt;br /&gt;&lt;br /&gt;
-On the other hand we have the archetypal bad boy, who wins over woman with his enigma or emotional unavailability; another stereotype which manifests in possessive other halves who don’t let the other breathe. Love was never meant to be suffocating - well, not always - it’s interesting that we stand at destiny’s crossroads today, trying to decipher what love is, and more importantly what it should be, for after all it’s the gestalt of the cultural zeitgeist.&lt;br /&gt;&lt;br /&gt;
-I would define love as a little more than friendship, it has the emotional availability of friendship; the zing that it brings along. It’s a little more than friendship considering there’s that physical connect which might or might not be in a friendship. Love and friendship are very much alike, to the extend that I would make the apposite claim that I love all my best friends. (This might invoke the collective groan of a lot of readers who either haven’t loved or who fail to see love to be anything beyond the physical realm).&lt;br /&gt;&lt;br /&gt;
-Love is a synergistic bond, you let each other grow, you let each other fail, you scuffle, you make up, you stay put for each other - like friends do. In fact, friendship is not an exclusive relationship, you can be really close with a few different people; modern times juxtapose love to friendship by invoking the exclusivity clause - which is not fine by me, for it abases love to be merely physical. Love is more than that, love demands no sacrifice, you need not give up your friendships to taste the forbidden fruit.&lt;br /&gt;&lt;br /&gt;
-Modern love is strange, and hopefully we come to see of it more like friendship; and less contractual&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/prose/modern-love/&quot;&gt;Modern Love&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on August 26, 2018.&lt;/p&gt;
-  </content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[How to Train Your Python - 2.7]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/how-to-train-your-python-2-7/" />
-  <id>//srijanshetty.in/technical/how-to-train-your-python-2-7</id>
-  <published>2018-08-17T00:41:54+05:30</published>
-  <updated>2018-08-17T00:41:54+05:30</updated>
-  <author>
-    <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
-    <email>srijan.shetty+code@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;The travails of the noble warriors who’ve tried to walk the path of the dependency hell of python have been immortalized in the travelogues of the internet. From &lt;a href=&quot;https://xkcd.com/1987/&quot;&gt;mosaics&lt;/a&gt; ornamenting the holy shrines of &lt;a href=&quot;https://xkcd.com/1987/&quot;&gt;xkcd&lt;/a&gt;, to gospels written in the blogosphere; we’ve been plagued with tales of valor. And yet, python like the heads of the hydra grows two more if you’ve managed to chop one off.&lt;br /&gt;&lt;br /&gt;
-Our hero, chose the path of pyenv - a recondite cult who claim to have conquered the versions of python. While all was the well in the land of pyenv’s python-2.7.9, until one day when he had to tackle a new villan in town - data visualizations. His best bet was to use jupyter - no, ipython wasn’t enough - and so he embarked on a perilous path. In his first attempt he used the incantation of:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;jupyter&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Things worked well and a kernel appeared to fulfil his commands until asked to plot, when kernel came crashing down.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;ModuleNotFoundError: No module named &lt;span class=&quot;s1&quot;&gt;'_tkinter'&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#_ This comment preserves formatting in vim&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;The helpful folks from the land of stackoverflow suggested a spell to resuscitate the kernel.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip uninstall jupyter numpy pandas matplotlib
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;tk-dev
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;jupyter numpy pandas matplotlib&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;And viola, and darkness took over and python-2.7.9. Scared and lonely in the world of the internet, our hero did the only logical thing.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pyenv uninstall 2.7.9&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;He took over the responsibility of the python world and annihilated it. Sometimes you have to let go of the past. Kill it if you have to. So he did, only to create a new one like the Oracle in Matrix. But this time he was determined, he went through the valleys of medium, the hills of StackOverflow and the plains of GitHub to learn of the one true spell.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pyenv &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;2.7.9
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--upgrade&lt;/span&gt; pip
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip uninstall enum enum34
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;enum34 &lt;span class=&quot;nt&quot;&gt;--upgrade&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;cryptography
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;numpy
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;pandas
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;matplotlib
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;jupyter&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;And in the moment he saw the reflection of the one true UNIX kernel. He had done it, he had vanquished data visualizations and walked the fiery dependency hell of python.&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/how-to-train-your-python-2-7/&quot;&gt;How to Train Your Python - 2.7&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on August 17, 2018.&lt;/p&gt;
-  </content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Travelogue - Russia, 2018]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/travelogue/travelogue-russia-2018/" />
-  <id>//srijanshetty.in/travelogue/travelogue-russia-2018</id>
-  <published>2018-08-12T20:39:01+05:30</published>
-  <updated>2018-08-12T20:39:01+05:30</updated>
-  <author>
-    <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
-    <email>srijan.shetty+code@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;Goodbyes are hard, and seldom perfect, especially when humdrum lives that lay ahead sink in. Standing at the prow of the cruise basking in the millions lights of Moscow, I felt debilitated by reality - these ten days were whimsical, yet I felt it slipping away and the harder I tried to capture it, the faster it slipped. In our foolhardy attempts to capture the moment, we’ve forgotten how to live them. Not everything needs the testimony of a photograph, not every memory needs to be validation of your fraternity. Some moments are inexorably lived then and there and left to the agency of the human mind. And so I let myself go, emboldened by the wine, I let the warmth of my friends sink in to the bittersweet symphony of endings.&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/travelogue/travelogue-russia-2018/&quot;&gt;Travelogue - Russia, 2018&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on August 12, 2018.&lt;/p&gt;
-  </content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Call (Me) by (Your) Name: Python Is Pass by What Again?]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/call-me-by-your-name-python-is-pass-by-what-again/" />
-  <id>//srijanshetty.in/technical/call-me-by-your-name-python-is-pass-by-what-again</id>
-  <updated>2018-06-05 10:14:37 +0530T00:00:00-00:00</updated>
-  <published>2018-06-05T10:14:37+05:30</published>
-  
-  <author>
-    <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
-    <email>srijan.shetty+code@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;Full disclosure, I haven’t read the book or watched the film, but the name (pun intended)
-gets across the point I want to make about python &lt;strong&gt;names&lt;/strong&gt;. (Note how I use the term &lt;strong&gt;names&lt;/strong&gt;
-and not &lt;strong&gt;variables&lt;/strong&gt; or &lt;strong&gt;references&lt;/strong&gt;, which will strike a chord in a few minutes).&lt;br /&gt;&lt;br /&gt;
-On the C side of things, you have &lt;em&gt;call-by-value&lt;/em&gt;, and on the Java/ECMAScript side of the world,
-you have &lt;em&gt;call-by-reference&lt;/em&gt;. But python, is sly, and while on the surface you’ll think python is
-&lt;em&gt;call-by-reference&lt;/em&gt;, it’s a different barnacled monstrosity. Python is what you might call,
-&lt;em&gt;&lt;a href=&quot;https://jeffknupp.com/blog/2012/11/13/is-python-callbyvalue-or-callbyreference-neither/&quot;&gt;call-by-name&lt;/a&gt;&lt;/em&gt;.&lt;br /&gt;&lt;br /&gt;
-Here’s an innocuous piece of code, which for some inexplicable reason doesn’t produce the expected
-output:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;mutate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;ls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;mutate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Despite the code being synthetic, it underscores an important point. In this particular example,
-the output on the console is &lt;strong&gt;[1,2]&lt;/strong&gt; and not &lt;strong&gt;[1]&lt;/strong&gt;. How on earth is that possible, you ask?
-Well, the answer to this mystery lies in the fact that python is &lt;em&gt;call-by-name.&lt;/em&gt;&lt;br /&gt;&lt;br /&gt;
-In the &lt;em&gt;call-by-name&lt;/em&gt; model, a name (or a variable in common parlance) is bound to an object. In the &lt;em&gt;main&lt;/em&gt;,
-&lt;strong&gt;arr&lt;/strong&gt; is bound to the object &lt;strong&gt;[1,2]&lt;/strong&gt;. Initially in mutate, &lt;strong&gt;ls&lt;/strong&gt; is bound to the same object &lt;strong&gt;[1,2]&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;note, how we say bound to an object and not a reference to a memory location, unlike C/Java/ECMAscript&lt;/li&gt;
-  &lt;li&gt;but, on the very first line of &lt;em&gt;mutate&lt;/em&gt;, we bind ls to a new object &lt;strong&gt;[]&lt;/strong&gt;, and hence forth the binding
-of &lt;strong&gt;[1,2]&lt;/strong&gt; is hidden from &lt;em&gt;mutate&lt;/em&gt;. Any changes to &lt;strong&gt;ls&lt;/strong&gt; will not be reflected back to &lt;strong&gt;arr&lt;/strong&gt; as they are bound
-to different objects.&lt;br /&gt;&lt;br /&gt;
-While this might seem pedantic, and left to language purists. This erudite fact can manifest in hard to
-find bugs. For example, the following code has a surprising output:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;mutate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;ls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;ls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;mutate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;mutate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;The output of this code is as follows:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python test.py
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;1, 2, 3, 4, 2, 6]
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;1, 2, 3, 4, 2, 6]&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;The second conditional becomes a no-op as &lt;strong&gt;arr&lt;/strong&gt; won’t be mutated once it’s length is greater than 5. Ipso facto,
-&lt;em&gt;call-by-name&lt;/em&gt; is evident right now, but in longer methods its to discern and impossible to debug.&lt;br /&gt;&lt;br /&gt;
-So, next time recall that python does call (me) by (your) name.&lt;/p&gt;
-
-
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/call-me-by-your-name-python-is-pass-by-what-again/&quot;&gt;Call (Me) by (Your) Name: Python Is Pass by What Again?&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on June 05, 2018.&lt;/p&gt;
   </content>
 </entry>
 
