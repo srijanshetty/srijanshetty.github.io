@@ -5,36 +5,36 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Travelogue - Nepal &#8211; Srijan R. Shetty</title>
-<meta name="description" content="Leap of faith">
-<meta name="keywords" content="travelogue, nepal, the last resort, bungy nepal">
+<title>Unit Testing Typescript in under 10 seconds &#8211; Srijan R. Shetty</title>
+<meta name="description" content="Using swc to test a 120k LOC in under 10s">
+<meta name="keywords" content="technical, testing, unit, coverage, jest, javascript, ecmascript, swc">
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Travelogue - Nepal">
-<meta name="twitter:description" content="Leap of faith">
+<meta name="twitter:title" content="Unit Testing Typescript in under 10 seconds">
+<meta name="twitter:description" content="Using swc to test a 120k LOC in under 10s">
 <meta name="twitter:site" content="@srijanshetty">
 <meta name="twitter:creator" content="@srijanshetty">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="//srijanshetty.in/images/bungee-06-03-2015.jpg">
+<meta name="twitter:image" content="//srijanshetty.in/images/fast_ts_testing.png">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Travelogue - Nepal">
-<meta property="og:description" content="Leap of faith">
-<meta property="og:url" content="//srijanshetty.in/travelogue/travelogue-nepal/">
+<meta property="og:title" content="Unit Testing Typescript in under 10 seconds">
+<meta property="og:description" content="Using swc to test a 120k LOC in under 10s">
+<meta property="og:url" content="//srijanshetty.in/technical/unit-test/">
 <meta property="og:site_name" content="Srijan R. Shetty">
 
-<meta property="og:image" content="//srijanshetty.in/images/bungee-06-03-2015.jpg">
+<meta property="og:image" content="//srijanshetty.in/images/fast_ts_testing.png">
 
 
 
 
 
 
-<link rel="canonical" href="//srijanshetty.in/travelogue/travelogue-nepal/">
+<link rel="canonical" href="//srijanshetty.in/technical/unit-test/">
 <link href="//srijanshetty.in/feed.xml" type="application/atom+xml" rel="alternate" title="Srijan R. Shetty Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -110,9 +110,9 @@
   <div class="image-wrap">
   <img src=
     
-      "//srijanshetty.in/images/bungee-06-03-2015.jpg"
+      "//srijanshetty.in/images/fast_ts_testing.png"
     
-  alt="Travelogue - Nepal feature image">
+  alt="Unit Testing Typescript in under 10 seconds feature image">
   
   </div><!-- /.image-wrap -->
 
@@ -156,25 +156,37 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="//srijanshetty.in/travelogue/travelogue-nepal/" rel="bookmark" title="Travelogue - Nepal">Travelogue - Nepal</a></h1>
+        <h1><a href="//srijanshetty.in/technical/unit-test/" rel="bookmark" title="Unit Testing Typescript in under 10 seconds">Unit Testing Typescript in under 10 seconds</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>As fear crippled my thoughts,<br />
-I could see an impending doom.<br />
-Not the valley that lay ahead,<br />
-An irrational fear did consume.<br /><br />
-As the ledge came to an end,<br />
-My heart swelled with hope,<br />
-Of living a brighter tomorrow,<br />
-Not constrained by this rope.<br /><br />
-So, I took the leap of faith,<br />
-To my friends echoing my name.<br />
-And in those few seconds I knew,<br />
-Life would never be the same.<br /></p>
+      <blockquote>
+  <p>I test in production.</p>
+</blockquote>
 
-<iframe width="854" height="510" src="https://www.youtube.com/embed/niShO0BIA6Q" frameborder="0" allowfullscreen=""></iframe>
+<p>The last thing any programmer wants to do is write tests. And I get it, I’ve been there. Writing tests can be boring. And I’m not going to give you a long lecture about why you should write tests, I’m just going to show what we’ve done at Fuze over the course of the next 2-3 posts.<br /><br />
+This particular post is about the fundamental unit of testing - Unit Testing.<br /><br />
+To lay the foundation, our goal is to have greater than 99% test coverage for statements, branches, function and
+lines.<br /><br />
+The headline numbers at Fuze for Unit Testing right now are:</p>
+<ul>
+  <li>Functions, Lines - 100%</li>
+  <li>Statements - 99.4%</li>
+  <li>Branches - 99.51%</li>
+</ul>
 
+<p>This is for a non-trivial codebase of 120k LOC and over 1200 tests.<br /><br />
+The big question is not why, it’s how and the answer at Fuze has been twofold:<br /><br />
+Firstly, we have a complex system that has many moving parts, so everyone realizes the importance of testing and we’ve built a top-down ‘testing’ culture.<br /><br />
+Secondly, we make testing fun.</p>
+<ul>
+  <li>Our tests run under the target goal of <code class="highlighter-rouge">15s</code>, and at more than 1200 test cases, this is possible because we use <code class="highlighter-rouge">swc</code> which uses <code class="highlighter-rouge">Rust</code> to speed up the tests.</li>
+  <li>We heavily rely on automations - GitHub Actions to run the tests. While we could have configured pre-commit hooks to run them we decided against it because it slows down development cycles.</li>
+</ul>
+
+<p>In the new few posts I’ll talk about API testing, Integration tests, Stress Testing and Vulnerability
+management.<br /><br />
+Do let me know if you liked the above post in the comments below.<br /><br /></p>
 
       <hr />
       <footer role="contentinfo">
@@ -182,17 +194,17 @@ Life would never be the same.<br /></p>
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/travelogue/travelogue-nepal/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/technical/unit-test/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/travelogue/travelogue-nepal/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/technical/unit-test/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=//srijanshetty.in/travelogue/travelogue-nepal/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=//srijanshetty.in/technical/unit-test/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>Travelogue - Nepal</strong> was published on <time datetime="2015-03-26T12:06:15+05:30">March 26, 2015</time> and last modified on <time datetime="2015-03-26">March 26, 2015</time>.</p>
+        <p class="byline"><strong>Unit Testing Typescript in under 10 seconds</strong> was published on <time datetime="2023-09-01T10:00:00+05:30">September 01, 2023</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -207,11 +219,11 @@ Life would never be the same.<br /></p>
   <h4>You might also enjoy <small class="pull-right">(<a href="//srijanshetty.in/posts/">View all posts</a>)</small></h4>
     <ul>
     
-      <li><a href="//srijanshetty.in/technical/unit-test/" title="Unit Testing Typescript in under 10 seconds">Unit Testing Typescript in under 10 seconds</a></li>
-    
       <li><a href="//srijanshetty.in/write-ups/oars-sql-injections-and-paper-backups/" title="OARS, SQL Injections and Paper Backups">OARS, SQL Injections and Paper Backups</a></li>
     
       <li><a href="//srijanshetty.in/write-ups/based-professors-of-iitk-professor-tvp/" title="The based professors of IIT Kanpur - Professor TVP">The based professors of IIT Kanpur - Professor TVP</a></li>
+    
+      <li><a href="//srijanshetty.in/write-ups/based-professors-of-iitk-professor-biswas/" title="The based professors of IIT Kanpur - Professor Biswas">The based professors of IIT Kanpur - Professor Biswas</a></li>
     
     </ul>
     <hr />
