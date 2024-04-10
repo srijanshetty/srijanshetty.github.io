@@ -5,14 +5,14 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Time Travelling With Vim &#8211; Srijan R. Shetty</title>
-<meta name="description" content="Using vim to time travel">
-<meta name="keywords" content="technical, vim-tips, tips, vim">
+<title>Setting up AWS Peering Connections for Wazuh and ECS &#8211; Srijan R. Shetty</title>
+<meta name="description" content="How to setup AWS Peering Connections for Wazuh and ECS in a secure manner">
+<meta name="keywords" content="technical, security, open source, wazuh, aws, ecs, peering, vpc, routing, tables">
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Time Travelling With Vim">
-<meta name="twitter:description" content="Using vim to time travel">
+<meta name="twitter:title" content="Setting up AWS Peering Connections for Wazuh and ECS">
+<meta name="twitter:description" content="How to setup AWS Peering Connections for Wazuh and ECS in a secure manner">
 <meta name="twitter:site" content="@srijanshetty">
 <meta name="twitter:creator" content="@srijanshetty">
 
@@ -22,9 +22,9 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Time Travelling With Vim">
-<meta property="og:description" content="Using vim to time travel">
-<meta property="og:url" content="//srijanshetty.in/technical/time-travelling-with-vim/">
+<meta property="og:title" content="Setting up AWS Peering Connections for Wazuh and ECS">
+<meta property="og:description" content="How to setup AWS Peering Connections for Wazuh and ECS in a secure manner">
+<meta property="og:url" content="//srijanshetty.in/technical/aws-peering-connections/">
 <meta property="og:site_name" content="Srijan R. Shetty">
 
 <meta property="og:image" content="//srijanshetty.in/images/default-thumb.png">
@@ -34,7 +34,7 @@
 
 
 
-<link rel="canonical" href="//srijanshetty.in/technical/time-travelling-with-vim/">
+<link rel="canonical" href="//srijanshetty.in/technical/aws-peering-connections/">
 <link href="//srijanshetty.in/feed.xml" type="application/atom+xml" rel="alternate" title="Srijan R. Shetty Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -147,29 +147,41 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="//srijanshetty.in/technical/time-travelling-with-vim/" rel="bookmark" title="Time Travelling With Vim">Time Travelling With Vim</a></h1>
+        <h1><a href="//srijanshetty.in/technical/aws-peering-connections/" rel="bookmark" title="Setting up AWS Peering Connections for Wazuh and ECS">Setting up AWS Peering Connections for Wazuh and ECS</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>I usually work on many projects at a time and as a consequence, I tend to open many files. Having all
-of my data backed in a VCS saves me the hassle of losing any committed data, but it’s always possible to
-shoot yourself in the foot by messing up the work tree; and this is where the editor of my choice -
-the mighty and glorious - vim comes to the rescue. A little know fact - vim is a superhero - and
-one of vim’s superpowers is time travel - and not just any time travel - time travel on steroids.<br /><br />
-Other folks may call it persistent undo, but there’s no fooling us! But being the humble superhero that vim
-is, you need to tell vim to use time travel.<br /><br /></p>
+      <p>As I’ve written before Fuze is a security company as much as it is a finance and technology company. In addition to having a strong testing culture at Fuze, we also have a strong security culture by including security in the SLDC supply chain.<br /><br /></p>
 
-<p>First create an undodir for vim.</p>
+<figure>
+	<img src="/images/aws_ecs.png" />
+	<figcaption>AWS ECS</figcaption>
+</figure>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">mkdir</span> <span class="nt">-p</span> ~/.vim/undodir</code></pre></figure>
+<p>At Fuze, we used AWS ECS to deploy our production infrastructure and CI/CD is run through GitHub Actions. The only difference between our development and production infrastructure is that for simplicity we run development on EC2 with TailScale to enforce strong ACL. No one has access to production without a break glass procedure. (We have two separate accounts for production and development to enforece strict security)</p>
 
-<p>Next you need to enable persistent undo by including the following lines in your vimrc:</p>
+<figure>
+	<img src="/images/wazuh.png" />
+	<figcaption>Wazuh</figcaption>
+</figure>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">set </span>undofile
-<span class="nb">set </span><span class="nv">undodir</span><span class="o">=</span>~/.vim/undodir</code></pre></figure>
+<p>Another core pillar of our infrastructure is self host as much as possible. We recently started using Wazuh as our open source SIEM, but it wasn’t without challenges. Because Wazuh is hosted in a different VPC than our production hosts, they cannot communicate directly. With our development infrastructure this is easily mitigated by using TailScale connections but we have ensured that production is completely isolated for now. The easy solution is to run TailScale and get done with it, but for some reason Tailscale breaks code deploys to ECS with GitHub actions. (This is something that I intend to explore in the coming few months but after extensive tests, we were able to establish that the root cause is TailScale).<br /><br />
+One option would have been to use agent less monitoring on Wazuh but we did not want to use SSH private keys or passwords for connections because they are inherently security unless combined with key rotation and we prefer not to dabble with key rotation.<br /><br />
+In light of the above, and after a week or two of head scratching, I was finally able to come up with a solution of this conundrum - AWS Peering Connections.</p>
 
-<p>And now even if you go on an editing rampage, vim will save the day. The next time, I shall introduce you
-to vim’s other superpower - the ability to use the multi-verse.</p>
+<figure>
+	<img src="/images/vpc_peering.png" />
+	<figcaption>AWS VPC Perring connections</figcaption>
+</figure>
+
+<p>We decided to setup a peering connection from the prod vpc to the wazuh vpc. This looked straightforward in theory but didn’t work because every documentation missed one vital step. Adding routing tables which missing in both the documentation of Wazuh and peering connection.</p>
+
+<figure>
+	<img src="/images/route_tables.png" />
+	<figcaption>AWS VPC route tables</figcaption>
+</figure>
+
+<p>After setting up the route table, our Wazuh server was successfully able to connect with the production instances and vice versa. This enabled the instances to send all telemetry and information about any security event that happened on the hosts.</p>
 
       <hr />
       <footer role="contentinfo">
@@ -177,17 +189,17 @@ to vim’s other superpower - the ability to use the multi-verse.</p>
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/technical/time-travelling-with-vim/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/technical/aws-peering-connections/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/technical/time-travelling-with-vim/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/technical/aws-peering-connections/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=//srijanshetty.in/technical/time-travelling-with-vim/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=//srijanshetty.in/technical/aws-peering-connections/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>Time Travelling With Vim</strong> was published on <time datetime="2015-05-30T10:36:18+04:00">May 30, 2015</time>.</p>
+        <p class="byline"><strong>Setting up AWS Peering Connections for Wazuh and ECS</strong> was published on <time datetime="2024-02-10T18:30:00+04:00">February 10, 2024</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -204,9 +216,9 @@ to vim’s other superpower - the ability to use the multi-verse.</p>
     
       <li><a href="//srijanshetty.in/technical/custom-port-websockets-alb/" title="Heath Checks on a Custom Port for Websockets with ALB">Heath Checks on a Custom Port for Websockets with ALB</a></li>
     
-      <li><a href="//srijanshetty.in/technical/aws-peering-connections/" title="Setting up AWS Peering Connections for Wazuh and ECS">Setting up AWS Peering Connections for Wazuh and ECS</a></li>
-    
       <li><a href="//srijanshetty.in/technical/unit-test/" title="Unit Testing Typescript in under 10 seconds">Unit Testing Typescript in under 10 seconds</a></li>
+    
+      <li><a href="//srijanshetty.in/write-ups/oars-sql-injections-and-paper-backups/" title="OARS, SQL Injections and Paper Backups">OARS, SQL Injections and Paper Backups</a></li>
     
     </ul>
     <hr />
