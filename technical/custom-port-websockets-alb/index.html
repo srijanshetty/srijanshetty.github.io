@@ -5,14 +5,14 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Afflatus Begins &#8211; Srijan R. Shetty</title>
-<meta name="description" content="The story of how it begins">
-<meta name="keywords" content="linux, python, os, java, bash, prose, poem, js, javascript">
+<title>Heath Checks on a Custom Port for Websockets with ALB &#8211; Srijan R. Shetty</title>
+<meta name="description" content="How to setup health checks on a custom port for websockets with Application Load Balancer">
+<meta name="keywords" content="technical, aws, alb, websockets, health, checks, http, tcp, custom, port">
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Afflatus Begins">
-<meta name="twitter:description" content="The story of how it begins">
+<meta name="twitter:title" content="Heath Checks on a Custom Port for Websockets with ALB">
+<meta name="twitter:description" content="How to setup health checks on a custom port for websockets with Application Load Balancer">
 <meta name="twitter:site" content="@srijanshetty">
 <meta name="twitter:creator" content="@srijanshetty">
 
@@ -22,9 +22,9 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Afflatus Begins">
-<meta property="og:description" content="The story of how it begins">
-<meta property="og:url" content="http://localhost:4000/prose/afflatus-begins/">
+<meta property="og:title" content="Heath Checks on a Custom Port for Websockets with ALB">
+<meta property="og:description" content="How to setup health checks on a custom port for websockets with Application Load Balancer">
+<meta property="og:url" content="http://localhost:4000/technical/custom-port-websockets-alb/">
 <meta property="og:site_name" content="Srijan R. Shetty">
 
 <meta property="og:image" content="http://localhost:4000/images/default-thumb.png">
@@ -34,7 +34,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/prose/afflatus-begins/">
+<link rel="canonical" href="http://localhost:4000/technical/custom-port-websockets-alb/">
 <link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Srijan R. Shetty Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -147,18 +147,42 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="http://localhost:4000/prose/afflatus-begins/" rel="bookmark" title="Afflatus Begins">Afflatus Begins</a></h1>
+        <h1><a href="http://localhost:4000/technical/custom-port-websockets-alb/" rel="bookmark" title="Heath Checks on a Custom Port for Websockets with ALB">Heath Checks on a Custom Port for Websockets with ALB</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>I would be lying to you if I told you that this is the first time I’ve tried to pen down this particular post. The idea of this blog post has existed for quite some time; but each half baked attempt has ended up in the bottomless pit of my unpublished ramblings.</p>
+      <p>This blog has been written because there wasn’t any good comprehensive guide to run a websocket server using AWS Load Balancer where the health check runs on a different port.<br /><br />
+In theory (and practice) you can run health checks on the same port as your web socket server, but unfortunately ALB does not support native WS communications. In fact all communications are using HTTP 1.1 with your Origin Server.<br /><br />
+The websocket server at Fuze is a single binary which runs an express server for health checks. (There is an argument to be made that it isn’t a true health check but we digress).<br /><br />
+This setup worked well for bare metal EC2 instances which we use in development, but our production servers which use ECS didn’t play along. We had two choices:</p>
+<ul>
+  <li>Change the code to run the health check on the same port as the web socket server. Which would be complicated as we would have to handle two different protocols on the same port and would require code changes.</li>
+  <li>Figure out if ALB can be persuaded to perform health checks on a different port. Which from a cursory check felt not possible.</li>
+</ul>
 
-<p>Alas, life is transitory and I’ve decided that I no longer will seek absolution in my words. That hope is forlorn.</p>
+<p>We chose the former because <code class="highlighter-rouge">Programmer Time is Expensive</code>.<br /><br />
+As mentioned above, most guides explicitly mentioned that this isn’t possible. But while experimenting, we found an escape hatch.</p>
 
-<p>The modus operandi of this blog will be simple. At times, I intend to present coherent arguments for both sides of a debate; but mostly, it’ll be excerpts and ramblings from a mind addled by a quarter life crisis. Or it’ll be a technical post, to keep all things balanced.</p>
+<figure>
+	<img src="/images/post-ws-stackexchange-question.png" />
+	<figcaption>Stack Exchange isn't of much help in this case</figcaption>
+</figure>
 
-<p>So, let’s hope that the afflatus stays for long. If not, the depression of social media would be my only recourse.</p>
+<p>For the uninitiated, the first step in attaching an origin server to ALB requires setting up <code class="highlighter-rouge">Target Group</code> with the port of the server.</p>
 
+<figure>
+	<img src="/images/post-aws-target-group.png" />
+	<figcaption>Setting up a target group in AWS</figcaption>
+</figure>
+
+<p>In the next step, where we setup the Health Check, we saw an undocumented feature of overriding the Health Check Port.</p>
+
+<figure>
+	<img src="/images/post-aws-health-check.png" />
+	<figcaption>Override the health check port to the port of the express server</figcaption>
+</figure>
+
+<p>And viola, we’re all done.</p>
 
       <hr />
       <footer role="contentinfo">
@@ -166,17 +190,17 @@
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/prose/afflatus-begins/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/technical/custom-port-websockets-alb/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/prose/afflatus-begins/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/technical/custom-port-websockets-alb/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=http://localhost:4000/prose/afflatus-begins/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/technical/custom-port-websockets-alb/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>Afflatus Begins</strong> was published on <time datetime="2018-05-07T09:28:38+04:00">May 07, 2018</time> and last modified on <time datetime="2018-05-07">May 07, 2018</time>.</p>
+        <p class="byline"><strong>Heath Checks on a Custom Port for Websockets with ALB</strong> was published on <time datetime="2024-04-09T18:23:00+04:00">April 09, 2024</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -191,11 +215,11 @@
   <h4>You might also enjoy <small class="pull-right">(<a href="http://localhost:4000/posts/">View all posts</a>)</small></h4>
     <ul>
     
-      <li><a href="http://localhost:4000/technical/custom-port-websockets-alb/" title="Heath Checks on a Custom Port for Websockets with ALB">Heath Checks on a Custom Port for Websockets with ALB</a></li>
-    
       <li><a href="http://localhost:4000/technical/unit-test/" title="Unit Testing Typescript in under 10 seconds">Unit Testing Typescript in under 10 seconds</a></li>
     
       <li><a href="http://localhost:4000/write-ups/oars-sql-injections-and-paper-backups/" title="OARS, SQL Injections and Paper Backups">OARS, SQL Injections and Paper Backups</a></li>
+    
+      <li><a href="http://localhost:4000/write-ups/based-professors-of-iitk-professor-tvp/" title="The based professors of IIT Kanpur - Professor TVP">The based professors of IIT Kanpur - Professor TVP</a></li>
     
     </ul>
     <hr />
