@@ -5,14 +5,14 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Linux: Pause and Resume Processes &#8211; Srijan R. Shetty</title>
-<meta name="description" content="Pause any running linux process and resume it later">
-<meta name="keywords" content="linux, process, management, pause, resume">
+<title>The missing guide to TailScale subnet routing in AWS &#8211; Srijan R. Shetty</title>
+<meta name="description" content="a few things that the official reference misses">
+<meta name="keywords" content="technical, security, open source, aws, zero trust network, tailscale, mesh vpn, wireguard, routing">
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Linux: Pause and Resume Processes">
-<meta name="twitter:description" content="Pause any running linux process and resume it later">
+<meta name="twitter:title" content="The missing guide to TailScale subnet routing in AWS">
+<meta name="twitter:description" content="a few things that the official reference misses">
 <meta name="twitter:site" content="@srijanshetty">
 <meta name="twitter:creator" content="@srijanshetty">
 
@@ -22,9 +22,9 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux: Pause and Resume Processes">
-<meta property="og:description" content="Pause any running linux process and resume it later">
-<meta property="og:url" content="//srijanshetty.in/hacks/linux-pause-and-resume-processes/">
+<meta property="og:title" content="The missing guide to TailScale subnet routing in AWS">
+<meta property="og:description" content="a few things that the official reference misses">
+<meta property="og:url" content="//srijanshetty.in/technical/tailscale-subnet-router/">
 <meta property="og:site_name" content="Srijan R. Shetty">
 
 <meta property="og:image" content="//srijanshetty.in/images/default-thumb.png">
@@ -34,7 +34,7 @@
 
 
 
-<link rel="canonical" href="//srijanshetty.in/hacks/linux-pause-and-resume-processes/">
+<link rel="canonical" href="//srijanshetty.in/technical/tailscale-subnet-router/">
 <link href="//srijanshetty.in/feed.xml" type="application/atom+xml" rel="alternate" title="Srijan R. Shetty Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -147,22 +147,60 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="//srijanshetty.in/hacks/linux-pause-and-resume-processes/" rel="bookmark" title="Linux: Pause and Resume Processes">Linux: Pause and Resume Processes</a></h1>
+        <h1><a href="//srijanshetty.in/technical/tailscale-subnet-router/" rel="bookmark" title="The missing guide to TailScale subnet routing in AWS">The missing guide to TailScale subnet routing in AWS</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>The last few days have been pretty hectic with two major assignment deadlines. And like every wild goose hunt fuelled by caffeine, they’ve enriched my repertoire.<br /><br />
-The <strong>R Tree</strong> assignment for <em>CS618: Searching and Indexing in Databases</em> involved the insertion of a million data points which took about <strong>forty minutes</strong> to run to completion. The program was midway through when I realized that I needed some precious CPU time for my other assignment: <strong>fitting a mixture of Gaussian</strong> to a data-set for <em>CS771: Machine Learning Tools and Techniques</em>.<br /><br />
-I’ve always maintained the racial superiority of my Dell XPS 15 but I knew better than run both these programs simultaneously. With less than three hours to D-Day, I couldn’t afford terminating the <strong>R Tree</strong> program; it was then by divine providence that I chanced upon the idea of somehow pausing the <strong>R Tree</strong> program. And guess what, as it turns out, Linux has just the solution.<br /><br />
-The Linux scheduler allows to pause any running program and resume it at a later time; and the way to achieve the same is dead simple. To pause a process, run the following command:</p>
+      <p>I’m a big fan of TailScale, and we extensively use it at <a href="https://fuze.finance">Fuze</a> as well.<br /><br />
+While most of the guides of TailScale are straightforward, I’ve found the section on subnet routers a bit obtuse or incomplete for the lack of a better word.<br /><br />
+So here’s my guide on how to setup a subnet router which will allow you to access private IPs on an AWS subnet (or any subnet) directly from TailScale.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">kill</span> <span class="nt">-STOP</span> &lt;pid&gt;</code></pre></figure>
+<ul>
+  <li>You need to setup a jumpbox, this box has tailscale installed. Let’s give it a SG called <code class="highlighter-rouge">tailscale-subnet-router</code>.</li>
+  <li>Ensure that the jumpbox has the ‘Source and Destination’ checks disabled</li>
+</ul>
 
-<p>And at any later stage, one can resume the stopped program by issuing the following command:</p>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">-</span> <span class="nx">In</span> <span class="nx">the</span> <span class="nx">Instances</span> <span class="nx">panel</span> <span class="k">of</span> <span class="nx">the</span> <span class="nx">Amazon</span> <span class="nx">EC2</span> <span class="nx">console</span> <span class="nx">find</span> <span class="nx">and</span> <span class="nx">select</span> <span class="nx">the</span> <span class="nx">EC2</span> <span class="nx">instance</span> <span class="nx">you</span> <span class="nx">just</span> <span class="nx">created</span><span class="p">.</span>
+<span class="o">-</span> <span class="nx">Choose</span> <span class="nx">Actions</span><span class="p">,</span> <span class="nx">Networking</span><span class="p">,</span> <span class="nx">Change</span> <span class="nx">source</span><span class="o">/</span><span class="nx">destination</span> <span class="nx">check</span><span class="p">.</span>
+<span class="o">-</span> <span class="nx">For</span> <span class="nx">Source</span><span class="o">/</span><span class="nx">destination</span> <span class="nx">checking</span><span class="p">,</span> <span class="nx">select</span> <span class="nx">Stop</span><span class="p">.</span>
+<span class="o">-</span> <span class="nx">Choose</span> <span class="nx">Save</span><span class="p">.</span> 
+</code></pre></div></div>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">kill</span> <span class="nt">-CONT</span> &lt;pid&gt;</code></pre></figure>
+<ul>
+  <li>Ensure that hosts you want to connect to have a SG which accepts <code class="highlighter-rouge">Inbound Connections</code> from <code class="highlighter-rouge">tailscale-subnet-router</code>.</li>
+  <li>Now we add the configuration in our TailScale ACL policy, to allow a group <code class="highlighter-rouge">devops</code> to access it</li>
+</ul>
 
-<p>And with that I was able to pause the <strong>R Tree</strong> program and save the universe from destruction (Not really, but I did manage to save my grades from destruction)<br /><br /></p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"ipsets"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+       </span><span class="nl">"ipset:subnet"</span><span class="p">:</span><span class="w">  </span><span class="p">[</span><span class="s2">"111.10.0.0/16"</span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"grants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"group:devops"</span><span class="p">],</span><span class="w">
+         </span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"ipset:subnet"</span><span class="w">
+         </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">   
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<ul>
+  <li>As a final step, we need to allow our current host accept routes published by the subnet router</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tailscale up <span class="nt">--accept-routes</span>
+</code></pre></div></div>
+
+<p>These steps should do the trick and you should be able to connect to subnet from your local machine now.</p>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li><a href="https://tailscale.com/kb/1019/subnets">Tailscale Subnet Router</a></li>
+  <li><a href="https://tailscale.com/kb/1021/install-aws#technical-requirements">Tailscale Subnet Router Technical Requirements</a></li>
+</ul>
 
       <hr />
       <footer role="contentinfo">
@@ -170,17 +208,17 @@ The Linux scheduler allows to pause any running program and resume it at a later
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/hacks/linux-pause-and-resume-processes/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/technical/tailscale-subnet-router/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/hacks/linux-pause-and-resume-processes/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/technical/tailscale-subnet-router/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=//srijanshetty.in/hacks/linux-pause-and-resume-processes/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=//srijanshetty.in/technical/tailscale-subnet-router/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>Linux: Pause and Resume Processes</strong> was published on <time datetime="2015-03-13T01:29:33+04:00">March 13, 2015</time>.</p>
+        <p class="byline"><strong>The missing guide to TailScale subnet routing in AWS</strong> was published on <time datetime="2024-09-24T08:30:00+04:00">September 24, 2024</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -195,11 +233,11 @@ The Linux scheduler allows to pause any running program and resume it at a later
   <h4>You might also enjoy <small class="pull-right">(<a href="//srijanshetty.in/posts/">View all posts</a>)</small></h4>
     <ul>
     
-      <li><a href="//srijanshetty.in/technical/tailscale-subnet-router/" title="The missing guide to TailScale subnet routing in AWS">The missing guide to TailScale subnet routing in AWS</a></li>
-    
       <li><a href="//srijanshetty.in/technical/custom-port-websockets-alb/" title="Heath Checks on a Custom Port for Websockets with ALB">Heath Checks on a Custom Port for Websockets with ALB</a></li>
     
       <li><a href="//srijanshetty.in/technical/aws-peering-connections/" title="Setting up AWS Peering Connections for Wazuh and ECS">Setting up AWS Peering Connections for Wazuh and ECS</a></li>
+    
+      <li><a href="//srijanshetty.in/technical/unit-test/" title="Unit Testing Typescript in under 10 seconds">Unit Testing Typescript in under 10 seconds</a></li>
     
     </ul>
     <hr />
