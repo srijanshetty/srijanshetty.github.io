@@ -5,36 +5,36 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Unit Testing Typescript in under 10 seconds &#8211; Srijan R. Shetty</title>
-<meta name="description" content="Using swc to test a 120k LOC in under 10s">
-<meta name="keywords" content="technical, testing, unit, coverage, jest, javascript, ecmascript, swc">
+<title>Japan &#8211; Srijan R. Shetty</title>
+<meta name="description" content="Japan is everything you hope it to be and more; it's one of the few places you experience a real culture shock because it is unlike any other place in the planet.">
+<meta name="keywords" content="travel, food, culture, money, japan, asia">
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Unit Testing Typescript in under 10 seconds">
-<meta name="twitter:description" content="Using swc to test a 120k LOC in under 10s">
+<meta name="twitter:title" content="Japan">
+<meta name="twitter:description" content="Japan is everything you hope it to be and more; it's one of the few places you experience a real culture shock because it is unlike any other place in the planet.">
 <meta name="twitter:site" content="@srijanshetty">
 <meta name="twitter:creator" content="@srijanshetty">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="//srijanshetty.in/images/fast_ts_testing.png">
+<meta name="twitter:image" content="//srijanshetty.in/images/japan_cover.jpeg">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Unit Testing Typescript in under 10 seconds">
-<meta property="og:description" content="Using swc to test a 120k LOC in under 10s">
-<meta property="og:url" content="//srijanshetty.in/technical/unit-test/">
+<meta property="og:title" content="Japan">
+<meta property="og:description" content="Japan is everything you hope it to be and more; it's one of the few places you experience a real culture shock because it is unlike any other place in the planet.">
+<meta property="og:url" content="//srijanshetty.in/travel/japan/">
 <meta property="og:site_name" content="Srijan R. Shetty">
 
-<meta property="og:image" content="//srijanshetty.in/images/fast_ts_testing.png">
+<meta property="og:image" content="//srijanshetty.in/images/japan_cover.jpeg">
 
 
 
 
 
 
-<link rel="canonical" href="//srijanshetty.in/technical/unit-test/">
+<link rel="canonical" href="//srijanshetty.in/travel/japan/">
 <link href="//srijanshetty.in/feed.xml" type="application/atom+xml" rel="alternate" title="Srijan R. Shetty Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -110,9 +110,9 @@
   <div class="image-wrap">
   <img src=
     
-      "//srijanshetty.in/images/fast_ts_testing.png"
+      "//srijanshetty.in/images/japan_cover.jpeg"
     
-  alt="Unit Testing Typescript in under 10 seconds feature image">
+  alt="Japan feature image">
   
   </div><!-- /.image-wrap -->
 
@@ -156,37 +156,72 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="//srijanshetty.in/technical/unit-test/" rel="bookmark" title="Unit Testing Typescript in under 10 seconds">Unit Testing Typescript in under 10 seconds</a></h1>
+        <h1><a href="//srijanshetty.in/travel/japan/" rel="bookmark" title="Japan">Japan</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <blockquote>
-  <p>I test in production.</p>
+      <p>I’ve always been immersed in Japanese culture. Dragon Ball Z, Pokemon, Beyblade, Death Note, Code Geass, Naruto, <em>Kimi no Na wa</em>, Murakami.<br /><br />
+But even that could not have prepared me for the whirlwind that Japan is.<br /><br />
+Movies, anime and books capture only a sliver of the Japanese experience. The sensory overload of being in the streets of Shinjuku or Shibuyu, listening to the cacophony of the eclectic crowd crossing the crowded streets, under lucid neon lights and drenched in the myriads flavours emanating from the streets is hard to convey.<br /><br />
+Japan is everything you hope it to be and more; it’s one of the few places you experience a real culture shock because it is unlike any other place in the planet</p>
+
+<h2 id="food">Food</h2>
+<p>My greatest takeaway of Japan and the reason I’ll keep revisiting has to be the food. I’ve had probably 20-30 full meals and countless knick-knacks in the time I spent in Japan, and all of those meals would probably feature in the top 100 meals I’ve every had in my life. From delicious ramen in a ramshackle store, to a Michelin star omakase experience with 12 courses - we had them all and all of them were equally delicious (apart from every Instagram recommendation and even they were great). The variety of cuisines that you can try is dumfounding - sushi, sashimi, teppanyaki, kaiseki, ramen, udon noodles, yakitori, yakiniki, cup noodles to just name a few of the things we tried.</p>
+
+<blockquote>
+  <p>You have to book popular places places way ahead of time.</p>
 </blockquote>
 
-<p>The last thing any programmer wants to do is write tests. And I get it, I’ve been there. Writing tests can be boring. And I’m not going to give you a long lecture about why you should write tests, I’m just going to show what we’ve done at Fuze over the course of the next 2-3 posts.<br /><br />
-This particular post is about the fundamental unit of testing - Unit Testing.<br /><br />
-To lay the foundation, our goal is to have greater than 99% test coverage for statements, branches, function and
-lines.<br /><br />
-The headline numbers at Fuze for Unit Testing right now are:</p>
-<ul>
-  <li>Functions, Lines - 100%</li>
-  <li>Statements - 99.4%</li>
-  <li>Branches - 99.51%</li>
-</ul>
+<p>Most of the places don’t seat more than 20 people at a time, so the ones offering Omakase require reservation. We got lucky by walking into some of the famous places because we were relatively in the off peak season.</p>
 
-<p>This is for a non-trivial codebase of 120k LOC and over 1200 tests.<br /><br />
-The big question is not why, it’s how and the answer at Fuze has been twofold:<br /><br />
-Firstly, we have a complex system that has many moving parts, so everyone realizes the importance of testing and we’ve built a top-down ‘testing’ culture.<br /><br />
-Secondly, we make testing fun.</p>
-<ul>
-  <li>Our tests run under the target goal of <code class="highlighter-rouge">15s</code>, and at more than 1200 test cases, this is possible because we use <code class="highlighter-rouge">swc</code> which uses <code class="highlighter-rouge">Rust</code> to speed up the tests.</li>
-  <li>We heavily rely on automations - GitHub Actions to run the tests. While we could have configured pre-commit hooks to run them we decided against it because it slows down development cycles.</li>
-</ul>
+<blockquote>
+  <p>Tabelog is much better than Google Maps.</p>
+</blockquote>
 
-<p>In the new few posts I’ll talk about API testing, Integration tests, Stress Testing and Vulnerability
-management.<br /><br />
-Do let me know if you liked the above post in the comments below.<br /><br /></p>
+<p>This is a consequence of ratings inflation. The bar of food is very high in Japan and any place you enter would have
+great food, which makes Google Maps reviews useless because they are always 4+. Hopefully the Gods of Tablecheck show mercy.</p>
+
+<blockquote>
+  <p>Knowing a few Japanese phrases goes a long distance. Google Translate is your friend.</p>
+</blockquote>
+
+<h2 id="travel">Travel</h2>
+<p>There is a method to the madness while travelling in Japan.<br /><br />
+Their transport system is by far the most advanced I’ve ever seen in any part of the world. For example, we were able to travel from our hotel in Kyoto to our hotel in Osaka in under 43 minutes by using metros and express trains, and we didn’t have to walk more than 5m on either side.<br /><br />
+But being the most advanced transport system comes with the challenges of navigating the maze. I hope you never get caught at Shinjuku station at midnight trying to figure out the last train to your hotel.</p>
+
+<blockquote>
+  <p>Again, Google Maps is your friend here. And if you’ve never used Google Maps to navigate directions of metros, exits of underground systems, now would be a good time to learn.</p>
+</blockquote>
+
+<h2 id="money">Money</h2>
+<p>You can <strong>get by without cash</strong>, but then you would be getting by without the quintessential experience of Japan - street food, fun and random frolic. So I would highly advise against it.<br /><br />
+ATMS are a plenty if you’re like me who doesn’t like to carry more than required cash.<br /><br />
+The number of payment methods in Japan on most restaurants is mind boggling. Chances are your card - credit/debit/forex/charge/prepaid will work.<br /><br />
+But the holy grail of money is the <strong>TRAVEL CARD</strong> or <strong>Suica</strong>. It’s a prepaid travel card which works on metros/trains/buses/restaurants/stores.</p>
+
+<blockquote>
+  <p>You should add SUICA to your Apple Wallet. The express travel card works even if your phone battery is dead.</p>
+</blockquote>
+
+<p>You will have to change the Media Location on your phone to US (don’t change apple store location, change the media location - <a href="https://discussions.apple.com/thread/254449023">guide</a>. Once done, you can goto Add Card -&gt; Add Travel Card -&gt; Suica. I had a credit card in Apple Wallet which made life so much easier.</p>
+
+<h2 id="culture">Culture</h2>
+<p>As mentioned in the beginning, <strong>the culture shock of Japan is real</strong>.<br /><br />
+The streets have all kinds of eclectic people - from salary men and women in suits and ties to kids donning the whackiest street wear clothes possible. The trains will have folks returning from work in a work attire to folks in casual cosplay clothes or gothic appearances and no one batting an eye-lid.<br /><br />
+Lawsons and Family Marts - the convenience stores are a treasure trove. They are stocked with delicious take away food, juices that you can prepare at the store, cup-noodles with hot water dispensers for you to eat; and all kinds of potent alcohol with people consuming food and alcohol right outside the stores.<br /><br />
+You can spend hours people watching at Shinjuku, Harijuku, Dotonburi in Osaka.<br /><br />
+Vending machines abound the streets in the most unlikeliest of places and serving the most bizarre things possible - orange juice, water, CDs, pokemon cards to name a few.<br /><br />
+Also, strangely there are no trash cans anywhere. You carry your own trash and dispose it off at your work or your hotel.</p>
+
+<blockquote>
+  <p>The beauty of Japan is that you can experience Zen at a Shinto shrine in Mt. Fuji to the anxiety of traversing Shinjuku station in the same trip.</p>
+</blockquote>
+
+<p>You can revel at the peace of shrines which are centuries old or marvel at mega structures of the modern metropolises and transport systems that work like.<br /><br />
+And this is also probably the reason that a single trip to Japan can hardly capture what this country has to
+offer.<br /><br />
+And this also probably the reason I’ve already planned my next visit there.</p>
 
       <hr />
       <footer role="contentinfo">
@@ -194,17 +229,17 @@ Do let me know if you liked the above post in the comments below.<br /><br /></p
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/technical/unit-test/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/travel/japan/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/technical/unit-test/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/travel/japan/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=//srijanshetty.in/technical/unit-test/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=//srijanshetty.in/travel/japan/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>Unit Testing Typescript in under 10 seconds</strong> was published on <time datetime="2023-09-01T08:30:00+04:00">September 01, 2023</time>.</p>
+        <p class="byline"><strong>Japan</strong> was published on <time datetime="2024-11-09T08:30:00+04:00">November 09, 2024</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -219,11 +254,11 @@ Do let me know if you liked the above post in the comments below.<br /><br /></p
   <h4>You might also enjoy <small class="pull-right">(<a href="//srijanshetty.in/posts/">View all posts</a>)</small></h4>
     <ul>
     
-      <li><a href="//srijanshetty.in/travel/japan/" title="Japan">Japan</a></li>
-    
       <li><a href="//srijanshetty.in/technical/tailscale-subnet-router/" title="The missing guide to TailScale subnet routing in AWS">The missing guide to TailScale subnet routing in AWS</a></li>
     
       <li><a href="//srijanshetty.in/technical/custom-port-websockets-alb/" title="Heath Checks on a Custom Port for Websockets with ALB">Heath Checks on a Custom Port for Websockets with ALB</a></li>
+    
+      <li><a href="//srijanshetty.in/technical/aws-peering-connections/" title="Setting up AWS Peering Connections for Wazuh and ECS">Setting up AWS Peering Connections for Wazuh and ECS</a></li>
     
     </ul>
     <hr />
