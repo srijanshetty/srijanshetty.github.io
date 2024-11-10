@@ -5,14 +5,14 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Custom DNS Using Pihole &#8211; Srijan R. Shetty</title>
-<meta name="description" content="custom DNS routes on pihole">
-<meta name="keywords" content="privacy, dns, pihole, ad blocking, routes">
+<title>A curious case of 520 errors with Nodejs and ALB &#8211; Srijan R. Shetty</title>
+<meta name="description" content="This post is a deep dive on how we solved intermittent 520 errors with our Nodejs application behind an AWS ALB">
+<meta name="keywords" content="technical, api, aws, alb, http, errors, node, express, javascript, typescript">
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Custom DNS Using Pihole">
-<meta name="twitter:description" content="custom DNS routes on pihole">
+<meta name="twitter:title" content="A curious case of 520 errors with Nodejs and ALB">
+<meta name="twitter:description" content="This post is a deep dive on how we solved intermittent 520 errors with our Nodejs application behind an AWS ALB">
 <meta name="twitter:site" content="@srijanshetty">
 <meta name="twitter:creator" content="@srijanshetty">
 
@@ -22,9 +22,9 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Custom DNS Using Pihole">
-<meta property="og:description" content="custom DNS routes on pihole">
-<meta property="og:url" content="//srijanshetty.in/technical/custom-dns-using-pihole/">
+<meta property="og:title" content="A curious case of 520 errors with Nodejs and ALB">
+<meta property="og:description" content="This post is a deep dive on how we solved intermittent 520 errors with our Nodejs application behind an AWS ALB">
+<meta property="og:url" content="//srijanshetty.in/technical/520-errors-with-Nodejs-and-ALB/">
 <meta property="og:site_name" content="Srijan R. Shetty">
 
 <meta property="og:image" content="//srijanshetty.in/images/default-thumb.png">
@@ -34,7 +34,7 @@
 
 
 
-<link rel="canonical" href="//srijanshetty.in/technical/custom-dns-using-pihole/">
+<link rel="canonical" href="//srijanshetty.in/technical/520-errors-with-Nodejs-and-ALB/">
 <link href="//srijanshetty.in/feed.xml" type="application/atom+xml" rel="alternate" title="Srijan R. Shetty Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -147,28 +147,37 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="//srijanshetty.in/technical/custom-dns-using-pihole/" rel="bookmark" title="Custom DNS Using Pihole">Custom DNS Using Pihole</a></h1>
+        <h1><a href="//srijanshetty.in/technical/520-errors-with-Nodejs-and-ALB/" rel="bookmark" title="A curious case of 520 errors with Nodejs and ALB">A curious case of 520 errors with Nodejs and ALB</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>I finally managed to setup custom DNS routes at my home server (a repurposed laptop with a bust screen, a post for
-another day).<br /><br />
-I installed <a href="https://pi-hole.net">pihole</a> on my local server and was struggling with setting up custom
-routes for my local router, and some AWS and GCP boxes that I run. My first attempt was modifying
-<code class="highlighter-rouge">/etc/pihole/local.list</code> with the following values:</p>
+      <p>Sometimes you need to get your hands dirty and go down the rabbit hole.<br /><br />
+This was exactly what we had to do when we saw intermittent 502 errors on our API stack.<br /><br /></p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.0.0.1 test.lan
-</code></pre></div></div>
+<figure>
+	<img src="/images/502_errors.png" />
+	<figcaption>502 errors on AWS ALB</figcaption>
+</figure>
 
-<p>This configuration worked, until pihole updated gravity database and <code class="highlighter-rouge">/etc/pihole/local.list</code> was cleaned up.<br /><br />
-After searching the rabbit hole of the internet, I was stuck with the epiphany of modifying <code class="highlighter-rouge">dnsmasq</code> to add the
-entries. The following configuration did the trick:<br /><br /></p>
+<p>The initial hypothesis was restarts at night, but the frequency of the errors was higher than the number of automated restarts. So to dig deeper we accessed the access logs of ALB (which are stored in gzip and add a minor inconvenience).<br /><br />
+The logs were inconclusive or I was unable to make sense of the access logs, so it was time for some old fashioned googling. After going through dead end after dead ends, we came across an <a href="https://repost.aws/knowledge-center/elb-alb-troubleshoot-502-errors">article</a>, two things stood out for me on the article:<br /><br /></p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>address=/test.lan/0.0.0.1
-</code></pre></div></div>
+<blockquote>
+  <p>If the <strong>elb_status_code</strong> is “502” and the <strong>target_status_code</strong> is “-“, then your load balancer is the source of the HTTP 502 errors. If the <strong>elb_status_code</strong> is “502” and the <strong>target_status_code</strong> is “502”, then your target is the source of the errors.</p>
+</blockquote>
 
-<p>My only pet-peeve is the default behaviour of browsers like firefox and chrome to interpret <code class="highlighter-rouge">.lan</code> entries as search
-queries instead of domain names.</p>
+<blockquote>
+  <p>The target receives the request and starts to process it, but closes the connection to the load balancer too early. This usually occurs when the duration of the keep-alive timeout for the target is shorter than the idle timeout value of the load balancer. Make sure that the duration of the keep-alive timeout is greater than the idle timeout value.</p>
+</blockquote>
+
+<blockquote>
+  <p>Check the values for the request_processing_time, target_processing_time and response_processing_time fields.</p>
+</blockquote>
+
+<p>With this knowledge the most likely culprit was express on nodejs having a shorter timeout than ALB On checking it was clear that express had a timeout of 5s which ALB had 60s.<br /><br />
+On updating ALB keepalives to 4s, the errors no longer appeared.<br /><br />
+This was a fun little problem that we chanced upon while setting up our API infrastructure which had us going into the weeds of Nodejs, express and ALB.<br /><br /></p>
+
 
       <hr />
       <footer role="contentinfo">
@@ -176,17 +185,17 @@ queries instead of domain names.</p>
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/technical/custom-dns-using-pihole/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/technical/520-errors-with-Nodejs-and-ALB/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/technical/custom-dns-using-pihole/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/technical/520-errors-with-Nodejs-and-ALB/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=//srijanshetty.in/technical/custom-dns-using-pihole/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=//srijanshetty.in/technical/520-errors-with-Nodejs-and-ALB/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>Custom DNS Using Pihole</strong> was published on <time datetime="2020-07-18T12:53:15+04:00">July 18, 2020</time>.</p>
+        <p class="byline"><strong>A curious case of 520 errors with Nodejs and ALB</strong> was published on <time datetime="2024-11-10T08:30:00+04:00">November 10, 2024</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -201,11 +210,11 @@ queries instead of domain names.</p>
   <h4>You might also enjoy <small class="pull-right">(<a href="//srijanshetty.in/posts/">View all posts</a>)</small></h4>
     <ul>
     
-      <li><a href="//srijanshetty.in/technical/520-errors-with-Nodejs-and-ALB/" title="A curious case of 520 errors with Nodejs and ALB">A curious case of 520 errors with Nodejs and ALB</a></li>
-    
       <li><a href="//srijanshetty.in/travel/japan/" title="Japan">Japan</a></li>
     
       <li><a href="//srijanshetty.in/technical/tailscale-subnet-router/" title="The missing guide to TailScale subnet routing in AWS">The missing guide to TailScale subnet routing in AWS</a></li>
+    
+      <li><a href="//srijanshetty.in/technical/custom-port-websockets-alb/" title="Heath Checks on a Custom Port for Websockets with ALB">Heath Checks on a Custom Port for Websockets with ALB</a></li>
     
     </ul>
     <hr />

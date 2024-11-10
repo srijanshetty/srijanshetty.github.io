@@ -4,13 +4,58 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="//srijanshetty.in/feed.xml" />
 <link rel="alternate" type="text/html" href="//srijanshetty.in" />
-<updated>2024-11-09T13:10:27+04:00</updated>
+<updated>2024-11-10T09:00:28+04:00</updated>
 <id>//srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
   <uri>//srijanshetty.in/</uri>
   <email>srijan.shetty+code@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[A curious case of 520 errors with Nodejs and ALB]]></title>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/520-errors-with-Nodejs-and-ALB/" />
+  <id>//srijanshetty.in/technical/520-errors-with-Nodejs-and-ALB</id>
+  <published>2024-11-10T08:30:00+04:00</published>
+  <updated>2024-11-10T08:30:00+04:00</updated>
+  <author>
+    <name>Srijan R. Shetty</name>
+    <uri>//srijanshetty.in</uri>
+    <email>srijan.shetty+code@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Sometimes you need to get your hands dirty and go down the rabbit hole.&lt;br /&gt;&lt;br /&gt;
+This was exactly what we had to do when we saw intermittent 502 errors on our API stack.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;figure&gt;
+	&lt;img src=&quot;/images/502_errors.png&quot; /&gt;
+	&lt;figcaption&gt;502 errors on AWS ALB&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The initial hypothesis was restarts at night, but the frequency of the errors was higher than the number of automated restarts. So to dig deeper we accessed the access logs of ALB (which are stored in gzip and add a minor inconvenience).&lt;br /&gt;&lt;br /&gt;
+The logs were inconclusive or I was unable to make sense of the access logs, so it was time for some old fashioned googling. After going through dead end after dead ends, we came across an &lt;a href=&quot;https://repost.aws/knowledge-center/elb-alb-troubleshoot-502-errors&quot;&gt;article&lt;/a&gt;, two things stood out for me on the article:&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;If the &lt;strong&gt;elb_status_code&lt;/strong&gt; is “502” and the &lt;strong&gt;target_status_code&lt;/strong&gt; is “-“, then your load balancer is the source of the HTTP 502 errors. If the &lt;strong&gt;elb_status_code&lt;/strong&gt; is “502” and the &lt;strong&gt;target_status_code&lt;/strong&gt; is “502”, then your target is the source of the errors.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The target receives the request and starts to process it, but closes the connection to the load balancer too early. This usually occurs when the duration of the keep-alive timeout for the target is shorter than the idle timeout value of the load balancer. Make sure that the duration of the keep-alive timeout is greater than the idle timeout value.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Check the values for the request_processing_time, target_processing_time and response_processing_time fields.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;With this knowledge the most likely culprit was express on nodejs having a shorter timeout than ALB On checking it was clear that express had a timeout of 5s which ALB had 60s.&lt;br /&gt;&lt;br /&gt;
+On updating ALB keepalives to 4s, the errors no longer appeared.&lt;br /&gt;&lt;br /&gt;
+This was a fun little problem that we chanced upon while setting up our API infrastructure which had us going into the weeds of Nodejs, express and ALB.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/520-errors-with-Nodejs-and-ALB/&quot;&gt;A curious case of 520 errors with Nodejs and ALB&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on November 10, 2024.&lt;/p&gt;
+  </content>
+</entry>
 
 
 <entry>
@@ -1128,48 +1173,6 @@ all costs. The only error that we care about is &lt;em&gt;undefined variables&lt
 &lt;p&gt;This simple scripts saves a lot of time especially when you’re managing a cluster of servers.&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/shell-tricks-to-manage-a-cluster/&quot;&gt;Shell tricks to manage a cluster&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on July 04, 2020.&lt;/p&gt;
-  </content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[KISS - UNIX and Composition]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/kiss-unix-and-composition/" />
-  <id>//srijanshetty.in/technical/kiss-unix-and-composition</id>
-  <published>2020-04-14T13:21:36+04:00</published>
-  <updated>2020-04-14T13:21:36+04:00</updated>
-  <author>
-    <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
-    <email>srijan.shetty+code@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;As engineers, we go overboard with engineering. Consider a recent &lt;strong&gt;bete noire&lt;/strong&gt; was the lack of a good API to get NAV
-for mutual funds in India. &lt;a href=&quot;https://www.amfiindia.com/&quot;&gt;AMFI&lt;/a&gt;, the association for mutual funds in India maintains a
-text file containing all the NAVs at open &lt;a href=&quot;https://www.amfiindia.com/spages/NAVAll.txt&quot;&gt;here&lt;/a&gt;. &lt;br /&gt;&lt;br /&gt;
-The first attempt I did to query the API was to write a python behemoth to which did a simple search after converting
-the data into json, and is hosted &lt;a href=&quot;https://github.com/srijanshetty/amfitools&quot;&gt;here&lt;/a&gt;.  Pleased with my prowess of python,
-I decided to implement fuzzy-search as well. After spending a few minutes pondering the correct interface of the
-commandline, I thought I should give bash a chance to solve the issue. &lt;a href=&quot;https://github.com/junegunn/fzf&quot;&gt;fzf&lt;/a&gt;, is
-already all over my zsh-fu and it seemed well versed to handle this task. All I needed was to massage the data returned
-into something easily fed into &lt;strong&gt;fzf&lt;/strong&gt;, after 10 minutes, I had the following:&lt;/p&gt;
-
-&lt;div class=&quot;language-zsh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;get-nav &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        http https://www.amfiindia.com/spages/NAVAll.txt | &lt;span class=&quot;nb&quot;&gt;cut&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;';'&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f4&lt;/span&gt;,5 | &lt;span class=&quot;nb&quot;&gt;tr&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;';'&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'\t'&lt;/span&gt; | fzf
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;This zsh snippet makes use of &lt;a href=&quot;https://httpie.org/&quot;&gt;httpie&lt;/a&gt; to download the file, &lt;strong&gt;cut and tr&lt;/strong&gt; to conver the output to
-a format feedable to &lt;strong&gt;fzf&lt;/strong&gt; and now I have generic fuzzy completion in a zsh one liner. Here’s a demo of the same:&lt;/p&gt;
-
-&lt;figure&gt;
-	&lt;img src=&quot;/images/nav.gif&quot; /&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;The UNIX rule of composition and KISS have stood the test of time. It’s easy to get overboard and reinvent the wheel
-when you could create complex text munging in one liners of shell.&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/kiss-unix-and-composition/&quot;&gt;KISS - UNIX and Composition&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on April 14, 2020.&lt;/p&gt;
   </content>
 </entry>
 
