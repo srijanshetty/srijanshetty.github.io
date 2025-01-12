@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="//srijanshetty.in/feed.xml" />
 <link rel="alternate" type="text/html" href="//srijanshetty.in" />
-<updated>2024-11-10T09:05:41+04:00</updated>
+<updated>2025-01-12T12:26:33+08:00</updated>
 <id>//srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
@@ -14,11 +14,45 @@
 
 
 <entry>
+  <title type="html"><![CDATA[The based professors of IIT Kanpur - Probability and Statistics]]></title>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/write-ups/based-professors-of-iitk-attendance/" />
+  <id>//srijanshetty.in/write-ups/based-professors-of-iitk-attendance</id>
+  <published>2025-01-07T22:30:00+08:00</published>
+  <updated>2025-01-07T22:30:00+08:00</updated>
+  <author>
+    <name>Srijan R. Shetty</name>
+    <uri>//srijanshetty.in</uri>
+    <email>srijan.shetty+code@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;While it’s well know that BITS Pilani has no mandatory attendance, not a lot of folks know that Indian Institute of Technology, Kanpur also doesn’t mandate attendance.&lt;br /&gt;&lt;br /&gt;
+This is the story of the only course I never attended in my four years of IIT Kanpur and how the professor tried to bribe the students to attend classes.&lt;br /&gt;&lt;br /&gt;
+The most dreaded class that you could sign up for is the 8am class in the winters.&lt;br /&gt;&lt;br /&gt;
+Winter temperatures in IIT Kanpur range in 1-5 degrees - a fact that we realized post-hoc due to the lack of curiosity and modern day smart phones. But what was nerve wracking is that you had no recourse to heaters.&lt;br /&gt;&lt;br /&gt;
+And if you’re wondering why we did not have recourse to heaters? Well, because the hostel most seniors get are ‘old’ as they have more ‘legacy’. And with great legacy comes prehistoric wiring which cannot withstand the power demand of more than 10 heaters. In a classic tragedy of commons, if more than 10 people use heaters, the entire hostel’s electricity would blow out.&lt;br /&gt;&lt;br /&gt;
+We battled the cold, the old fashioned way. 4 blankets, 3 trousers, 3 socks, a monkey cap.&lt;br /&gt;&lt;br /&gt;
+So, getting students to wake up at 8am is a professor’s worst nightmare. Now couple that with a class of 500 students on Probability.&lt;br /&gt;&lt;br /&gt;
+The session in January started with the usual enthusiasm with a turnout of over 100%. You would expect that everyone would get a hand of probability because you read that in JEE. But by week 3 most students were either lost or were not attending the classes. Attendance fell by atleast 50% (or so I think because I was one of those who did not dare leave his bed). Just a few weeks before mid-term, a pittance of 20 students were attending classes.&lt;br /&gt;&lt;br /&gt;
+Most professors would not bat an eyelid, after all, a professors primary job is not teaching.&lt;br /&gt;&lt;br /&gt;
+But every once in a while professors want to have some fun. So one fine day in February he decided to mandate 10% of marks for attendance.&lt;br /&gt;&lt;br /&gt;
+For those of you who haven’t attended classes with relative grading. 10% is the difference between an ‘A’ grade and a ‘C’ grade, or in some cases the line between flunking a course and comfortably passing one.&lt;br /&gt;&lt;br /&gt;
+And the ‘cherry on top’? It was a random roll-call, which essentially was a class on probability in a class on probability. With 500 students and 40 classes left you can do the math about what your probability for being roll called on a particular day can be.&lt;br /&gt;&lt;br /&gt;
+This had the intended effect, the classes were packed post the mid-sems.&lt;br /&gt;&lt;br /&gt;
+I’m sure you’re wondering what happened to me? Didn’t I mention that I did not attend any of the classes for this particular course? &lt;br /&gt;&lt;br /&gt;
+Well, I only spoke a half-truth. Yes, I did not attend any class till the very last day because not only did I hate the cold more than the upside of 10% marks, but because my name was never called. Which meant that I rushed on the final day just before the final class to get my name marked and managed to those precious 10% marks.&lt;br /&gt;&lt;br /&gt;
+Despite those 10% marks, this was my Scarlett letter in my gradesheet.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/write-ups/based-professors-of-iitk-attendance/&quot;&gt;The based professors of IIT Kanpur - Probability and Statistics&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on January 07, 2025.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
   <title type="html"><![CDATA[A curious case of 520 errors with Nodejs and ALB]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/520-errors-with-Nodejs-and-ALB/" />
   <id>//srijanshetty.in/technical/520-errors-with-Nodejs-and-ALB</id>
-  <published>2024-11-10T08:30:00+04:00</published>
-  <updated>2024-11-10T08:30:00+04:00</updated>
+  <published>2024-11-10T12:30:00+08:00</published>
+  <updated>2024-11-10T12:30:00+08:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -62,8 +96,8 @@ This was a fun little problem that we chanced upon while setting up our API infr
   <title type="html"><![CDATA[Japan]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/travel/japan/" />
   <id>//srijanshetty.in/travel/japan</id>
-  <published>2024-11-09T08:30:00+04:00</published>
-  <updated>2024-11-09T08:30:00+04:00</updated>
+  <published>2024-11-09T12:30:00+08:00</published>
+  <updated>2024-11-09T12:30:00+08:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -142,8 +176,8 @@ And this also probably the reason I’ve already planned my next visit there.&lt
   <title type="html"><![CDATA[The missing guide to TailScale subnet routing in AWS]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/tailscale-subnet-router/" />
   <id>//srijanshetty.in/technical/tailscale-subnet-router</id>
-  <published>2024-09-24T08:30:00+04:00</published>
-  <updated>2024-09-24T08:30:00+04:00</updated>
+  <published>2024-09-24T12:30:00+08:00</published>
+  <updated>2024-09-24T12:30:00+08:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -210,8 +244,8 @@ So here’s my guide on how to setup a subnet router which will allow you to acc
   <title type="html"><![CDATA[Heath Checks on a Custom Port for Websockets with ALB]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/custom-port-websockets-alb/" />
   <id>//srijanshetty.in/technical/custom-port-websockets-alb</id>
-  <published>2024-04-09T18:23:00+04:00</published>
-  <updated>2024-04-09T18:23:00+04:00</updated>
+  <published>2024-04-09T22:23:00+08:00</published>
+  <updated>2024-04-09T22:23:00+08:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -260,8 +294,8 @@ As mentioned above, most guides explicitly mentioned that this isn’t possible.
   <title type="html"><![CDATA[Setting up AWS Peering Connections for Wazuh and ECS]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/aws-peering-connections/" />
   <id>//srijanshetty.in/technical/aws-peering-connections</id>
-  <published>2024-02-10T18:30:00+04:00</published>
-  <updated>2024-02-10T18:30:00+04:00</updated>
+  <published>2024-02-10T22:30:00+08:00</published>
+  <updated>2024-02-10T22:30:00+08:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -309,8 +343,8 @@ In light of the above, and after a week or two of head scratching, I was finally
   <title type="html"><![CDATA[Unit Testing Typescript in under 10 seconds]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/unit-test/" />
   <id>//srijanshetty.in/technical/unit-test</id>
-  <published>2023-09-01T08:30:00+04:00</published>
-  <updated>2023-09-01T08:30:00+04:00</updated>
+  <published>2023-09-01T12:30:00+08:00</published>
+  <updated>2023-09-01T12:30:00+08:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -354,8 +388,8 @@ Do let me know if you liked the above post in the comments below.&lt;br /&gt;&lt
   <title type="html"><![CDATA[OARS, SQL Injections and Paper Backups]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/write-ups/oars-sql-injections-and-paper-backups/" />
   <id>//srijanshetty.in/write-ups/oars-sql-injections-and-paper-backups</id>
-  <published>2023-08-01T18:30:00+04:00</published>
-  <updated>2023-08-01T18:30:00+04:00</updated>
+  <published>2023-08-01T22:30:00+08:00</published>
+  <updated>2023-08-01T22:30:00+08:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -379,8 +413,8 @@ This was a defining moment because you have to admit that sometimes plain old pa
   <title type="html"><![CDATA[The based professors of IIT Kanpur - Professor TVP]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/write-ups/based-professors-of-iitk-professor-tvp/" />
   <id>//srijanshetty.in/write-ups/based-professors-of-iitk-professor-tvp</id>
-  <published>2023-05-01T18:30:00+04:00</published>
-  <updated>2023-05-01T18:30:00+04:00</updated>
+  <published>2023-05-01T22:30:00+08:00</published>
+  <updated>2023-05-01T22:30:00+08:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -413,8 +447,8 @@ Told you, never underestimate the Professors of IIT Kanpur. They can surprise yo
   <title type="html"><![CDATA[The based professors of IIT Kanpur - Professor Biswas]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/write-ups/based-professors-of-iitk-professor-biswas/" />
   <id>//srijanshetty.in/write-ups/based-professors-of-iitk-professor-biswas</id>
-  <published>2023-03-01T18:30:00+04:00</published>
-  <updated>2023-03-01T18:30:00+04:00</updated>
+  <published>2023-03-01T22:30:00+08:00</published>
+  <updated>2023-03-01T22:30:00+08:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -443,8 +477,8 @@ We learnt a valuable lesson, you don’t mess with professors, especially the pr
   <title type="html"><![CDATA[On missing the shared intimacy of friendships]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/prose/shared-experiences/" />
   <id>//srijanshetty.in/prose/shared-experiences</id>
-  <published>2022-11-21T22:34:54+04:00</published>
-  <updated>2022-11-21T22:34:54+04:00</updated>
+  <published>2022-11-22T02:34:54+08:00</published>
+  <updated>2022-11-22T02:34:54+08:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -456,7 +490,7 @@ As you grow older and friendships yonder, you miss not a time long lost, you mis
 It’s not adulting, it’s the human condition. We consistently seek strifes as we believe that it’s the struggles that give our existence meaning, and when the hangman comes knocking he’ll smile over our futility in giving up something valuable in pursuit of something that never existed.&lt;br /&gt;&lt;br /&gt;
 Srijan R Shetty&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/prose/shared-experiences/&quot;&gt;On missing the shared intimacy of friendships&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on November 21, 2022.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/prose/shared-experiences/&quot;&gt;On missing the shared intimacy of friendships&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on November 22, 2022.&lt;/p&gt;
   </content>
 </entry>
 
@@ -465,8 +499,8 @@ Srijan R Shetty&lt;/p&gt;
   <title type="html"><![CDATA[Moving 4 TB across cloud storage providers for free]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/hacks/rclone-moving-files/" />
   <id>//srijanshetty.in/hacks/rclone-moving-files</id>
-  <published>2022-09-28T23:11:54+04:00</published>
-  <updated>2022-09-28T23:11:54+04:00</updated>
+  <published>2022-09-29T03:11:54+08:00</published>
+  <updated>2022-09-29T03:11:54+08:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -523,7 +557,7 @@ command in a &lt;code class=&quot;highlighter-rouge&quot;&gt;tmux&lt;/code&gt; s
 completed.&lt;br /&gt;&lt;br /&gt;
 Until the next post!&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/hacks/rclone-moving-files/&quot;&gt;Moving 4 TB across cloud storage providers for free&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 28, 2022.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/hacks/rclone-moving-files/&quot;&gt;Moving 4 TB across cloud storage providers for free&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 29, 2022.&lt;/p&gt;
   </content>
 </entry>
 
@@ -532,8 +566,8 @@ Until the next post!&lt;/p&gt;
   <title type="html"><![CDATA[Handling CORS with cloudflare workers]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/cloudflare-workers-cors/" />
   <id>//srijanshetty.in/technical/cloudflare-workers-cors</id>
-  <published>2022-09-25T23:11:54+04:00</published>
-  <updated>2022-09-25T23:11:54+04:00</updated>
+  <published>2022-09-26T03:11:54+08:00</published>
+  <updated>2022-09-26T03:11:54+08:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -620,7 +654,7 @@ The way to solve this problem is twofold:&lt;/p&gt;
 
 &lt;p&gt;Don’t think I was able to find a solution on the internet, but knowing how &lt;code class=&quot;highlighter-rouge&quot;&gt;CORS&lt;/code&gt; is handled helped.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/cloudflare-workers-cors/&quot;&gt;Handling CORS with cloudflare workers&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 25, 2022.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/cloudflare-workers-cors/&quot;&gt;Handling CORS with cloudflare workers&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 26, 2022.&lt;/p&gt;
   </content>
 </entry>
 
@@ -629,8 +663,8 @@ The way to solve this problem is twofold:&lt;/p&gt;
   <title type="html"><![CDATA[ZSH bindkey in MacOSX for Cmd]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/hacks/macos-alt-dot-bindkey/" />
   <id>//srijanshetty.in/hacks/macos-alt-dot-bindkey</id>
-  <published>2022-09-20T23:11:54+04:00</published>
-  <updated>2022-09-20T23:11:54+04:00</updated>
+  <published>2022-09-21T03:11:54+08:00</published>
+  <updated>2022-09-21T03:11:54+08:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -671,7 +705,7 @@ bindkey &lt;span class=&quot;s2&quot;&gt;&quot;^[altdot&quot;&lt;/span&gt; inser
 &lt;p&gt;And viola, now the keybindings work. This process works &lt;code class=&quot;highlighter-rouge&quot;&gt;mutatis mundis&lt;/code&gt; for other keybindings that you want to import
 from your workflow in bash/zsh from linux.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/hacks/macos-alt-dot-bindkey/&quot;&gt;ZSH bindkey in MacOSX for Cmd&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 20, 2022.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/hacks/macos-alt-dot-bindkey/&quot;&gt;ZSH bindkey in MacOSX for Cmd&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 21, 2022.&lt;/p&gt;
   </content>
 </entry>
 
@@ -680,8 +714,8 @@ from your workflow in bash/zsh from linux.&lt;/p&gt;
   <title type="html"><![CDATA[Using TouchId for sudo in Mac OSX]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/hacks/sudo-touch-id/" />
   <id>//srijanshetty.in/hacks/sudo-touch-id</id>
-  <published>2022-09-13T23:11:54+04:00</published>
-  <updated>2022-09-13T23:11:54+04:00</updated>
+  <published>2022-09-14T03:11:54+08:00</published>
+  <updated>2022-09-14T03:11:54+08:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -698,7 +732,7 @@ auth sufficient pam_tid.so&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Works like a charm.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/hacks/sudo-touch-id/&quot;&gt;Using TouchId for sudo in Mac OSX&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 13, 2022.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/hacks/sudo-touch-id/&quot;&gt;Using TouchId for sudo in Mac OSX&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 14, 2022.&lt;/p&gt;
   </content>
 </entry>
 
@@ -707,8 +741,8 @@ auth sufficient pam_tid.so&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
   <title type="html"><![CDATA[Polygon Devfolio Fellowship]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/polygon-devfolio-fellowship/" />
   <id>//srijanshetty.in/technical/polygon-devfolio-fellowship</id>
-  <published>2022-09-12T17:02:54+04:00</published>
-  <updated>2022-09-12T17:02:54+04:00</updated>
+  <published>2022-09-12T21:02:54+08:00</published>
+  <updated>2022-09-12T21:02:54+08:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -769,8 +803,8 @@ All the code including the smart contract is open source and the links are provi
   <title type="html"><![CDATA[Poor Man's ALB - Apache]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/poor-mans-alb-apache/" />
   <id>//srijanshetty.in/technical/poor-mans-alb-apache</id>
-  <published>2022-09-01T23:11:54+04:00</published>
-  <updated>2022-09-01T23:11:54+04:00</updated>
+  <published>2022-09-02T03:11:54+08:00</published>
+  <updated>2022-09-02T03:11:54+08:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -812,7 +846,7 @@ worked.&lt;/p&gt;
 &lt;p&gt;The trick was &lt;code class=&quot;highlighter-rouge&quot;&gt;ProxyPass /blog !&lt;/code&gt; which ensured that we can use apache for sublocation routing. On port 3001, &lt;code class=&quot;highlighter-rouge&quot;&gt;next.js&lt;/code&gt;
 was running &lt;code class=&quot;highlighter-rouge&quot;&gt;supervisor&lt;/code&gt; (my goto solution for running apps on a box).&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/poor-mans-alb-apache/&quot;&gt;Poor Man's ALB - Apache&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 01, 2022.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/poor-mans-alb-apache/&quot;&gt;Poor Man's ALB - Apache&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 02, 2022.&lt;/p&gt;
   </content>
 </entry>
 
@@ -821,8 +855,8 @@ was running &lt;code class=&quot;highlighter-rouge&quot;&gt;supervisor&lt;/code&
   <title type="html"><![CDATA[How Do Gulp Typescript Without Module Loaders]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/how-do-gulp-typescript-without-module-loaders/" />
   <id>//srijanshetty.in/technical/how-do-gulp-typescript-without-module-loaders</id>
-  <published>2020-10-20T16:40:00+04:00</published>
-  <updated>2020-10-20T16:40:00+04:00</updated>
+  <published>2020-10-20T20:40:00+08:00</published>
+  <updated>2020-10-20T20:40:00+08:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -924,8 +958,8 @@ global in the browser.&lt;/li&gt;
   <title type="html"><![CDATA[Leaving Your Sock(et)s Hanging]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/leaving-your-sock-et-s-hanging/" />
   <id>//srijanshetty.in/technical/leaving-your-sock-et-s-hanging</id>
-  <published>2020-07-21T11:42:24+04:00</published>
-  <updated>2020-07-21T11:42:24+04:00</updated>
+  <published>2020-07-21T15:42:24+08:00</published>
+  <updated>2020-07-21T15:42:24+08:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -1065,8 +1099,8 @@ granted in languages which support such idioms out of the box like Java.&lt;/p&g
   <title type="html"><![CDATA[Custom DNS Using Pihole]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/custom-dns-using-pihole/" />
   <id>//srijanshetty.in/technical/custom-dns-using-pihole</id>
-  <published>2020-07-18T12:53:15+04:00</published>
-  <updated>2020-07-18T12:53:15+04:00</updated>
+  <published>2020-07-18T16:53:15+08:00</published>
+  <updated>2020-07-18T16:53:15+08:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -1093,86 +1127,6 @@ entries. The following configuration did the trick:&lt;br /&gt;&lt;br /&gt;&lt;/
 queries instead of domain names.&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/custom-dns-using-pihole/&quot;&gt;Custom DNS Using Pihole&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on July 18, 2020.&lt;/p&gt;
-  </content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Shell tricks to manage a cluster]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/shell-tricks-to-manage-a-cluster/" />
-  <id>//srijanshetty.in/technical/shell-tricks-to-manage-a-cluster</id>
-  <published>2020-07-04T17:18:51+04:00</published>
-  <updated>2020-07-04T17:18:51+04:00</updated>
-  <author>
-    <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
-    <email>srijan.shetty+code@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;There are complex solutions available for server management, some of you might even be on the &lt;em&gt;containerization train&lt;/em&gt;.
-Sometimes you just want to run a quick command on every server, it could be a one off to check &lt;code class=&quot;highlighter-rouge&quot;&gt;uptime&lt;/code&gt; or a simple
-check for &lt;code class=&quot;highlighter-rouge&quot;&gt;lockfiles&lt;/code&gt;. Here’s a simple script which runs a shell command on a list of servers.&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
-
-&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt;
-
-&lt;span class=&quot;nv&quot;&gt;ACTION&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;1&lt;/span&gt;:?&lt;span class=&quot;s2&quot;&gt;&quot;Must supply action&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;HOST&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;2&lt;/span&gt;:?&lt;span class=&quot;s2&quot;&gt;&quot;Must supply host name&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ./scripts/lib.sh
-
-&lt;span class=&quot;c&quot;&gt;# Expand host string&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;HOSTS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;GET_HOSTS &lt;span class=&quot;nv&quot;&gt;$HOST&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;            &lt;span class=&quot;c&quot;&gt;# GET_HOSTS is a lists all hosts&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# Command to SSH&lt;/span&gt;
-SSH_COMMAND&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;local &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;GET_IP &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;           &lt;span class=&quot;c&quot;&gt;# GET_IP is maps hostname to IP&lt;/span&gt;
-    ssh &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;TARGET_USER&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ip&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$2&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# Run command for each host&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;declare&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-A&lt;/span&gt; results
-&lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;H &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$HOSTS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;# Redirect output to a temp file, later redirect back to stdio&lt;/span&gt;
-    &lt;span class=&quot;nv&quot;&gt;temp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;mktemp&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; &amp;amp;&amp;gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;temp&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;c&quot;&gt;# Not the '&amp;amp;', this creates a background process.&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;# We also source the env on the host,&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;# as .bashrc and .bash_profile are finicky at times&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;printf&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Running command %s %s &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ACTION&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;H&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-    SSH_COMMAND &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$H&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;source ~/app/scripts/env.sh; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ACTION&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &amp;amp; 
-
-    &lt;span class=&quot;c&quot;&gt;# '$!' is the PID which maps to the correct temp file&lt;/span&gt;
-    results[&lt;span class=&quot;nv&quot;&gt;$!&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$temp&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# Restore stdout and stderr&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; &amp;amp;&amp;gt; /dev/tty
-
-&lt;span class=&quot;c&quot;&gt;# Wait for the jobs that were executed&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;pid &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;!results[@]&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do
-    &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;wait&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$pid&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$pid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;There’s a lot to dissect in this little snippet. Let’s get right to it.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;set -u&lt;/code&gt;:  Most bash guides will ask you to use &lt;code class=&quot;highlighter-rouge&quot;&gt;set -eEuo pipefail&lt;/code&gt;, but you would not want to use that especially
-when you parallelize using background proccesses in bash. This would mean partial execution and we want to avoid that
-all costs. The only error that we care about is &lt;em&gt;undefined variables&lt;/em&gt;, hence the &lt;em&gt;set -u&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;GET HOSTS&lt;/code&gt;: A simple function to generate a list of hosts that you want to run the command on.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;exec &amp;amp;&amp;gt; ${temp} and exec &amp;amp;&amp;gt; /dev/tty&lt;/code&gt;: This redirects the output temporarily and later resets it to the terminal.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;results[$!]=$temp&lt;/code&gt;: To keep track of which pid points to which output file.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;for pid in &quot;${!results[@]}&quot;&lt;/code&gt;: Traverse over every pid in the map and wait on it.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This simple scripts saves a lot of time especially when you’re managing a cluster of servers.&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/shell-tricks-to-manage-a-cluster/&quot;&gt;Shell tricks to manage a cluster&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on July 04, 2020.&lt;/p&gt;
   </content>
 </entry>
 
