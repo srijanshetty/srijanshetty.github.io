@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="//srijanshetty.in/feed.xml" />
 <link rel="alternate" type="text/html" href="//srijanshetty.in" />
-<updated>2025-01-12T12:26:33+08:00</updated>
+<updated>2025-03-01T13:22:11+04:00</updated>
 <id>//srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
@@ -14,11 +14,43 @@
 
 
 <entry>
+  <title type="html"><![CDATA[The based professors of IIT Kanpur - Professor Dheeraj Sanghi]]></title>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/write-ups/based-professors-of-iitk-dheeraj-sanghi/" />
+  <id>//srijanshetty.in/write-ups/based-professors-of-iitk-dheeraj-sanghi</id>
+  <published>2025-02-03T18:30:00+04:00</published>
+  <updated>2025-02-03T18:30:00+04:00</updated>
+  <author>
+    <name>Srijan R. Shetty</name>
+    <uri>//srijanshetty.in</uri>
+    <email>srijan.shetty+code@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;The one thing that Indian Institute of Technology, Kanpur taught me was that you can just do things.&lt;br /&gt;&lt;br /&gt;
+This is the story of professor Dheeraj Sanghi, probably one of the most based professors of IITK because he didn’t care for the status quo on most instances.&lt;br /&gt;&lt;br /&gt;
+Mozilla had launched their ‘Winter of Security’ Programme to compete with Google’s Summer of Code. But they had one catch, it was supposed to be during the semester.&lt;br /&gt;&lt;br /&gt;
+Now, in any normal institute, this would be categorized as ‘extra-curricular’ work - after all what is the application of security principles in a college that is known for solving some of the most pressing matters of theoretical computer science. And which college would allow you to get grades for ‘Open Source Contributions’ in Network Security?&lt;br /&gt;&lt;br /&gt;
+But, then IIT Kanpur isn’t a normal college.&lt;br /&gt;&lt;br /&gt;
+And to top it all off, Professor Dheeraj Sanghi had done something never done before, he constructed a class on ‘Network Security’ as a series of lectures by the best minds of ‘Security’ in the country. Here was a professor inviting industry professionals to teach a subject to kids and who himself was open to learn more about a rapidly evolving space.&lt;br /&gt;&lt;br /&gt;
+I assembled two more crazy batchmates and thought maybe we should knock on the doors of our favorite renegade Professor.&lt;br /&gt;&lt;br /&gt;
+Professor Dheeraj Sanghi - who was also running the show as the DOAA - was a busy man and he could have easily shunned us away.&lt;br /&gt;&lt;br /&gt;
+Instead, he entertained the wild ideas of three kids who wanted to overload him with a UGP which would be spent contributing to Open Source and wherein he would be required to spend significant resources.&lt;br /&gt;&lt;br /&gt;
+At this point, we were happy in just getting an audience to our idea. And a reasonable person would have said no but then what is reason to ambition.&lt;br /&gt;&lt;br /&gt;
+Not only did Professor Dheeraj Sanghi agree to our wild plan. He spent the entire semster helping us because in the end we were one of the only teams to have been accepted for ‘Mozilla Winter of Security’ in India and were one of 12 teams across the world.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;I learned a valuable lesson - You can just do things, and people will go out of their way to support you.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/write-ups/based-professors-of-iitk-dheeraj-sanghi/&quot;&gt;The based professors of IIT Kanpur - Professor Dheeraj Sanghi&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on February 03, 2025.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
   <title type="html"><![CDATA[The based professors of IIT Kanpur - Probability and Statistics]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/write-ups/based-professors-of-iitk-attendance/" />
   <id>//srijanshetty.in/write-ups/based-professors-of-iitk-attendance</id>
-  <published>2025-01-07T22:30:00+08:00</published>
-  <updated>2025-01-07T22:30:00+08:00</updated>
+  <published>2025-01-07T18:30:00+04:00</published>
+  <updated>2025-01-07T18:30:00+04:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -51,8 +83,8 @@ Despite those 10% marks, this was my Scarlett letter in my gradesheet.&lt;br /&g
   <title type="html"><![CDATA[A curious case of 520 errors with Nodejs and ALB]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/520-errors-with-Nodejs-and-ALB/" />
   <id>//srijanshetty.in/technical/520-errors-with-Nodejs-and-ALB</id>
-  <published>2024-11-10T12:30:00+08:00</published>
-  <updated>2024-11-10T12:30:00+08:00</updated>
+  <published>2024-11-10T08:30:00+04:00</published>
+  <updated>2024-11-10T08:30:00+04:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -96,8 +128,8 @@ This was a fun little problem that we chanced upon while setting up our API infr
   <title type="html"><![CDATA[Japan]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/travel/japan/" />
   <id>//srijanshetty.in/travel/japan</id>
-  <published>2024-11-09T12:30:00+08:00</published>
-  <updated>2024-11-09T12:30:00+08:00</updated>
+  <published>2024-11-09T08:30:00+04:00</published>
+  <updated>2024-11-09T08:30:00+04:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -176,8 +208,8 @@ And this also probably the reason I’ve already planned my next visit there.&lt
   <title type="html"><![CDATA[The missing guide to TailScale subnet routing in AWS]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/tailscale-subnet-router/" />
   <id>//srijanshetty.in/technical/tailscale-subnet-router</id>
-  <published>2024-09-24T12:30:00+08:00</published>
-  <updated>2024-09-24T12:30:00+08:00</updated>
+  <published>2024-09-24T08:30:00+04:00</published>
+  <updated>2024-09-24T08:30:00+04:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -244,8 +276,8 @@ So here’s my guide on how to setup a subnet router which will allow you to acc
   <title type="html"><![CDATA[Heath Checks on a Custom Port for Websockets with ALB]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/custom-port-websockets-alb/" />
   <id>//srijanshetty.in/technical/custom-port-websockets-alb</id>
-  <published>2024-04-09T22:23:00+08:00</published>
-  <updated>2024-04-09T22:23:00+08:00</updated>
+  <published>2024-04-09T18:23:00+04:00</published>
+  <updated>2024-04-09T18:23:00+04:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -294,8 +326,8 @@ As mentioned above, most guides explicitly mentioned that this isn’t possible.
   <title type="html"><![CDATA[Setting up AWS Peering Connections for Wazuh and ECS]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/aws-peering-connections/" />
   <id>//srijanshetty.in/technical/aws-peering-connections</id>
-  <published>2024-02-10T22:30:00+08:00</published>
-  <updated>2024-02-10T22:30:00+08:00</updated>
+  <published>2024-02-10T18:30:00+04:00</published>
+  <updated>2024-02-10T18:30:00+04:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -343,8 +375,8 @@ In light of the above, and after a week or two of head scratching, I was finally
   <title type="html"><![CDATA[Unit Testing Typescript in under 10 seconds]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/unit-test/" />
   <id>//srijanshetty.in/technical/unit-test</id>
-  <published>2023-09-01T12:30:00+08:00</published>
-  <updated>2023-09-01T12:30:00+08:00</updated>
+  <published>2023-09-01T08:30:00+04:00</published>
+  <updated>2023-09-01T08:30:00+04:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -388,8 +420,8 @@ Do let me know if you liked the above post in the comments below.&lt;br /&gt;&lt
   <title type="html"><![CDATA[OARS, SQL Injections and Paper Backups]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/write-ups/oars-sql-injections-and-paper-backups/" />
   <id>//srijanshetty.in/write-ups/oars-sql-injections-and-paper-backups</id>
-  <published>2023-08-01T22:30:00+08:00</published>
-  <updated>2023-08-01T22:30:00+08:00</updated>
+  <published>2023-08-01T18:30:00+04:00</published>
+  <updated>2023-08-01T18:30:00+04:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -413,8 +445,8 @@ This was a defining moment because you have to admit that sometimes plain old pa
   <title type="html"><![CDATA[The based professors of IIT Kanpur - Professor TVP]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/write-ups/based-professors-of-iitk-professor-tvp/" />
   <id>//srijanshetty.in/write-ups/based-professors-of-iitk-professor-tvp</id>
-  <published>2023-05-01T22:30:00+08:00</published>
-  <updated>2023-05-01T22:30:00+08:00</updated>
+  <published>2023-05-01T18:30:00+04:00</published>
+  <updated>2023-05-01T18:30:00+04:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -447,8 +479,8 @@ Told you, never underestimate the Professors of IIT Kanpur. They can surprise yo
   <title type="html"><![CDATA[The based professors of IIT Kanpur - Professor Biswas]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/write-ups/based-professors-of-iitk-professor-biswas/" />
   <id>//srijanshetty.in/write-ups/based-professors-of-iitk-professor-biswas</id>
-  <published>2023-03-01T22:30:00+08:00</published>
-  <updated>2023-03-01T22:30:00+08:00</updated>
+  <published>2023-03-01T18:30:00+04:00</published>
+  <updated>2023-03-01T18:30:00+04:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -477,8 +509,8 @@ We learnt a valuable lesson, you don’t mess with professors, especially the pr
   <title type="html"><![CDATA[On missing the shared intimacy of friendships]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/prose/shared-experiences/" />
   <id>//srijanshetty.in/prose/shared-experiences</id>
-  <published>2022-11-22T02:34:54+08:00</published>
-  <updated>2022-11-22T02:34:54+08:00</updated>
+  <published>2022-11-21T22:34:54+04:00</published>
+  <updated>2022-11-21T22:34:54+04:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -490,7 +522,7 @@ As you grow older and friendships yonder, you miss not a time long lost, you mis
 It’s not adulting, it’s the human condition. We consistently seek strifes as we believe that it’s the struggles that give our existence meaning, and when the hangman comes knocking he’ll smile over our futility in giving up something valuable in pursuit of something that never existed.&lt;br /&gt;&lt;br /&gt;
 Srijan R Shetty&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/prose/shared-experiences/&quot;&gt;On missing the shared intimacy of friendships&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on November 22, 2022.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/prose/shared-experiences/&quot;&gt;On missing the shared intimacy of friendships&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on November 21, 2022.&lt;/p&gt;
   </content>
 </entry>
 
@@ -499,8 +531,8 @@ Srijan R Shetty&lt;/p&gt;
   <title type="html"><![CDATA[Moving 4 TB across cloud storage providers for free]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/hacks/rclone-moving-files/" />
   <id>//srijanshetty.in/hacks/rclone-moving-files</id>
-  <published>2022-09-29T03:11:54+08:00</published>
-  <updated>2022-09-29T03:11:54+08:00</updated>
+  <published>2022-09-28T23:11:54+04:00</published>
+  <updated>2022-09-28T23:11:54+04:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -557,7 +589,7 @@ command in a &lt;code class=&quot;highlighter-rouge&quot;&gt;tmux&lt;/code&gt; s
 completed.&lt;br /&gt;&lt;br /&gt;
 Until the next post!&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/hacks/rclone-moving-files/&quot;&gt;Moving 4 TB across cloud storage providers for free&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 29, 2022.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/hacks/rclone-moving-files/&quot;&gt;Moving 4 TB across cloud storage providers for free&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 28, 2022.&lt;/p&gt;
   </content>
 </entry>
 
@@ -566,8 +598,8 @@ Until the next post!&lt;/p&gt;
   <title type="html"><![CDATA[Handling CORS with cloudflare workers]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/cloudflare-workers-cors/" />
   <id>//srijanshetty.in/technical/cloudflare-workers-cors</id>
-  <published>2022-09-26T03:11:54+08:00</published>
-  <updated>2022-09-26T03:11:54+08:00</updated>
+  <published>2022-09-25T23:11:54+04:00</published>
+  <updated>2022-09-25T23:11:54+04:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -654,7 +686,7 @@ The way to solve this problem is twofold:&lt;/p&gt;
 
 &lt;p&gt;Don’t think I was able to find a solution on the internet, but knowing how &lt;code class=&quot;highlighter-rouge&quot;&gt;CORS&lt;/code&gt; is handled helped.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/cloudflare-workers-cors/&quot;&gt;Handling CORS with cloudflare workers&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 26, 2022.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/cloudflare-workers-cors/&quot;&gt;Handling CORS with cloudflare workers&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 25, 2022.&lt;/p&gt;
   </content>
 </entry>
 
@@ -663,8 +695,8 @@ The way to solve this problem is twofold:&lt;/p&gt;
   <title type="html"><![CDATA[ZSH bindkey in MacOSX for Cmd]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/hacks/macos-alt-dot-bindkey/" />
   <id>//srijanshetty.in/hacks/macos-alt-dot-bindkey</id>
-  <published>2022-09-21T03:11:54+08:00</published>
-  <updated>2022-09-21T03:11:54+08:00</updated>
+  <published>2022-09-20T23:11:54+04:00</published>
+  <updated>2022-09-20T23:11:54+04:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -705,7 +737,7 @@ bindkey &lt;span class=&quot;s2&quot;&gt;&quot;^[altdot&quot;&lt;/span&gt; inser
 &lt;p&gt;And viola, now the keybindings work. This process works &lt;code class=&quot;highlighter-rouge&quot;&gt;mutatis mundis&lt;/code&gt; for other keybindings that you want to import
 from your workflow in bash/zsh from linux.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/hacks/macos-alt-dot-bindkey/&quot;&gt;ZSH bindkey in MacOSX for Cmd&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 21, 2022.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/hacks/macos-alt-dot-bindkey/&quot;&gt;ZSH bindkey in MacOSX for Cmd&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 20, 2022.&lt;/p&gt;
   </content>
 </entry>
 
@@ -714,8 +746,8 @@ from your workflow in bash/zsh from linux.&lt;/p&gt;
   <title type="html"><![CDATA[Using TouchId for sudo in Mac OSX]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/hacks/sudo-touch-id/" />
   <id>//srijanshetty.in/hacks/sudo-touch-id</id>
-  <published>2022-09-14T03:11:54+08:00</published>
-  <updated>2022-09-14T03:11:54+08:00</updated>
+  <published>2022-09-13T23:11:54+04:00</published>
+  <updated>2022-09-13T23:11:54+04:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -732,7 +764,7 @@ auth sufficient pam_tid.so&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Works like a charm.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/hacks/sudo-touch-id/&quot;&gt;Using TouchId for sudo in Mac OSX&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 14, 2022.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/hacks/sudo-touch-id/&quot;&gt;Using TouchId for sudo in Mac OSX&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 13, 2022.&lt;/p&gt;
   </content>
 </entry>
 
@@ -741,8 +773,8 @@ auth sufficient pam_tid.so&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
   <title type="html"><![CDATA[Polygon Devfolio Fellowship]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/polygon-devfolio-fellowship/" />
   <id>//srijanshetty.in/technical/polygon-devfolio-fellowship</id>
-  <published>2022-09-12T21:02:54+08:00</published>
-  <updated>2022-09-12T21:02:54+08:00</updated>
+  <published>2022-09-12T17:02:54+04:00</published>
+  <updated>2022-09-12T17:02:54+04:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -803,8 +835,8 @@ All the code including the smart contract is open source and the links are provi
   <title type="html"><![CDATA[Poor Man's ALB - Apache]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/poor-mans-alb-apache/" />
   <id>//srijanshetty.in/technical/poor-mans-alb-apache</id>
-  <published>2022-09-02T03:11:54+08:00</published>
-  <updated>2022-09-02T03:11:54+08:00</updated>
+  <published>2022-09-01T23:11:54+04:00</published>
+  <updated>2022-09-01T23:11:54+04:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -846,7 +878,7 @@ worked.&lt;/p&gt;
 &lt;p&gt;The trick was &lt;code class=&quot;highlighter-rouge&quot;&gt;ProxyPass /blog !&lt;/code&gt; which ensured that we can use apache for sublocation routing. On port 3001, &lt;code class=&quot;highlighter-rouge&quot;&gt;next.js&lt;/code&gt;
 was running &lt;code class=&quot;highlighter-rouge&quot;&gt;supervisor&lt;/code&gt; (my goto solution for running apps on a box).&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/poor-mans-alb-apache/&quot;&gt;Poor Man's ALB - Apache&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 02, 2022.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/poor-mans-alb-apache/&quot;&gt;Poor Man's ALB - Apache&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 01, 2022.&lt;/p&gt;
   </content>
 </entry>
 
@@ -855,8 +887,8 @@ was running &lt;code class=&quot;highlighter-rouge&quot;&gt;supervisor&lt;/code&
   <title type="html"><![CDATA[How Do Gulp Typescript Without Module Loaders]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/how-do-gulp-typescript-without-module-loaders/" />
   <id>//srijanshetty.in/technical/how-do-gulp-typescript-without-module-loaders</id>
-  <published>2020-10-20T20:40:00+08:00</published>
-  <updated>2020-10-20T20:40:00+08:00</updated>
+  <published>2020-10-20T16:40:00+04:00</published>
+  <updated>2020-10-20T16:40:00+04:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -958,8 +990,8 @@ global in the browser.&lt;/li&gt;
   <title type="html"><![CDATA[Leaving Your Sock(et)s Hanging]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/leaving-your-sock-et-s-hanging/" />
   <id>//srijanshetty.in/technical/leaving-your-sock-et-s-hanging</id>
-  <published>2020-07-21T15:42:24+08:00</published>
-  <updated>2020-07-21T15:42:24+08:00</updated>
+  <published>2020-07-21T11:42:24+04:00</published>
+  <updated>2020-07-21T11:42:24+04:00</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -1091,42 +1123,6 @@ to figure out the right protocol to correctly close a sidecar thread which uses 
 granted in languages which support such idioms out of the box like Java.&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/leaving-your-sock-et-s-hanging/&quot;&gt;Leaving Your Sock(et)s Hanging&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on July 21, 2020.&lt;/p&gt;
-  </content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Custom DNS Using Pihole]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/custom-dns-using-pihole/" />
-  <id>//srijanshetty.in/technical/custom-dns-using-pihole</id>
-  <published>2020-07-18T16:53:15+08:00</published>
-  <updated>2020-07-18T16:53:15+08:00</updated>
-  <author>
-    <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
-    <email>srijan.shetty+code@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;I finally managed to setup custom DNS routes at my home server (a repurposed laptop with a bust screen, a post for
-another day).&lt;br /&gt;&lt;br /&gt;
-I installed &lt;a href=&quot;https://pi-hole.net&quot;&gt;pihole&lt;/a&gt; on my local server and was struggling with setting up custom
-routes for my local router, and some AWS and GCP boxes that I run. My first attempt was modifying
-&lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/pihole/local.list&lt;/code&gt; with the following values:&lt;/p&gt;
-
-&lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;0.0.0.1 test.lan
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;This configuration worked, until pihole updated gravity database and &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/pihole/local.list&lt;/code&gt; was cleaned up.&lt;br /&gt;&lt;br /&gt;
-After searching the rabbit hole of the internet, I was stuck with the epiphany of modifying &lt;code class=&quot;highlighter-rouge&quot;&gt;dnsmasq&lt;/code&gt; to add the
-entries. The following configuration did the trick:&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;address=/test.lan/0.0.0.1
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;My only pet-peeve is the default behaviour of browsers like firefox and chrome to interpret &lt;code class=&quot;highlighter-rouge&quot;&gt;.lan&lt;/code&gt; entries as search
-queries instead of domain names.&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/custom-dns-using-pihole/&quot;&gt;Custom DNS Using Pihole&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on July 18, 2020.&lt;/p&gt;
   </content>
 </entry>
 
