@@ -5,14 +5,14 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>ZSH bindkey in MacOSX for Cmd &#8211; Srijan R. Shetty</title>
-<meta name="description" content="Binding insert-last-word in ZSH to 'Cmd + .' in Mac OSX">
-<meta name="keywords" content="zsh, bindkey, cmd, linux, mac, osx, cli, commands, bash, iTerm">
+<title>The based professors of IIT Kanpur - Professor TVP &#8211; Srijan R. Shetty</title>
+<meta name="description" content="You can't outsmart the professors at IIT Kanpur">
+<meta name="keywords" content="write-ups, iitk, professors, kanpur, iit">
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="ZSH bindkey in MacOSX for Cmd">
-<meta name="twitter:description" content="Binding insert-last-word in ZSH to 'Cmd + .' in Mac OSX">
+<meta name="twitter:title" content="The based professors of IIT Kanpur - Professor TVP">
+<meta name="twitter:description" content="You can't outsmart the professors at IIT Kanpur">
 <meta name="twitter:site" content="@srijanshetty">
 <meta name="twitter:creator" content="@srijanshetty">
 
@@ -22,9 +22,9 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ZSH bindkey in MacOSX for Cmd">
-<meta property="og:description" content="Binding insert-last-word in ZSH to 'Cmd + .' in Mac OSX">
-<meta property="og:url" content="//srijanshetty.in/hacks/macos-alt-dot-bindkey/">
+<meta property="og:title" content="The based professors of IIT Kanpur - Professor TVP">
+<meta property="og:description" content="You can't outsmart the professors at IIT Kanpur">
+<meta property="og:url" content="//srijanshetty.in/write-ups/based-professors-of-iitk-tvp-2/">
 <meta property="og:site_name" content="Srijan R. Shetty">
 
 <meta property="og:image" content="//srijanshetty.in/images/default-thumb.png">
@@ -34,7 +34,7 @@
 
 
 
-<link rel="canonical" href="//srijanshetty.in/hacks/macos-alt-dot-bindkey/">
+<link rel="canonical" href="//srijanshetty.in/write-ups/based-professors-of-iitk-tvp-2/">
 <link href="//srijanshetty.in/feed.xml" type="application/atom+xml" rel="alternate" title="Srijan R. Shetty Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -147,43 +147,25 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="//srijanshetty.in/hacks/macos-alt-dot-bindkey/" rel="bookmark" title="ZSH bindkey in MacOSX for Cmd">ZSH bindkey in MacOSX for Cmd</a></h1>
+        <h1><a href="//srijanshetty.in/write-ups/based-professors-of-iitk-tvp-2/" rel="bookmark" title="The based professors of IIT Kanpur - Professor TVP">The based professors of IIT Kanpur - Professor TVP</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>Another short one but very useful trick in my moving from Linux to Mac series.<br /><br />
-One of my most used shortcuts in the terminal is <code class="highlighter-rouge">Alt + .</code>, which I adapted from my <code class="highlighter-rouge">bash</code> workflow to my <code class="highlighter-rouge">zsh</code> workflow
-when I started using zsh. It basically inserts the last word from the previous command. This turns out to be very handy
-and I use it multiple times a day.<br /><br />
-There is no out of the box way to accomplish this on Mac, unless you use <code class="highlighter-rouge">iTerm</code>.<br /><br />
-The first step is opening up iTerm preferences and navigate to the keybindings section.</p>
+      <p>Professors has completely autonomy over their courses at Indian Institute of Technology, Kanpur, and boy o boy, did it translate to some really fun and innovating grading schemes.<br /><br />
+Professor TV Prabhakar (or Professor TVP) is probably of the coolest professor that I can recall from my days of college. I’ve already written about the time when he cancelled a class on account of it being April’s fool and gave us a chai party instead.<br /><br />
+But this is the story of the first time we met him.<br /><br />
+Traditionally, the first class of any course at IIT Kanpur is an overview of the course to set expectations. The professor will talk about how they intend to structure the credits of the course, the niti-grities of grading, lecture splits, workshops, practical and theory. Incidentally this is also the class with probably the most attendance as the ‘ethu’ is high during the start of the semester and wanes with students getting back into the rhythm of college life.<br /><br />
+A lot of professors over the course have had interesting takes on the grading system and I’ve countless stories to share from open book exams, to semi-infinite time boxed exams (this was an interesting one), but Professor TVP threw what can be called as a ‘googly’.<br /><br />
+Grading is an exercise in game theory. Most professors want to optimize for classes attended, effort or maybe even learning, but Professor TVP had wilder plans.<br /><br />
+And hence on the very first day of class - just like Morpheus in Matrix did - presented all the students with a
+choice.<br /><br />
+You could chose the blue pill - where you continue with the course as usual - tests, mid-terms, end-iterms, classes et al.<br /><br />
+Or you could choose the red pill - don’t attend any single class and instead build out an interesting project on which you will be graded. A project which could eventually stand on it’s own legs like any good startup.<br /><br />
+A few students did choose the latter, but for the rest of us not only did he make us take tests, mid-terms, end-terms. But also he got us to do a project at a smaller scale.<br /><br /></p>
 
-<figure>
-    <a href="/images/mac_zsh_keybinding_1.png"><img src="/images/mac_zsh_keybinding_1.png" /></a>
-    <figcaption>iTerm &gt; Preferences &gt; Keybindings</figcaption>
-</figure>
-
-<p>Once in the keybindings section:</p>
-<ol>
-  <li>Click <code class="highlighter-rouge">+</code>.</li>
-  <li>In the dialogue select any Keyboard Shortcut you want. I used <code class="highlighter-rouge">Cmd + .</code>.</li>
-  <li>Select <code class="highlighter-rouge">Action</code> as <code class="highlighter-rouge">Send Escape Sequence</code>.</li>
-  <li>Add <code class="highlighter-rouge">altdot</code> as the <code class="highlighter-rouge">Escape Sequence</code>.</li>
-  <li>Hit <code class="highlighter-rouge">Save</code> and we’re done!</li>
-</ol>
-
-<figure>
-    <a href="/images/mac_zsh_keybinding_2.png"><img src="/images/mac_zsh_keybinding_2.png" /></a>
-    <figcaption>Add Keyboard Shorcut with Send Escape Sequence</figcaption>
-</figure>
-
-<p>The next step is configuring zsh keybindings to process the <code class="highlighter-rouge">Escape sequence</code>.</p>
-
-<figure class="highlight"><pre><code class="language-zsh" data-lang="zsh"><span class="c"># somewhere in your zsh config</span>
-bindkey <span class="s2">"^[altdot"</span> insert-last-word</code></pre></figure>
-
-<p>And viola, now the keybindings work. This process works <code class="highlighter-rouge">mutatis mundis</code> for other keybindings that you want to import
-from your workflow in bash/zsh from linux.</p>
+<blockquote>
+  <p>Talk about having the cake and eating the cherry too.</p>
+</blockquote>
 
       <hr />
       <footer role="contentinfo">
@@ -191,17 +173,17 @@ from your workflow in bash/zsh from linux.</p>
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/hacks/macos-alt-dot-bindkey/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/write-ups/based-professors-of-iitk-tvp-2/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/hacks/macos-alt-dot-bindkey/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/write-ups/based-professors-of-iitk-tvp-2/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=//srijanshetty.in/hacks/macos-alt-dot-bindkey/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=//srijanshetty.in/write-ups/based-professors-of-iitk-tvp-2/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>ZSH bindkey in MacOSX for Cmd</strong> was published on <time datetime="2022-09-20T23:11:54+04:00">September 20, 2022</time>.</p>
+        <p class="byline"><strong>The based professors of IIT Kanpur - Professor TVP</strong> was published on <time datetime="2025-02-10T18:30:00+04:00">February 10, 2025</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -216,11 +198,11 @@ from your workflow in bash/zsh from linux.</p>
   <h4>You might also enjoy <small class="pull-right">(<a href="//srijanshetty.in/posts/">View all posts</a>)</small></h4>
     <ul>
     
-      <li><a href="//srijanshetty.in/write-ups/based-professors-of-iitk-tvp-2/" title="The based professors of IIT Kanpur - Professor TVP">The based professors of IIT Kanpur - Professor TVP</a></li>
-    
       <li><a href="//srijanshetty.in/write-ups/based-professors-of-iitk-dheeraj-sanghi/" title="The based professors of IIT Kanpur - Professor Dheeraj Sanghi">The based professors of IIT Kanpur - Professor Dheeraj Sanghi</a></li>
     
       <li><a href="//srijanshetty.in/write-ups/based-professors-of-iitk-attendance/" title="The based professors of IIT Kanpur - Probability and Statistics">The based professors of IIT Kanpur - Probability and Statistics</a></li>
+    
+      <li><a href="//srijanshetty.in/technical/520-errors-with-Nodejs-and-ALB/" title="A curious case of 520 errors with Nodejs and ALB">A curious case of 520 errors with Nodejs and ALB</a></li>
     
     </ul>
     <hr />
