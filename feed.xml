@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="//srijanshetty.in/feed.xml" />
 <link rel="alternate" type="text/html" href="//srijanshetty.in" />
-<updated>2025-03-01T13:42:29+04:00</updated>
+<updated>2025-06-01T10:33:09+05:30</updated>
 <id>//srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
@@ -17,8 +17,8 @@
   <title type="html"><![CDATA[The based professors of IIT Kanpur - Professor TVP]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/write-ups/based-professors-of-iitk-tvp-2/" />
   <id>//srijanshetty.in/write-ups/based-professors-of-iitk-tvp-2</id>
-  <published>2025-02-10T18:30:00+04:00</published>
-  <updated>2025-02-10T18:30:00+04:00</updated>
+  <published>2025-02-10T20:00:00+05:30</published>
+  <updated>2025-02-10T20:00:00+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -50,8 +50,8 @@ A few students did choose the latter, but for the rest of us not only did he mak
   <title type="html"><![CDATA[The based professors of IIT Kanpur - Professor Dheeraj Sanghi]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/write-ups/based-professors-of-iitk-dheeraj-sanghi/" />
   <id>//srijanshetty.in/write-ups/based-professors-of-iitk-dheeraj-sanghi</id>
-  <published>2025-02-03T18:30:00+04:00</published>
-  <updated>2025-02-03T18:30:00+04:00</updated>
+  <published>2025-02-03T20:00:00+05:30</published>
+  <updated>2025-02-03T20:00:00+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -82,8 +82,8 @@ Not only did Professor Dheeraj Sanghi agree to our wild plan. He spent the entir
   <title type="html"><![CDATA[The based professors of IIT Kanpur - Probability and Statistics]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/write-ups/based-professors-of-iitk-attendance/" />
   <id>//srijanshetty.in/write-ups/based-professors-of-iitk-attendance</id>
-  <published>2025-01-07T18:30:00+04:00</published>
-  <updated>2025-01-07T18:30:00+04:00</updated>
+  <published>2025-01-07T20:00:00+05:30</published>
+  <updated>2025-01-07T20:00:00+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -116,8 +116,8 @@ Despite those 10% marks, this was my Scarlett letter in my gradesheet.&lt;br /&g
   <title type="html"><![CDATA[A curious case of 520 errors with Nodejs and ALB]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/520-errors-with-Nodejs-and-ALB/" />
   <id>//srijanshetty.in/technical/520-errors-with-Nodejs-and-ALB</id>
-  <published>2024-11-10T08:30:00+04:00</published>
-  <updated>2024-11-10T08:30:00+04:00</updated>
+  <published>2024-11-10T10:00:00+05:30</published>
+  <updated>2024-11-10T10:00:00+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -161,8 +161,8 @@ This was a fun little problem that we chanced upon while setting up our API infr
   <title type="html"><![CDATA[Japan]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/travel/japan/" />
   <id>//srijanshetty.in/travel/japan</id>
-  <published>2024-11-09T08:30:00+04:00</published>
-  <updated>2024-11-09T08:30:00+04:00</updated>
+  <published>2024-11-09T10:00:00+05:30</published>
+  <updated>2024-11-09T10:00:00+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -241,8 +241,8 @@ And this also probably the reason I’ve already planned my next visit there.&lt
   <title type="html"><![CDATA[The missing guide to TailScale subnet routing in AWS]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/tailscale-subnet-router/" />
   <id>//srijanshetty.in/technical/tailscale-subnet-router</id>
-  <published>2024-09-24T08:30:00+04:00</published>
-  <updated>2024-09-24T08:30:00+04:00</updated>
+  <published>2024-09-24T10:00:00+05:30</published>
+  <updated>2024-09-24T10:00:00+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -309,8 +309,8 @@ So here’s my guide on how to setup a subnet router which will allow you to acc
   <title type="html"><![CDATA[Heath Checks on a Custom Port for Websockets with ALB]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/custom-port-websockets-alb/" />
   <id>//srijanshetty.in/technical/custom-port-websockets-alb</id>
-  <published>2024-04-09T18:23:00+04:00</published>
-  <updated>2024-04-09T18:23:00+04:00</updated>
+  <published>2024-04-09T19:53:00+05:30</published>
+  <updated>2024-04-09T19:53:00+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -359,8 +359,8 @@ As mentioned above, most guides explicitly mentioned that this isn’t possible.
   <title type="html"><![CDATA[Setting up AWS Peering Connections for Wazuh and ECS]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/aws-peering-connections/" />
   <id>//srijanshetty.in/technical/aws-peering-connections</id>
-  <published>2024-02-10T18:30:00+04:00</published>
-  <updated>2024-02-10T18:30:00+04:00</updated>
+  <published>2024-02-10T20:00:00+05:30</published>
+  <updated>2024-02-10T20:00:00+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -408,8 +408,8 @@ In light of the above, and after a week or two of head scratching, I was finally
   <title type="html"><![CDATA[Unit Testing Typescript in under 10 seconds]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/unit-test/" />
   <id>//srijanshetty.in/technical/unit-test</id>
-  <published>2023-09-01T08:30:00+04:00</published>
-  <updated>2023-09-01T08:30:00+04:00</updated>
+  <published>2023-09-01T10:00:00+05:30</published>
+  <updated>2023-09-01T10:00:00+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -453,8 +453,8 @@ Do let me know if you liked the above post in the comments below.&lt;br /&gt;&lt
   <title type="html"><![CDATA[OARS, SQL Injections and Paper Backups]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/write-ups/oars-sql-injections-and-paper-backups/" />
   <id>//srijanshetty.in/write-ups/oars-sql-injections-and-paper-backups</id>
-  <published>2023-08-01T18:30:00+04:00</published>
-  <updated>2023-08-01T18:30:00+04:00</updated>
+  <published>2023-08-01T20:00:00+05:30</published>
+  <updated>2023-08-01T20:00:00+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -478,8 +478,8 @@ This was a defining moment because you have to admit that sometimes plain old pa
   <title type="html"><![CDATA[The based professors of IIT Kanpur - Professor TVP]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/write-ups/based-professors-of-iitk-professor-tvp/" />
   <id>//srijanshetty.in/write-ups/based-professors-of-iitk-professor-tvp</id>
-  <published>2023-05-01T18:30:00+04:00</published>
-  <updated>2023-05-01T18:30:00+04:00</updated>
+  <published>2023-05-01T20:00:00+05:30</published>
+  <updated>2023-05-01T20:00:00+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -512,8 +512,8 @@ Told you, never underestimate the Professors of IIT Kanpur. They can surprise yo
   <title type="html"><![CDATA[The based professors of IIT Kanpur - Professor Biswas]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/write-ups/based-professors-of-iitk-professor-biswas/" />
   <id>//srijanshetty.in/write-ups/based-professors-of-iitk-professor-biswas</id>
-  <published>2023-03-01T18:30:00+04:00</published>
-  <updated>2023-03-01T18:30:00+04:00</updated>
+  <published>2023-03-01T20:00:00+05:30</published>
+  <updated>2023-03-01T20:00:00+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -542,8 +542,8 @@ We learnt a valuable lesson, you don’t mess with professors, especially the pr
   <title type="html"><![CDATA[On missing the shared intimacy of friendships]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/prose/shared-experiences/" />
   <id>//srijanshetty.in/prose/shared-experiences</id>
-  <published>2022-11-21T22:34:54+04:00</published>
-  <updated>2022-11-21T22:34:54+04:00</updated>
+  <published>2022-11-22T00:04:54+05:30</published>
+  <updated>2022-11-22T00:04:54+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -555,7 +555,7 @@ As you grow older and friendships yonder, you miss not a time long lost, you mis
 It’s not adulting, it’s the human condition. We consistently seek strifes as we believe that it’s the struggles that give our existence meaning, and when the hangman comes knocking he’ll smile over our futility in giving up something valuable in pursuit of something that never existed.&lt;br /&gt;&lt;br /&gt;
 Srijan R Shetty&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/prose/shared-experiences/&quot;&gt;On missing the shared intimacy of friendships&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on November 21, 2022.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/prose/shared-experiences/&quot;&gt;On missing the shared intimacy of friendships&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on November 22, 2022.&lt;/p&gt;
   </content>
 </entry>
 
@@ -564,8 +564,8 @@ Srijan R Shetty&lt;/p&gt;
   <title type="html"><![CDATA[Moving 4 TB across cloud storage providers for free]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/hacks/rclone-moving-files/" />
   <id>//srijanshetty.in/hacks/rclone-moving-files</id>
-  <published>2022-09-28T23:11:54+04:00</published>
-  <updated>2022-09-28T23:11:54+04:00</updated>
+  <published>2022-09-29T00:41:54+05:30</published>
+  <updated>2022-09-29T00:41:54+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -622,7 +622,7 @@ command in a &lt;code class=&quot;highlighter-rouge&quot;&gt;tmux&lt;/code&gt; s
 completed.&lt;br /&gt;&lt;br /&gt;
 Until the next post!&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/hacks/rclone-moving-files/&quot;&gt;Moving 4 TB across cloud storage providers for free&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 28, 2022.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/hacks/rclone-moving-files/&quot;&gt;Moving 4 TB across cloud storage providers for free&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 29, 2022.&lt;/p&gt;
   </content>
 </entry>
 
@@ -631,8 +631,8 @@ Until the next post!&lt;/p&gt;
   <title type="html"><![CDATA[Handling CORS with cloudflare workers]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/cloudflare-workers-cors/" />
   <id>//srijanshetty.in/technical/cloudflare-workers-cors</id>
-  <published>2022-09-25T23:11:54+04:00</published>
-  <updated>2022-09-25T23:11:54+04:00</updated>
+  <published>2022-09-26T00:41:54+05:30</published>
+  <updated>2022-09-26T00:41:54+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -719,7 +719,7 @@ The way to solve this problem is twofold:&lt;/p&gt;
 
 &lt;p&gt;Don’t think I was able to find a solution on the internet, but knowing how &lt;code class=&quot;highlighter-rouge&quot;&gt;CORS&lt;/code&gt; is handled helped.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/cloudflare-workers-cors/&quot;&gt;Handling CORS with cloudflare workers&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 25, 2022.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/cloudflare-workers-cors/&quot;&gt;Handling CORS with cloudflare workers&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 26, 2022.&lt;/p&gt;
   </content>
 </entry>
 
@@ -728,8 +728,8 @@ The way to solve this problem is twofold:&lt;/p&gt;
   <title type="html"><![CDATA[ZSH bindkey in MacOSX for Cmd]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/hacks/macos-alt-dot-bindkey/" />
   <id>//srijanshetty.in/hacks/macos-alt-dot-bindkey</id>
-  <published>2022-09-20T23:11:54+04:00</published>
-  <updated>2022-09-20T23:11:54+04:00</updated>
+  <published>2022-09-21T00:41:54+05:30</published>
+  <updated>2022-09-21T00:41:54+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -770,7 +770,7 @@ bindkey &lt;span class=&quot;s2&quot;&gt;&quot;^[altdot&quot;&lt;/span&gt; inser
 &lt;p&gt;And viola, now the keybindings work. This process works &lt;code class=&quot;highlighter-rouge&quot;&gt;mutatis mundis&lt;/code&gt; for other keybindings that you want to import
 from your workflow in bash/zsh from linux.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/hacks/macos-alt-dot-bindkey/&quot;&gt;ZSH bindkey in MacOSX for Cmd&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 20, 2022.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/hacks/macos-alt-dot-bindkey/&quot;&gt;ZSH bindkey in MacOSX for Cmd&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 21, 2022.&lt;/p&gt;
   </content>
 </entry>
 
@@ -779,8 +779,8 @@ from your workflow in bash/zsh from linux.&lt;/p&gt;
   <title type="html"><![CDATA[Using TouchId for sudo in Mac OSX]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/hacks/sudo-touch-id/" />
   <id>//srijanshetty.in/hacks/sudo-touch-id</id>
-  <published>2022-09-13T23:11:54+04:00</published>
-  <updated>2022-09-13T23:11:54+04:00</updated>
+  <published>2022-09-14T00:41:54+05:30</published>
+  <updated>2022-09-14T00:41:54+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -797,7 +797,7 @@ auth sufficient pam_tid.so&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Works like a charm.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/hacks/sudo-touch-id/&quot;&gt;Using TouchId for sudo in Mac OSX&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 13, 2022.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/hacks/sudo-touch-id/&quot;&gt;Using TouchId for sudo in Mac OSX&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 14, 2022.&lt;/p&gt;
   </content>
 </entry>
 
@@ -806,8 +806,8 @@ auth sufficient pam_tid.so&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
   <title type="html"><![CDATA[Polygon Devfolio Fellowship]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/polygon-devfolio-fellowship/" />
   <id>//srijanshetty.in/technical/polygon-devfolio-fellowship</id>
-  <published>2022-09-12T17:02:54+04:00</published>
-  <updated>2022-09-12T17:02:54+04:00</updated>
+  <published>2022-09-12T18:32:54+05:30</published>
+  <updated>2022-09-12T18:32:54+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -868,8 +868,8 @@ All the code including the smart contract is open source and the links are provi
   <title type="html"><![CDATA[Poor Man's ALB - Apache]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/poor-mans-alb-apache/" />
   <id>//srijanshetty.in/technical/poor-mans-alb-apache</id>
-  <published>2022-09-01T23:11:54+04:00</published>
-  <updated>2022-09-01T23:11:54+04:00</updated>
+  <published>2022-09-02T00:41:54+05:30</published>
+  <updated>2022-09-02T00:41:54+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
@@ -911,7 +911,7 @@ worked.&lt;/p&gt;
 &lt;p&gt;The trick was &lt;code class=&quot;highlighter-rouge&quot;&gt;ProxyPass /blog !&lt;/code&gt; which ensured that we can use apache for sublocation routing. On port 3001, &lt;code class=&quot;highlighter-rouge&quot;&gt;next.js&lt;/code&gt;
 was running &lt;code class=&quot;highlighter-rouge&quot;&gt;supervisor&lt;/code&gt; (my goto solution for running apps on a box).&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/poor-mans-alb-apache/&quot;&gt;Poor Man's ALB - Apache&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 01, 2022.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/poor-mans-alb-apache/&quot;&gt;Poor Man's ALB - Apache&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 02, 2022.&lt;/p&gt;
   </content>
 </entry>
 
@@ -920,8 +920,8 @@ was running &lt;code class=&quot;highlighter-rouge&quot;&gt;supervisor&lt;/code&
   <title type="html"><![CDATA[How Do Gulp Typescript Without Module Loaders]]></title>
   <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/how-do-gulp-typescript-without-module-loaders/" />
   <id>//srijanshetty.in/technical/how-do-gulp-typescript-without-module-loaders</id>
-  <published>2020-10-20T16:40:00+04:00</published>
-  <updated>2020-10-20T16:40:00+04:00</updated>
+  <published>2020-10-20T18:10:00+05:30</published>
+  <updated>2020-10-20T18:10:00+05:30</updated>
   <author>
     <name>Srijan R. Shetty</name>
     <uri>//srijanshetty.in</uri>
