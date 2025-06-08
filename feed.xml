@@ -4,13 +4,41 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="//srijanshetty.in/feed.xml" />
 <link rel="alternate" type="text/html" href="//srijanshetty.in" />
-<updated>2025-06-08T10:48:13+05:30</updated>
+<updated>2025-06-08T11:07:38+05:30</updated>
 <id>//srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
   <uri>//srijanshetty.in/</uri>
   <email>srijan.shetty+code@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[On Starting Fuze]]></title>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/startups/on-starting-fuze/" />
+  <id>//srijanshetty.in/startups/on-starting-fuze</id>
+  <published>2025-06-08T10:00:00+05:30</published>
+  <updated>2025-06-08T10:00:00+05:30</updated>
+  <author>
+    <name>Srijan R. Shetty</name>
+    <uri>//srijanshetty.in</uri>
+    <email>srijan.shetty+code@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;&lt;a href=&quot;https://fuze.finance&quot;&gt;Fuze&lt;/a&gt; was built on a completely different mindset than
+&lt;a href=&quot;https://allroundclub.com&quot;&gt;allround&lt;/a&gt;.&lt;br /&gt;&lt;br /&gt;
+With allround, I was trying to maximise the expected outcome in life.&lt;br /&gt;&lt;br /&gt;
+With Fuze, I just wanted to enjoy the process of building something that scales and serves thousands if not millions of people, while working with a cracked team that loves the process.&lt;br /&gt;&lt;br /&gt;
+During my sabbatical, a hard realisation that hit me was that I might not be the best person to start a consumer company. Maybe one day, but not yet.&amp;lt;/br/&amp;gt;&lt;br /&gt;
+I read this piece by Richard Feynman on finding joy in work to deal with burnout and this inspired me a lot: &lt;a href=&quot;https://www.asc.ohio-state.edu/kilcup.1/262/feynman.html&quot;&gt;on burnout&lt;/a&gt;. Echoing Mr. Feynman’s sentiment, I wanted to work on something that was ‘fun’ and I would look forward to everyday.&amp;lt;/br/&amp;gt;&lt;br /&gt;
+The summer of 2022, was spent tinkering with the cool folks at &lt;a href=&quot;https://superteam.fun/&quot;&gt;Superteam&lt;/a&gt;. Working with chad folks and cracked devs, I imbibed the Solana ethos. It was during this time that my conviction on building on crypto solidified.&amp;lt;/br/&amp;gt;&lt;br /&gt;
+In 2022 at the Solana Hacker House Mumbai I spoke about how ‘Stablecoins are the killer use-case of crypto’ and today they’ve taken over the finance world by storm.&amp;lt;/br/&amp;gt;&lt;br /&gt;
+Crypto through stablecoins provides the first time to rewrite the banking stack with an internet first primitive. Open banking, FinTechs were a layer on top of core banking systems. But stablecoins is an innovation that is outside in is already having far reaching impact.&amp;lt;/br/&amp;gt;&lt;br /&gt;
+The crypto ethos, the belief that stablecoin will eat the world, and the need to build a place where you can have fun building a system that scales to millions are few of the driving forces for me personally.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/startups/on-starting-fuze/&quot;&gt;On Starting Fuze&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on June 08, 2025.&lt;/p&gt;
+  </content>
+</entry>
 
 
 <entry>
@@ -887,58 +915,6 @@ All the code including the smart contract is open source and the links are provi
 &lt;/table&gt;
 
     &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/polygon-devfolio-fellowship/&quot;&gt;Polygon Devfolio Fellowship&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 12, 2022.&lt;/p&gt;
-  </content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Poor Man's ALB - Apache]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/poor-mans-alb-apache/" />
-  <id>//srijanshetty.in/technical/poor-mans-alb-apache</id>
-  <published>2022-09-02T00:41:54+05:30</published>
-  <updated>2022-09-02T00:41:54+05:30</updated>
-  <author>
-    <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
-    <email>srijan.shetty+code@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;One complicated aspect of SEO is hosting your blog on the same domain as the rest of the site. This is arguably very
-simple on AWS via ALB which allows sublocation routing, but it became a nightmare when we had to move our resources
-awayt from AWS once we had to shutdown our startups and keep the blog churning content.&lt;br /&gt;&lt;br /&gt;
-Wordpress is a lingua franca for most content online, but the way it handles URLs internally is aggregious. My first
-instinct was to host wordpress via nginx, using &lt;code class=&quot;highlighter-rouge&quot;&gt;proxy_pass&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;SSL termination&lt;/code&gt; at &lt;code class=&quot;highlighter-rouge&quot;&gt;nginx&lt;/code&gt;. But wordpress decided to
-act like a brashful teenager. Finally I caved and hosted wordpress with &lt;code class=&quot;highlighter-rouge&quot;&gt;apache&lt;/code&gt; on a &lt;code class=&quot;highlighter-rouge&quot;&gt;/blog&lt;/code&gt; subdomain here &lt;a href=&quot;https://allround.club/blog&quot;&gt;allround
-blog&lt;/a&gt;.&lt;br /&gt;&lt;br /&gt;
-The second part of the problem was running &lt;code class=&quot;highlighter-rouge&quot;&gt;next.js&lt;/code&gt; on the same host on the &lt;code class=&quot;highlighter-rouge&quot;&gt;/&lt;/code&gt; path. Apache has &lt;code class=&quot;highlighter-rouge&quot;&gt;ProxyPass&lt;/code&gt;, but my
-first attempt wasn’t very succesful and after some researching (sic) on the internet, this was the final solution that
-worked.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-apache&quot; data-lang=&quot;apache&quot;&gt;&lt;span class=&quot;nc&quot;&gt;ProxyPass&lt;/span&gt; /blog !
-&lt;span class=&quot;nc&quot;&gt;Alias&lt;/span&gt; /blog /path/to/wordpress
-
-&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;Directory&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt; /path/to/wordpress&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;
-&lt;/span&gt;    &lt;span class=&quot;nc&quot;&gt;Options&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;FollowSymLinks&lt;/span&gt;
-    &lt;span class=&quot;nc&quot;&gt;AllowOverride&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;Limit&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;Options&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;FileInfo&lt;/span&gt;
-    &lt;span class=&quot;nc&quot;&gt;DirectoryIndex&lt;/span&gt; index.php
-    &lt;span class=&quot;nc&quot;&gt;Order&lt;/span&gt; allow,deny
-    &lt;span class=&quot;nc&quot;&gt;Allow&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;all&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;Directory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;
-&amp;lt;&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;Directory&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt; /path/to/wordpress/wp-content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;
-&lt;/span&gt;    &lt;span class=&quot;nc&quot;&gt;Options&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;FollowSymLinks&lt;/span&gt;
-    &lt;span class=&quot;nc&quot;&gt;Order&lt;/span&gt; allow,deny
-    &lt;span class=&quot;nc&quot;&gt;Allow&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;all&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;Directory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;
-&lt;/span&gt;
-&lt;span class=&quot;nc&quot;&gt;ProxyPass&lt;/span&gt; 		/ http://localhost:3001/
-&lt;span class=&quot;nc&quot;&gt;ProxyPassReverse&lt;/span&gt; 	/ http://localhost:3001/
-&lt;span class=&quot;nc&quot;&gt;ProxyPreserveHost&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;on&lt;/span&gt;
-&lt;span class=&quot;nc&quot;&gt;LogLevel&lt;/span&gt; warn&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;The trick was &lt;code class=&quot;highlighter-rouge&quot;&gt;ProxyPass /blog !&lt;/code&gt; which ensured that we can use apache for sublocation routing. On port 3001, &lt;code class=&quot;highlighter-rouge&quot;&gt;next.js&lt;/code&gt;
-was running &lt;code class=&quot;highlighter-rouge&quot;&gt;supervisor&lt;/code&gt; (my goto solution for running apps on a box).&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/poor-mans-alb-apache/&quot;&gt;Poor Man's ALB - Apache&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 02, 2022.&lt;/p&gt;
   </content>
 </entry>
 
