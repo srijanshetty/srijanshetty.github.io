@@ -176,9 +176,9 @@ Removing cmake
 Processing triggers <span class="k">for </span>man-db
 Log ended: 2015-05-01  10:36:29</code></pre></figure>
 
-<p>As you can see above, <strong>apt</strong> logs all removed programs as *Removing <program_name>*, so a simple **grep** search
+<p>As you can see above, <strong>apt</strong> logs all removed programs as <em>Removing &lt;program_name&gt;</em>, so a simple <strong>grep</strong> search
 would list all the lines containing the removed programs and the second field of these lines would get us
-a list of all the programs which were removed by this operation. <br /></program_name></p>
+a list of all the programs which were removed by this operation. <br /></p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">cat </span>temp.log | <span class="nb">grep</span> <span class="s1">'^Removing'</span> | <span class="nb">awk</span> <span class="s1">'{print \$2}'</span></code></pre></figure>
 

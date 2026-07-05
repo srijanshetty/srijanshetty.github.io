@@ -193,7 +193,7 @@ mr up</code></pre></figure>
 <ol>
   <li>
     <p><strong>vcsh</strong>: The ~500 LOC of vcsh bellies it unfathomable power. Like every great UNIX utility, vcsh builds upon another great UNIX utility - <em>git</em>. Git allows for the $GIT_DIR to be separate from the $GIT_WORKING_TREE. What this means is that the ‘.git
-‘ directory could be located in another folder and Git would still work fine. vcsh keeps all these ‘.git’ folders in ~/.config/vcsh/repo.d/REPO_NAME.git. And the work trees are maintained in $HOME. So, we can have multiple git directories residing within home and none of them will collide with each other. Awesome isn’t it?</p>
+’ directory could be located in another folder and Git would still work fine. vcsh keeps all these ‘.git’ folders in ~/.config/vcsh/repo.d/REPO_NAME.git. And the work trees are maintained in $HOME. So, we can have multiple git directories residing within home and none of them will collide with each other. Awesome isn’t it?</p>
   </li>
   <li>
     <p><strong>mr</strong>: mr allows to manage multiple repositories together. You register repositories with mr (Using <em>mr reg</em>, D’oh) and then you can execute VCS commands like push, update, checkout on them together. mr supports all popular version controls systems. (I only care about git though).</p>
@@ -384,13 +384,9 @@ git push
 <h2 id="caveats">Caveats</h2>
 
 <ol>
-  <li>
-    <strike>The lack a git prompt in my terminal for vcsh enabled repos is unnerving. I still need to soak it all in and find a system to track pending changes. </strike>
-  </li>
+  <li><strike>The lack a git prompt in my terminal for vcsh enabled repos is unnerving. I still need to soak it all in and find a system to track pending changes. </strike></li>
   <li>All repositories need to share a common README file. Again, I need to find a way around this.</li>
-  <li>
-    <strike>I don't like the manual symlinking required in .config.d/. It would be much easier to have helper functions like Apache provides for it's web server.</strike>
-  </li>
+  <li><strike>I don’t like the manual symlinking required in .config.d/. It would be much easier to have helper functions like Apache provides for it’s web server.</strike></li>
 </ol>
 
 <p><strong>Update</strong>:</p>

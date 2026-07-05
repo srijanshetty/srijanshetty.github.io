@@ -157,9 +157,9 @@ Language</a>.<br /><br />
 After struggling with bespoke solutions in the lingua franca of bash,
 I rolled my own solutions which has been lost (fortunately) to Father Time.
 My Eureka moment happened last week when I came across <a href="https://commitlint.js.org/#/guides-local-setup">commitlint</a>
-and the <a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a> spec 
+and the <a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a> spec
 (an admirable way to manage releases and make commits more readable).
-In trying to integrate Conventional Commits to my <a href="https://github.com/srijanshetty/minimal-mistakes">website</a>, 
+In trying to integrate Conventional Commits to my <a href="https://github.com/srijanshetty/minimal-mistakes">website</a>,
 I’ve come across a solution that works perfect for me.<br /><br />
 The current setup uses <code class="highlighter-rouge">husky</code> as a dev-dependency in <code class="highlighter-rouge">package.json</code> which sets up a <code class="highlighter-rouge">commit-msg</code> hook as follows:</p>
 
@@ -181,7 +181,7 @@ The current setup uses <code class="highlighter-rouge">husky</code> as a dev-dep
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
-<p>The great part of this setup is that it ties everything into a single <code class="highlighter-rouge">package.json</code> file. 
+<p>The great part of this setup is that it ties everything into a single <code class="highlighter-rouge">package.json</code> file.
 The npm eco-system is a cesspool when it comes to security but it does make developer tooling a breeze.
 The community converging on using a single <code class="highlighter-rouge">package.json</code> is a god-send, over the alternative of a bunch of .rc files spewed all across; adding <code class="highlighter-rouge">git hooks</code> is the natural evolution to the puzzle.<br /><br />
 It’s great how sometimes your problems solve themselves if you let them be for years.</p>
