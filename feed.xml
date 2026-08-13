@@ -4,13 +4,68 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="//srijanshetty.in/feed.xml" />
 <link rel="alternate" type="text/html" href="//srijanshetty.in" />
-<updated>2026-08-10T15:27:42+00:00</updated>
+<updated>2026-08-13T05:21:12+00:00</updated>
 <id>//srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
   <uri>//srijanshetty.in/</uri>
   <email>srijan.shetty+code@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Pristine Core. Slop Shell]]></title>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/pristine-core-slop-shell/" />
+  <id>//srijanshetty.in/technical/pristine-core-slop-shell</id>
+  <published>2026-08-13T04:30:00+00:00</published>
+  <updated>2026-08-13T04:30:00+00:00</updated>
+  <author>
+    <name>Srijan R. Shetty</name>
+    <uri>//srijanshetty.in</uri>
+    <email>srijan.shetty+code@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;To set context, I’m the co-founder CTO of a company with a flat hierarchy of 25 engineers reporting to me (everyone runs their own show so it’s not that difficult).&lt;/p&gt;
+
+&lt;p&gt;I’ve never felt more productive in my life.&lt;/p&gt;
+
+&lt;p&gt;And before all the engineers wince at a co-founder writing slop code, let me preface that I don’t mess around with the core feature set, I work in the periphery where I have always loved working - platforms, automations, devops.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;My core KPI in 2025 was how to make the engineers more productive.
+My core KPI this year is how to make the engineers (using agents) more productive.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In 2026, this translates to building safeguards and perimeters which provide fast feedback and prevent the system from collapsing under the new ‘velocity’.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;My mantra is pristine core. Slop shell.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Having agents at my disposal to build to build slop guard-rails gives me glorious purpose.&lt;/p&gt;
+
+&lt;p&gt;The things I’ve been able to build to ensure that we keep shipping without falling under the weight of agent velocity feels unreal - custom audit logging agents, perf agents, PII scanners, debuggers, E2E testers - you think it and we have some kind of implementation of the same.&lt;/p&gt;
+
+&lt;p&gt;I want to give some examples of agents which were not possible when writing code wasn’t effective cheap, and I would never spend time in writing throwaway code.&lt;/p&gt;
+
+&lt;h4 id=&quot;stress-test-agent&quot;&gt;Stress Test Agent&lt;/h4&gt;
+&lt;p&gt;Everyone loves stress tests, but setting up the environment was very tedious back in the day. You needed to know k6, string together multiple calls for workflows and the infrastructure might not be provisioned properly to stress tested. Now it’s merely asking an agent to write a parallel workload using REST APIs - all done within an hour.&lt;/p&gt;
+
+&lt;h4 id=&quot;pii-scanner&quot;&gt;PII Scanner&lt;/h4&gt;
+&lt;p&gt;Just the other day, I wanted to ensure that there is no PII in our slack as an internal policy. Instead of hooking up a DLP service, I asked Claude to spin up a loop which used Slack MCP to check for PII in every channel that I’m present. This took a few minutes from thought to implementation.&lt;/p&gt;
+
+&lt;h4 id=&quot;perf-and-audit-agent&quot;&gt;Perf and Audit Agent&lt;/h4&gt;
+&lt;p&gt;If you aduit your logs every month for PII, perf issues or anomalies, you can now do it realtime. Engineers can try their best at trying to audit logs and figure out anamolies, but they will never be great at it due to the monotonous nature of the work. So, I wrote a small loop read only signoz access and now Claude monitors the logs and suggests improvements for slow queries, PIIs and other class of issues with PRs and git blame attribution.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The core code is always free from slop. It’s the safeguards, auditors, debuggers, E2E tests that has slop and this is okay, because they don’t run in production.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I’m not advocating writing slop, I’m advocating writing a class of code which was very expensive to write 6 months ago, but is essentially free today. A class of code which makes sure that the actual code keeps running at a pace which is inline with business expectation and a class of code you would be foolish not to use to make you a better programmer.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/pristine-core-slop-shell/&quot;&gt;Pristine Core. Slop Shell&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on August 13, 2026.&lt;/p&gt;
+  </content>
+</entry>
 
 
 <entry>
@@ -850,33 +905,6 @@ bindkey &lt;span class=&quot;s2&quot;&gt;&quot;^[altdot&quot;&lt;/span&gt; inser
 from your workflow in bash/zsh from linux.&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/hacks/macos-alt-dot-bindkey/&quot;&gt;ZSH bindkey in MacOSX for Cmd&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 20, 2022.&lt;/p&gt;
-  </content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Using TouchId for sudo in Mac OSX]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/hacks/sudo-touch-id/" />
-  <id>//srijanshetty.in/hacks/sudo-touch-id</id>
-  <published>2022-09-13T19:11:54+00:00</published>
-  <updated>2022-09-13T19:11:54+00:00</updated>
-  <author>
-    <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
-    <email>srijan.shetty+code@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;This one is short, I wanted to use TouchId for sudo in Mac OSX.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# Edit pam.d&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;vi /etc/pam.d/sudo
-
-&lt;span class=&quot;c&quot;&gt;# Add the following as the first line&lt;/span&gt;
-auth sufficient pam_tid.so&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Works like a charm.&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/hacks/sudo-touch-id/&quot;&gt;Using TouchId for sudo in Mac OSX&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 13, 2022.&lt;/p&gt;
   </content>
 </entry>
 
