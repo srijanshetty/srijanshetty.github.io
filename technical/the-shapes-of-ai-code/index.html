@@ -5,14 +5,14 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>A Tale of Two Pickpockets - Round One &#8211; Srijan R. Shetty</title>
-<meta name="description" content="Round One - The pickpocket wins">
-<meta name="keywords" content="write-ups, bangalore, pickpocket">
+<title>The Shapes of AI Code &#8211; Srijan R. Shetty</title>
+<meta name="description" content="How to think about writing code with AI">
+<meta name="keywords" content="technical, ai, llms, agents">
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="A Tale of Two Pickpockets - Round One">
-<meta name="twitter:description" content="Round One - The pickpocket wins">
+<meta name="twitter:title" content="The Shapes of AI Code">
+<meta name="twitter:description" content="How to think about writing code with AI">
 <meta name="twitter:site" content="@srijanshetty">
 <meta name="twitter:creator" content="@srijanshetty">
 
@@ -22,9 +22,9 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="A Tale of Two Pickpockets - Round One">
-<meta property="og:description" content="Round One - The pickpocket wins">
-<meta property="og:url" content="//srijanshetty.in/write-ups/a-tale-of-two-pickpockets-round-one/">
+<meta property="og:title" content="The Shapes of AI Code">
+<meta property="og:description" content="How to think about writing code with AI">
+<meta property="og:url" content="//srijanshetty.in/technical/the-shapes-of-ai-code/">
 <meta property="og:site_name" content="Srijan R. Shetty">
 
 <meta property="og:image" content="//srijanshetty.in/images/default-thumb.png">
@@ -34,7 +34,7 @@
 
 
 
-<link rel="canonical" href="//srijanshetty.in/write-ups/a-tale-of-two-pickpockets-round-one/">
+<link rel="canonical" href="//srijanshetty.in/technical/the-shapes-of-ai-code/">
 <link href="//srijanshetty.in/feed.xml" type="application/atom+xml" rel="alternate" title="Srijan R. Shetty Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -147,25 +147,25 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="//srijanshetty.in/write-ups/a-tale-of-two-pickpockets-round-one/" rel="bookmark" title="A Tale of Two Pickpockets - Round One">A Tale of Two Pickpockets - Round One</a></h1>
+        <h1><a href="//srijanshetty.in/technical/the-shapes-of-ai-code/" rel="bookmark" title="The Shapes of AI Code">The Shapes of AI Code</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>I think Hermes has taken a liking to me of late. With these frequent cameos of pickpockets in the past few weeks, I’ve started to feel like some kind of pseudo demigod now. So, my not so happy story - happy for the pickpocket - begins with the first bout on June 6thy 2013.<br /><br />
-In my defence I was a naive, blissfully unaware code monkey lost in the world of music. To add to it, I was taken completely off guard in a battlefield bent in the favour of my masterful opponent. (In retrospect, I should have been more careful after seeing a couple of mobile phones being lost; but then, I was busy mocking the foolishness of the owners to take notice. I guess these things come back to bite you.)<br /><br />
-For the readers who don’t know much about Shivajinagar Bus Station and the commute from Shivajinagar to Yeshwantpur, it’s almost impossible to miss out on a Yeshwantpur bus; over the course of my stay here, I’ve found the following two step process to be very useful:<br /></p>
-<ol>
-  <li>Get some peanuts (preferably roasted).</li>
-  <li>Enjoy the peanuts.</li>
-</ol>
+      <p>In the last six months, I have realized that I have three modes of writing code with AI:</p>
 
-<p>(You’ll know a Yeshwantpur bus when you see one - the platform 2 bus being trailed by tens of crazy commuters like a piece of living flesh being hounded by a mob of zombies, yes that’s the one!)<br /><br />
-That day, I was the perfect victim. I trailed the bus like every other zombie until the doors of hell opened. And this is when my stupidity dawned upon me, I was surrounded by hungry zombies waiting to devour the bus. I had to save myself from this outbreak. Fighting these horrid creatures, I somehow paved a way onto the bus.<br /><br />
-I was preening myself for making it on alive and thought that this deserved a victory song  - I had switched off the music while trying to board the bus - when it hit me that my earphones missed a crucial component - the phone. I was heartbroken, and dolefully I got out of the bus with false hopes of finding it lying on the floor.<br /><br />
-After a few minutes of trying to find my phone in vain, I gave up, boarded the next bus to Yeshwantpur - this time I stayed away from the zombie mob - and thought only about revenge. (Which I sort of got in the second round).</p>
+<h3 id="pristine-core">Pristine Core:</h3>
+<p>This is the critical section of the code. When I ask AI to make changes (in auto mode), I know which parts of the codebase will be touched and what the shape of the final output will be.<br /><br />
+The sessions are usually long with multiple prompts till the code is in a shape I like, followed by adversial reviews and a lot of E2E testing (we have setup an extensive E2E testing harness which makes life easy for us) which continues in the same session till E2E tests pass. The agent drives the E2E test, monitors the result and ensures that the tests behave as expected.</p>
 
-<p>To be continued ……..</p>
+<h3 id="slop-shell">Slop Shell:</h3>
+<p>This is code in the same repo as the critical section, but it’s slop that surrounds the core - E2E testing, custom debuggers, custom harnesses, one-off scripts and tools.<br /><br />
+Since this code doesn’t run in production and doesn’t impact the critical section boundary, I let the AI do it’s thing and I don’t care about what the code is doing here.</p>
 
+<h3 id="side-stuff">Side Stuff:</h3>
+<p>Nothing critical here, so AI breaks all hell lose.<br /><br />
+I don’t see the code, I just care about the outcome and if it succeeds in getting it across the line.<br /><br /><br />
+My usual workflow has been defining the test cases first and then letting the AI fit the code to match the test cases.<br /><br /><br />
+This seems like a pragmatic approach which allows enough bandwidth to go crazy with AI without going on an all out rampage with business critical code.</p>
 
       <hr />
       <footer role="contentinfo">
@@ -173,17 +173,17 @@ After a few minutes of trying to find my phone in vain, I gave up, boarded the n
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/write-ups/a-tale-of-two-pickpockets-round-one/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=//srijanshetty.in/technical/the-shapes-of-ai-code/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/write-ups/a-tale-of-two-pickpockets-round-one/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=//srijanshetty.in/technical/the-shapes-of-ai-code/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=//srijanshetty.in/write-ups/a-tale-of-two-pickpockets-round-one/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=//srijanshetty.in/technical/the-shapes-of-ai-code/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>A Tale of Two Pickpockets - Round One</strong> was published on <time datetime="2013-06-15T03:45:49+00:00">June 15, 2013</time>.</p>
+        <p class="byline"><strong>The Shapes of AI Code</strong> was published on <time datetime="2026-08-29T04:30:00+00:00">August 29, 2026</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -198,11 +198,11 @@ After a few minutes of trying to find my phone in vain, I gave up, boarded the n
   <h4>You might also enjoy <small class="pull-right">(<a href="//srijanshetty.in/posts/">View all posts</a>)</small></h4>
     <ul>
     
-      <li><a href="//srijanshetty.in/technical/the-shapes-of-ai-code/" title="The Shapes of AI Code">The Shapes of AI Code</a></li>
-    
       <li><a href="//srijanshetty.in/technical/tokenmaxxing-will-continue/" title="Tokenmaxxing will continue till EMs burn out">Tokenmaxxing will continue till EMs burn out</a></li>
     
       <li><a href="//srijanshetty.in/technical/pristine-core-slop-shell/" title="Pristine Core. Slop Shell">Pristine Core. Slop Shell</a></li>
+    
+      <li><a href="//srijanshetty.in/startups/on-starting-fuze/" title="On Starting Fuze">On Starting Fuze</a></li>
     
     </ul>
     <hr />
