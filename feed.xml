@@ -4,13 +4,58 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="//srijanshetty.in/feed.xml" />
 <link rel="alternate" type="text/html" href="//srijanshetty.in" />
-<updated>2026-08-31T02:55:33+00:00</updated>
+<updated>2026-10-17T03:36:59+00:00</updated>
 <id>//srijanshetty.in/</id>
 <author>
   <name>Srijan R. Shetty</name>
   <uri>//srijanshetty.in/</uri>
   <email>srijan.shetty+code@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[]]></title>
+  <link rel="alternate" type="text/html" href="//srijanshetty.in/technical/high-performance-appraisal/" />
+  <id>//srijanshetty.in/technical/high-performance-appraisal</id>
+  <updated>Appraisals for High Performance TeamsT00:00:00-00:00</updated>
+  <published>2026-10-17T04:30:00+00:00</published>
+  
+  <author>
+    <name>Srijan R. Shetty</name>
+    <uri>//srijanshetty.in</uri>
+    <email>srijan.shetty+code@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Appraisals are daunting. Even in the most relaxed work environments, appraisals can be nerve wracking and they lay bare the power dynamic between a manager and a reportee.&lt;br /&gt;&lt;br /&gt;
+I’ve been thinking of ways to make the process more transparent; and whilst I was trying to do so, I’ve come to realize about the greatest folly or great/non-toxic workplaces - your performance isn’t discerning.&lt;br /&gt;&lt;br /&gt;
+In a toxic workplace you will always feel that your work is shit, but in a great workplace you’ll always feel that your work is exceptional and either of this isn’t great.&lt;br /&gt;&lt;br /&gt;
+One of my central tenants of starting Fuze was to build a workplace where I personally have fun - I get to work with great people and build great things. Crafting such a workplace means that appreciation is always public, criticism is private and often we’re getting things done without major setbacks. &lt;br /&gt;&lt;br /&gt;
+If everyone is doing a fairly good job, how do you discern if someone is truly exceptional? How do you distinguish between the great and the good engineers?&lt;br /&gt;&lt;br /&gt;
+It’s a rhetorical question, because you always know who is exceptional.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The folks who don’t need to be managed, those who find work that needs to be done without prompting are the truly exceptional people.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Exceptional engineers generate work. They peek into the hood of code and figure out what requires fine tuning. They talk to ‘business’ to figure out what generates revenue. More often than not, the managing that they require is orienting their compass to the most critical issue to be solved because they will try to solve everything and go down rabbit holes.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The folks who take great pride in the work they do. The code they write is thing of beauty.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;These are the engineers who love tinkering with code and believe that their code is art. They will get things done on time and in an extensible manner which makes it easy to add more use-case in the future, but more often than not they would not care about the ‘business’. The revenue is important but not without great code.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Finally, the people who get the job done. It’s good honest work that meets the expectation.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;There is nothing wrong about it, everyone has their priorities in life and meeting expectations is what you were hired for.&lt;br /&gt;&lt;br /&gt;
+Obviously, I won’t be talking about people who don’t want to work because they self select out of this process.&lt;br /&gt;&lt;br /&gt;
+There is nothing wrong in being any of these personas, after all you’re having fun building something great and the work you do is fruitful. You just need to be self aware about your personal and work priorities.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/technical/high-performance-appraisal/&quot;&gt;&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on October 17, 2026.&lt;/p&gt;
+  </content>
+</entry>
 
 
 <entry>
@@ -746,73 +791,6 @@ It’s not adulting, it’s the human condition. We consistently seek strifes as
 Srijan R Shetty&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/prose/shared-experiences/&quot;&gt;On missing the shared intimacy of friendships&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on November 21, 2022.&lt;/p&gt;
-  </content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Moving 4 TB across cloud storage providers for free]]></title>
-  <link rel="alternate" type="text/html" href="//srijanshetty.in/hacks/rclone-moving-files/" />
-  <id>//srijanshetty.in/hacks/rclone-moving-files</id>
-  <published>2022-09-28T19:11:54+00:00</published>
-  <updated>2022-09-28T19:11:54+00:00</updated>
-  <author>
-    <name>Srijan R. Shetty</name>
-    <uri>//srijanshetty.in</uri>
-    <email>srijan.shetty+code@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;Ever run into the problem of maxing out your cloud capacity in one provider (most possibly on the free tier) and being
-left with no other solution but to upgrade because you can’t move your data?&lt;br /&gt;&lt;br /&gt;
-Or got into the solution of migrating data from a work account to a backup?&lt;br /&gt;&lt;br /&gt;
-I got into somewhat of a fix lately as I had to transfer over 4TB of data from AWS to a Google Drive account (with
-infinite free storage, courtesty my alma mater). What makes matters worse is that I have only 4TB of metered usuage in
-my broadband network, post which I’m downgraded on speed (and we obviously don’t like slow networks).&lt;br /&gt;&lt;br /&gt;
-The final solution that I came up with didn’t drain by broadband quota and didn’t cost me in time or money, which I
-think is a great outcome.&lt;br /&gt;&lt;br /&gt;
-The trick is to run the transfer on a VPS solution like &lt;a href=&quot;https://digitalocean.com&quot;&gt;digitalocean&lt;/a&gt;, with &lt;code class=&quot;highlighter-rouge&quot;&gt;tmux&lt;/code&gt; to resume
-sessions. This allows you to use the bandwidth of the VPS providers and not your home network!&lt;br /&gt;&lt;br /&gt;
-Let’s get everything setup:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Get a free digital ocean account using this &lt;a href=&quot;https://m.do.co/c/c7d0b328194e&quot;&gt;link&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spin up a basic Ubuntu instance on Digital Ocean.&lt;/li&gt;
-  &lt;li&gt;Install &lt;a href=&quot;https://rclone.org/install/&quot;&gt;rclone&lt;/a&gt; using the following command.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; curl https://rclone.org/install.sh | &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;bash&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rclone&lt;/code&gt; is the swiss army knife of transferring files between different service providers, unlike &lt;code class=&quot;highlighter-rouge&quot;&gt;scp&lt;/code&gt; it does allow
-you to transfer between two different hosts and doesn’t have a &lt;code class=&quot;highlighter-rouge&quot;&gt;one local node&lt;/code&gt; policy. With rclone setup, the rest is
-easy.&lt;br /&gt;&lt;br /&gt;
-Install the cloud providers that you want to transfer files between.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;rclone config
-
-Name                 Type
-&lt;span class=&quot;o&quot;&gt;====&lt;/span&gt;                 &lt;span class=&quot;o&quot;&gt;====&lt;/span&gt;
-dropbox              dropbox
-s3                   s3
-
-e&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; Edit existing remote
-n&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; New remote
-d&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; Delete remote
-r&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; Rename remote
-c&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; Copy remote
-s&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; Set configuration password
-q&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; Quit config
-e/n/d/r/c/s/q&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Once you have the source and destination providers setup, the transfer is easy.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;rclone copy s3:bucket.name/ dropbox:backup/ &lt;span class=&quot;nt&quot;&gt;--ignore-existing&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Running with &lt;code class=&quot;highlighter-rouge&quot;&gt;--ignore-existing&lt;/code&gt; makes the process idempotent in case the SSH connection fails. I prefer running the
-command in a &lt;code class=&quot;highlighter-rouge&quot;&gt;tmux&lt;/code&gt; session so that I can reattach the session in a few days when the transfer might have
-completed.&lt;br /&gt;&lt;br /&gt;
-Until the next post!&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;//srijanshetty.in/hacks/rclone-moving-files/&quot;&gt;Moving 4 TB across cloud storage providers for free&lt;/a&gt; was originally published by Srijan R. Shetty at &lt;a href=&quot;//srijanshetty.in&quot;&gt;Srijan R. Shetty&lt;/a&gt; on September 28, 2022.&lt;/p&gt;
   </content>
 </entry>
 
